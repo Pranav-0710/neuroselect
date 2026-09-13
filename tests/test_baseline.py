@@ -115,3 +115,7 @@ def test_ctc_geometry_accounts_for_repeated_targets():
     assert report["T_over_U"] == 1.25
     assert report["minimum_ctc_timesteps"] == 5
     assert report["structurally_feasible"]
+
+
+def test_ctc_decoder_collapses_blanks_and_repeats():
+    assert decode_spanish([0, 1, 1, 0, 9, 9, 0, 13, 13]) == "s b"

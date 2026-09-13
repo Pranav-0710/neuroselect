@@ -1,0 +1,2057 @@
+{
+  "target": "xyz",
+  "T": 240,
+  "U": 3,
+  "T_over_U": 80.0,
+  "initial_loss": 274.25018310546875,
+  "minimum_loss": 0.01171127613633871,
+  "final_loss": 0.01171127613633871,
+  "epochs": 300,
+  "prediction": "xyz",
+  "cer": 0.0,
+  "decoded_indices": [
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    25,
+    26,
+    15
+  ],
+  "seconds": 96.24098930000036,
+  "blank_history": [
+    {
+      "mean_blank_probability": 0.025105305016040802,
+      "max_nonblank_probability": 0.044792648404836655,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 45
+    },
+    {
+      "mean_blank_probability": 0.027831321582198143,
+      "max_nonblank_probability": 0.04959858953952789,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 1
+    },
+    {
+      "mean_blank_probability": 0.02959814853966236,
+      "max_nonblank_probability": 0.06588828563690186,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 0.029447240754961967,
+      "max_nonblank_probability": 0.12101201713085175,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 0.026345456019043922,
+      "max_nonblank_probability": 0.2497970014810562,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 5
+    },
+    {
+      "mean_blank_probability": 0.02023395709693432,
+      "max_nonblank_probability": 0.47600793838500977,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 4
+    },
+    {
+      "mean_blank_probability": 0.012501534074544907,
+      "max_nonblank_probability": 0.7103853225708008,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 2
+    },
+    {
+      "mean_blank_probability": 0.006592730991542339,
+      "max_nonblank_probability": 0.8516213893890381,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 2
+    },
+    {
+      "mean_blank_probability": 0.00356095633469522,
+      "max_nonblank_probability": 0.9199398756027222,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 2
+    },
+    {
+      "mean_blank_probability": 0.0021330188028514385,
+      "max_nonblank_probability": 0.9534743428230286,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 2
+    },
+    {
+      "mean_blank_probability": 0.0013981991214677691,
+      "max_nonblank_probability": 0.971444845199585,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 2
+    },
+    {
+      "mean_blank_probability": 0.0009912971872836351,
+      "max_nonblank_probability": 0.9817289710044861,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 1
+    },
+    {
+      "mean_blank_probability": 0.0008063517161644995,
+      "max_nonblank_probability": 0.9878818988800049,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 2
+    },
+    {
+      "mean_blank_probability": 0.0007032578578218818,
+      "max_nonblank_probability": 0.9918586611747742,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 2
+    },
+    {
+      "mean_blank_probability": 0.0006468407227657735,
+      "max_nonblank_probability": 0.9943546056747437,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 2
+    },
+    {
+      "mean_blank_probability": 0.0005656318389810622,
+      "max_nonblank_probability": 0.9959413409233093,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 2
+    },
+    {
+      "mean_blank_probability": 0.0004685511812567711,
+      "max_nonblank_probability": 0.9969889521598816,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 2
+    },
+    {
+      "mean_blank_probability": 0.0003841934085357934,
+      "max_nonblank_probability": 0.9977031350135803,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 2
+    },
+    {
+      "mean_blank_probability": 0.0003198642225470394,
+      "max_nonblank_probability": 0.9982049465179443,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 2
+    },
+    {
+      "mean_blank_probability": 0.0002715248556341976,
+      "max_nonblank_probability": 0.9985663294792175,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 0.00023733660054858774,
+      "max_nonblank_probability": 0.9988320469856262,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 0.00021465982717927545,
+      "max_nonblank_probability": 0.9990313053131104,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 0.00019917944155167788,
+      "max_nonblank_probability": 0.9991829991340637,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 0.00018812442431226373,
+      "max_nonblank_probability": 0.9993008375167847,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 0.0001791407266864553,
+      "max_nonblank_probability": 0.999393105506897,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 0.00016923820658121258,
+      "max_nonblank_probability": 0.9994668364524841,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 0.00015781584079377353,
+      "max_nonblank_probability": 0.9995260238647461,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 0.00014579556591343135,
+      "max_nonblank_probability": 0.9995743632316589,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 0.00013382874021772295,
+      "max_nonblank_probability": 0.9996140599250793,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 0.00012243013770785183,
+      "max_nonblank_probability": 0.9996470212936401,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 0.00011204564361833036,
+      "max_nonblank_probability": 0.9996746778488159,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 0.00010263967124046758,
+      "max_nonblank_probability": 0.999698281288147,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.399203554494306e-05,
+      "max_nonblank_probability": 0.9997178912162781,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.603571768617257e-05,
+      "max_nonblank_probability": 0.9997348189353943,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.880899647716433e-05,
+      "max_nonblank_probability": 0.9997493624687195,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.232469943119213e-05,
+      "max_nonblank_probability": 0.9997618794441223,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.652892625425011e-05,
+      "max_nonblank_probability": 0.9997727274894714,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.134614523034543e-05,
+      "max_nonblank_probability": 0.9997825026512146,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.6698700063861907e-05,
+      "max_nonblank_probability": 0.9997907280921936,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.251278344076127e-05,
+      "max_nonblank_probability": 0.9997981190681458,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.87427314510569e-05,
+      "max_nonblank_probability": 0.9998045563697815,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.536004416877404e-05,
+      "max_nonblank_probability": 0.9998102784156799,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.232844366924837e-05,
+      "max_nonblank_probability": 0.9998151659965515,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 3.960837420891039e-05,
+      "max_nonblank_probability": 0.999819815158844,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 3.7162782973609865e-05,
+      "max_nonblank_probability": 0.9998238682746887,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 3.495844066492282e-05,
+      "max_nonblank_probability": 0.99982750415802,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 3.296542854513973e-05,
+      "max_nonblank_probability": 0.9998306035995483,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 3.1156283512245864e-05,
+      "max_nonblank_probability": 0.9998334646224976,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 2.950504858745262e-05,
+      "max_nonblank_probability": 0.9998362064361572,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 2.7986576242255978e-05,
+      "max_nonblank_probability": 0.9998384714126587,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 2.65760700131068e-05,
+      "max_nonblank_probability": 0.999840497970581,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 2.5250168619095348e-05,
+      "max_nonblank_probability": 0.9998424053192139,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 2.3991806301637553e-05,
+      "max_nonblank_probability": 0.9998443126678467,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 2.2800173610448837e-05,
+      "max_nonblank_probability": 0.9998456239700317,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 2.1696778276236728e-05,
+      "max_nonblank_probability": 0.9998471736907959,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 2.0709707314381376e-05,
+      "max_nonblank_probability": 0.9998483657836914,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.9844788766931742e-05,
+      "max_nonblank_probability": 0.9998495578765869,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.908135527628474e-05,
+      "max_nonblank_probability": 0.9998507499694824,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.8389915567240678e-05,
+      "max_nonblank_probability": 0.9998517036437988,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.774624797690194e-05,
+      "max_nonblank_probability": 0.9998527765274048,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.714005702524446e-05,
+      "max_nonblank_probability": 0.9998534917831421,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.6580752344452776e-05,
+      "max_nonblank_probability": 0.999854326248169,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.608400089025963e-05,
+      "max_nonblank_probability": 0.9998550415039062,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.5648935004719533e-05,
+      "max_nonblank_probability": 0.999855637550354,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.52620214066701e-05,
+      "max_nonblank_probability": 0.9998563528060913,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.4910753634467255e-05,
+      "max_nonblank_probability": 0.9998569488525391,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.4587290934287012e-05,
+      "max_nonblank_probability": 0.9998573064804077,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.4286945770436432e-05,
+      "max_nonblank_probability": 0.999858021736145,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.400667224515928e-05,
+      "max_nonblank_probability": 0.9998582601547241,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.3744293937634211e-05,
+      "max_nonblank_probability": 0.9998588562011719,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.3498075531970244e-05,
+      "max_nonblank_probability": 0.9998592138290405,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.3266560017655138e-05,
+      "max_nonblank_probability": 0.9998596906661987,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.30484686451382e-05,
+      "max_nonblank_probability": 0.9998600482940674,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.2842684554925654e-05,
+      "max_nonblank_probability": 0.9998602867126465,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.2648216397792567e-05,
+      "max_nonblank_probability": 0.9998607635498047,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.246413648914313e-05,
+      "max_nonblank_probability": 0.9998608827590942,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.2289649021113291e-05,
+      "max_nonblank_probability": 0.9998613595962524,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.2123981832701247e-05,
+      "max_nonblank_probability": 0.9998615980148315,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.196648463519523e-05,
+      "max_nonblank_probability": 0.9998619556427002,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.1816529877251014e-05,
+      "max_nonblank_probability": 0.9998620748519897,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.1673563676595222e-05,
+      "max_nonblank_probability": 0.9998623132705688,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.153705579781672e-05,
+      "max_nonblank_probability": 0.9998626708984375,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.1406552403059322e-05,
+      "max_nonblank_probability": 0.9998629093170166,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.128163785324432e-05,
+      "max_nonblank_probability": 0.9998633861541748,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.1161896509293001e-05,
+      "max_nonblank_probability": 0.9998633861541748,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.1046983672713395e-05,
+      "max_nonblank_probability": 0.9998636245727539,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.0936555554508232e-05,
+      "max_nonblank_probability": 0.999863862991333,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.0830315659404732e-05,
+      "max_nonblank_probability": 0.9998642206192017,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.0727981134550646e-05,
+      "max_nonblank_probability": 0.9998642206192017,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.0629312782839406e-05,
+      "max_nonblank_probability": 0.9998645782470703,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.0534063221712131e-05,
+      "max_nonblank_probability": 0.9998646974563599,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.0442007805977482e-05,
+      "max_nonblank_probability": 0.9998650550842285,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.0352959179726895e-05,
+      "max_nonblank_probability": 0.9998652935028076,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.0266734534525312e-05,
+      "max_nonblank_probability": 0.9998654127120972,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.0183148333453573e-05,
+      "max_nonblank_probability": 0.9998655319213867,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.0102061423822306e-05,
+      "max_nonblank_probability": 0.9998657703399658,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 1.0023328286479227e-05,
+      "max_nonblank_probability": 0.9998661279678345,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.94679703580914e-06,
+      "max_nonblank_probability": 0.999866247177124,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.872364898910746e-06,
+      "max_nonblank_probability": 0.9998663663864136,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.799903637031093e-06,
+      "max_nonblank_probability": 0.9998666048049927,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.729315024742391e-06,
+      "max_nonblank_probability": 0.9998667240142822,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.660499017627444e-06,
+      "max_nonblank_probability": 0.9998669624328613,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.593350114300847e-06,
+      "max_nonblank_probability": 0.9998670816421509,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.527814654575195e-06,
+      "max_nonblank_probability": 0.99986732006073,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.463782589591574e-06,
+      "max_nonblank_probability": 0.9998675584793091,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.401204806636088e-06,
+      "max_nonblank_probability": 0.9998680353164673,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.339998541690875e-06,
+      "max_nonblank_probability": 0.9998680353164673,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.280107406084426e-06,
+      "max_nonblank_probability": 0.9998680353164673,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.221465006703511e-06,
+      "max_nonblank_probability": 0.9998682737350464,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.164037692244165e-06,
+      "max_nonblank_probability": 0.999868631362915,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.107742698688526e-06,
+      "max_nonblank_probability": 0.9998688697814941,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 9.05256729311077e-06,
+      "max_nonblank_probability": 0.9998688697814941,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.998444172902964e-06,
+      "max_nonblank_probability": 0.9998689889907837,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.945349691202864e-06,
+      "max_nonblank_probability": 0.9998694658279419,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.89322745933896e-06,
+      "max_nonblank_probability": 0.999869704246521,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.842053830449004e-06,
+      "max_nonblank_probability": 0.9998699426651001,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.791800610197242e-06,
+      "max_nonblank_probability": 0.9998699426651001,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.74243960424792e-06,
+      "max_nonblank_probability": 0.9998701810836792,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.693927156855352e-06,
+      "max_nonblank_probability": 0.9998703002929688,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.64627418195596e-06,
+      "max_nonblank_probability": 0.9998705387115479,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.599437023804057e-06,
+      "max_nonblank_probability": 0.999870777130127,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.553398402000312e-06,
+      "max_nonblank_probability": 0.999870777130127,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.50815195008181e-06,
+      "max_nonblank_probability": 0.9998712539672852,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.463714038953185e-06,
+      "max_nonblank_probability": 0.9998714923858643,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.420047379331663e-06,
+      "max_nonblank_probability": 0.9998714923858643,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.377180165553e-06,
+      "max_nonblank_probability": 0.9998717308044434,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.335128768521827e-06,
+      "max_nonblank_probability": 0.9998719692230225,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.29393229651032e-06,
+      "max_nonblank_probability": 0.9998722076416016,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.253663509094622e-06,
+      "max_nonblank_probability": 0.9998723268508911,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.214385161409155e-06,
+      "max_nonblank_probability": 0.9998725652694702,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.176242772606201e-06,
+      "max_nonblank_probability": 0.9998726844787598,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.139466444845311e-06,
+      "max_nonblank_probability": 0.9998730421066284,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.104378139250912e-06,
+      "max_nonblank_probability": 0.9998733997344971,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.07152537163347e-06,
+      "max_nonblank_probability": 0.9998733997344971,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.04174123913981e-06,
+      "max_nonblank_probability": 0.9998736381530762,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 8.016321771719959e-06,
+      "max_nonblank_probability": 0.9998737573623657,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.997139618964866e-06,
+      "max_nonblank_probability": 0.9998738765716553,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.986268428794574e-06,
+      "max_nonblank_probability": 0.9998742341995239,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.984487638168503e-06,
+      "max_nonblank_probability": 0.9998743534088135,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.988432116690092e-06,
+      "max_nonblank_probability": 0.9998745918273926,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.990156518644653e-06,
+      "max_nonblank_probability": 0.9998748302459717,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.982801434991416e-06,
+      "max_nonblank_probability": 0.9998751878738403,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.965200893522706e-06,
+      "max_nonblank_probability": 0.9998753070831299,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.940029718156438e-06,
+      "max_nonblank_probability": 0.999875545501709,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.910301974334288e-06,
+      "max_nonblank_probability": 0.999875545501709,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.878134056227282e-06,
+      "max_nonblank_probability": 0.9998757839202881,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.844763786124531e-06,
+      "max_nonblank_probability": 0.9998760223388672,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.810833267285489e-06,
+      "max_nonblank_probability": 0.9998761415481567,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.776731763442513e-06,
+      "max_nonblank_probability": 0.9998764991760254,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.742662091914099e-06,
+      "max_nonblank_probability": 0.9998766183853149,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.708707016718108e-06,
+      "max_nonblank_probability": 0.9998769760131836,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.674949301872402e-06,
+      "max_nonblank_probability": 0.9998772144317627,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.641408046765719e-06,
+      "max_nonblank_probability": 0.9998772144317627,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.608105079270899e-06,
+      "max_nonblank_probability": 0.9998774528503418,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.57505858928198e-06,
+      "max_nonblank_probability": 0.9998778104782104,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.542266757809557e-06,
+      "max_nonblank_probability": 0.9998780488967896,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.509743227274157e-06,
+      "max_nonblank_probability": 0.9998780488967896,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.477485269191675e-06,
+      "max_nonblank_probability": 0.9998782873153687,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.445486517099198e-06,
+      "max_nonblank_probability": 0.9998784065246582,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.41375379220699e-06,
+      "max_nonblank_probability": 0.999879002571106,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.3822761805786286e-06,
+      "max_nonblank_probability": 0.999879002571106,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.351068234129343e-06,
+      "max_nonblank_probability": 0.9998791217803955,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.320123586396221e-06,
+      "max_nonblank_probability": 0.9998792409896851,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.2894413278845605e-06,
+      "max_nonblank_probability": 0.9998794794082642,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.259009180415887e-06,
+      "max_nonblank_probability": 0.9998799562454224,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.228826689242851e-06,
+      "max_nonblank_probability": 0.9998799562454224,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.198904313554522e-06,
+      "max_nonblank_probability": 0.9998801946640015,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.16922704668832e-06,
+      "max_nonblank_probability": 0.9998804330825806,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.139797162381001e-06,
+      "max_nonblank_probability": 0.9998806715011597,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.11062284608488e-06,
+      "max_nonblank_probability": 0.9998807907104492,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.081682724674465e-06,
+      "max_nonblank_probability": 0.9998810291290283,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.052977707644459e-06,
+      "max_nonblank_probability": 0.9998811483383179,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 7.024520073173335e-06,
+      "max_nonblank_probability": 0.9998815059661865,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.9962957240932155e-06,
+      "max_nonblank_probability": 0.9998817443847656,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.968298293941189e-06,
+      "max_nonblank_probability": 0.9998817443847656,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.940531875443412e-06,
+      "max_nonblank_probability": 0.9998819828033447,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.912996468599886e-06,
+      "max_nonblank_probability": 0.9998823404312134,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.885675247758627e-06,
+      "max_nonblank_probability": 0.9998825788497925,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.858581855340162e-06,
+      "max_nonblank_probability": 0.999882698059082,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.831703103671316e-06,
+      "max_nonblank_probability": 0.999882698059082,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.805047178204404e-06,
+      "max_nonblank_probability": 0.9998831748962402,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.778602255508304e-06,
+      "max_nonblank_probability": 0.9998834133148193,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.7523610596254e-06,
+      "max_nonblank_probability": 0.9998835325241089,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.726332685502712e-06,
+      "max_nonblank_probability": 0.9998836517333984,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.700510766677326e-06,
+      "max_nonblank_probability": 0.9998838901519775,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.674891665170435e-06,
+      "max_nonblank_probability": 0.9998841285705566,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.649471743003232e-06,
+      "max_nonblank_probability": 0.9998844861984253,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.624248726438964e-06,
+      "max_nonblank_probability": 0.9998846054077148,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.5992203417408746e-06,
+      "max_nonblank_probability": 0.9998847246170044,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.574384769919561e-06,
+      "max_nonblank_probability": 0.999885082244873,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.549744284711778e-06,
+      "max_nonblank_probability": 0.9998852014541626,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.525289791170508e-06,
+      "max_nonblank_probability": 0.9998853206634521,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.501021744043101e-06,
+      "max_nonblank_probability": 0.9998855590820312,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.476927865151083e-06,
+      "max_nonblank_probability": 0.9998859167098999,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.4530304371146485e-06,
+      "max_nonblank_probability": 0.9998860359191895,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.429309451050358e-06,
+      "max_nonblank_probability": 0.999886155128479,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.405751264537685e-06,
+      "max_nonblank_probability": 0.9998865127563477,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.382382707670331e-06,
+      "max_nonblank_probability": 0.9998866319656372,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.359178314596647e-06,
+      "max_nonblank_probability": 0.9998867511749268,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.336149454000406e-06,
+      "max_nonblank_probability": 0.9998871088027954,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.313284302450484e-06,
+      "max_nonblank_probability": 0.999887228012085,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.290584224188933e-06,
+      "max_nonblank_probability": 0.9998873472213745,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.268050128710456e-06,
+      "max_nonblank_probability": 0.9998877048492432,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.245680197025649e-06,
+      "max_nonblank_probability": 0.9998879432678223,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.2234657889348455e-06,
+      "max_nonblank_probability": 0.9998880624771118,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.201415544637712e-06,
+      "max_nonblank_probability": 0.9998884201049805,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.179506726766704e-06,
+      "max_nonblank_probability": 0.99988853931427,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.157767074910225e-06,
+      "max_nonblank_probability": 0.99988853931427,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.136175670690136e-06,
+      "max_nonblank_probability": 0.9998888969421387,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.114735697337892e-06,
+      "max_nonblank_probability": 0.9998892545700073,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.09344033364323e-06,
+      "max_nonblank_probability": 0.9998892545700073,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.072286396374693e-06,
+      "max_nonblank_probability": 0.9998894929885864,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.0512893469422124e-06,
+      "max_nonblank_probability": 0.999889612197876,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.030430995451752e-06,
+      "max_nonblank_probability": 0.9998900890350342,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 6.009710887155961e-06,
+      "max_nonblank_probability": 0.9998902082443237,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.989127657812787e-06,
+      "max_nonblank_probability": 0.9998904466629028,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.96868630964309e-06,
+      "max_nonblank_probability": 0.9998904466629028,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.94838729739422e-06,
+      "max_nonblank_probability": 0.9998908042907715,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.928208793193335e-06,
+      "max_nonblank_probability": 0.9998910427093506,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.908170351176523e-06,
+      "max_nonblank_probability": 0.9998910427093506,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.888266969122924e-06,
+      "max_nonblank_probability": 0.9998914003372192,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.868483640369959e-06,
+      "max_nonblank_probability": 0.9998914003372192,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.848839009559015e-06,
+      "max_nonblank_probability": 0.999891996383667,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.8293185247748625e-06,
+      "max_nonblank_probability": 0.999891996383667,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.8099244597542565e-06,
+      "max_nonblank_probability": 0.9998921155929565,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.790645445813425e-06,
+      "max_nonblank_probability": 0.9998923540115356,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.771495580120245e-06,
+      "max_nonblank_probability": 0.9998925924301147,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.752463493990945e-06,
+      "max_nonblank_probability": 0.9998928308486938,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.7335469136887696e-06,
+      "max_nonblank_probability": 0.9998929500579834,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.714756753150141e-06,
+      "max_nonblank_probability": 0.999893069267273,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.696082553185988e-06,
+      "max_nonblank_probability": 0.999893307685852,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.677522040059557e-06,
+      "max_nonblank_probability": 0.9998936653137207,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.65906611882383e-06,
+      "max_nonblank_probability": 0.9998939037322998,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.640728886646684e-06,
+      "max_nonblank_probability": 0.9998940229415894,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.6225039770652074e-06,
+      "max_nonblank_probability": 0.9998941421508789,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.604394118563505e-06,
+      "max_nonblank_probability": 0.999894380569458,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.586390216194559e-06,
+      "max_nonblank_probability": 0.9998944997787476,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.5684881772322115e-06,
+      "max_nonblank_probability": 0.9998947381973267,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.550698915612884e-06,
+      "max_nonblank_probability": 0.9998949766159058,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.533016064873664e-06,
+      "max_nonblank_probability": 0.9998950958251953,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.515429165825481e-06,
+      "max_nonblank_probability": 0.999895453453064,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.497950951394159e-06,
+      "max_nonblank_probability": 0.9998955726623535,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.480568688653875e-06,
+      "max_nonblank_probability": 0.9998958110809326,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.4632923820463475e-06,
+      "max_nonblank_probability": 0.9998960494995117,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.44611384611926e-06,
+      "max_nonblank_probability": 0.9998961687088013,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.429037173598772e-06,
+      "max_nonblank_probability": 0.9998964071273804,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.412053269537864e-06,
+      "max_nonblank_probability": 0.9998965263366699,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.395171228883555e-06,
+      "max_nonblank_probability": 0.999896764755249,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.378377409215318e-06,
+      "max_nonblank_probability": 0.9998970031738281,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.361679086490767e-06,
+      "max_nonblank_probability": 0.9998971223831177,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.345078534446657e-06,
+      "max_nonblank_probability": 0.9998973608016968,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.328566203388618e-06,
+      "max_nonblank_probability": 0.9998975992202759,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.312149369274266e-06,
+      "max_nonblank_probability": 0.999897837638855,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.29581257069367e-06,
+      "max_nonblank_probability": 0.9998979568481445,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.279575361782918e-06,
+      "max_nonblank_probability": 0.9998981952667236,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.263425009616185e-06,
+      "max_nonblank_probability": 0.9998983144760132,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.247367880656384e-06,
+      "max_nonblank_probability": 0.9998986721038818,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.231383056525374e-06,
+      "max_nonblank_probability": 0.9998986721038818,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.215494184085401e-06,
+      "max_nonblank_probability": 0.9998987913131714,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.1996821639477275e-06,
+      "max_nonblank_probability": 0.9998990297317505,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.183964276511688e-06,
+      "max_nonblank_probability": 0.9998992681503296,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.16832415087265e-06,
+      "max_nonblank_probability": 0.9998996257781982,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.152769972482929e-06,
+      "max_nonblank_probability": 0.9998998641967773,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.137296739121666e-06,
+      "max_nonblank_probability": 0.9998998641967773,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.121897174831247e-06,
+      "max_nonblank_probability": 0.9998999834060669,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.106586286274251e-06,
+      "max_nonblank_probability": 0.999900221824646,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.09135543325101e-06,
+      "max_nonblank_probability": 0.9999005794525146,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.076195066067157e-06,
+      "max_nonblank_probability": 0.9999006986618042,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.061112915427657e-06,
+      "max_nonblank_probability": 0.9999006986618042,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.046113983553369e-06,
+      "max_nonblank_probability": 0.9999009370803833,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.031190994486678e-06,
+      "max_nonblank_probability": 0.999901294708252,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.01634576721699e-06,
+      "max_nonblank_probability": 0.999901533126831,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 5.001570571039338e-06,
+      "max_nonblank_probability": 0.9999016523361206,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.986871317669284e-06,
+      "max_nonblank_probability": 0.9999017715454102,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.972246188117424e-06,
+      "max_nonblank_probability": 0.9999020099639893,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.957694727636408e-06,
+      "max_nonblank_probability": 0.9999021291732788,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.943211934005376e-06,
+      "max_nonblank_probability": 0.9999024868011475,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.9288091759081e-06,
+      "max_nonblank_probability": 0.9999024868011475,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.914462351734983e-06,
+      "max_nonblank_probability": 0.9999024868011475,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.9001964725903235e-06,
+      "max_nonblank_probability": 0.9999028444290161,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.886004262516508e-06,
+      "max_nonblank_probability": 0.9999032020568848,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.871869805356255e-06,
+      "max_nonblank_probability": 0.9999034404754639,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.857810381508898e-06,
+      "max_nonblank_probability": 0.9999034404754639,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.843823717237683e-06,
+      "max_nonblank_probability": 0.9999035596847534,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.829892077395925e-06,
+      "max_nonblank_probability": 0.9999037981033325,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.81603865409852e-06,
+      "max_nonblank_probability": 0.9999041557312012,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.8022425289673265e-06,
+      "max_nonblank_probability": 0.9999041557312012,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.78851688967552e-06,
+      "max_nonblank_probability": 0.9999043941497803,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.774856734002242e-06,
+      "max_nonblank_probability": 0.9999045133590698,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.761257514473982e-06,
+      "max_nonblank_probability": 0.9999048709869385,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.747727871290408e-06,
+      "max_nonblank_probability": 0.999904990196228,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.7342578000098e-06,
+      "max_nonblank_probability": 0.9999052286148071,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.720852302853018e-06,
+      "max_nonblank_probability": 0.9999053478240967,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.707506377599202e-06,
+      "max_nonblank_probability": 0.9999054670333862,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.69422911919537e-06,
+      "max_nonblank_probability": 0.9999059438705444,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.681001883000135e-06,
+      "max_nonblank_probability": 0.9999059438705444,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.66784103991813e-06,
+      "max_nonblank_probability": 0.9999059438705444,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.654746135202004e-06,
+      "max_nonblank_probability": 0.999906063079834,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.641708528652089e-06,
+      "max_nonblank_probability": 0.9999064207077026,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    },
+    {
+      "mean_blank_probability": 4.628731403499842e-06,
+      "max_nonblank_probability": 0.9999067783355713,
+      "blank_argmax_fraction": 0.0,
+      "decoded_length": 3
+    }
+  ]
+}

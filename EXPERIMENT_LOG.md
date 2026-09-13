@@ -64,3 +64,26 @@ leakage checks are completed.
   overfitting.
 - Current classification: preprocessing mismatch is verified and fixed;
   remaining root cause is not yet established.
+
+## Phase 4B — CTC and model learnability isolation
+
+- Decoder regression passed for blanks, adjacent repeats, spaces, `abc`, and
+  `hello`.
+- Direct trainable CTC logits recovered `abc` and `hello` exactly. This
+  verifies the current target encoding, tensor dimensions, blank index, and
+  CTC loss invocation.
+- Exact `Conv1D + BiGRU + Linear + CTC` did not pass the easy `abc` gate:
+  prediction `c`, CER `0.667`. It did recover `brain` exactly and produced
+  partial outputs for `hello` and `hello world`.
+- Noise sweep was inconsistent: clean `hello` CER `0.40`, noise `0.05`
+  recovered `hello`, while higher noise levels failed. The 306-channel
+  smooth realistic synthetic test produced an empty prediction.
+- Shuffled control recovered arbitrary target `xyz` from signal encoding
+  `abc`; this is a verified positional-memorization confound, not evidence
+  of signal-based decoding.
+- Fresh real trials produced partial outputs:
+  trial 2 `la ta ees` (CER `0.70`), trial 3 `el motor consrgia` (CER
+  `0.3704`). These are not reliable one-trial exact recoveries.
+- Phase 4B status: `NOT YET ESTABLISHED`. Do not implement Evidence Selector.
+- Full experiment details:
+  `docs/CTC_LEARNABILITY.md`.
