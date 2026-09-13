@@ -8,9 +8,10 @@ python scripts\prepare_real_subset.py data\raw\spanishbcbl_s22
 ```
 
 It runs official event extraction and preprocessing, selects production
-sentences, crops the official sentence interval, keeps MEG channels, applies
-the official 0.1–20 Hz filter, resamples to 50 Hz, fits a per-trial robust
-scaler, clamps to ±5, and saves `(time, channels)` float32 `.npy` arrays.
+sentences, applies the official 0.1–20 Hz filter and 50 Hz resampling to the
+continuous MEG recording, applies continuous-recording RobustScaler,
+extracts official sentence intervals, baseline-corrects, clamps to ±5, and
+saves `(time, channels)` float32 `.npy` arrays.
 The resulting manifest is `data/processed/spanishbcbl_subset/manifest.jsonl`
 and the CSV audit manifest is
 `data/manifests/spanishbcbl_meg_subset.csv`.
