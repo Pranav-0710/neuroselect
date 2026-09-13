@@ -1,0 +1,2403 @@
+{
+  "official_event_definition": "Keystroke events are behavioral keypresses aligned to STI101 trigger events.",
+  "timestamps": "seconds; MNE sample indices divided by raw.info['sfreq']",
+  "original_sampling_rate": 1000.0,
+  "offset": "official alignment matches trigger sequences; no additional offset applied",
+  "every_target_character_has_retained_event": true,
+  "trials": [
+    {
+      "trial_id": 2,
+      "sentence_uid": "2.0_S22_1_block1",
+      "subject": "0",
+      "session": "1",
+      "block": "block1",
+      "source_file": "data\\raw\\spanishbcbl_s22\\MEG\\FIF\\22_9788\\231214\\block1.fif",
+      "original_sampling_rate": 1000.0,
+      "original_channel_count": 306,
+      "original_recording_duration": 890.999,
+      "processed_duration": 5.2,
+      "processed_shape": [
+        260,
+        306
+      ],
+      "target_text": "la tasa excede las velocidades",
+      "target_length": 30,
+      "encoded_target_indices": [
+        11,
+        8,
+        9,
+        3,
+        8,
+        1,
+        8,
+        9,
+        4,
+        25,
+        6,
+        4,
+        10,
+        4,
+        9,
+        11,
+        8,
+        1,
+        9,
+        16,
+        4,
+        11,
+        2,
+        6,
+        7,
+        10,
+        8,
+        10,
+        4,
+        1
+      ],
+      "decoded_target_text": "la tasa excede las velocidades",
+      "unique_target_classes": [
+        1,
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        16,
+        25
+      ],
+      "input_length_T": 260,
+      "target_length_U": 30,
+      "T_over_U": 8.666666666666666,
+      "repeated_adjacent_target": false,
+      "ctc_geometry": {
+        "T": 260,
+        "U": 30,
+        "T_over_U": 8.666666666666666,
+        "repeated_adjacent_indices": [],
+        "has_repeated_adjacent_target": false,
+        "minimum_ctc_timesteps": 30,
+        "structurally_feasible": true
+      },
+      "initial_ctc_loss": 24.049409866333008,
+      "final_ctc_loss": 2.3936145305633545,
+      "final_greedy_decoded_output": " ",
+      "decoded_output_indices": [
+        0,
+        9,
+        9,
+        9,
+        9,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "event_count": 30,
+      "events": [
+        {
+          "event_number": 9,
+          "timestamp_seconds": 383.276,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 10,
+          "timestamp_seconds": 383.451,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 11,
+          "timestamp_seconds": 383.644,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 13,
+          "timestamp_seconds": 383.901,
+          "raw_label": "t",
+          "mapped_character": "t"
+        },
+        {
+          "event_number": 14,
+          "timestamp_seconds": 383.985,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 15,
+          "timestamp_seconds": 384.228,
+          "raw_label": "s",
+          "mapped_character": "s"
+        },
+        {
+          "event_number": 16,
+          "timestamp_seconds": 384.318,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 17,
+          "timestamp_seconds": 384.468,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 19,
+          "timestamp_seconds": 384.827,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 20,
+          "timestamp_seconds": 385.043,
+          "raw_label": "x",
+          "mapped_character": "x"
+        },
+        {
+          "event_number": 21,
+          "timestamp_seconds": 385.428,
+          "raw_label": "c",
+          "mapped_character": "c"
+        },
+        {
+          "event_number": 22,
+          "timestamp_seconds": 385.66,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 23,
+          "timestamp_seconds": 385.869,
+          "raw_label": "d",
+          "mapped_character": "d"
+        },
+        {
+          "event_number": 24,
+          "timestamp_seconds": 386.035,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 25,
+          "timestamp_seconds": 386.143,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 27,
+          "timestamp_seconds": 386.277,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 28,
+          "timestamp_seconds": 386.419,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 29,
+          "timestamp_seconds": 386.519,
+          "raw_label": "s",
+          "mapped_character": "s"
+        },
+        {
+          "event_number": 30,
+          "timestamp_seconds": 386.661,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 32,
+          "timestamp_seconds": 386.819,
+          "raw_label": "v",
+          "mapped_character": "v"
+        },
+        {
+          "event_number": 33,
+          "timestamp_seconds": 386.986,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 34,
+          "timestamp_seconds": 387.078,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 35,
+          "timestamp_seconds": 387.245,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 36,
+          "timestamp_seconds": 387.429,
+          "raw_label": "c",
+          "mapped_character": "c"
+        },
+        {
+          "event_number": 37,
+          "timestamp_seconds": 387.527,
+          "raw_label": "i",
+          "mapped_character": "i"
+        },
+        {
+          "event_number": 38,
+          "timestamp_seconds": 387.72,
+          "raw_label": "d",
+          "mapped_character": "d"
+        },
+        {
+          "event_number": 39,
+          "timestamp_seconds": 387.853,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 40,
+          "timestamp_seconds": 388.061,
+          "raw_label": "d",
+          "mapped_character": "d"
+        },
+        {
+          "event_number": 41,
+          "timestamp_seconds": 388.237,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 42,
+          "timestamp_seconds": 388.363,
+          "raw_label": "s",
+          "mapped_character": "s"
+        }
+      ]
+    },
+    {
+      "trial_id": 3,
+      "sentence_uid": "3.0_S22_1_block1",
+      "subject": "0",
+      "session": "1",
+      "block": "block1",
+      "source_file": "data\\raw\\spanishbcbl_s22\\MEG\\FIF\\22_9788\\231214\\block1.fif",
+      "original_sampling_rate": 1000.0,
+      "original_channel_count": 306,
+      "original_recording_duration": 890.999,
+      "processed_duration": 4.02,
+      "processed_shape": [
+        201,
+        306
+      ],
+      "target_text": "el motor consume la energia",
+      "target_length": 27,
+      "encoded_target_indices": [
+        4,
+        11,
+        9,
+        18,
+        2,
+        3,
+        2,
+        12,
+        9,
+        6,
+        2,
+        5,
+        1,
+        19,
+        18,
+        4,
+        9,
+        11,
+        8,
+        9,
+        4,
+        5,
+        4,
+        12,
+        22,
+        7,
+        8
+      ],
+      "decoded_target_text": "el motor consume la energia",
+      "unique_target_classes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        18,
+        19,
+        22
+      ],
+      "input_length_T": 201,
+      "target_length_U": 27,
+      "T_over_U": 7.444444444444445,
+      "repeated_adjacent_target": false,
+      "ctc_geometry": {
+        "T": 201,
+        "U": 27,
+        "T_over_U": 7.444444444444445,
+        "repeated_adjacent_indices": [],
+        "has_repeated_adjacent_target": false,
+        "minimum_ctc_timesteps": 27,
+        "structurally_feasible": true
+      },
+      "initial_ctc_loss": null,
+      "final_ctc_loss": null,
+      "final_greedy_decoded_output": null,
+      "decoded_output_indices": null,
+      "event_count": 27,
+      "events": [
+        {
+          "event_number": 50,
+          "timestamp_seconds": 395.255,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 51,
+          "timestamp_seconds": 395.38,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 52,
+          "timestamp_seconds": 395.639,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 54,
+          "timestamp_seconds": 395.831,
+          "raw_label": "m",
+          "mapped_character": "m"
+        },
+        {
+          "event_number": 55,
+          "timestamp_seconds": 395.946,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 56,
+          "timestamp_seconds": 396.163,
+          "raw_label": "t",
+          "mapped_character": "t"
+        },
+        {
+          "event_number": 57,
+          "timestamp_seconds": 396.247,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 58,
+          "timestamp_seconds": 396.415,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 59,
+          "timestamp_seconds": 396.54,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 61,
+          "timestamp_seconds": 396.79,
+          "raw_label": "c",
+          "mapped_character": "c"
+        },
+        {
+          "event_number": 62,
+          "timestamp_seconds": 396.857,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 63,
+          "timestamp_seconds": 396.965,
+          "raw_label": "n",
+          "mapped_character": "n"
+        },
+        {
+          "event_number": 64,
+          "timestamp_seconds": 397.155,
+          "raw_label": "s",
+          "mapped_character": "s"
+        },
+        {
+          "event_number": 65,
+          "timestamp_seconds": 397.256,
+          "raw_label": "u",
+          "mapped_character": "u"
+        },
+        {
+          "event_number": 66,
+          "timestamp_seconds": 397.439,
+          "raw_label": "m",
+          "mapped_character": "m"
+        },
+        {
+          "event_number": 67,
+          "timestamp_seconds": 397.565,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 68,
+          "timestamp_seconds": 397.757,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 70,
+          "timestamp_seconds": 397.89,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 71,
+          "timestamp_seconds": 397.998,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 72,
+          "timestamp_seconds": 398.116,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 74,
+          "timestamp_seconds": 398.322,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 75,
+          "timestamp_seconds": 398.397,
+          "raw_label": "n",
+          "mapped_character": "n"
+        },
+        {
+          "event_number": 76,
+          "timestamp_seconds": 398.498,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 77,
+          "timestamp_seconds": 398.666,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 78,
+          "timestamp_seconds": 398.923,
+          "raw_label": "g",
+          "mapped_character": "g"
+        },
+        {
+          "event_number": 79,
+          "timestamp_seconds": 399.048,
+          "raw_label": "i",
+          "mapped_character": "i"
+        },
+        {
+          "event_number": 80,
+          "timestamp_seconds": 399.172,
+          "raw_label": "a",
+          "mapped_character": "a"
+        }
+      ]
+    },
+    {
+      "trial_id": 4,
+      "sentence_uid": "4.0_S22_1_block1",
+      "subject": "0",
+      "session": "1",
+      "block": "block1",
+      "source_file": "data\\raw\\spanishbcbl_s22\\MEG\\FIF\\22_9788\\231214\\block1.fif",
+      "original_sampling_rate": 1000.0,
+      "original_channel_count": 306,
+      "original_recording_duration": 890.999,
+      "processed_duration": 5.58,
+      "processed_shape": [
+        279,
+        306
+      ],
+      "target_text": "los arboles estimulan la secrecion",
+      "target_length": 34,
+      "encoded_target_indices": [
+        11,
+        2,
+        1,
+        9,
+        8,
+        12,
+        13,
+        2,
+        11,
+        4,
+        1,
+        9,
+        4,
+        1,
+        3,
+        7,
+        18,
+        19,
+        11,
+        8,
+        5,
+        9,
+        11,
+        8,
+        9,
+        1,
+        4,
+        6,
+        12,
+        4,
+        6,
+        7,
+        2,
+        5
+      ],
+      "decoded_target_text": "los arboles estimulan la secrecion",
+      "unique_target_classes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        18,
+        19
+      ],
+      "input_length_T": 279,
+      "target_length_U": 34,
+      "T_over_U": 8.205882352941176,
+      "repeated_adjacent_target": false,
+      "ctc_geometry": {
+        "T": 279,
+        "U": 34,
+        "T_over_U": 8.205882352941176,
+        "repeated_adjacent_indices": [],
+        "has_repeated_adjacent_target": false,
+        "minimum_ctc_timesteps": 34,
+        "structurally_feasible": true
+      },
+      "initial_ctc_loss": null,
+      "final_ctc_loss": null,
+      "final_greedy_decoded_output": null,
+      "decoded_output_indices": null,
+      "event_count": 34,
+      "events": [
+        {
+          "event_number": 88,
+          "timestamp_seconds": 406.191,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 89,
+          "timestamp_seconds": 406.475,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 90,
+          "timestamp_seconds": 406.575,
+          "raw_label": "s",
+          "mapped_character": "s"
+        },
+        {
+          "event_number": 91,
+          "timestamp_seconds": 406.758,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 93,
+          "timestamp_seconds": 407.083,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 94,
+          "timestamp_seconds": 407.342,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 95,
+          "timestamp_seconds": 407.625,
+          "raw_label": "b",
+          "mapped_character": "b"
+        },
+        {
+          "event_number": 96,
+          "timestamp_seconds": 407.758,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 97,
+          "timestamp_seconds": 407.934,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 98,
+          "timestamp_seconds": 408.084,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 99,
+          "timestamp_seconds": 408.234,
+          "raw_label": "s",
+          "mapped_character": "s"
+        },
+        {
+          "event_number": 100,
+          "timestamp_seconds": 408.333,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 102,
+          "timestamp_seconds": 408.492,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 103,
+          "timestamp_seconds": 408.608,
+          "raw_label": "s",
+          "mapped_character": "s"
+        },
+        {
+          "event_number": 104,
+          "timestamp_seconds": 408.842,
+          "raw_label": "t",
+          "mapped_character": "t"
+        },
+        {
+          "event_number": 105,
+          "timestamp_seconds": 408.934,
+          "raw_label": "i",
+          "mapped_character": "i"
+        },
+        {
+          "event_number": 106,
+          "timestamp_seconds": 409.042,
+          "raw_label": "m",
+          "mapped_character": "m"
+        },
+        {
+          "event_number": 107,
+          "timestamp_seconds": 409.276,
+          "raw_label": "u",
+          "mapped_character": "u"
+        },
+        {
+          "event_number": 108,
+          "timestamp_seconds": 409.443,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 109,
+          "timestamp_seconds": 409.575,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 110,
+          "timestamp_seconds": 409.676,
+          "raw_label": "n",
+          "mapped_character": "n"
+        },
+        {
+          "event_number": 111,
+          "timestamp_seconds": 409.817,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 113,
+          "timestamp_seconds": 409.984,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 114,
+          "timestamp_seconds": 410.085,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 115,
+          "timestamp_seconds": 410.201,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 117,
+          "timestamp_seconds": 410.384,
+          "raw_label": "s",
+          "mapped_character": "s"
+        },
+        {
+          "event_number": 118,
+          "timestamp_seconds": 410.517,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 119,
+          "timestamp_seconds": 410.792,
+          "raw_label": "c",
+          "mapped_character": "c"
+        },
+        {
+          "event_number": 120,
+          "timestamp_seconds": 411.002,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 121,
+          "timestamp_seconds": 411.126,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 122,
+          "timestamp_seconds": 411.351,
+          "raw_label": "c",
+          "mapped_character": "c"
+        },
+        {
+          "event_number": 123,
+          "timestamp_seconds": 411.451,
+          "raw_label": "i",
+          "mapped_character": "i"
+        },
+        {
+          "event_number": 124,
+          "timestamp_seconds": 411.518,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 125,
+          "timestamp_seconds": 411.618,
+          "raw_label": "n",
+          "mapped_character": "n"
+        }
+      ]
+    },
+    {
+      "trial_id": 5,
+      "sentence_uid": "5.0_S22_1_block1",
+      "subject": "0",
+      "session": "1",
+      "block": "block1",
+      "source_file": "data\\raw\\spanishbcbl_s22\\MEG\\FIF\\22_9788\\231214\\block1.fif",
+      "original_sampling_rate": 1000.0,
+      "original_channel_count": 306,
+      "original_recording_duration": 890.999,
+      "processed_duration": 4.68,
+      "processed_shape": [
+        234,
+        306
+      ],
+      "target_text": "el pedido merece las atenciones",
+      "target_length": 31,
+      "encoded_target_indices": [
+        4,
+        11,
+        9,
+        21,
+        4,
+        10,
+        7,
+        10,
+        2,
+        9,
+        18,
+        4,
+        12,
+        4,
+        6,
+        4,
+        9,
+        11,
+        8,
+        1,
+        9,
+        8,
+        3,
+        4,
+        5,
+        6,
+        7,
+        2,
+        5,
+        4,
+        1
+      ],
+      "decoded_target_text": "el pedido merece las atenciones",
+      "unique_target_classes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        18,
+        21
+      ],
+      "input_length_T": 234,
+      "target_length_U": 31,
+      "T_over_U": 7.548387096774194,
+      "repeated_adjacent_target": false,
+      "ctc_geometry": {
+        "T": 234,
+        "U": 31,
+        "T_over_U": 7.548387096774194,
+        "repeated_adjacent_indices": [],
+        "has_repeated_adjacent_target": false,
+        "minimum_ctc_timesteps": 31,
+        "structurally_feasible": true
+      },
+      "initial_ctc_loss": null,
+      "final_ctc_loss": null,
+      "final_greedy_decoded_output": null,
+      "decoded_output_indices": null,
+      "event_count": 31,
+      "events": [
+        {
+          "event_number": 133,
+          "timestamp_seconds": 418.538,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 134,
+          "timestamp_seconds": 418.713,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 135,
+          "timestamp_seconds": 418.878,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 137,
+          "timestamp_seconds": 419.02,
+          "raw_label": "p",
+          "mapped_character": "p"
+        },
+        {
+          "event_number": 138,
+          "timestamp_seconds": 419.18,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 139,
+          "timestamp_seconds": 419.546,
+          "raw_label": "d",
+          "mapped_character": "d"
+        },
+        {
+          "event_number": 140,
+          "timestamp_seconds": 419.613,
+          "raw_label": "i",
+          "mapped_character": "i"
+        },
+        {
+          "event_number": 141,
+          "timestamp_seconds": 419.754,
+          "raw_label": "d",
+          "mapped_character": "d"
+        },
+        {
+          "event_number": 142,
+          "timestamp_seconds": 419.837,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 143,
+          "timestamp_seconds": 420.062,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 145,
+          "timestamp_seconds": 420.27,
+          "raw_label": "m",
+          "mapped_character": "m"
+        },
+        {
+          "event_number": 146,
+          "timestamp_seconds": 420.405,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 147,
+          "timestamp_seconds": 420.671,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 148,
+          "timestamp_seconds": 420.771,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 149,
+          "timestamp_seconds": 421.038,
+          "raw_label": "c",
+          "mapped_character": "c"
+        },
+        {
+          "event_number": 150,
+          "timestamp_seconds": 421.221,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 151,
+          "timestamp_seconds": 421.339,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 153,
+          "timestamp_seconds": 421.489,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 154,
+          "timestamp_seconds": 421.621,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 155,
+          "timestamp_seconds": 421.747,
+          "raw_label": "s",
+          "mapped_character": "s"
+        },
+        {
+          "event_number": 156,
+          "timestamp_seconds": 421.888,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 158,
+          "timestamp_seconds": 422.029,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 159,
+          "timestamp_seconds": 422.221,
+          "raw_label": "t",
+          "mapped_character": "t"
+        },
+        {
+          "event_number": 160,
+          "timestamp_seconds": 422.346,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 161,
+          "timestamp_seconds": 422.421,
+          "raw_label": "n",
+          "mapped_character": "n"
+        },
+        {
+          "event_number": 162,
+          "timestamp_seconds": 422.596,
+          "raw_label": "c",
+          "mapped_character": "c"
+        },
+        {
+          "event_number": 163,
+          "timestamp_seconds": 422.688,
+          "raw_label": "i",
+          "mapped_character": "i"
+        },
+        {
+          "event_number": 164,
+          "timestamp_seconds": 422.773,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 165,
+          "timestamp_seconds": 422.856,
+          "raw_label": "n",
+          "mapped_character": "n"
+        },
+        {
+          "event_number": 166,
+          "timestamp_seconds": 422.98,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 167,
+          "timestamp_seconds": 423.121,
+          "raw_label": "s",
+          "mapped_character": "s"
+        }
+      ]
+    },
+    {
+      "trial_id": 6,
+      "sentence_uid": "6.0_S22_1_block1",
+      "subject": "0",
+      "session": "1",
+      "block": "block1",
+      "source_file": "data\\raw\\spanishbcbl_s22\\MEG\\FIF\\22_9788\\231214\\block1.fif",
+      "original_sampling_rate": 1000.0,
+      "original_channel_count": 306,
+      "original_recording_duration": 890.999,
+      "processed_duration": 4.4,
+      "processed_shape": [
+        220,
+        306
+      ],
+      "target_text": "el algoritmo recorre el nodo",
+      "target_length": 28,
+      "encoded_target_indices": [
+        4,
+        11,
+        9,
+        8,
+        11,
+        22,
+        2,
+        12,
+        7,
+        3,
+        18,
+        2,
+        9,
+        12,
+        4,
+        6,
+        2,
+        12,
+        12,
+        4,
+        9,
+        4,
+        11,
+        9,
+        5,
+        2,
+        10,
+        2
+      ],
+      "decoded_target_text": "el algoritmo recore el nodo",
+      "unique_target_classes": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        18,
+        22
+      ],
+      "input_length_T": 220,
+      "target_length_U": 28,
+      "T_over_U": 7.857142857142857,
+      "repeated_adjacent_target": true,
+      "ctc_geometry": {
+        "T": 220,
+        "U": 28,
+        "T_over_U": 7.857142857142857,
+        "repeated_adjacent_indices": [
+          17
+        ],
+        "has_repeated_adjacent_target": true,
+        "minimum_ctc_timesteps": 29,
+        "structurally_feasible": true
+      },
+      "initial_ctc_loss": null,
+      "final_ctc_loss": null,
+      "final_greedy_decoded_output": null,
+      "decoded_output_indices": null,
+      "event_count": 28,
+      "events": [
+        {
+          "event_number": 175,
+          "timestamp_seconds": 429.815,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 176,
+          "timestamp_seconds": 429.932,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 177,
+          "timestamp_seconds": 430.05,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 179,
+          "timestamp_seconds": 430.324,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 180,
+          "timestamp_seconds": 430.457,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 181,
+          "timestamp_seconds": 430.748,
+          "raw_label": "g",
+          "mapped_character": "g"
+        },
+        {
+          "event_number": 182,
+          "timestamp_seconds": 430.915,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 183,
+          "timestamp_seconds": 431.182,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 184,
+          "timestamp_seconds": 431.291,
+          "raw_label": "i",
+          "mapped_character": "i"
+        },
+        {
+          "event_number": 185,
+          "timestamp_seconds": 431.44,
+          "raw_label": "t",
+          "mapped_character": "t"
+        },
+        {
+          "event_number": 186,
+          "timestamp_seconds": 431.566,
+          "raw_label": "m",
+          "mapped_character": "m"
+        },
+        {
+          "event_number": 187,
+          "timestamp_seconds": 431.683,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 188,
+          "timestamp_seconds": 431.766,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 190,
+          "timestamp_seconds": 431.982,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 191,
+          "timestamp_seconds": 432.082,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 192,
+          "timestamp_seconds": 432.324,
+          "raw_label": "c",
+          "mapped_character": "c"
+        },
+        {
+          "event_number": 193,
+          "timestamp_seconds": 432.449,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 194,
+          "timestamp_seconds": 432.633,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 195,
+          "timestamp_seconds": 432.816,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 196,
+          "timestamp_seconds": 432.949,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 197,
+          "timestamp_seconds": 433.216,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 199,
+          "timestamp_seconds": 433.416,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 200,
+          "timestamp_seconds": 433.533,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 201,
+          "timestamp_seconds": 433.625,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 203,
+          "timestamp_seconds": 433.791,
+          "raw_label": "n",
+          "mapped_character": "n"
+        },
+        {
+          "event_number": 204,
+          "timestamp_seconds": 433.924,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 205,
+          "timestamp_seconds": 434.024,
+          "raw_label": "d",
+          "mapped_character": "d"
+        },
+        {
+          "event_number": 206,
+          "timestamp_seconds": 434.149,
+          "raw_label": "o",
+          "mapped_character": "o"
+        }
+      ]
+    },
+    {
+      "trial_id": 7,
+      "sentence_uid": "7.0_S22_1_block1",
+      "subject": "0",
+      "session": "1",
+      "block": "block1",
+      "source_file": "data\\raw\\spanishbcbl_s22\\MEG\\FIF\\22_9788\\231214\\block1.fif",
+      "original_sampling_rate": 1000.0,
+      "original_channel_count": 306,
+      "original_recording_duration": 890.999,
+      "processed_duration": 5.04,
+      "processed_shape": [
+        252,
+        306
+      ],
+      "target_text": "el caballo recorre la casilla",
+      "target_length": 29,
+      "encoded_target_indices": [
+        4,
+        11,
+        9,
+        6,
+        8,
+        13,
+        8,
+        11,
+        11,
+        2,
+        9,
+        12,
+        4,
+        6,
+        2,
+        12,
+        12,
+        4,
+        9,
+        11,
+        8,
+        9,
+        6,
+        8,
+        1,
+        7,
+        11,
+        11,
+        8
+      ],
+      "decoded_target_text": "el cabalo recore la casila",
+      "unique_target_classes": [
+        1,
+        2,
+        4,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13
+      ],
+      "input_length_T": 252,
+      "target_length_U": 29,
+      "T_over_U": 8.689655172413794,
+      "repeated_adjacent_target": true,
+      "ctc_geometry": {
+        "T": 252,
+        "U": 29,
+        "T_over_U": 8.689655172413794,
+        "repeated_adjacent_indices": [
+          7,
+          15,
+          26
+        ],
+        "has_repeated_adjacent_target": true,
+        "minimum_ctc_timesteps": 32,
+        "structurally_feasible": true
+      },
+      "initial_ctc_loss": null,
+      "final_ctc_loss": null,
+      "final_greedy_decoded_output": null,
+      "decoded_output_indices": null,
+      "event_count": 29,
+      "events": [
+        {
+          "event_number": 214,
+          "timestamp_seconds": 441.243,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 215,
+          "timestamp_seconds": 441.302,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 216,
+          "timestamp_seconds": 441.452,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 218,
+          "timestamp_seconds": 441.694,
+          "raw_label": "c",
+          "mapped_character": "c"
+        },
+        {
+          "event_number": 219,
+          "timestamp_seconds": 441.827,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 220,
+          "timestamp_seconds": 442.069,
+          "raw_label": "b",
+          "mapped_character": "b"
+        },
+        {
+          "event_number": 221,
+          "timestamp_seconds": 442.144,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 222,
+          "timestamp_seconds": 442.344,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 223,
+          "timestamp_seconds": 442.494,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 224,
+          "timestamp_seconds": 442.66,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 225,
+          "timestamp_seconds": 443.136,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 227,
+          "timestamp_seconds": 443.427,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 228,
+          "timestamp_seconds": 443.569,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 229,
+          "timestamp_seconds": 444.027,
+          "raw_label": "c",
+          "mapped_character": "c"
+        },
+        {
+          "event_number": 230,
+          "timestamp_seconds": 444.111,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 231,
+          "timestamp_seconds": 444.344,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 232,
+          "timestamp_seconds": 444.519,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 233,
+          "timestamp_seconds": 444.611,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 234,
+          "timestamp_seconds": 444.728,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 236,
+          "timestamp_seconds": 444.87,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 237,
+          "timestamp_seconds": 445.003,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 238,
+          "timestamp_seconds": 445.111,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 240,
+          "timestamp_seconds": 445.388,
+          "raw_label": "c",
+          "mapped_character": "c"
+        },
+        {
+          "event_number": 241,
+          "timestamp_seconds": 445.454,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 242,
+          "timestamp_seconds": 445.729,
+          "raw_label": "s",
+          "mapped_character": "s"
+        },
+        {
+          "event_number": 243,
+          "timestamp_seconds": 445.82,
+          "raw_label": "i",
+          "mapped_character": "i"
+        },
+        {
+          "event_number": 244,
+          "timestamp_seconds": 445.97,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 245,
+          "timestamp_seconds": 446.095,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 246,
+          "timestamp_seconds": 446.186,
+          "raw_label": "a",
+          "mapped_character": "a"
+        }
+      ]
+    },
+    {
+      "trial_id": 8,
+      "sentence_uid": "8.0_S22_1_block1",
+      "subject": "0",
+      "session": "1",
+      "block": "block1",
+      "source_file": "data\\raw\\spanishbcbl_s22\\MEG\\FIF\\22_9788\\231214\\block1.fif",
+      "original_sampling_rate": 1000.0,
+      "original_channel_count": 306,
+      "original_recording_duration": 890.999,
+      "processed_duration": 6.0,
+      "processed_shape": [
+        300,
+        306
+      ],
+      "target_text": "las proposiciones recorren el tema",
+      "target_length": 34,
+      "encoded_target_indices": [
+        11,
+        8,
+        1,
+        9,
+        21,
+        12,
+        2,
+        21,
+        2,
+        1,
+        7,
+        6,
+        7,
+        2,
+        5,
+        4,
+        1,
+        9,
+        12,
+        4,
+        6,
+        2,
+        12,
+        12,
+        4,
+        5,
+        9,
+        4,
+        11,
+        9,
+        3,
+        4,
+        18,
+        8
+      ],
+      "decoded_target_text": "las proposiciones recoren el tema",
+      "unique_target_classes": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        18,
+        21
+      ],
+      "input_length_T": 300,
+      "target_length_U": 34,
+      "T_over_U": 8.823529411764707,
+      "repeated_adjacent_target": true,
+      "ctc_geometry": {
+        "T": 300,
+        "U": 34,
+        "T_over_U": 8.823529411764707,
+        "repeated_adjacent_indices": [
+          22
+        ],
+        "has_repeated_adjacent_target": true,
+        "minimum_ctc_timesteps": 35,
+        "structurally_feasible": true
+      },
+      "initial_ctc_loss": null,
+      "final_ctc_loss": null,
+      "final_greedy_decoded_output": null,
+      "decoded_output_indices": null,
+      "event_count": 34,
+      "events": [
+        {
+          "event_number": 254,
+          "timestamp_seconds": 453.022,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 255,
+          "timestamp_seconds": 453.272,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 256,
+          "timestamp_seconds": 453.58,
+          "raw_label": "s",
+          "mapped_character": "s"
+        },
+        {
+          "event_number": 257,
+          "timestamp_seconds": 453.872,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 259,
+          "timestamp_seconds": 454.047,
+          "raw_label": "p",
+          "mapped_character": "p"
+        },
+        {
+          "event_number": 260,
+          "timestamp_seconds": 454.264,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 261,
+          "timestamp_seconds": 454.347,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 262,
+          "timestamp_seconds": 454.497,
+          "raw_label": "p",
+          "mapped_character": "p"
+        },
+        {
+          "event_number": 263,
+          "timestamp_seconds": 454.631,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 264,
+          "timestamp_seconds": 454.922,
+          "raw_label": "s",
+          "mapped_character": "s"
+        },
+        {
+          "event_number": 265,
+          "timestamp_seconds": 454.998,
+          "raw_label": "i",
+          "mapped_character": "i"
+        },
+        {
+          "event_number": 266,
+          "timestamp_seconds": 455.223,
+          "raw_label": "c",
+          "mapped_character": "c"
+        },
+        {
+          "event_number": 267,
+          "timestamp_seconds": 455.323,
+          "raw_label": "i",
+          "mapped_character": "i"
+        },
+        {
+          "event_number": 268,
+          "timestamp_seconds": 455.406,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 269,
+          "timestamp_seconds": 455.489,
+          "raw_label": "n",
+          "mapped_character": "n"
+        },
+        {
+          "event_number": 270,
+          "timestamp_seconds": 455.598,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 271,
+          "timestamp_seconds": 455.723,
+          "raw_label": "s",
+          "mapped_character": "s"
+        },
+        {
+          "event_number": 272,
+          "timestamp_seconds": 455.889,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 274,
+          "timestamp_seconds": 456.073,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 275,
+          "timestamp_seconds": 456.173,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 276,
+          "timestamp_seconds": 456.398,
+          "raw_label": "c",
+          "mapped_character": "c"
+        },
+        {
+          "event_number": 277,
+          "timestamp_seconds": 456.515,
+          "raw_label": "o",
+          "mapped_character": "o"
+        },
+        {
+          "event_number": 278,
+          "timestamp_seconds": 456.689,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 279,
+          "timestamp_seconds": 456.865,
+          "raw_label": "r",
+          "mapped_character": "r"
+        },
+        {
+          "event_number": 280,
+          "timestamp_seconds": 457.69,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 281,
+          "timestamp_seconds": 457.915,
+          "raw_label": "n",
+          "mapped_character": "n"
+        },
+        {
+          "event_number": 282,
+          "timestamp_seconds": 458.04,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 284,
+          "timestamp_seconds": 458.198,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 285,
+          "timestamp_seconds": 458.307,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 286,
+          "timestamp_seconds": 458.382,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 288,
+          "timestamp_seconds": 458.565,
+          "raw_label": "t",
+          "mapped_character": "t"
+        },
+        {
+          "event_number": 289,
+          "timestamp_seconds": 458.699,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 290,
+          "timestamp_seconds": 458.799,
+          "raw_label": "m",
+          "mapped_character": "m"
+        },
+        {
+          "event_number": 291,
+          "timestamp_seconds": 458.907,
+          "raw_label": "a",
+          "mapped_character": "a"
+        }
+      ]
+    },
+    {
+      "trial_id": 9,
+      "sentence_uid": "9.0_S22_1_block1",
+      "subject": "0",
+      "session": "1",
+      "block": "block1",
+      "source_file": "data\\raw\\spanishbcbl_s22\\MEG\\FIF\\22_9788\\231214\\block1.fif",
+      "original_sampling_rate": 1000.0,
+      "original_channel_count": 306,
+      "original_recording_duration": 890.999,
+      "processed_duration": 5.5,
+      "processed_shape": [
+        275,
+        306
+      ],
+      "target_text": "las calles macan las lineas",
+      "target_length": 27,
+      "encoded_target_indices": [
+        11,
+        8,
+        1,
+        9,
+        6,
+        8,
+        11,
+        11,
+        4,
+        1,
+        9,
+        18,
+        8,
+        6,
+        8,
+        5,
+        9,
+        11,
+        8,
+        1,
+        9,
+        11,
+        7,
+        5,
+        4,
+        8,
+        1
+      ],
+      "decoded_target_text": "las cales macan las lineas",
+      "unique_target_classes": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        18
+      ],
+      "input_length_T": 275,
+      "target_length_U": 27,
+      "T_over_U": 10.185185185185185,
+      "repeated_adjacent_target": true,
+      "ctc_geometry": {
+        "T": 275,
+        "U": 27,
+        "T_over_U": 10.185185185185185,
+        "repeated_adjacent_indices": [
+          6
+        ],
+        "has_repeated_adjacent_target": true,
+        "minimum_ctc_timesteps": 28,
+        "structurally_feasible": true
+      },
+      "initial_ctc_loss": null,
+      "final_ctc_loss": null,
+      "final_greedy_decoded_output": null,
+      "decoded_output_indices": null,
+      "event_count": 27,
+      "events": [
+        {
+          "event_number": 299,
+          "timestamp_seconds": 465.727,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 300,
+          "timestamp_seconds": 465.867,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 301,
+          "timestamp_seconds": 466.017,
+          "raw_label": "s",
+          "mapped_character": "s"
+        },
+        {
+          "event_number": 302,
+          "timestamp_seconds": 466.151,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 304,
+          "timestamp_seconds": 466.377,
+          "raw_label": "c",
+          "mapped_character": "c"
+        },
+        {
+          "event_number": 305,
+          "timestamp_seconds": 466.451,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 306,
+          "timestamp_seconds": 466.685,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 307,
+          "timestamp_seconds": 466.827,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 308,
+          "timestamp_seconds": 466.936,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 309,
+          "timestamp_seconds": 467.059,
+          "raw_label": "s",
+          "mapped_character": "s"
+        },
+        {
+          "event_number": 310,
+          "timestamp_seconds": 467.252,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 312,
+          "timestamp_seconds": 467.436,
+          "raw_label": "m",
+          "mapped_character": "m"
+        },
+        {
+          "event_number": 313,
+          "timestamp_seconds": 467.526,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 314,
+          "timestamp_seconds": 467.759,
+          "raw_label": "c",
+          "mapped_character": "c"
+        },
+        {
+          "event_number": 315,
+          "timestamp_seconds": 467.92,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 316,
+          "timestamp_seconds": 468.935,
+          "raw_label": "n",
+          "mapped_character": "n"
+        },
+        {
+          "event_number": 317,
+          "timestamp_seconds": 469.22,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 319,
+          "timestamp_seconds": 469.393,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 320,
+          "timestamp_seconds": 469.518,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 321,
+          "timestamp_seconds": 469.628,
+          "raw_label": "s",
+          "mapped_character": "s"
+        },
+        {
+          "event_number": 322,
+          "timestamp_seconds": 469.802,
+          "raw_label": "<space>",
+          "mapped_character": " "
+        },
+        {
+          "event_number": 324,
+          "timestamp_seconds": 470.044,
+          "raw_label": "l",
+          "mapped_character": "l"
+        },
+        {
+          "event_number": 325,
+          "timestamp_seconds": 470.369,
+          "raw_label": "i",
+          "mapped_character": "i"
+        },
+        {
+          "event_number": 326,
+          "timestamp_seconds": 470.562,
+          "raw_label": "n",
+          "mapped_character": "n"
+        },
+        {
+          "event_number": 327,
+          "timestamp_seconds": 470.77,
+          "raw_label": "e",
+          "mapped_character": "e"
+        },
+        {
+          "event_number": 328,
+          "timestamp_seconds": 470.937,
+          "raw_label": "a",
+          "mapped_character": "a"
+        },
+        {
+          "event_number": 329,
+          "timestamp_seconds": 471.111,
+          "raw_label": "s",
+          "mapped_character": "s"
+        }
+      ]
+    }
+  ]
+}

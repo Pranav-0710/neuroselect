@@ -47,3 +47,20 @@ leakage checks are completed.
   did not reproduce the sentences.
 - Scientific conclusion: real-data CER/WER is not yet reportable; investigate
   alignment, preprocessing, and model learning before a baseline evaluation.
+
+## Phase 3 — Real-data baseline forensics
+
+- Added `scripts/real_baseline_forensics.py` and CTC geometry validation.
+- Mapping reconstruction matched event-derived text, manifest text, and CTC
+  targets for the first three trials; all eight trials have one retained
+  keystroke per target character.
+- All eight trials satisfy CTC geometry with `T/U` from `7.44` to `10.19`.
+- Found and fixed a preprocessing mismatch: filtering was previously applied
+  after cropping short trials, instead of to the continuous recording first.
+- After the fix, one-trial loss was `24.05 -> 2.39`, but greedy output
+  remained a space-like prediction.
+- Normalization comparison, learning-rate comparison, random-target control,
+  and artificial-target control did not yet demonstrate reliable sequence
+  overfitting.
+- Current classification: preprocessing mismatch is verified and fixed;
+  remaining root cause is not yet established.

@@ -4,6 +4,7 @@ import numpy as np
 import torch
 
 from neuroselect.data import NeuralTextDataset, collate_batch
+from neuroselect.diagnostics import validate_ctc_geometry
 from neuroselect.metrics import cer, wer
 from neuroselect.models import ConvCTC
 from neuroselect.splitting import split_by_unique_text
@@ -106,3 +107,11 @@ def test_real_style_manifest_and_ctc_compatibility(tmp_path):
     assert dataset[0]["signal"].shape == (80, 4)
     assert logits.shape == (1, 80, len(SPANISH_VOCAB))
     assert torch.isfinite(loss)
+
+
+def test_ctc_geometry_accounts_for_repeated_targets():
+    report = validate_ctc_geometry(5, [1, 2, 2, 3])
+    assert report["U"] == 4
+    assert report["T_over_U"] == 1.25
+    assert report["minimum_ctc_timesteps"] == 5
+    assert report["structurally_feasible"]

@@ -49,6 +49,10 @@ def main() -> None:
 
     raw = mne.io.read_raw_fif(raw_path, preload=False, verbose=False, allow_maxshield=True)
     raw = raw.pick("meg")
+    raw.load_data()
+    raw.filter(0.1, 20.0, n_jobs=1, verbose=False)
+    raw.resample(50.0, npad="auto", n_jobs=1, verbose=False)
+    raw._data = RobustScaler().fit_transform(raw._data.T).T
     args.output_root.mkdir(parents=True, exist_ok=True)
     signal_root = args.output_root / "signals"
     signal_root.mkdir(exist_ok=True)
@@ -58,11 +62,10 @@ def main() -> None:
         start = float(sentence["start"])
         end = float(sentence["stop"])
         segment = raw.copy().crop(tmin=start, tmax=end, include_tmax=False)
-        segment.load_data()
-        segment.filter(0.1, 20.0, n_jobs=1, verbose=False)
-        segment.resample(50.0, npad="auto", n_jobs=1, verbose=False)
         data = segment.get_data().T.astype(np.float32, copy=False)
-        data = RobustScaler().fit_transform(data).astype(np.float32)
+        baseline_end = min(0.2, data.shape[0] / 50.0)
+        baseline_count = max(1, int(round(baseline_end * 50.0)))
+        data = data - data[:baseline_count].mean(axis=0, keepdims=True)
         data = np.clip(data, -5.0, 5.0)
         signal_name = f"trial_{int(sentence['trial_id']):03d}.npy"
         np.save(signal_root / signal_name, data)
