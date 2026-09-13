@@ -1,0 +1,32 @@
+[
+  {
+    "trial_id": 2,
+    "sentence_uid": "2.0_S22_1_block1",
+    "ground_truth": "la tasa excede las velocidades",
+    "key_count": 30,
+    "signal_duration": 5.206985699999223,
+    "first_event": 383.276,
+    "last_event": 388.48298569999923,
+    "label_sequence": "la tasa excede las velocidades"
+  },
+  {
+    "trial_id": 3,
+    "sentence_uid": "3.0_S22_1_block1",
+    "ground_truth": "el motor consume la energia",
+    "key_count": 27,
+    "signal_duration": 4.021172699999283,
+    "first_event": 395.255,
+    "last_event": 399.2761726999993,
+    "label_sequence": "el motor consume la energia"
+  },
+  {
+    "trial_id": 4,
+    "sentence_uid": "4.0_S22_1_block1",
+    "ground_truth": "los arboles estimulan la secrecion",
+    "key_count": 34,
+    "signal_duration": 5.5790032999997266,
+    "first_event": 406.191,
+    "last_event": 411.7700032999997,
+    "label_sequence": "los arboles estimulan la secrecion"
+  }
+]

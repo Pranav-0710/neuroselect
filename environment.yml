@@ -1,0 +1,16 @@
+name: neuroselect
+channels:
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pytorch>=2.2
+  - numpy>=1.26
+  - scipy>=1.11
+  - pandas>=2.1
+  - mne>=1.6
+  - pytest>=8
+  - pip
+  - pip:
+      - huggingface_hub>=0.24,<2
+

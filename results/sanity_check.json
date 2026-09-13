@@ -1,0 +1,8 @@
+{
+  "seed": 33,
+  "examples": 1,
+  "initial_ctc_loss": 29.33146095275879,
+  "final_ctc_loss": 0.0019628985319286585,
+  "loss_decreased": true,
+  "overfit_success": true
+}

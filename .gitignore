@@ -1,0 +1,22 @@
+# Python and local tooling
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Downloaded and derived neural recordings
+data/raw/
+data/processed/
+data/**/*.fif
+data/**/*.mat
+data/**/*.npy
+data/**/*.npz
+
+# Local experiment outputs that may contain large/generated artifacts
+results/sanity_fixture/
+results/real_overfit_one/
+results/real_overfit_two/
+results/*.pt
+
+# Keep small manifests, reports, and figures under version control.

@@ -1,0 +1,41 @@
+{
+  "seed": 33,
+  "trials": 6,
+  "epochs": 40,
+  "initial_loss": 20.875511169433594,
+  "final_loss": 2.927356799443563,
+  "loss_decreased": true,
+  "training_seconds": 36.77893199999744,
+  "predictions": [
+    {
+      "id": "2.0_S22_1_block1",
+      "reference": "la tasa excede las velocidades",
+      "prediction": " "
+    },
+    {
+      "id": "3.0_S22_1_block1",
+      "reference": "el motor consume la energia",
+      "prediction": " "
+    },
+    {
+      "id": "4.0_S22_1_block1",
+      "reference": "los arboles estimulan la secrecion",
+      "prediction": " "
+    },
+    {
+      "id": "5.0_S22_1_block1",
+      "reference": "el pedido merece las atenciones",
+      "prediction": " "
+    },
+    {
+      "id": "7.0_S22_1_block1",
+      "reference": "el caballo recorre la casilla",
+      "prediction": "  "
+    },
+    {
+      "id": "8.0_S22_1_block1",
+      "reference": "las proposiciones recorren el tema",
+      "prediction": "  "
+    }
+  ]
+}
