@@ -216,3 +216,17 @@ leakage checks are completed.
   also differed descriptively, especially 0.1–4 Hz and 4–20 Hz bands.
 - These are descriptive results from only two evaluation trials; no
   significance testing or causal explanation was made.
+
+## Phase 5E — Leave-one-trial-out generalization
+
+- Ran exactly eight folds, holding out each trial once. Every fold used seed
+  `33`, Adam, learning rate `0.001`, gradient clipping max norm `1.0`, and
+  300 epochs with unchanged preprocessing, model, vocabulary, and decoder.
+- Mean held-out CER was `0.917`; median `0.864`; mean WER `1.200`.
+- Only trial 7 achieved held-out CER below `0.75`. Trials 2–6, 8, and 9 were
+  poor-transfer cases under the descriptive threshold.
+- Trial 8 CER was `0.824` and trial 9 CER was `0.852`, not uniquely worse
+  than most other held-out trials. Trial 3 was worst at `1.185`.
+- Attached 5D geometry and distribution statistics were included in
+  `results/leave_one_trial_out.json`. No significance tests or causal claims
+  were made.
