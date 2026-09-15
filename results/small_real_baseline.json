@@ -1,0 +1,83 @@
+{
+  "dataset": "SpanishBCBL/DECOMEG",
+  "baseline_type": "small single-subject development-set baseline",
+  "manifest": "data/processed/spanishbcbl_subset/manifest.jsonl",
+  "preprocessing_version": "continuous filter/resample/RobustScaler then sentence crop, baseline correction, clamp",
+  "vocabulary_version": "SpanishBCBL verified 30-class vocabulary",
+  "seed": 33,
+  "train_trial_ids": [
+    "2.0_S22_1_block1",
+    "3.0_S22_1_block1",
+    "4.0_S22_1_block1",
+    "5.0_S22_1_block1",
+    "6.0_S22_1_block1",
+    "7.0_S22_1_block1"
+  ],
+  "evaluation_trial_ids": [
+    "8.0_S22_1_block1",
+    "9.0_S22_1_block1"
+  ],
+  "duplicate_sentences_across_split": false,
+  "model": "Conv1D + BiGRU + Linear + CTC",
+  "channels": 306,
+  "learning_rate": 0.01,
+  "optimizer": "Adam",
+  "epochs": 300,
+  "per_trial": [
+    {
+      "trial_id": "8.0_S22_1_block1",
+      "target": "las proposiciones recorren el tema",
+      "decoded": "",
+      "cer": 1.0,
+      "wer": 1.0,
+      "target_length": 34,
+      "decoded_length": 0,
+      "mean_blank_probability": 0.9048457741737366,
+      "blank_argmax_fraction": 1.0
+    },
+    {
+      "trial_id": "9.0_S22_1_block1",
+      "target": "las calles macan las lineas",
+      "decoded": "lelo",
+      "cer": 0.8888888888888888,
+      "wer": 1.0,
+      "target_length": 27,
+      "decoded_length": 4,
+      "mean_blank_probability": 0.8814018368721008,
+      "blank_argmax_fraction": 0.9818181991577148
+    }
+  ],
+  "aggregate": {
+    "mean_cer": 0.9444444444444444,
+    "median_cer": 0.9444444444444444,
+    "mean_wer": 1.0,
+    "median_wer": 1.0
+  },
+  "trivial_baselines": {
+    "empty_prediction": {
+      "per_trial_cer": [
+        1.0,
+        1.0
+      ],
+      "per_trial_wer": [
+        1.0,
+        1.0
+      ],
+      "mean_cer": 1.0,
+      "mean_wer": 1.0
+    },
+    "most_common_character": {
+      "character": "e",
+      "per_trial_cer": [
+        0.8529411764705882,
+        0.9259259259259259
+      ],
+      "per_trial_wer": [
+        1.0,
+        1.0
+      ],
+      "mean_cer": 0.8894335511982571,
+      "mean_wer": 1.0
+    }
+  }
+}

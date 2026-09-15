@@ -154,3 +154,15 @@ leakage checks are completed.
   `results/figures/debug/real_vs_synthetic_training.png`.
 - No benchmark, architecture change, real-data generalization claim, or
   downstream NeuroSelect component was introduced.
+
+## Phase 5A — Small real-data baseline
+
+- Used all eight prepared SpanishBCBL trials from the same subject/session/
+  block. Trials 2–7 were training; trials 8–9 were evaluation.
+- Verified no identical sentence crossed the split.
+- Used unchanged model and corrected continuous preprocessing. Configuration:
+  seed `33`, Adam, learning rate `0.01`, 300 epochs.
+- Per-trial CER/WER, aggregate metrics, blank statistics, and trivial
+  references are stored in `results/small_real_baseline.json`.
+- This is a small single-subject development-set baseline only, not a
+  generalization benchmark.
