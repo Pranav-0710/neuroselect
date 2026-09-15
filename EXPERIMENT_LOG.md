@@ -139,3 +139,18 @@ leakage checks are completed.
 - All four tested conditions recovered `abc` exactly with CER `0.0`;
   final loss increased from `0.00162` at no noise to `0.01424` at high noise.
 - This phase makes no claim about real MEG or neuroscience.
+
+## Phase 4E — Real MEG one-trial recheck
+
+- Reused the corrected continuous preprocessing manifest and unchanged
+  `Conv1D + BiGRU + Linear + CTC` model.
+- Trial 2 (`S22`, session 1, `block1`) was trained for 1000 epochs. One
+  additional trial was run because Trial 2 showed loss reduction and partial
+  decoding, satisfying the meaningful-learning continuation criterion.
+- Recorded loss, CER, decoded output, decoded length, mean blank probability,
+  blank-argmax fraction, and target length in
+  `results/real_trial_recheck.json`.
+- Saved comparison figure:
+  `results/figures/debug/real_vs_synthetic_training.png`.
+- No benchmark, architecture change, real-data generalization claim, or
+  downstream NeuroSelect component was introduced.
