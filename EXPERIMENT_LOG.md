@@ -190,3 +190,15 @@ leakage checks are completed.
   seed. All reported losses and metrics were finite. The matrix supports
   optimization as a major factor and shows train/evaluation divergence under
   clipping, but does not identify a unique root cause.
+
+## Phase 5C — Seed stability of clipped configuration
+
+- Ran exactly seeds `33`, `123`, and `777` with fixed train/evaluation split,
+  unchanged preprocessing, vocabulary, decoder, and architecture.
+- Configuration: Adam, learning rate `0.001`, gradient clipping max norm
+  `1.0`, 300 epochs.
+- Recorded per-seed train/evaluation CER, WER, blank-argmax fractions,
+  decoded-length ratios, per-trial evaluation outputs, CER gaps, and finite
+  checks in `results/seed_stability_diagnostic.json`.
+- Saved comparison figure:
+  `results/figures/debug/seed_stability_diagnostic.png`.
