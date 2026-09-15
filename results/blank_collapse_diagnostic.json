@@ -1,0 +1,630 @@
+{
+  "metadata": {
+    "manifest": "data/processed/spanishbcbl_subset/manifest.jsonl",
+    "train_trial_ids": [
+      "2.0_S22_1_block1",
+      "3.0_S22_1_block1",
+      "4.0_S22_1_block1",
+      "5.0_S22_1_block1",
+      "6.0_S22_1_block1",
+      "7.0_S22_1_block1"
+    ],
+    "evaluation_trial_ids": [
+      "8.0_S22_1_block1",
+      "9.0_S22_1_block1"
+    ],
+    "seed": 33,
+    "model": "Conv1D + BiGRU + Linear + CTC",
+    "vocabulary": "SpanishBCBL verified 30-class vocabulary",
+    "preprocessing": "existing corrected continuous preprocessing manifest",
+    "epochs": 300,
+    "same_split_all_configs": true
+  },
+  "configurations": {
+    "A_baseline": {
+      "learning_rate": 0.01,
+      "clip_norm": null,
+      "optimizer": "Adam",
+      "final_training_ctc_loss": 1.57428777217865,
+      "training": {
+        "per_trial": [
+          {
+            "trial_id": "2.0_S22_1_block1",
+            "target": "la tasa excede las velocidades",
+            "decoded": "la tasa ",
+            "cer": 0.7333333333333333,
+            "wer": 0.6,
+            "target_length": 30,
+            "decoded_length": 8,
+            "decoded_length_ratio": 0.26666666666666666,
+            "mean_blank_probability": 0.8641921877861023,
+            "blank_argmax_fraction": 0.9576923251152039
+          },
+          {
+            "trial_id": "3.0_S22_1_block1",
+            "target": "el motor consume la energia",
+            "decoded": "el motor ",
+            "cer": 0.6666666666666666,
+            "wer": 0.6,
+            "target_length": 27,
+            "decoded_length": 9,
+            "decoded_length_ratio": 0.3333333333333333,
+            "mean_blank_probability": 0.8238123655319214,
+            "blank_argmax_fraction": 0.9402984976768494
+          },
+          {
+            "trial_id": "4.0_S22_1_block1",
+            "target": "los arboles estimulan la secrecion",
+            "decoded": "los",
+            "cer": 0.9117647058823529,
+            "wer": 0.8,
+            "target_length": 34,
+            "decoded_length": 3,
+            "decoded_length_ratio": 0.08823529411764706,
+            "mean_blank_probability": 0.8735275268554688,
+            "blank_argmax_fraction": 0.9856630563735962
+          },
+          {
+            "trial_id": "5.0_S22_1_block1",
+            "target": "el pedido merece las atenciones",
+            "decoded": "el pedido",
+            "cer": 0.7096774193548387,
+            "wer": 0.6,
+            "target_length": 31,
+            "decoded_length": 9,
+            "decoded_length_ratio": 0.2903225806451613,
+            "mean_blank_probability": 0.8246053457260132,
+            "blank_argmax_fraction": 0.9487179517745972
+          },
+          {
+            "trial_id": "6.0_S22_1_block1",
+            "target": "el algoritmo recorre el nodo",
+            "decoded": "el algori",
+            "cer": 0.6785714285714286,
+            "wer": 0.8,
+            "target_length": 28,
+            "decoded_length": 9,
+            "decoded_length_ratio": 0.32142857142857145,
+            "mean_blank_probability": 0.823093593120575,
+            "blank_argmax_fraction": 0.9409090876579285
+          },
+          {
+            "trial_id": "7.0_S22_1_block1",
+            "target": "el caballo recorre la casilla",
+            "decoded": "el ca",
+            "cer": 0.8275862068965517,
+            "wer": 0.8,
+            "target_length": 29,
+            "decoded_length": 5,
+            "decoded_length_ratio": 0.1724137931034483,
+            "mean_blank_probability": 0.8543898463249207,
+            "blank_argmax_fraction": 0.9722222089767456
+          }
+        ],
+        "mean_cer": 0.7545999601175287,
+        "mean_wer": 0.7000000000000001,
+        "mean_blank_probability": 0.8439368108908335,
+        "blank_argmax_fraction": 0.9575838545958201,
+        "mean_decoded_length_ratio": 0.2454000398824713
+      },
+      "evaluation": {
+        "per_trial": [
+          {
+            "trial_id": "8.0_S22_1_block1",
+            "target": "las proposiciones recorren el tema",
+            "decoded": "",
+            "cer": 1.0,
+            "wer": 1.0,
+            "target_length": 34,
+            "decoded_length": 0,
+            "decoded_length_ratio": 0.0,
+            "mean_blank_probability": 0.9048457741737366,
+            "blank_argmax_fraction": 1.0
+          },
+          {
+            "trial_id": "9.0_S22_1_block1",
+            "target": "las calles macan las lineas",
+            "decoded": "lelo",
+            "cer": 0.8888888888888888,
+            "wer": 1.0,
+            "target_length": 27,
+            "decoded_length": 4,
+            "decoded_length_ratio": 0.14814814814814814,
+            "mean_blank_probability": 0.8814018368721008,
+            "blank_argmax_fraction": 0.9818181991577148
+          }
+        ],
+        "mean_cer": 0.9444444444444444,
+        "mean_wer": 1.0,
+        "mean_blank_probability": 0.8931238055229187,
+        "blank_argmax_fraction": 0.9909090995788574,
+        "mean_decoded_length_ratio": 0.07407407407407407
+      },
+      "all_metrics_finite": true
+    },
+    "B_lr_0.001": {
+      "learning_rate": 0.001,
+      "clip_norm": null,
+      "optimizer": "Adam",
+      "final_training_ctc_loss": 2.218477964401245,
+      "training": {
+        "per_trial": [
+          {
+            "trial_id": "2.0_S22_1_block1",
+            "target": "la tasa excede las velocidades",
+            "decoded": "la a",
+            "cer": 0.8666666666666667,
+            "wer": 0.8,
+            "target_length": 30,
+            "decoded_length": 4,
+            "decoded_length_ratio": 0.13333333333333333,
+            "mean_blank_probability": 0.8683018684387207,
+            "blank_argmax_fraction": 0.9615384340286255
+          },
+          {
+            "trial_id": "3.0_S22_1_block1",
+            "target": "el motor consume la energia",
+            "decoded": "el o",
+            "cer": 0.8518518518518519,
+            "wer": 0.8,
+            "target_length": 27,
+            "decoded_length": 4,
+            "decoded_length_ratio": 0.14814814814814814,
+            "mean_blank_probability": 0.8618108034133911,
+            "blank_argmax_fraction": 0.96517413854599
+          },
+          {
+            "trial_id": "4.0_S22_1_block1",
+            "target": "los arboles estimulan la secrecion",
+            "decoded": " a",
+            "cer": 0.9411764705882353,
+            "wer": 1.0,
+            "target_length": 34,
+            "decoded_length": 2,
+            "decoded_length_ratio": 0.058823529411764705,
+            "mean_blank_probability": 0.8657090663909912,
+            "blank_argmax_fraction": 0.9892473220825195
+          },
+          {
+            "trial_id": "5.0_S22_1_block1",
+            "target": "el pedido merece las atenciones",
+            "decoded": "el ed",
+            "cer": 0.8387096774193549,
+            "wer": 0.8,
+            "target_length": 31,
+            "decoded_length": 5,
+            "decoded_length_ratio": 0.16129032258064516,
+            "mean_blank_probability": 0.8545605540275574,
+            "blank_argmax_fraction": 0.9658119678497314
+          },
+          {
+            "trial_id": "6.0_S22_1_block1",
+            "target": "el algoritmo recorre el nodo",
+            "decoded": "e a",
+            "cer": 0.8928571428571429,
+            "wer": 1.0,
+            "target_length": 28,
+            "decoded_length": 3,
+            "decoded_length_ratio": 0.10714285714285714,
+            "mean_blank_probability": 0.8537119626998901,
+            "blank_argmax_fraction": 0.9818181991577148
+          },
+          {
+            "trial_id": "7.0_S22_1_block1",
+            "target": "el caballo recorre la casilla",
+            "decoded": "ea",
+            "cer": 0.9310344827586207,
+            "wer": 1.0,
+            "target_length": 29,
+            "decoded_length": 2,
+            "decoded_length_ratio": 0.06896551724137931,
+            "mean_blank_probability": 0.8752726316452026,
+            "blank_argmax_fraction": 0.976190447807312
+          }
+        ],
+        "mean_cer": 0.8870493820236455,
+        "mean_wer": 0.9,
+        "mean_blank_probability": 0.8632278144359589,
+        "blank_argmax_fraction": 0.9732967515786489,
+        "mean_decoded_length_ratio": 0.11295061797635463
+      },
+      "evaluation": {
+        "per_trial": [
+          {
+            "trial_id": "8.0_S22_1_block1",
+            "target": "las proposiciones recorren el tema",
+            "decoded": " ea",
+            "cer": 0.9117647058823529,
+            "wer": 1.0,
+            "target_length": 34,
+            "decoded_length": 3,
+            "decoded_length_ratio": 0.08823529411764706,
+            "mean_blank_probability": 0.845036506652832,
+            "blank_argmax_fraction": 0.9800000190734863
+          },
+          {
+            "trial_id": "9.0_S22_1_block1",
+            "target": "las calles macan las lineas",
+            "decoded": "a eae",
+            "cer": 0.8148148148148148,
+            "wer": 1.0,
+            "target_length": 27,
+            "decoded_length": 5,
+            "decoded_length_ratio": 0.18518518518518517,
+            "mean_blank_probability": 0.8142415285110474,
+            "blank_argmax_fraction": 0.9236363768577576
+          }
+        ],
+        "mean_cer": 0.8632897603485838,
+        "mean_wer": 1.0,
+        "mean_blank_probability": 0.8296390175819397,
+        "blank_argmax_fraction": 0.951818197965622,
+        "mean_decoded_length_ratio": 0.13671023965141613
+      },
+      "all_metrics_finite": true
+    },
+    "C_lr_0.0001": {
+      "learning_rate": 0.0001,
+      "clip_norm": null,
+      "optimizer": "Adam",
+      "final_training_ctc_loss": 3.120450258255005,
+      "training": {
+        "per_trial": [
+          {
+            "trial_id": "2.0_S22_1_block1",
+            "target": "la tasa excede las velocidades",
+            "decoded": "",
+            "cer": 1.0,
+            "wer": 1.0,
+            "target_length": 30,
+            "decoded_length": 0,
+            "decoded_length_ratio": 0.0,
+            "mean_blank_probability": 0.8490692377090454,
+            "blank_argmax_fraction": 1.0
+          },
+          {
+            "trial_id": "3.0_S22_1_block1",
+            "target": "el motor consume la energia",
+            "decoded": "",
+            "cer": 1.0,
+            "wer": 1.0,
+            "target_length": 27,
+            "decoded_length": 0,
+            "decoded_length_ratio": 0.0,
+            "mean_blank_probability": 0.8309378027915955,
+            "blank_argmax_fraction": 1.0
+          },
+          {
+            "trial_id": "4.0_S22_1_block1",
+            "target": "los arboles estimulan la secrecion",
+            "decoded": "",
+            "cer": 1.0,
+            "wer": 1.0,
+            "target_length": 34,
+            "decoded_length": 0,
+            "decoded_length_ratio": 0.0,
+            "mean_blank_probability": 0.8523330092430115,
+            "blank_argmax_fraction": 1.0
+          },
+          {
+            "trial_id": "5.0_S22_1_block1",
+            "target": "el pedido merece las atenciones",
+            "decoded": "",
+            "cer": 1.0,
+            "wer": 1.0,
+            "target_length": 31,
+            "decoded_length": 0,
+            "decoded_length_ratio": 0.0,
+            "mean_blank_probability": 0.824661374092102,
+            "blank_argmax_fraction": 1.0
+          },
+          {
+            "trial_id": "6.0_S22_1_block1",
+            "target": "el algoritmo recorre el nodo",
+            "decoded": "",
+            "cer": 1.0,
+            "wer": 1.0,
+            "target_length": 28,
+            "decoded_length": 0,
+            "decoded_length_ratio": 0.0,
+            "mean_blank_probability": 0.8433944582939148,
+            "blank_argmax_fraction": 1.0
+          },
+          {
+            "trial_id": "7.0_S22_1_block1",
+            "target": "el caballo recorre la casilla",
+            "decoded": "",
+            "cer": 1.0,
+            "wer": 1.0,
+            "target_length": 29,
+            "decoded_length": 0,
+            "decoded_length_ratio": 0.0,
+            "mean_blank_probability": 0.8518006801605225,
+            "blank_argmax_fraction": 1.0
+          }
+        ],
+        "mean_cer": 1.0,
+        "mean_wer": 1.0,
+        "mean_blank_probability": 0.8420327603816986,
+        "blank_argmax_fraction": 1.0,
+        "mean_decoded_length_ratio": 0.0
+      },
+      "evaluation": {
+        "per_trial": [
+          {
+            "trial_id": "8.0_S22_1_block1",
+            "target": "las proposiciones recorren el tema",
+            "decoded": "",
+            "cer": 1.0,
+            "wer": 1.0,
+            "target_length": 34,
+            "decoded_length": 0,
+            "decoded_length_ratio": 0.0,
+            "mean_blank_probability": 0.7645580172538757,
+            "blank_argmax_fraction": 1.0
+          },
+          {
+            "trial_id": "9.0_S22_1_block1",
+            "target": "las calles macan las lineas",
+            "decoded": "r@ @ ",
+            "cer": 0.9259259259259259,
+            "wer": 1.0,
+            "target_length": 27,
+            "decoded_length": 5,
+            "decoded_length_ratio": 0.18518518518518517,
+            "mean_blank_probability": 0.7616478204727173,
+            "blank_argmax_fraction": 0.9309090971946716
+          }
+        ],
+        "mean_cer": 0.962962962962963,
+        "mean_wer": 1.0,
+        "mean_blank_probability": 0.7631029188632965,
+        "blank_argmax_fraction": 0.9654545485973358,
+        "mean_decoded_length_ratio": 0.09259259259259259
+      },
+      "all_metrics_finite": true
+    },
+    "D_lr_0.001_clip_1": {
+      "learning_rate": 0.001,
+      "clip_norm": 1.0,
+      "optimizer": "Adam",
+      "final_training_ctc_loss": 0.30702605843544006,
+      "training": {
+        "per_trial": [
+          {
+            "trial_id": "2.0_S22_1_block1",
+            "target": "la tasa excede las velocidades",
+            "decoded": "la tasa excede las eldes",
+            "cer": 0.2,
+            "wer": 0.2,
+            "target_length": 30,
+            "decoded_length": 24,
+            "decoded_length_ratio": 0.8,
+            "mean_blank_probability": 0.8385363221168518,
+            "blank_argmax_fraction": 0.8615384697914124
+          },
+          {
+            "trial_id": "3.0_S22_1_block1",
+            "target": "el motor consume la energia",
+            "decoded": "el motor consume la egia",
+            "cer": 0.1111111111111111,
+            "wer": 0.2,
+            "target_length": 27,
+            "decoded_length": 24,
+            "decoded_length_ratio": 0.8888888888888888,
+            "mean_blank_probability": 0.805541455745697,
+            "blank_argmax_fraction": 0.8159204125404358
+          },
+          {
+            "trial_id": "4.0_S22_1_block1",
+            "target": "los arboles estimulan la secrecion",
+            "decoded": "los arboles estlan la seen",
+            "cer": 0.23529411764705882,
+            "wer": 0.4,
+            "target_length": 34,
+            "decoded_length": 26,
+            "decoded_length_ratio": 0.7647058823529411,
+            "mean_blank_probability": 0.819175124168396,
+            "blank_argmax_fraction": 0.8458781242370605
+          },
+          {
+            "trial_id": "5.0_S22_1_block1",
+            "target": "el pedido merece las atenciones",
+            "decoded": "el pedido merece las as",
+            "cer": 0.25806451612903225,
+            "wer": 0.2,
+            "target_length": 31,
+            "decoded_length": 23,
+            "decoded_length_ratio": 0.7419354838709677,
+            "mean_blank_probability": 0.82310551404953,
+            "blank_argmax_fraction": 0.8504273295402527
+          },
+          {
+            "trial_id": "6.0_S22_1_block1",
+            "target": "el algoritmo recorre el nodo",
+            "decoded": "el algoritmo recorr l nodo",
+            "cer": 0.07142857142857142,
+            "wer": 0.4,
+            "target_length": 28,
+            "decoded_length": 26,
+            "decoded_length_ratio": 0.9285714285714286,
+            "mean_blank_probability": 0.8206929564476013,
+            "blank_argmax_fraction": 0.8227272629737854
+          },
+          {
+            "trial_id": "7.0_S22_1_block1",
+            "target": "el caballo recorre la casilla",
+            "decoded": "el caballo recorre a ala",
+            "cer": 0.1724137931034483,
+            "wer": 0.4,
+            "target_length": 29,
+            "decoded_length": 24,
+            "decoded_length_ratio": 0.8275862068965517,
+            "mean_blank_probability": 0.8207405805587769,
+            "blank_argmax_fraction": 0.8333333134651184
+          }
+        ],
+        "mean_cer": 0.17471868490320364,
+        "mean_wer": 0.3,
+        "mean_blank_probability": 0.8212986588478088,
+        "blank_argmax_fraction": 0.8383041520913442,
+        "mean_decoded_length_ratio": 0.8252813150967965
+      },
+      "evaluation": {
+        "per_trial": [
+          {
+            "trial_id": "8.0_S22_1_block1",
+            "target": "las proposiciones recorren el tema",
+            "decoded": "etoe lbas as as s s s ns ao   s asns anaon sasaanmansasa ddoo",
+            "cer": 1.4411764705882353,
+            "wer": 2.8,
+            "target_length": 34,
+            "decoded_length": 61,
+            "decoded_length_ratio": 1.7941176470588236,
+            "mean_blank_probability": 0.5199218988418579,
+            "blank_argmax_fraction": 0.5899999737739563
+          },
+          {
+            "trial_id": "9.0_S22_1_block1",
+            "target": "las calles macan las lineas",
+            "decoded": " otsl b a las s lsls  addd",
+            "cer": 0.7777777777777778,
+            "wer": 1.2,
+            "target_length": 27,
+            "decoded_length": 26,
+            "decoded_length_ratio": 0.9629629629629629,
+            "mean_blank_probability": 0.7039716243743896,
+            "blank_argmax_fraction": 0.7345454692840576
+          }
+        ],
+        "mean_cer": 1.1094771241830066,
+        "mean_wer": 2.0,
+        "mean_blank_probability": 0.6119467616081238,
+        "blank_argmax_fraction": 0.662272721529007,
+        "mean_decoded_length_ratio": 1.3785403050108933
+      },
+      "all_metrics_finite": true
+    },
+    "E_lr_0.001_no_clip": {
+      "learning_rate": 0.001,
+      "clip_norm": null,
+      "optimizer": "Adam",
+      "final_training_ctc_loss": 2.218477964401245,
+      "training": {
+        "per_trial": [
+          {
+            "trial_id": "2.0_S22_1_block1",
+            "target": "la tasa excede las velocidades",
+            "decoded": "la a",
+            "cer": 0.8666666666666667,
+            "wer": 0.8,
+            "target_length": 30,
+            "decoded_length": 4,
+            "decoded_length_ratio": 0.13333333333333333,
+            "mean_blank_probability": 0.8683018684387207,
+            "blank_argmax_fraction": 0.9615384340286255
+          },
+          {
+            "trial_id": "3.0_S22_1_block1",
+            "target": "el motor consume la energia",
+            "decoded": "el o",
+            "cer": 0.8518518518518519,
+            "wer": 0.8,
+            "target_length": 27,
+            "decoded_length": 4,
+            "decoded_length_ratio": 0.14814814814814814,
+            "mean_blank_probability": 0.8618108034133911,
+            "blank_argmax_fraction": 0.96517413854599
+          },
+          {
+            "trial_id": "4.0_S22_1_block1",
+            "target": "los arboles estimulan la secrecion",
+            "decoded": " a",
+            "cer": 0.9411764705882353,
+            "wer": 1.0,
+            "target_length": 34,
+            "decoded_length": 2,
+            "decoded_length_ratio": 0.058823529411764705,
+            "mean_blank_probability": 0.8657090663909912,
+            "blank_argmax_fraction": 0.9892473220825195
+          },
+          {
+            "trial_id": "5.0_S22_1_block1",
+            "target": "el pedido merece las atenciones",
+            "decoded": "el ed",
+            "cer": 0.8387096774193549,
+            "wer": 0.8,
+            "target_length": 31,
+            "decoded_length": 5,
+            "decoded_length_ratio": 0.16129032258064516,
+            "mean_blank_probability": 0.8545605540275574,
+            "blank_argmax_fraction": 0.9658119678497314
+          },
+          {
+            "trial_id": "6.0_S22_1_block1",
+            "target": "el algoritmo recorre el nodo",
+            "decoded": "e a",
+            "cer": 0.8928571428571429,
+            "wer": 1.0,
+            "target_length": 28,
+            "decoded_length": 3,
+            "decoded_length_ratio": 0.10714285714285714,
+            "mean_blank_probability": 0.8537119626998901,
+            "blank_argmax_fraction": 0.9818181991577148
+          },
+          {
+            "trial_id": "7.0_S22_1_block1",
+            "target": "el caballo recorre la casilla",
+            "decoded": "ea",
+            "cer": 0.9310344827586207,
+            "wer": 1.0,
+            "target_length": 29,
+            "decoded_length": 2,
+            "decoded_length_ratio": 0.06896551724137931,
+            "mean_blank_probability": 0.8752726316452026,
+            "blank_argmax_fraction": 0.976190447807312
+          }
+        ],
+        "mean_cer": 0.8870493820236455,
+        "mean_wer": 0.9,
+        "mean_blank_probability": 0.8632278144359589,
+        "blank_argmax_fraction": 0.9732967515786489,
+        "mean_decoded_length_ratio": 0.11295061797635463
+      },
+      "evaluation": {
+        "per_trial": [
+          {
+            "trial_id": "8.0_S22_1_block1",
+            "target": "las proposiciones recorren el tema",
+            "decoded": " ea",
+            "cer": 0.9117647058823529,
+            "wer": 1.0,
+            "target_length": 34,
+            "decoded_length": 3,
+            "decoded_length_ratio": 0.08823529411764706,
+            "mean_blank_probability": 0.845036506652832,
+            "blank_argmax_fraction": 0.9800000190734863
+          },
+          {
+            "trial_id": "9.0_S22_1_block1",
+            "target": "las calles macan las lineas",
+            "decoded": "a eae",
+            "cer": 0.8148148148148148,
+            "wer": 1.0,
+            "target_length": 27,
+            "decoded_length": 5,
+            "decoded_length_ratio": 0.18518518518518517,
+            "mean_blank_probability": 0.8142415285110474,
+            "blank_argmax_fraction": 0.9236363768577576
+          }
+        ],
+        "mean_cer": 0.8632897603485838,
+        "mean_wer": 1.0,
+        "mean_blank_probability": 0.8296390175819397,
+        "blank_argmax_fraction": 0.951818197965622,
+        "mean_decoded_length_ratio": 0.13671023965141613
+      },
+      "all_metrics_finite": true
+    }
+  }
+}

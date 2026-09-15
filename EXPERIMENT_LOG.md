@@ -166,3 +166,27 @@ leakage checks are completed.
   references are stored in `results/small_real_baseline.json`.
 - This is a small single-subject development-set baseline only, not a
   generalization benchmark.
+
+## Phase 5B — Blank-collapse diagnostic
+
+- Tested fixed train/evaluation split (trials 2–7 / 8–9), seed `33`, unchanged
+  preprocessing, vocabulary, model, decoder, and 300 epochs.
+- Matrix: baseline Adam `0.01`; Adam `0.001`; Adam `0.0001`; Adam `0.001`
+  with max-norm `1.0`; and Adam `0.001` without clipping.
+- Each configuration records train/evaluation CER, WER, blank probability,
+  blank-argmax fraction, decoded-length ratio, per-trial outputs, and finite
+  metric checks in `results/blank_collapse_diagnostic.json`.
+- Comparison figure:
+  `results/figures/debug/blank_collapse_diagnostic.png`.
+- Baseline matrix remained blank-dominated on both splits (train CER `0.755`,
+  eval CER `0.944`; train/eval blank-argmax fractions `0.958`/`0.991`).
+- Lowering LR to `0.0001` worsened training to all-empty decoding. LR
+  `0.001` reduced train/eval CER modestly but remained mostly blank.
+- Gradient clipping at `1.0` materially changed behavior: train CER `0.175`
+  and blank fraction `0.838`, but eval CER worsened to `1.109` with long
+  nonsensical outputs and blank fraction `0.662`. This supports an
+  optimization/generalization tradeoff, not a standalone explanation.
+- No-clipping `0.001` matched the unclipped `0.001` run under this fixed
+  seed. All reported losses and metrics were finite. The matrix supports
+  optimization as a major factor and shows train/evaluation divergence under
+  clipping, but does not identify a unique root cause.
