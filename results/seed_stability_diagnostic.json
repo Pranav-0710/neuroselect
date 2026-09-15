@@ -1,0 +1,368 @@
+{
+  "metadata": {
+    "manifest": "data/processed/spanishbcbl_subset/manifest.jsonl",
+    "train_trial_ids": [
+      "2.0_S22_1_block1",
+      "3.0_S22_1_block1",
+      "4.0_S22_1_block1",
+      "5.0_S22_1_block1",
+      "6.0_S22_1_block1",
+      "7.0_S22_1_block1"
+    ],
+    "evaluation_trial_ids": [
+      "8.0_S22_1_block1",
+      "9.0_S22_1_block1"
+    ],
+    "preprocessing": "existing corrected continuous preprocessing manifest",
+    "vocabulary": "SpanishBCBL verified 30-class vocabulary",
+    "model": "Conv1D + BiGRU + Linear + CTC",
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "gradient_clip_max_norm": 1.0,
+    "epochs": 300,
+    "seeds_requested": [
+      33,
+      123,
+      777
+    ]
+  },
+  "seeds": {
+    "33": {
+      "seed": 33,
+      "final_training_ctc_loss": 0.30702605843544006,
+      "training": {
+        "per_trial": [
+          {
+            "trial_id": "2.0_S22_1_block1",
+            "target": "la tasa excede las velocidades",
+            "decoded": "la tasa excede las eldes",
+            "cer": 0.2,
+            "wer": 0.2,
+            "decoded_length": 24,
+            "target_length": 30,
+            "decoded_length_ratio": 0.8,
+            "blank_argmax_fraction": 0.8615384697914124
+          },
+          {
+            "trial_id": "3.0_S22_1_block1",
+            "target": "el motor consume la energia",
+            "decoded": "el motor consume la egia",
+            "cer": 0.1111111111111111,
+            "wer": 0.2,
+            "decoded_length": 24,
+            "target_length": 27,
+            "decoded_length_ratio": 0.8888888888888888,
+            "blank_argmax_fraction": 0.8159204125404358
+          },
+          {
+            "trial_id": "4.0_S22_1_block1",
+            "target": "los arboles estimulan la secrecion",
+            "decoded": "los arboles estlan la seen",
+            "cer": 0.23529411764705882,
+            "wer": 0.4,
+            "decoded_length": 26,
+            "target_length": 34,
+            "decoded_length_ratio": 0.7647058823529411,
+            "blank_argmax_fraction": 0.8458781242370605
+          },
+          {
+            "trial_id": "5.0_S22_1_block1",
+            "target": "el pedido merece las atenciones",
+            "decoded": "el pedido merece las as",
+            "cer": 0.25806451612903225,
+            "wer": 0.2,
+            "decoded_length": 23,
+            "target_length": 31,
+            "decoded_length_ratio": 0.7419354838709677,
+            "blank_argmax_fraction": 0.8504273295402527
+          },
+          {
+            "trial_id": "6.0_S22_1_block1",
+            "target": "el algoritmo recorre el nodo",
+            "decoded": "el algoritmo recorr l nodo",
+            "cer": 0.07142857142857142,
+            "wer": 0.4,
+            "decoded_length": 26,
+            "target_length": 28,
+            "decoded_length_ratio": 0.9285714285714286,
+            "blank_argmax_fraction": 0.8227272629737854
+          },
+          {
+            "trial_id": "7.0_S22_1_block1",
+            "target": "el caballo recorre la casilla",
+            "decoded": "el caballo recorre a ala",
+            "cer": 0.1724137931034483,
+            "wer": 0.4,
+            "decoded_length": 24,
+            "target_length": 29,
+            "decoded_length_ratio": 0.8275862068965517,
+            "blank_argmax_fraction": 0.8333333134651184
+          }
+        ],
+        "mean_cer": 0.17471868490320364,
+        "mean_wer": 0.3,
+        "mean_blank_argmax_fraction": 0.8383041520913442,
+        "mean_decoded_length_ratio": 0.8252813150967965
+      },
+      "evaluation": {
+        "per_trial": [
+          {
+            "trial_id": "8.0_S22_1_block1",
+            "target": "las proposiciones recorren el tema",
+            "decoded": "etoe lbas as as s s s ns ao   s asns anaon sasaanmansasa ddoo",
+            "cer": 1.4411764705882353,
+            "wer": 2.8,
+            "decoded_length": 61,
+            "target_length": 34,
+            "decoded_length_ratio": 1.7941176470588236,
+            "blank_argmax_fraction": 0.5899999737739563
+          },
+          {
+            "trial_id": "9.0_S22_1_block1",
+            "target": "las calles macan las lineas",
+            "decoded": " otsl b a las s lsls  addd",
+            "cer": 0.7777777777777778,
+            "wer": 1.2,
+            "decoded_length": 26,
+            "target_length": 27,
+            "decoded_length_ratio": 0.9629629629629629,
+            "blank_argmax_fraction": 0.7345454692840576
+          }
+        ],
+        "mean_cer": 1.1094771241830066,
+        "mean_wer": 2.0,
+        "mean_blank_argmax_fraction": 0.662272721529007,
+        "mean_decoded_length_ratio": 1.3785403050108933
+      },
+      "train_eval_cer_gap": 0.934758439279803,
+      "all_metrics_finite": true
+    },
+    "123": {
+      "seed": 123,
+      "final_training_ctc_loss": 0.34319090843200684,
+      "training": {
+        "per_trial": [
+          {
+            "trial_id": "2.0_S22_1_block1",
+            "target": "la tasa excede las velocidades",
+            "decoded": "la tasa ee laldades",
+            "cer": 0.36666666666666664,
+            "wer": 0.6,
+            "decoded_length": 19,
+            "target_length": 30,
+            "decoded_length_ratio": 0.6333333333333333,
+            "blank_argmax_fraction": 0.8884615302085876
+          },
+          {
+            "trial_id": "3.0_S22_1_block1",
+            "target": "el motor consume la energia",
+            "decoded": "el motor cons  ergia",
+            "cer": 0.25925925925925924,
+            "wer": 0.6,
+            "decoded_length": 20,
+            "target_length": 27,
+            "decoded_length_ratio": 0.7407407407407407,
+            "blank_argmax_fraction": 0.8656716346740723
+          },
+          {
+            "trial_id": "4.0_S22_1_block1",
+            "target": "los arboles estimulan la secrecion",
+            "decoded": "los arboles estila la see",
+            "cer": 0.2647058823529412,
+            "wer": 0.4,
+            "decoded_length": 25,
+            "target_length": 34,
+            "decoded_length_ratio": 0.7352941176470589,
+            "blank_argmax_fraction": 0.8315412402153015
+          },
+          {
+            "trial_id": "5.0_S22_1_block1",
+            "target": "el pedido merece las atenciones",
+            "decoded": "el pedido merece las ate",
+            "cer": 0.22580645161290322,
+            "wer": 0.2,
+            "decoded_length": 24,
+            "target_length": 31,
+            "decoded_length_ratio": 0.7741935483870968,
+            "blank_argmax_fraction": 0.8547008633613586
+          },
+          {
+            "trial_id": "6.0_S22_1_block1",
+            "target": "el algoritmo recorre el nodo",
+            "decoded": "el algoritmo recorre el no",
+            "cer": 0.07142857142857142,
+            "wer": 0.2,
+            "decoded_length": 26,
+            "target_length": 28,
+            "decoded_length_ratio": 0.9285714285714286,
+            "blank_argmax_fraction": 0.00909090880304575
+          },
+          {
+            "trial_id": "7.0_S22_1_block1",
+            "target": "el caballo recorre la casilla",
+            "decoded": "el caballo recorre la asila",
+            "cer": 0.06896551724137931,
+            "wer": 0.2,
+            "decoded_length": 27,
+            "target_length": 29,
+            "decoded_length_ratio": 0.9310344827586207,
+            "blank_argmax_fraction": 0.8253968358039856
+          }
+        ],
+        "mean_cer": 0.20947205809362016,
+        "mean_wer": 0.3666666666666667,
+        "mean_blank_argmax_fraction": 0.7124771688443919,
+        "mean_decoded_length_ratio": 0.79052794190638
+      },
+      "evaluation": {
+        "per_trial": [
+          {
+            "trial_id": "8.0_S22_1_block1",
+            "target": "las proposiciones recorren el tema",
+            "decoded": "tl lae e asssiiscorrroo",
+            "cer": 0.7647058823529411,
+            "wer": 1.0,
+            "decoded_length": 23,
+            "target_length": 34,
+            "decoded_length_ratio": 0.6764705882352942,
+            "blank_argmax_fraction": 0.4000000059604645
+          },
+          {
+            "trial_id": "9.0_S22_1_block1",
+            "target": "las calles macan las lineas",
+            "decoded": "l al caoboeor o",
+            "cer": 0.7407407407407407,
+            "wer": 1.0,
+            "decoded_length": 15,
+            "target_length": 27,
+            "decoded_length_ratio": 0.5555555555555556,
+            "blank_argmax_fraction": 0.7309091091156006
+          }
+        ],
+        "mean_cer": 0.7527233115468409,
+        "mean_wer": 1.0,
+        "mean_blank_argmax_fraction": 0.5654545575380325,
+        "mean_decoded_length_ratio": 0.6160130718954249
+      },
+      "train_eval_cer_gap": 0.5432512534532208,
+      "all_metrics_finite": true
+    },
+    "777": {
+      "seed": 777,
+      "final_training_ctc_loss": 0.23176884651184082,
+      "training": {
+        "per_trial": [
+          {
+            "trial_id": "2.0_S22_1_block1",
+            "target": "la tasa excede las velocidades",
+            "decoded": "la tasa excede las elodades",
+            "cer": 0.1,
+            "wer": 0.2,
+            "decoded_length": 27,
+            "target_length": 30,
+            "decoded_length_ratio": 0.9,
+            "blank_argmax_fraction": 0.807692289352417
+          },
+          {
+            "trial_id": "3.0_S22_1_block1",
+            "target": "el motor consume la energia",
+            "decoded": "el motor consume la ea",
+            "cer": 0.18518518518518517,
+            "wer": 0.2,
+            "decoded_length": 22,
+            "target_length": 27,
+            "decoded_length_ratio": 0.8148148148148148,
+            "blank_argmax_fraction": 0.8507462739944458
+          },
+          {
+            "trial_id": "4.0_S22_1_block1",
+            "target": "los arboles estimulan la secrecion",
+            "decoded": "los arboles estmulan la secreco",
+            "cer": 0.08823529411764706,
+            "wer": 0.4,
+            "decoded_length": 31,
+            "target_length": 34,
+            "decoded_length_ratio": 0.9117647058823529,
+            "blank_argmax_fraction": 0.6738350987434387
+          },
+          {
+            "trial_id": "5.0_S22_1_block1",
+            "target": "el pedido merece las atenciones",
+            "decoded": "el pedido merece las a",
+            "cer": 0.2903225806451613,
+            "wer": 0.2,
+            "decoded_length": 22,
+            "target_length": 31,
+            "decoded_length_ratio": 0.7096774193548387,
+            "blank_argmax_fraction": 0.8504273295402527
+          },
+          {
+            "trial_id": "6.0_S22_1_block1",
+            "target": "el algoritmo recorre el nodo",
+            "decoded": "el algoritmo recorre el nodo",
+            "cer": 0.0,
+            "wer": 0.0,
+            "decoded_length": 28,
+            "target_length": 28,
+            "decoded_length_ratio": 1.0,
+            "blank_argmax_fraction": 0.004545454401522875
+          },
+          {
+            "trial_id": "7.0_S22_1_block1",
+            "target": "el caballo recorre la casilla",
+            "decoded": "el caballo recorre la casla",
+            "cer": 0.06896551724137931,
+            "wer": 0.2,
+            "decoded_length": 27,
+            "target_length": 29,
+            "decoded_length_ratio": 0.9310344827586207,
+            "blank_argmax_fraction": 0.8134920597076416
+          }
+        ],
+        "mean_cer": 0.12211809619822883,
+        "mean_wer": 0.19999999999999998,
+        "mean_blank_argmax_fraction": 0.6667897509566197,
+        "mean_decoded_length_ratio": 0.8778819038017712
+      },
+      "evaluation": {
+        "per_trial": [
+          {
+            "trial_id": "8.0_S22_1_block1",
+            "target": "las proposiciones recorren el tema",
+            "decoded": "do as e cerldra o corror coro r o",
+            "cer": 0.8235294117647058,
+            "wer": 1.8,
+            "decoded_length": 33,
+            "target_length": 34,
+            "decoded_length_ratio": 0.9705882352941176,
+            "blank_argmax_fraction": 0.3799999952316284
+          },
+          {
+            "trial_id": "9.0_S22_1_block1",
+            "target": "las calles macan las lineas",
+            "decoded": "a l ele oi ar r d",
+            "cer": 0.7037037037037037,
+            "wer": 1.4,
+            "decoded_length": 17,
+            "target_length": 27,
+            "decoded_length_ratio": 0.6296296296296297,
+            "blank_argmax_fraction": 0.6509090662002563
+          }
+        ],
+        "mean_cer": 0.7636165577342048,
+        "mean_wer": 1.6,
+        "mean_blank_argmax_fraction": 0.5154545307159424,
+        "mean_decoded_length_ratio": 0.8001089324618736
+      },
+      "train_eval_cer_gap": 0.641498461535976,
+      "all_metrics_finite": true
+    }
+  },
+  "summary": {
+    "train_cer_mean": 0.1687696130650175,
+    "train_cer_std": 0.0359093512102098,
+    "evaluation_cer_mean": 0.8752723311546841,
+    "evaluation_cer_std": 0.1656674973376978,
+    "all_metrics_finite": true
+  }
+}
