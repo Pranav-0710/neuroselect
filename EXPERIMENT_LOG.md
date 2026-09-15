@@ -124,3 +124,18 @@ leakage checks are completed.
 - Saved the signal visualization at
   `results/figures/debug/synthetic_easy_signal.png`.
 - Phase 4C conclusion is based only on exact final decoding and CER.
+
+## Phase 4D — Synthetic noise robustness
+
+- Reused the Phase 4C signal, model, CTC loss, decoder, seed, optimizer,
+  learning rate, and 1000-epoch training setup.
+- Tested Gaussian noise standard deviations `0.0`, `0.5`, `2.0`, and `5.0`.
+  Clean signal standard deviation and realized noise standard deviation are
+  recorded per condition.
+- Recorded loss, decoded output, CER, and exact-recovery status in
+  `results/synthetic_noise_sweep.json`.
+- Saved the representative channel comparison at
+  `results/figures/debug/synthetic_noise_levels.png`.
+- All four tested conditions recovered `abc` exactly with CER `0.0`;
+  final loss increased from `0.00162` at no noise to `0.01424` at high noise.
+- This phase makes no claim about real MEG or neuroscience.
