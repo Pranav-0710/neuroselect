@@ -202,3 +202,17 @@ leakage checks are completed.
   checks in `results/seed_stability_diagnostic.json`.
 - Saved comparison figure:
   `results/figures/debug/seed_stability_diagnostic.png`.
+
+## Phase 5D — Trial distribution and temporal statistics audit
+
+- Audited all eight existing processed `.npy` trials without retraining or
+  changing preprocessing.
+- Compared train trials 2–7 with evaluation trials 8–9 across geometry,
+  global signal, temporal difference, energy, channel, broad-band spectral,
+  and lightweight pooled-distribution distance statistics.
+- Evaluation trials were longer on average (`T=287.5` vs `241.0`,
+  duration `5.74 s` vs `4.82 s`, `T/U=9.50` vs `8.07`) and had higher mean
+  channel standard deviation (`0.629` vs `0.465`). Broad-band relative power
+  also differed descriptively, especially 0.1–4 Hz and 4–20 Hz bands.
+- These are descriptive results from only two evaluation trials; no
+  significance testing or causal explanation was made.
