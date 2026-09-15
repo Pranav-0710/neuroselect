@@ -98,3 +98,18 @@ leakage checks are completed.
 - Decoder behavior matches standard greedy CTC collapse rules.
 - Result: `results/ctc_decoder_test.json`.
 - Phase 4A status: `CTC DECODER VERIFIED`.
+
+## Phase 4B — Direct CTC logit learnability
+
+- Isolated CTC from MEG, neural signals, `Conv1D`, `BiGRU`, training data, and
+  model parameters. Only logits were trainable.
+- Used exact SpanishBCBL vocabulary, blank index `0`, `CTCLoss`, and greedy
+  decoder. Log probabilities had shape `(T, N, C)`; targets had shape
+  `(N, S)`.
+- Tested `abc` (`T=30`), `hello` (`T=50`), `hi there` (`T=70`), and
+  `la tasa` (`T=80`).
+- Recorded initial/minimum/final loss, gradient norm, tensor geometry,
+  iterations, decoded output, and CER in
+  `results/ctc_direct_logits_test.json`.
+- Phase 4B conclusion is determined by artifact results and post-training
+  greedy decoding; no model architecture work is included.

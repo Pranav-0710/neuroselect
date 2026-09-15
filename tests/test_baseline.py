@@ -134,3 +134,18 @@ def test_ctc_decoder_verification_cases():
     assert decode_spanish([0, 0, 8, 0, 0, 13, 0]) == "ab"
     assert decode_spanish([8, 8, 0, 8, 8]) == "aa"
     assert decode_spanish([8, 8, 8, 8]) == "a"
+
+
+def test_direct_ctc_loss_has_gradient():
+    logits = torch.randn(30, 1, len(SPANISH_VOCAB), requires_grad=True)
+    targets = torch.tensor([encode_spanish("abc")], dtype=torch.long)
+    loss = torch.nn.CTCLoss(blank=0, zero_infinity=True)(
+        logits.log_softmax(-1),
+        targets,
+        torch.tensor([30]),
+        torch.tensor([3]),
+    )
+    loss.backward()
+    assert loss.requires_grad
+    assert logits.grad is not None
+    assert torch.linalg.vector_norm(logits.grad) > 0
