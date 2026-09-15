@@ -113,3 +113,14 @@ leakage checks are completed.
   `results/ctc_direct_logits_test.json`.
 - Phase 4B conclusion is determined by artifact results and post-training
   greedy decoding; no model architecture work is included.
+
+## Phase 4C — Exact model synthetic overfit
+
+- Tested the unchanged `Conv1D + BiGRU + Linear` model on a deterministic
+  306-channel, `T=300` signal encoding `abc` in channels 0, 1, and 2.
+- Recorded model/CTC tensor shapes, loss history, first gradient norm,
+  parameter update norm, final greedy decoding, and CER in
+  `results/synthetic_easy_overfit.json`.
+- Saved the signal visualization at
+  `results/figures/debug/synthetic_easy_signal.png`.
+- Phase 4C conclusion is based only on exact final decoding and CER.
