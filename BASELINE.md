@@ -50,6 +50,14 @@ pipeline and dataset-specific vocabulary. A one-trial forward pass and CTC
 loss are finite. Tiny real-data training reduces loss, but does not
 reconstruct the training sentences; real CER/WER is therefore not reported.
 
+## Phase 5A small real-data baseline
+
+The current development result uses all eight prepared trials from one
+subject/session/block, with trials 2–7 for training and trials 8–9 for
+evaluation. This is a small single-subject development-set baseline, not a
+generalization or subject-independent benchmark. Results are stored in
+`results/small_real_baseline.json`.
+
 ## Limitations
 
 The preparation script parses the selected `.fif` file through the official
