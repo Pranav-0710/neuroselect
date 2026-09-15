@@ -119,3 +119,18 @@ def test_ctc_geometry_accounts_for_repeated_targets():
 
 def test_ctc_decoder_collapses_blanks_and_repeats():
     assert decode_spanish([0, 1, 1, 0, 9, 9, 0, 13, 13]) == "s b"
+
+
+def test_ctc_decoder_verification_cases():
+    assert decode_spanish([0, *encode_spanish("a"), *encode_spanish("a"), 0,
+                           *encode_spanish("b"), *encode_spanish("b"), 0,
+                           *encode_spanish("c"), *encode_spanish("c"), 0]) == "abc"
+    assert decode_spanish(
+        [0, 20, 20, 0, 4, 4, 0, 11, 11, 0, 11, 11, 0, 2, 2]
+    ) == "hello"
+    assert decode_spanish(
+        [0, 20, 0, 7, 0, 9, 0, 3, 0, 20, 0, 4, 0, 12, 0, 4, 0]
+    ) == "hi there"
+    assert decode_spanish([0, 0, 8, 0, 0, 13, 0]) == "ab"
+    assert decode_spanish([8, 8, 0, 8, 8]) == "aa"
+    assert decode_spanish([8, 8, 8, 8]) == "a"

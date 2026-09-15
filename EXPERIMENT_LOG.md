@@ -87,3 +87,14 @@ leakage checks are completed.
 - Phase 4B status: `NOT YET ESTABLISHED`. Do not implement Evidence Selector.
 - Full experiment details:
   `docs/CTC_LEARNABILITY.md`.
+
+## Phase 4A — CTC decoder verification
+
+- Tested exact SpanishBCBL `decode_ctc` implementation independently of MEG,
+  model, training, and optimization.
+- Verified ordinary characters (`abc`), repeated `l` characters (`hello`),
+  spaces (`hi there`), blank-heavy paths (`ab`), repeated characters with a
+  separating blank (`aa`), and repeated characters without a blank (`a`).
+- Decoder behavior matches standard greedy CTC collapse rules.
+- Result: `results/ctc_decoder_test.json`.
+- Phase 4A status: `CTC DECODER VERIFIED`.
