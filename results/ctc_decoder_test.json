@@ -55,5 +55,25 @@
     ],
     "decoded": "a  bb",
     "passed": true
+  },
+  "hi there": {
+    "path": [0, 20, 0, 7, 0, 9, 0, 3, 0, 20, 0, 4, 0, 12, 0, 4, 0],
+    "decoded": "hi there",
+    "passed": true
+  },
+  "blank_heavy_ab": {
+    "path": [0, 0, 8, 0, 0, 13, 0],
+    "decoded": "ab",
+    "passed": true
+  },
+  "repeated_a_with_blank": {
+    "path": [8, 8, 0, 8, 8],
+    "decoded": "aa",
+    "passed": true
+  },
+  "repeated_a_without_blank": {
+    "path": [8, 8, 8, 8],
+    "decoded": "a",
+    "passed": true
   }
 }
