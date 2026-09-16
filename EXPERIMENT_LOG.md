@@ -254,3 +254,20 @@ leakage checks are completed.
 - Interpretation: weak or no detectable event-level character information
   under these simple features and this small dataset; no sentence-level CTC
   retraining was performed.
+
+## Phase 5G — Event-centered versus temporal-control windows
+
+- Compared paired event-centered windows `[-0.2s,+0.3s]` with control windows
+  `[-1.2s,-0.7s]`, both 25 samples at 50 Hz, using identical events,
+  labels, features, classifier, folds, and chronological within-trial split.
+- Boundary filtering left 168 paired events from 240; 72 events were excluded
+  from both conditions. Both conditions used exactly the same paired events.
+- Event-centered cross-trial performance was lower than control:
+  accuracy `0.089` vs `0.118`, macro-F1 `0.041` vs `0.054`, balanced
+  accuracy `0.076` vs `0.085`.
+- Event-centered within-trial performance was also lower:
+  accuracy `0.076` vs `0.097`, macro-F1 `0.034` vs `0.054`, balanced
+  accuracy `0.088` vs `0.108`.
+- Differences were mixed across held-out trials. Classification shows no
+  clear event-timing advantage; this does not establish absence of MEG
+  character information.

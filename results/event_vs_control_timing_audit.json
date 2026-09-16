@@ -1,0 +1,379 @@
+{
+  "seed": 33,
+  "sampling_rate_hz": 50.0,
+  "windows": {
+    "event_centered": {
+      "start_seconds": -0.2,
+      "end_seconds": 0.3,
+      "samples": 25
+    },
+    "temporal_control": {
+      "start_seconds": -1.2,
+      "end_seconds": -0.7,
+      "samples": 25
+    }
+  },
+  "original_retained_events": 240,
+  "paired_usable_events": 168,
+  "excluded_events": 72,
+  "class_counts_paired": {
+    " ": 24,
+    "a": 12,
+    "b": 1,
+    "c": 13,
+    "d": 4,
+    "e": 27,
+    "g": 1,
+    "i": 9,
+    "l": 14,
+    "m": 5,
+    "n": 10,
+    "o": 14,
+    "p": 1,
+    "r": 14,
+    "s": 11,
+    "t": 4,
+    "u": 2,
+    "v": 1,
+    "x": 1
+  },
+  "same_event_indices": true,
+  "feature_definition": "concatenated mean and standard deviation across 25 time samples for each of 306 channels",
+  "classifier": "StandardScaler + balanced LogisticRegression(max_iter=1000)",
+  "cross_trial": {
+    "event_centered": {
+      "folds": [
+        {
+          "held_out_trial": "2.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.14285714285714285,
+            "macro_f1": 0.07727272727272728,
+            "balanced_accuracy": 0.1212121212121212
+          },
+          "majority_accuracy": 0.19047619047619047
+        },
+        {
+          "held_out_trial": "3.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.058823529411764705,
+            "macro_f1": 0.03076923076923077,
+            "balanced_accuracy": 0.027777777777777776
+          },
+          "majority_accuracy": 0.17647058823529413
+        },
+        {
+          "held_out_trial": "4.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.038461538461538464,
+            "macro_f1": 0.014285714285714287,
+            "balanced_accuracy": 0.023809523809523808
+          },
+          "majority_accuracy": 0.15384615384615385
+        },
+        {
+          "held_out_trial": "5.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.09090909090909091,
+            "macro_f1": 0.013986013986013986,
+            "balanced_accuracy": 0.07692307692307693
+          },
+          "majority_accuracy": 0.18181818181818182
+        },
+        {
+          "held_out_trial": "6.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.05263157894736842,
+            "macro_f1": 0.011363636363636364,
+            "balanced_accuracy": 0.03333333333333333
+          },
+          "majority_accuracy": 0.15789473684210525
+        },
+        {
+          "held_out_trial": "7.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.15789473684210525,
+            "macro_f1": 0.09079365079365079,
+            "balanced_accuracy": 0.12962962962962962
+          },
+          "majority_accuracy": 0.10526315789473684
+        },
+        {
+          "held_out_trial": "8.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.1111111111111111,
+            "macro_f1": 0.04415584415584416,
+            "balanced_accuracy": 0.08181818181818182
+          },
+          "majority_accuracy": 0.18518518518518517
+        },
+        {
+          "held_out_trial": "9.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.058823529411764705,
+            "macro_f1": 0.045454545454545456,
+            "balanced_accuracy": 0.1111111111111111
+          },
+          "majority_accuracy": 0.11764705882352941
+        }
+      ],
+      "aggregate": {
+        "accuracy": 0.0889390322439858,
+        "macro_f1": 0.04101017038517039,
+        "balanced_accuracy": 0.07570184445184444
+      },
+      "majority_accuracy": 0.1585751566401721
+    },
+    "temporal_control": {
+      "folds": [
+        {
+          "held_out_trial": "2.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.14285714285714285,
+            "macro_f1": 0.05411255411255411,
+            "balanced_accuracy": 0.10606060606060605
+          },
+          "majority_accuracy": 0.19047619047619047
+        },
+        {
+          "held_out_trial": "3.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.11764705882352941,
+            "macro_f1": 0.06944444444444443,
+            "balanced_accuracy": 0.06944444444444443
+          },
+          "majority_accuracy": 0.17647058823529413
+        },
+        {
+          "held_out_trial": "4.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.11538461538461539,
+            "macro_f1": 0.019047619047619046,
+            "balanced_accuracy": 0.05357142857142857
+          },
+          "majority_accuracy": 0.15384615384615385
+        },
+        {
+          "held_out_trial": "5.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.0,
+            "macro_f1": 0.0,
+            "balanced_accuracy": 0.0
+          },
+          "majority_accuracy": 0.18181818181818182
+        },
+        {
+          "held_out_trial": "6.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.15789473684210525,
+            "macro_f1": 0.0641025641025641,
+            "balanced_accuracy": 0.1
+          },
+          "majority_accuracy": 0.15789473684210525
+        },
+        {
+          "held_out_trial": "7.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.3157894736842105,
+            "macro_f1": 0.1746031746031746,
+            "balanced_accuracy": 0.2777777777777778
+          },
+          "majority_accuracy": 0.10526315789473684
+        },
+        {
+          "held_out_trial": "8.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.037037037037037035,
+            "macro_f1": 0.017094017094017092,
+            "balanced_accuracy": 0.018181818181818184
+          },
+          "majority_accuracy": 0.18518518518518517
+        },
+        {
+          "held_out_trial": "9.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.058823529411764705,
+            "macro_f1": 0.03333333333333333,
+            "balanced_accuracy": 0.05555555555555555
+          },
+          "majority_accuracy": 0.11764705882352941
+        }
+      ],
+      "aggregate": {
+        "accuracy": 0.11817919925505065,
+        "macro_f1": 0.05396721334221334,
+        "balanced_accuracy": 0.08507395382395383
+      },
+      "majority_accuracy": 0.1585751566401721
+    }
+  },
+  "within_trial": {
+    "event_centered": {
+      "folds": [
+        {
+          "trial_id": "2.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.0,
+            "macro_f1": 0.0,
+            "balanced_accuracy": 0.0
+          }
+        },
+        {
+          "trial_id": "3.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.0,
+            "macro_f1": 0.0,
+            "balanced_accuracy": 0.0
+          }
+        },
+        {
+          "trial_id": "4.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.0,
+            "macro_f1": 0.0,
+            "balanced_accuracy": 0.0
+          }
+        },
+        {
+          "trial_id": "5.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.0,
+            "macro_f1": 0.0,
+            "balanced_accuracy": 0.0
+          }
+        },
+        {
+          "trial_id": "6.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.16666666666666666,
+            "macro_f1": 0.05714285714285714,
+            "balanced_accuracy": 0.2
+          }
+        },
+        {
+          "trial_id": "7.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.16666666666666666,
+            "macro_f1": 0.047619047619047616,
+            "balanced_accuracy": 0.16666666666666666
+          }
+        },
+        {
+          "trial_id": "8.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.1111111111111111,
+            "macro_f1": 0.09523809523809523,
+            "balanced_accuracy": 0.16666666666666666
+          }
+        },
+        {
+          "trial_id": "9.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.16666666666666666,
+            "macro_f1": 0.07142857142857142,
+            "balanced_accuracy": 0.16666666666666666
+          }
+        }
+      ],
+      "aggregate": {
+        "accuracy": 0.0763888888888889,
+        "macro_f1": 0.033928571428571426,
+        "balanced_accuracy": 0.0875
+      }
+    },
+    "temporal_control": {
+      "folds": [
+        {
+          "trial_id": "2.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.0,
+            "macro_f1": 0.0,
+            "balanced_accuracy": 0.0
+          }
+        },
+        {
+          "trial_id": "3.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.0,
+            "macro_f1": 0.0,
+            "balanced_accuracy": 0.0
+          }
+        },
+        {
+          "trial_id": "4.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.0,
+            "macro_f1": 0.0,
+            "balanced_accuracy": 0.0
+          }
+        },
+        {
+          "trial_id": "5.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.0,
+            "macro_f1": 0.0,
+            "balanced_accuracy": 0.0
+          }
+        },
+        {
+          "trial_id": "6.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.16666666666666666,
+            "macro_f1": 0.05714285714285714,
+            "balanced_accuracy": 0.2
+          }
+        },
+        {
+          "trial_id": "7.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.3333333333333333,
+            "macro_f1": 0.17777777777777778,
+            "balanced_accuracy": 0.3333333333333333
+          }
+        },
+        {
+          "trial_id": "8.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.1111111111111111,
+            "macro_f1": 0.05714285714285715,
+            "balanced_accuracy": 0.16666666666666666
+          }
+        },
+        {
+          "trial_id": "9.0_S22_1_block1",
+          "metrics": {
+            "accuracy": 0.16666666666666666,
+            "macro_f1": 0.14285714285714285,
+            "balanced_accuracy": 0.16666666666666666
+          }
+        }
+      ],
+      "aggregate": {
+        "accuracy": 0.09722222222222222,
+        "macro_f1": 0.054365079365079366,
+        "balanced_accuracy": 0.10833333333333334
+      }
+    }
+  },
+  "differences": {
+    "cross_trial": {
+      "accuracy": -0.02924016701106484,
+      "macro_f1": -0.012957042957042954,
+      "balanced_accuracy": -0.009372109372109388
+    },
+    "within_trial": {
+      "accuracy": -0.02083333333333333,
+      "macro_f1": -0.02043650793650794,
+      "balanced_accuracy": -0.020833333333333343
+    },
+    "per_trial_accuracy": {
+      "2.0_S22_1_block1": 0.0,
+      "3.0_S22_1_block1": -0.058823529411764705,
+      "4.0_S22_1_block1": -0.07692307692307693,
+      "5.0_S22_1_block1": 0.09090909090909091,
+      "6.0_S22_1_block1": -0.10526315789473684,
+      "7.0_S22_1_block1": -0.15789473684210525,
+      "8.0_S22_1_block1": 0.07407407407407407,
+      "9.0_S22_1_block1": 0.0
+    }
+  }
+}
