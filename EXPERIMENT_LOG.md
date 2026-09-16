@@ -230,3 +230,27 @@ leakage checks are completed.
 - Attached 5D geometry and distribution statistics were included in
   `results/leave_one_trial_out.json`. No significance tests or causal claims
   were made.
+
+## Phase 5F — Event-aligned character-information audit
+
+- Reused `events_clean.pkl` and existing processed trial tensors. Extracted
+  exactly 25 samples per retained keystroke from `event_time-0.2s` through
+  `event_time+0.3s` at 50 Hz, with boundary padding only where needed.
+- Audited 240 events across 19 observed character classes. Five classes had
+  fewer than three examples (`b`, `g`, `u`, `v`, `x`), limiting class-wise
+  interpretation.
+- Group-aware leave-one-trial-out linear classification performed only
+  modestly above majority accuracy with the best feature set
+  (mean/std features): accuracy `0.142`, macro-F1 `0.080`, balanced accuracy
+  `0.114`; majority accuracy was `0.129`.
+- Within-trial chronological classification was weak (accuracy `0.051`,
+  balanced accuracy `0.056`) and did not exceed the deterministic shuffled
+  label control (accuracy `0.053`, balanced accuracy `0.044`).
+- Full artifact and figures:
+  `results/event_information_audit.json`,
+  `results/figures/debug/event_label_distribution.png`,
+  `results/figures/debug/event_window_examples.png`,
+  `results/figures/debug/event_classification_results.png`.
+- Interpretation: weak or no detectable event-level character information
+  under these simple features and this small dataset; no sentence-level CTC
+  retraining was performed.
