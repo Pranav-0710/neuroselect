@@ -2018,12 +2018,12 @@
       "channel_order_exact": true,
       "gated_vs_official": {
         "events_compared": 27,
-        "maximum_mae": 0.04699639448329952,
-        "maximum_rmse": 0.05378162302809018,
-        "maximum_absolute_difference": 0.16675949096679688,
-        "minimum_correlation": 0.9989852909139245,
-        "exact_hash_matches": 26,
-        "within_atol_1e-20": 26,
+        "maximum_mae": 0.0,
+        "maximum_rmse": 0.0,
+        "maximum_absolute_difference": 0.0,
+        "minimum_correlation": 0.9999999999999998,
+        "exact_hash_matches": 27,
+        "within_atol_1e-20": 27,
         "all_shapes_equal": true,
         "all_dtypes_equal": true,
         "all_finite": true
@@ -2047,12 +2047,12 @@
         "event_count": 25,
         "parity": {
           "events_compared": 25,
-          "maximum_mae": 0.04699639448329952,
-          "maximum_rmse": 0.05378162302809018,
-          "maximum_absolute_difference": 0.16675949096679688,
-          "minimum_correlation": 0.9989852909139245,
-          "exact_hash_matches": 24,
-          "within_atol_1e-20": 24,
+          "maximum_mae": 0.0,
+          "maximum_rmse": 0.0,
+          "maximum_absolute_difference": 0.0,
+          "minimum_correlation": 0.9999999999999998,
+          "exact_hash_matches": 25,
+          "within_atol_1e-20": 25,
           "all_shapes_equal": true,
           "all_dtypes_equal": true,
           "all_finite": true
@@ -2642,7 +2642,7 @@
             ],
             "dtype": "float32",
             "finite": true,
-            "sha256": "2a8b93ab7a1cffa1125859664395560bc28ddf7d270c5738a43839c9d16f4d74"
+            "sha256": "6b1270daa23f74fdf1c0727b52c49a16f060ece003a458fb9d9234b74795917c"
           },
           "parity": {
             "official_shape_native": [
@@ -2660,14 +2660,14 @@
             "official_finite": true,
             "gated_finite": true,
             "finite_equal": true,
-            "mean_absolute_difference": 0.04699639448329952,
-            "maximum_absolute_difference": 0.16675949096679688,
-            "rmse": 0.05378162302809018,
-            "correlation": 0.9989852909139245,
+            "mean_absolute_difference": 0.0,
+            "maximum_absolute_difference": 0.0,
+            "rmse": 0.0,
+            "correlation": 1.0,
             "official_sha256": "c5226ffaec2a57d581f8baeca6360f4a6659bb494989f3afb0db91ec38cc8814",
-            "gated_native_layout_sha256": "2bd45b798fab719984779afff81ec1adf1ea722e34942775dc84a4d9711eeba9",
-            "exact_hash_equal_after_transpose": false,
-            "within_atol_1e-20": false
+            "gated_native_layout_sha256": "c5226ffaec2a57d581f8baeca6360f4a6659bb494989f3afb0db91ec38cc8814",
+            "exact_hash_equal_after_transpose": true,
+            "within_atol_1e-20": true
           },
           "historical_window_outside_sentence_crop": false
         },
@@ -5828,12 +5828,12 @@
       "channel_order_exact": true,
       "gated_vs_official": {
         "events_compared": 31,
-        "maximum_mae": 0.2244568894190099,
-        "maximum_rmse": 0.38195886729916506,
-        "maximum_absolute_difference": 2.672981560230255,
-        "minimum_correlation": 0.654090364614398,
-        "exact_hash_matches": 30,
-        "within_atol_1e-20": 30,
+        "maximum_mae": 0.0,
+        "maximum_rmse": 0.0,
+        "maximum_absolute_difference": 0.0,
+        "minimum_correlation": 0.9999999999999998,
+        "exact_hash_matches": 31,
+        "within_atol_1e-20": 31,
         "all_shapes_equal": true,
         "all_dtypes_equal": true,
         "all_finite": true
@@ -5857,12 +5857,12 @@
         "event_count": 29,
         "parity": {
           "events_compared": 29,
-          "maximum_mae": 0.2244568894190099,
-          "maximum_rmse": 0.38195886729916506,
-          "maximum_absolute_difference": 2.672981560230255,
-          "minimum_correlation": 0.654090364614398,
-          "exact_hash_matches": 28,
-          "within_atol_1e-20": 28,
+          "maximum_mae": 0.0,
+          "maximum_rmse": 0.0,
+          "maximum_absolute_difference": 0.0,
+          "minimum_correlation": 0.9999999999999998,
+          "exact_hash_matches": 29,
+          "within_atol_1e-20": 29,
           "all_shapes_equal": true,
           "all_dtypes_equal": true,
           "all_finite": true
@@ -6493,8 +6493,8 @@
           "category": "non_early",
           "sample_indices": {
             "event_sample_index_50_hz": 5613,
-            "window_start_sample_index_50_hz": 5603,
-            "window_end_sample_index_exclusive_50_hz": 5628
+            "window_start_sample_index_50_hz": 5604,
+            "window_end_sample_index_exclusive_50_hz": 5629
           },
           "official_tensor": {
             "shape": [
@@ -6512,7 +6512,7 @@
             ],
             "dtype": "float32",
             "finite": true,
-            "sha256": "e3c6598c53043d514f53e7e397eada5917a1c9998e5eb81296dc67d8daf072e0"
+            "sha256": "0e9f67cf889fb066d67fa735fe032facf4c3d3263bd32578215029ee8869fd0b"
           },
           "parity": {
             "official_shape_native": [
@@ -6530,14 +6530,14 @@
             "official_finite": true,
             "gated_finite": true,
             "finite_equal": true,
-            "mean_absolute_difference": 0.2244568894190099,
-            "maximum_absolute_difference": 2.672981560230255,
-            "rmse": 0.38195886729916506,
-            "correlation": 0.654090364614398,
+            "mean_absolute_difference": 0.0,
+            "maximum_absolute_difference": 0.0,
+            "rmse": 0.0,
+            "correlation": 1.0,
             "official_sha256": "3ff43a97570571281c9db47c6a368bf852542e077f13fa01d7b84495ea240921",
-            "gated_native_layout_sha256": "c207517d5c8a15db4da497ca220b314d8934d2f161d534808fc0487fb48271c1",
-            "exact_hash_equal_after_transpose": false,
-            "within_atol_1e-20": false
+            "gated_native_layout_sha256": "3ff43a97570571281c9db47c6a368bf852542e077f13fa01d7b84495ea240921",
+            "exact_hash_equal_after_transpose": true,
+            "within_atol_1e-20": true
           },
           "historical_window_outside_sentence_crop": false
         },
@@ -7763,12 +7763,12 @@
       "channel_order_exact": true,
       "gated_vs_official": {
         "events_compared": 28,
-        "maximum_mae": 0.0192196672431382,
-        "maximum_rmse": 0.03192038852574028,
-        "maximum_absolute_difference": 0.16696113348007202,
-        "minimum_correlation": 0.9952150994044436,
-        "exact_hash_matches": 27,
-        "within_atol_1e-20": 27,
+        "maximum_mae": 0.0,
+        "maximum_rmse": 0.0,
+        "maximum_absolute_difference": 0.0,
+        "minimum_correlation": 0.9999999999999998,
+        "exact_hash_matches": 28,
+        "within_atol_1e-20": 28,
         "all_shapes_equal": true,
         "all_dtypes_equal": true,
         "all_finite": true
@@ -7792,12 +7792,12 @@
         "event_count": 26,
         "parity": {
           "events_compared": 26,
-          "maximum_mae": 0.0192196672431382,
-          "maximum_rmse": 0.03192038852574028,
-          "maximum_absolute_difference": 0.16696113348007202,
-          "minimum_correlation": 0.9952150994044436,
-          "exact_hash_matches": 25,
-          "within_atol_1e-20": 25,
+          "maximum_mae": 0.0,
+          "maximum_rmse": 0.0,
+          "maximum_absolute_difference": 0.0,
+          "minimum_correlation": 0.9999999999999998,
+          "exact_hash_matches": 26,
+          "within_atol_1e-20": 26,
           "all_shapes_equal": true,
           "all_dtypes_equal": true,
           "all_finite": true
@@ -7967,7 +7967,7 @@
             ],
             "dtype": "float32",
             "finite": true,
-            "sha256": "a44ecb364c4658e83efba5f4859c286c99fd416448d6b5d4fe36cb21ff5970b8"
+            "sha256": "47a2d901a8058832f21d3037c628185b443b1286261111f727dcff1596f1fe5d"
           },
           "parity": {
             "official_shape_native": [
@@ -7985,14 +7985,14 @@
             "official_finite": true,
             "gated_finite": true,
             "finite_equal": true,
-            "mean_absolute_difference": 0.0192196672431382,
-            "maximum_absolute_difference": 0.16696113348007202,
-            "rmse": 0.03192038852574028,
-            "correlation": 0.9952150994044436,
+            "mean_absolute_difference": 0.0,
+            "maximum_absolute_difference": 0.0,
+            "rmse": 0.0,
+            "correlation": 1.0,
             "official_sha256": "b7c73309f3b78d1fe468bd13d1861ae9192032ef0a607a182a077c09292d04b7",
-            "gated_native_layout_sha256": "50ecc19d41dd73f7e0d251d9f3f8c1289a6fa5203161e998e639eb227aaa5dcd",
-            "exact_hash_equal_after_transpose": false,
-            "within_atol_1e-20": false
+            "gated_native_layout_sha256": "b7c73309f3b78d1fe468bd13d1861ae9192032ef0a607a182a077c09292d04b7",
+            "exact_hash_equal_after_transpose": true,
+            "within_atol_1e-20": true
           },
           "historical_window_outside_sentence_crop": false
         },
@@ -9518,12 +9518,12 @@
       "channel_order_exact": true,
       "gated_vs_official": {
         "events_compared": 29,
-        "maximum_mae": 0.01718697806323416,
-        "maximum_rmse": 0.025977886095399343,
-        "maximum_absolute_difference": 0.11273670196533203,
-        "minimum_correlation": 0.9965132588600885,
-        "exact_hash_matches": 28,
-        "within_atol_1e-20": 28,
+        "maximum_mae": 0.0,
+        "maximum_rmse": 0.0,
+        "maximum_absolute_difference": 0.0,
+        "minimum_correlation": 0.9999999999999998,
+        "exact_hash_matches": 29,
+        "within_atol_1e-20": 29,
         "all_shapes_equal": true,
         "all_dtypes_equal": true,
         "all_finite": true
@@ -9547,12 +9547,12 @@
         "event_count": 27,
         "parity": {
           "events_compared": 27,
-          "maximum_mae": 0.01718697806323416,
-          "maximum_rmse": 0.025977886095399343,
-          "maximum_absolute_difference": 0.11273670196533203,
-          "minimum_correlation": 0.9965132588600885,
-          "exact_hash_matches": 26,
-          "within_atol_1e-20": 26,
+          "maximum_mae": 0.0,
+          "maximum_rmse": 0.0,
+          "maximum_absolute_difference": 0.0,
+          "minimum_correlation": 0.9999999999999998,
+          "exact_hash_matches": 27,
+          "within_atol_1e-20": 27,
           "all_shapes_equal": true,
           "all_dtypes_equal": true,
           "all_finite": true
@@ -10742,7 +10742,7 @@
             ],
             "dtype": "float32",
             "finite": true,
-            "sha256": "4c922ac085cf1a9efaf343828c7efddbbd14d163c0928bee74cd4d085b4c232d"
+            "sha256": "13eebd06eccbc39ddb27df839de9685e39c33e2f866c37d912736f8589ba9fb5"
           },
           "parity": {
             "official_shape_native": [
@@ -10760,14 +10760,14 @@
             "official_finite": true,
             "gated_finite": true,
             "finite_equal": true,
-            "mean_absolute_difference": 0.01718697806323416,
-            "maximum_absolute_difference": 0.11273670196533203,
-            "rmse": 0.025977886095399343,
-            "correlation": 0.9965132588600885,
+            "mean_absolute_difference": 0.0,
+            "maximum_absolute_difference": 0.0,
+            "rmse": 0.0,
+            "correlation": 1.0,
             "official_sha256": "3449e4a9196b0fdcaaca5bbf7646a6fe2cf8445ec94900ef95b18b0363ff8af5",
-            "gated_native_layout_sha256": "332971dc126da9b81e3c7657b6f5167b548a7adf6901a028c1f433aa6021e6ff",
-            "exact_hash_equal_after_transpose": false,
-            "within_atol_1e-20": false
+            "gated_native_layout_sha256": "3449e4a9196b0fdcaaca5bbf7646a6fe2cf8445ec94900ef95b18b0363ff8af5",
+            "exact_hash_equal_after_transpose": true,
+            "within_atol_1e-20": true
           },
           "historical_window_outside_sentence_crop": false
         },
@@ -15747,24 +15747,24 @@
   },
   "global_gated_vs_official": {
     "events_compared": 240,
-    "maximum_mae": 0.2244568894190099,
-    "maximum_rmse": 0.38195886729916506,
-    "maximum_absolute_difference": 2.672981560230255,
-    "minimum_correlation": 0.654090364614398,
-    "exact_hash_matches": 236,
-    "within_atol_1e-20": 236,
+    "maximum_mae": 0.0,
+    "maximum_rmse": 0.0,
+    "maximum_absolute_difference": 0.0,
+    "minimum_correlation": 0.9999999999999998,
+    "exact_hash_matches": 240,
+    "within_atol_1e-20": 240,
     "all_shapes_equal": true,
     "all_dtypes_equal": true,
     "all_finite": true
   },
   "global_historical_vs_official": {
     "events_compared": 210,
-    "maximum_mae": 0.2244568894190099,
-    "maximum_rmse": 0.38195886729916506,
-    "maximum_absolute_difference": 2.672981560230255,
-    "minimum_correlation": 0.654090364614398,
-    "exact_hash_matches": 206,
-    "within_atol_1e-20": 206,
+    "maximum_mae": 0.0,
+    "maximum_rmse": 0.0,
+    "maximum_absolute_difference": 0.0,
+    "minimum_correlation": 0.9999999999999998,
+    "exact_hash_matches": 210,
+    "within_atol_1e-20": 210,
     "all_shapes_equal": true,
     "all_dtypes_equal": true,
     "all_finite": true
@@ -16031,7 +16031,7 @@
     ],
     "all_match": true
   },
-  "decision": "B. MOSTLY PARITY WITH ISOLATED MISMATCHES",
+  "decision": "A. FULL EIGHT-TRIAL PARITY",
   "figures": [
     "Z:\\PROJECTS\\PROJECTS\\Meta project brain\\results\\figures\\debug\\eight_trial_parity_summary.png",
     "Z:\\PROJECTS\\PROJECTS\\Meta project brain\\results\\figures\\debug\\eight_trial_event_parity_examples.png"

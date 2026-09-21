@@ -24,6 +24,7 @@ from neuralset.extractors import MegExtractor
 from sklearn.preprocessing import RobustScaler
 
 from brain2qwerty_v1.transforms import SpanishBCBLPreprocessing
+from neuroselect.official_v1_preprocessing import NeuroSelectOfficialV1EventPreprocessing
 
 ROOT = Path(__file__).resolve().parents[1]
 RAW_PATH = ROOT / "data/raw/spanishbcbl_s22/MEG/FIF/22_9788/231214/block1.fif"
@@ -132,15 +133,18 @@ def continuous_preprocess() -> tuple[np.ndarray, list[str]]:
     return raw.get_data().T.astype(np.float32, copy=False), channels
 
 
-def gated_tensor(processed: np.ndarray, timestamp: float) -> tuple[np.ndarray, dict[str, int]]:
-    indices = event_indices(timestamp)
-    start = indices["window_start_sample_index_50_hz"]
-    stop = indices["window_end_sample_index_exclusive_50_hz"]
-    if start < 0 or stop > processed.shape[0]:
-        raise ValueError("Event window is outside continuous recording; no padding is permitted")
-    channel_time = processed[start:stop].T
-    baseline = channel_time[:, :BASELINE_SAMPLES].mean(axis=1, keepdims=True)
-    return np.clip(channel_time - baseline, -CLAMP, CLAMP).T.astype(np.float32), indices
+def gated_tensor(
+    processor: NeuroSelectOfficialV1EventPreprocessing, timestamp: float
+) -> tuple[np.ndarray, dict[str, int]]:
+    result = processor.extract_event(timestamp)
+    metadata = result.metadata
+    return result.tensor, {
+        "event_sample_index_50_hz": int(metadata["event_sample_index"]),
+        "window_start_sample_index_50_hz": int(metadata["window_start_sample_index"]),
+        "window_end_sample_index_exclusive_50_hz": int(
+            metadata["window_end_sample_index_exclusive"]
+        ),
+    }
 
 
 def official_tensor(extractor: MegExtractor, event: pd.Series) -> np.ndarray:
@@ -240,6 +244,9 @@ def main() -> None:
     manifest = load_manifest()
     events = extract_official_events()
     processed, gated_channels = continuous_preprocess()
+    processor = NeuroSelectOfficialV1EventPreprocessing(
+        processed, tuple(gated_channels), recording_start_seconds=RECORDING_START
+    )
     if len(gated_channels) != 306:
         raise RuntimeError(f"Expected 306 MEG channels, got {len(gated_channels)}")
     parity_reference = json.loads(
@@ -290,7 +297,7 @@ def main() -> None:
         for event_index, event in rows.iterrows():
             timestamp = float(event["start"])
             official_ct = official_tensor(extractor, event)
-            gated_tc, indices = gated_tensor(processed, timestamp)
+            gated_tc, indices = gated_tensor(processor, timestamp)
             comparison = compare(official_ct, gated_tc)
             is_early = float(event["start"]) - float(record["signal_start"]) < 0.2
             category = "early_boundary" if is_early else "non_early"

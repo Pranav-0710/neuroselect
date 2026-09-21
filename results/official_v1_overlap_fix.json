@@ -1,0 +1,24 @@
+{
+  "experiment": "official_v1_overlap_fix",
+  "official_commit": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "implementation": "src/neuroselect/official_v1_preprocessing.py",
+  "semantics": {
+    "overlap_index": "int(round(seconds * 50))",
+    "extended_window": "event_time + [-0.2, 0.3]",
+    "baseline_origin": "requested event-window start plus [0.0, 0.2]",
+    "baseline_source": "snapped extended-overlap slice",
+    "order": ["extend", "overlap", "baseline", "crop", "clamp"],
+    "padding": false
+  },
+  "validation": {
+    "events_compared": 240,
+    "exact_hash_matches": 240,
+    "within_atol_1e-20": 240,
+    "maximum_mae": 0.0,
+    "maximum_rmse": 0.0,
+    "maximum_absolute_difference": 0.0,
+    "minimum_correlation": 0.9999999999999998,
+    "decision": "A. FULL EIGHT-TRIAL PARITY"
+  },
+  "scope": "Existing development subset, trials 2-9 only; not entire-dataset validation."
+}
