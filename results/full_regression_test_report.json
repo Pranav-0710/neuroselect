@@ -1,0 +1,55 @@
+{
+  "timestamp": "2026-09-21T10:58:56.5070194+05:30",
+  "python_version": "3.13.7",
+  "environment": {
+    "identification": "workspace/original NeuroSelect environment",
+    "pytest_version": "8.3.3",
+    "official_environment": "not used for normal pytest; it has no pytest"
+  },
+  "integrity_before_and_after": {
+    "historical_preprocessing_unchanged": true,
+    "gated_official_v1_preprocessing_present": true,
+    "official_source_unchanged": true,
+    "raw_meg_sha256": "634bf9c57ec7b6ae0697e50750233c4eed27f96e3a7493341bc21a14beaef7d0",
+    "mat_log_sha256": "87cd3b3a1a4512db31004b76528a23a4c39c96dff68e91ec75c4c301f8c96bc6",
+    "data_downloaded": false
+  },
+  "full_suite": {
+    "command": "python -m pytest tests -q",
+    "collected_count": null,
+    "passed_count": 0,
+    "failed_count": 0,
+    "skipped_count": 0,
+    "errors": [
+      {
+        "type": "collection_native_access_violation",
+        "message": "Windows fatal exception: access violation while importing numpy during tests/test_baseline.py collection",
+        "exit_code": 1
+      }
+    ]
+  },
+  "targeted_official_v1": {
+    "command": "python -m pytest tests/test_official_v1_preprocessing.py -q",
+    "collected_count": null,
+    "passed_count": 0,
+    "failed_count": 0,
+    "skipped_count": 0,
+    "errors": [
+      {
+        "type": "collection_native_access_violation",
+        "message": "Windows fatal exception: access violation while importing numpy at test module import",
+        "exit_code": 1
+      }
+    ]
+  },
+  "git_status_after": {
+    "branch": "main",
+    "ahead_of_origin": 3,
+    "tracked_files_changed_by_tests": false,
+    "preexisting_untracked_files_remain": true
+  },
+  "test_source_inventory": {
+    "test_files": 2,
+    "test_markers_or_functions_found": 15
+  }
+}
