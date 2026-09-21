@@ -1,0 +1,63 @@
+{
+  "python_executable": "C:/Users/prana/AppData/Local/Programs/Python/Python313/python.exe",
+  "python_version": "3.13.7",
+  "environment_path": "C:/Users/prana/AppData/Local/Programs/Python/Python313",
+  "operating_system": "Windows 11",
+  "architecture": "AMD64 / 64-bit",
+  "packages": {
+    "numpy": {"version": "2.2.6", "path": "C:/Users/prana/AppData/Local/Programs/Python/Python313/Lib/site-packages/numpy/__init__.py"},
+    "scipy": "1.15.2",
+    "scikit_learn": "1.5.2",
+    "pandas": "3.0.1",
+    "torch": "2.13.0+cpu",
+    "mne": "1.11.0",
+    "pytest": "8.3.3"
+  },
+  "repair": {
+    "removed": "numpy 1.26.4 MINGW-W64 experimental build",
+    "installed": "numpy 2.2.6 cp313-cp313-win_amd64 wheel",
+    "other_packages_changed": false,
+    "isolated_official_environment_changed": false
+  },
+  "minimal_imports": {
+    "numpy": "success",
+    "scipy": "success",
+    "sklearn": "success",
+    "pandas": "success",
+    "torch": "success",
+    "mne": "success",
+    "tests.test_baseline": "success with PYTHONPATH=src",
+    "tests.test_official_v1_preprocessing": "success with PYTHONPATH=src"
+  },
+  "pip_check": {
+    "status": "conflicts remain",
+    "conflicts": [
+      "dataengenv requires fastapi==0.115.6, installed 0.115.0",
+      "flwr requires cryptography<45.0.0, installed 46.0.7",
+      "gradio requires fastapi>=0.115.2, installed 0.115.0",
+      "gradio requires starlette>=0.40.0, installed 0.38.6",
+      "grpcio-health-checking requires protobuf>=6.31.1, installed 5.29.6",
+      "openenv-core requires openai>=2.7.2, installed 1.109.1",
+      "streamlit requires pandas<3, installed 3.0.1"
+    ]
+  },
+  "pytest": {
+    "targeted_command": "python -m pytest tests/test_official_v1_preprocessing.py -q",
+    "targeted_result": "7 passed",
+    "full_command": "python -m pytest tests -q --basetemp=pytest-basetemp",
+    "full_result": "17 passed",
+    "full_collected": 17,
+    "full_failed": 0,
+    "full_skipped": 0,
+    "full_errors": 0,
+    "note": "Default temp directory was access-denied; explicit writable workspace basetemp was used. No tests were changed."
+  },
+  "integrity": {
+    "raw_meg_unchanged": true,
+    "mat_log_unchanged": true,
+    "source_unchanged": true,
+    "git_tracked_files_changed_by_repair_or_tests": false,
+    "model_training": false,
+    "data_download": false
+  }
+}

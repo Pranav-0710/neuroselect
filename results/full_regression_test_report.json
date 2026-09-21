@@ -15,32 +15,21 @@
     "data_downloaded": false
   },
   "full_suite": {
-    "command": "python -m pytest tests -q",
-    "collected_count": null,
-    "passed_count": 0,
+    "command": "python -m pytest tests -q --basetemp=pytest-basetemp",
+    "collected_count": 17,
+    "passed_count": 17,
     "failed_count": 0,
     "skipped_count": 0,
-    "errors": [
-      {
-        "type": "collection_native_access_violation",
-        "message": "Windows fatal exception: access violation while importing numpy during tests/test_baseline.py collection",
-        "exit_code": 1
-      }
-    ]
+    "errors": [],
+    "initial_environment_error": "Native NumPy access violation; repaired by replacing MINGW NumPy 1.26.4 with cp313 win_amd64 NumPy 2.2.6."
   },
   "targeted_official_v1": {
     "command": "python -m pytest tests/test_official_v1_preprocessing.py -q",
-    "collected_count": null,
-    "passed_count": 0,
+    "collected_count": 7,
+    "passed_count": 7,
     "failed_count": 0,
     "skipped_count": 0,
-    "errors": [
-      {
-        "type": "collection_native_access_violation",
-        "message": "Windows fatal exception: access violation while importing numpy at test module import",
-        "exit_code": 1
-      }
-    ]
+    "errors": []
   },
   "git_status_after": {
     "branch": "main",
