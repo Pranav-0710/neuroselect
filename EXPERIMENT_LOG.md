@@ -271,3 +271,24 @@ leakage checks are completed.
 - Differences were mixed across held-out trials. Classification shows no
   clear event-timing advantage; this does not establish absence of MEG
   character information.
+
+## Phase 5V — Target-permutation negative control
+
+- Reused the committed 5U official-v1 event-sequence CTC code unchanged.
+  Training signals were left untouched and training targets were deranged
+  once with shuffle seed `2026` (signal trial → target trial:
+  `2→3, 3→6, 4→2, 5→7, 6→4, 7→5`). Evaluation trials 8–9 stayed correctly
+  paired. Same permutation for model seeds `33`, `123`, `777`.
+- The control memorized the mismatched pairs almost as well as real labels:
+  train CER `0.043 ± 0.007` vs `0.022`.
+- Held-out CER, control vs real: seed 33 `1.356` vs `0.778`; seed 123
+  `0.842` vs `0.841`; seed 777 `1.047` vs `1.139`. Mean `1.082 ± 0.212` vs
+  `0.919 ± 0.157` (difference `+0.162`, driven by seed 33 alone).
+- Where real and control seeds landed in the same blank regime, their CERs
+  matched; eval CER tracks the blank regime, not label correctness.
+- Interpretation: **B — real-label and no-signal performance are similar**.
+  Two evaluation trials only; no significance claim; not proof that MEG
+  character information is absent.
+- Artifacts: `results/no_signal_target_permutation.json`,
+  `results/figures/debug/no_signal_target_permutation.png`,
+  `results/figures/debug/no_signal_control_outputs.png`.

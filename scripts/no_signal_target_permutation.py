@@ -5,6 +5,7 @@ from __future__ import annotations
 import collections
 import importlib.util
 import json
+import sys
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -54,7 +55,49 @@ def output_structure(rows: list[dict]) -> list[dict]:
     return structure
 
 
+def plot_figures(comparison: list[dict], seed_results: list[dict]) -> None:
+    FIGURE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    seeds = [str(row["seed"]) for row in comparison]
+    x = np.arange(len(seeds))
+    width = 0.38
+    figure, axes = plt.subplots(1, 2, figsize=(11, 4.5), sharey=True)
+    for axis, key, title in ((axes[0], "eval", "Evaluation CER (trials 8-9)"), (axes[1], "train", "Training CER (trials 2-7)")):
+        real_values = [row[f"real_{key}_cer"] for row in comparison]
+        control_values = [row[f"control_{key}_cer"] for row in comparison]
+        axis.bar(x - width / 2, real_values, width, label="real labels (5U)", color="#3a6ea5")
+        axis.bar(x + width / 2, control_values, width, label="target permutation (5V)", color="#c8553d")
+        for offset, values in ((-width / 2, real_values), (width / 2, control_values)):
+            for position, value in zip(x + offset, values):
+                axis.text(position, value + 0.02, f"{value:.3f}", ha="center", fontsize=8)
+        axis.set_xticks(x, seeds)
+        axis.set_xlabel("model seed")
+        axis.set_title(title)
+    axes[0].set_ylabel("CER")
+    axes[0].set_ylim(0, 1.65)
+    axes[0].legend(loc="upper right", ncols=2, fontsize=8)
+    figure.suptitle(f"Real-label vs target-permutation control (shuffle seed {SHUFFLE_SEED})")
+    figure.tight_layout()
+    figure.savefig(FIGURE_PATH, dpi=160)
+    plt.close(figure)
+
+    figure, axes = plt.subplots(len(seed_results), 1, figsize=(12, 7), squeeze=False)
+    for axis, result in zip(axes[:, 0], seed_results):
+        axis.axis("off")
+        axis.set_title(f"control model seed {result['seed']}", loc="left")
+        axis.text(0.01, 0.8, "\n".join(
+            f"trial {row['trial_number']}  CER={row['cer']:.3f}\n  target : {row['target']!r}\n  decoded: {row['decoded']!r}"
+            for row in result["evaluation_predictions"]
+        ), fontsize=8.5, va="top", family="monospace")
+    figure.tight_layout()
+    figure.savefig(OUTPUTS_FIGURE_PATH, dpi=160)
+    plt.close(figure)
+
+
 def main() -> None:
+    if "--figures-only" in sys.argv:
+        artifact = json.loads(OUT_PATH.read_text(encoding="utf-8"))
+        plot_figures(artifact["real_vs_control"], artifact["seed_results"])
+        return
     real = json.loads(REAL_RESULTS_PATH.read_text(encoding="utf-8"))
     real_hashes = {row["trial_number"]: row["sequence_sha256"] for row in real["shape_audit"]}
 
@@ -168,40 +211,7 @@ def main() -> None:
         "control_evaluation": output_structure(result["evaluation_predictions"]),
     } for result in seed_results]
 
-    FIGURE_PATH.parent.mkdir(parents=True, exist_ok=True)
-    seeds = [str(seed) for seed in baseline.SEEDS]
-    x = np.arange(len(seeds))
-    width = 0.38
-    figure, axes = plt.subplots(1, 2, figsize=(11, 4.5), sharey=True)
-    for axis, key, title in ((axes[0], "eval", "Evaluation CER (trials 8-9)"), (axes[1], "train", "Training CER (trials 2-7)")):
-        real_values = [row[f"real_{key}_cer"] for row in comparison]
-        control_values = [row[f"control_{key}_cer"] for row in comparison]
-        axis.bar(x - width / 2, real_values, width, label="real labels (5U)", color="#3a6ea5")
-        axis.bar(x + width / 2, control_values, width, label="target permutation (5V)", color="#c8553d")
-        for offset, values in ((-width / 2, real_values), (width / 2, control_values)):
-            for position, value in zip(x + offset, values):
-                axis.text(position, value + 0.02, f"{value:.3f}", ha="center", fontsize=8)
-        axis.set_xticks(x, seeds)
-        axis.set_xlabel("model seed")
-        axis.set_title(title)
-    axes[0].set_ylabel("CER")
-    axes[0].legend(loc="upper left")
-    figure.suptitle(f"Real-label vs target-permutation control (shuffle seed {SHUFFLE_SEED})")
-    figure.tight_layout()
-    figure.savefig(FIGURE_PATH, dpi=160)
-    plt.close(figure)
-
-    figure, axes = plt.subplots(len(seed_results), 1, figsize=(12, 7), squeeze=False)
-    for axis, result in zip(axes[:, 0], seed_results):
-        axis.axis("off")
-        axis.set_title(f"control model seed {result['seed']}", loc="left")
-        axis.text(0.01, 0.8, "\n".join(
-            f"trial {row['trial_number']}  CER={row['cer']:.3f}\n  target : {row['target']!r}\n  decoded: {row['decoded']!r}"
-            for row in result["evaluation_predictions"]
-        ), fontsize=8.5, va="top", family="monospace")
-    figure.tight_layout()
-    figure.savefig(OUTPUTS_FIGURE_PATH, dpi=160)
-    plt.close(figure)
+    plot_figures(comparison, seed_results)
 
     artifact = {
         "experiment": "5V_no_signal_target_permutation",
