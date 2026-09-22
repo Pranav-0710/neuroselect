@@ -1,0 +1,312 @@
+{
+  "task": "S22 data-scale inventory (metadata only)",
+  "source": {
+    "repository": "https://huggingface.co/datasets/bcbl190626/SpanishBCBL",
+    "revision": "88f9096c6ce3a3fb17cc7b8e3131ff7f96da5684",
+    "last_modified": "2026-06-29 11:56:46+00:00",
+    "gated": false,
+    "method": "huggingface_hub.HfApi.list_repo_tree(recursive=True) metadata; dataset README.md text; vendored official studies/spanishbcbl.py for session/task mapping",
+    "local_download_revision_from_hf_cache_metadata": "88f9096c6ce3a3fb17cc7b8e3131ff7f96da5684",
+    "release_totals": {
+      "meg_fif_files": 231,
+      "meg_mat_logs": 84
+    }
+  },
+  "mapping_rules_from_official_loader": {
+    "session": "index of date directory within sorted subject directory + 1 (_retrieve_session)",
+    "task": "FIF stem lowercased; tapping files skipped",
+    "log": "glob **/{sid}-session{session}_{task}*.mat"
+  },
+  "dataset_readme_facts": [
+    "Each subject has two sessions; each session has two typing blocks (block1, block2) and one tapping localizer.",
+    "Each session used 128 unique declarative Spanish sentences of 5-8 words.",
+    "The first two trials of each block are training trials with visual feedback (from official loader docstring).",
+    "S22 is not listed among participants with repeated subject IDs."
+  ],
+  "remote_s22_files": [
+    {
+      "remote_path": "MEG/FIF/22_9788/231214/block1.fif",
+      "remote_size_bytes": 1107644612,
+      "remote_lfs_sha256": "634bf9c57ec7b6ae0697e50750233c4eed27f96e3a7493341bc21a14beaef7d0",
+      "local_path": "data\\raw\\spanishbcbl_s22\\MEG\\FIF\\22_9788\\231214\\block1.fif",
+      "local_sha256": "634bf9c57ec7b6ae0697e50750233c4eed27f96e3a7493341bc21a14beaef7d0",
+      "local_matches_remote": true
+    },
+    {
+      "remote_path": "MEG/FIF/22_9788/231214/block2.fif",
+      "remote_size_bytes": 1411728256,
+      "remote_lfs_sha256": "b827b6d4e5101a53ba8c6e248cc30cb50501db1628cda8768f68e588a055744e",
+      "local_path": null,
+      "local_sha256": null,
+      "local_matches_remote": null
+    },
+    {
+      "remote_path": "MEG/FIF/22_9788/231214/tapping.fif",
+      "remote_size_bytes": 437661096,
+      "remote_lfs_sha256": "a3438935311e2b818a578482cd30b4ca0829618a5908a4fea29d7ce04a3b6cb6",
+      "local_path": null,
+      "local_sha256": null,
+      "local_matches_remote": null
+    },
+    {
+      "remote_path": "MEG/FIF/22_9788/231222/Block1.fif",
+      "remote_size_bytes": 1560050432,
+      "remote_lfs_sha256": "dcbcb8f6c693e36be8d7632380103e4bfe35236fc6ee352f837d9257cc2dac82",
+      "local_path": null,
+      "local_sha256": null,
+      "local_matches_remote": null
+    },
+    {
+      "remote_path": "MEG/FIF/22_9788/231222/Block2.fif",
+      "remote_size_bytes": 1136070372,
+      "remote_lfs_sha256": "659d8f5cb3a9a3786157afecc6b9881adf027d699b2b793c6b3095f802436c33",
+      "local_path": null,
+      "local_sha256": null,
+      "local_matches_remote": null
+    },
+    {
+      "remote_path": "MEG/FIF/22_9788/231222/tapping.fif",
+      "remote_size_bytes": 436421948,
+      "remote_lfs_sha256": "4409db6c19b1f01448867f507b4c7bbe79823b3ef5c57d8a6f245a992323f4e8",
+      "local_path": null,
+      "local_sha256": null,
+      "local_matches_remote": null
+    },
+    {
+      "remote_path": "MEG/logs/S22-session1_block1_list1.mat",
+      "remote_size_bytes": 221606,
+      "remote_lfs_sha256": "87cd3b3a1a4512db31004b76528a23a4c39c96dff68e91ec75c4c301f8c96bc6",
+      "local_path": "data\\raw\\spanishbcbl_s22\\MEG\\logs\\S22-session1_block1_list1.mat",
+      "local_sha256": "87cd3b3a1a4512db31004b76528a23a4c39c96dff68e91ec75c4c301f8c96bc6",
+      "local_matches_remote": true
+    },
+    {
+      "remote_path": "MEG/logs/S22-session1_block2_list2.mat",
+      "remote_size_bytes": 285603,
+      "remote_lfs_sha256": "d70a6bd029811e9c44a70c00a4fa93bf1ee36cc53fc6bb1e9582e5f5e166a27c",
+      "local_path": null,
+      "local_sha256": null,
+      "local_matches_remote": null
+    },
+    {
+      "remote_path": "MEG/logs/S22-session2_block1_list2.mat",
+      "remote_size_bytes": 289761,
+      "remote_lfs_sha256": "dbdff992d8c31428dcf9b962df43a650cfdcc77559f40cc4a7bbce938ffb03de",
+      "local_path": null,
+      "local_sha256": null,
+      "local_matches_remote": null
+    },
+    {
+      "remote_path": "MEG/logs/S22-session2_block2_list1.mat",
+      "remote_size_bytes": 220934,
+      "remote_lfs_sha256": "96085ee480ba53b0d09be0ffb1b041fd9e9526917c601357596670ed103d0992",
+      "local_path": null,
+      "local_sha256": null,
+      "local_matches_remote": null
+    }
+  ],
+  "recordings": {
+    "231214/block1": {
+      "recording_directory": "MEG/FIF/22_9788/231214",
+      "subject_id": "S22",
+      "recording_id": "22_9788",
+      "date": "231214",
+      "session": 1,
+      "task": "block1",
+      "remote_fif_filename": "block1.fif",
+      "is_typing_block": true,
+      "fif_size_bytes": 1107644612,
+      "log_path": "MEG/logs/S22-session1_block1_list1.mat",
+      "log_size_bytes": 221606,
+      "sentence_list_label": "list1",
+      "total_size_bytes": 1107866218,
+      "fif_local": true,
+      "log_local": true,
+      "event_count": "verified locally: 2918 events (2119 keystrokes, 666 words, 132 sentences)",
+      "leakage_category": "current data",
+      "classification": "current data",
+      "classification_basis": "Already downloaded and used for 5A-5V."
+    },
+    "231214/block2": {
+      "recording_directory": "MEG/FIF/22_9788/231214",
+      "subject_id": "S22",
+      "recording_id": "22_9788",
+      "date": "231214",
+      "session": 1,
+      "task": "block2",
+      "remote_fif_filename": "block2.fif",
+      "is_typing_block": true,
+      "fif_size_bytes": 1411728256,
+      "log_path": "MEG/logs/S22-session1_block2_list2.mat",
+      "log_size_bytes": 285603,
+      "sentence_list_label": "list2",
+      "total_size_bytes": 1412013859,
+      "fif_local": false,
+      "log_local": false,
+      "event_count": "event count unavailable without downloading the recording.",
+      "leakage_category": "B. same subject, different block (same recording session/day as current data)",
+      "classification": "A. HIGH VALUE / SMALL COST",
+      "classification_basis": "New typing block of the current session with a different sentence list (list2); 1.41 GB."
+    },
+    "231214/tapping": {
+      "recording_directory": "MEG/FIF/22_9788/231214",
+      "subject_id": "S22",
+      "recording_id": "22_9788",
+      "date": "231214",
+      "session": 1,
+      "task": "tapping",
+      "remote_fif_filename": "tapping.fif",
+      "is_typing_block": false,
+      "fif_size_bytes": 437661096,
+      "log_path": null,
+      "log_size_bytes": 0,
+      "sentence_list_label": null,
+      "total_size_bytes": 437661096,
+      "fif_local": false,
+      "log_local": false,
+      "event_count": "event count unavailable without downloading the recording.",
+      "leakage_category": "A. same recording/session as current data (non-typing localizer)",
+      "classification": "C. LOW VALUE",
+      "classification_basis": "Tapping localizer, no typing events, no behavioral log; skipped by the official study loader."
+    },
+    "231222/block1": {
+      "recording_directory": "MEG/FIF/22_9788/231222",
+      "subject_id": "S22",
+      "recording_id": "22_9788",
+      "date": "231222",
+      "session": 2,
+      "task": "block1",
+      "remote_fif_filename": "Block1.fif",
+      "is_typing_block": true,
+      "fif_size_bytes": 1560050432,
+      "log_path": "MEG/logs/S22-session2_block1_list2.mat",
+      "log_size_bytes": 289761,
+      "sentence_list_label": "list2",
+      "total_size_bytes": 1560340193,
+      "fif_local": false,
+      "log_local": false,
+      "event_count": "event count unavailable without downloading the recording.",
+      "leakage_category": "C. same subject, different session",
+      "classification": "A. HIGH VALUE / SMALL COST",
+      "classification_basis": "New session; list2 label suggests it shares sentences with session-1 block2 (unverified); 1.56 GB."
+    },
+    "231222/block2": {
+      "recording_directory": "MEG/FIF/22_9788/231222",
+      "subject_id": "S22",
+      "recording_id": "22_9788",
+      "date": "231222",
+      "session": 2,
+      "task": "block2",
+      "remote_fif_filename": "Block2.fif",
+      "is_typing_block": true,
+      "fif_size_bytes": 1136070372,
+      "log_path": "MEG/logs/S22-session2_block2_list1.mat",
+      "log_size_bytes": 220934,
+      "sentence_list_label": "list1",
+      "total_size_bytes": 1136291306,
+      "fif_local": false,
+      "log_local": false,
+      "event_count": "event count unavailable without downloading the recording.",
+      "leakage_category": "C. same subject, different session",
+      "classification": "A. HIGH VALUE / SMALL COST",
+      "classification_basis": "New session; list1 label suggests it repeats the current block's sentences (unverified); 1.14 GB."
+    },
+    "231222/tapping": {
+      "recording_directory": "MEG/FIF/22_9788/231222",
+      "subject_id": "S22",
+      "recording_id": "22_9788",
+      "date": "231222",
+      "session": 2,
+      "task": "tapping",
+      "remote_fif_filename": "tapping.fif",
+      "is_typing_block": false,
+      "fif_size_bytes": 436421948,
+      "log_path": null,
+      "log_size_bytes": 0,
+      "sentence_list_label": null,
+      "total_size_bytes": 436421948,
+      "fif_local": false,
+      "log_local": false,
+      "event_count": "event count unavailable without downloading the recording.",
+      "leakage_category": "C. same subject, different session (non-typing localizer)",
+      "classification": "C. LOW VALUE",
+      "classification_basis": "Tapping localizer, no typing events, no behavioral log; skipped by the official study loader."
+    }
+  },
+  "storage": {
+    "current_local_s22_fif_bytes": 1107644612,
+    "current_local_s22_mat_bytes": 221606,
+    "additional_typing_fif_bytes": 4107849060,
+    "additional_typing_mat_bytes": 796298,
+    "optional_tapping_fif_bytes_not_recommended": 874083044,
+    "current_local_s22_total_bytes": 1107866218,
+    "additional_total_bytes": 4108645358,
+    "future_s22_typing_total_bytes": 5216511576,
+    "storage_multiplier": 4.70861146521574
+  },
+  "disk_free_bytes_at_inventory": 163243315200,
+  "event_counts": {
+    "231214/block1": "verified locally (2918 events; 2119 keystrokes; 666 words; 132 sentences)",
+    "other_blocks": "event count unavailable without downloading the recording.",
+    "note": "Behavioral MAT logs would provide trial/keystroke counts, but downloading them is outside this inventory's scope."
+  },
+  "sentence_list_overlap_hypothesis": {
+    "session1_block1": "list1 (current)",
+    "session1_block2": "list2",
+    "session2_block1": "list2",
+    "session2_block2": "list1",
+    "status": "Inferred from log filenames only; sentence text not verified. If true, all four S22 blocks cover the same 128 sentences, each typed once per session."
+  },
+  "other_local_non_s22_raw_files": [
+    {
+      "path": "data\\raw\\spanishbcbl\\MEG\\FIF\\21_3660\\231204\\block2.fif",
+      "size_bytes": 621506838
+    },
+    {
+      "path": "data\\raw\\spanishbcbl\\MEG\\FIF\\25_12032\\240530\\block2.fif",
+      "size_bytes": 1009713753
+    },
+    {
+      "path": "data\\raw\\spanishbcbl\\MEG\\logs\\S21-session1_block2_list2.mat",
+      "size_bytes": 280082
+    },
+    {
+      "path": "data\\raw\\spanishbcbl\\MEG\\logs\\S25-session1_block2_list2.mat",
+      "size_bytes": 291347
+    }
+  ],
+  "no_download_verification": {
+    "new_fif_downloaded": false,
+    "new_mat_downloaded": false,
+    "data_folder_unchanged": "29 files; identical paths, sizes and modification times before/after",
+    "existing_files_modified": false,
+    "git_status_before": "clean",
+    "git_status_after": "only the three new inventory artifacts (script, JSON, figure)",
+    "remote_calls": "dataset_info and list_repo_tree metadata; README.md and download_dataset.py text read into a scratch directory outside the repo"
+  },
+  "tests_after_inventory": {
+    "collected": 17,
+    "passed": 17,
+    "failed": 0,
+    "skipped": 0,
+    "errors": 0
+  },
+  "recommended_download_plan": {
+    "files": [
+      "MEG/FIF/22_9788/231214/block2.fif",
+      "MEG/logs/S22-session1_block2_list2.mat",
+      "MEG/FIF/22_9788/231222/Block1.fif",
+      "MEG/logs/S22-session2_block1_list2.mat",
+      "MEG/FIF/22_9788/231222/Block2.fif",
+      "MEG/logs/S22-session2_block2_list1.mat"
+    ],
+    "excluded": [
+      "both tapping.fif localizers"
+    ],
+    "revision": "88f9096c6ce3a3fb17cc7b8e3131ff7f96da5684",
+    "size_bytes": 4108645358,
+    "destination": "data/raw/spanishbcbl_s22 (same layout as the existing block1)",
+    "verification": "SHA-256 of each file must equal remote_lfs_sha256 in this artifact",
+    "status": "not executed; requires explicit authorization"
+  }
+}
