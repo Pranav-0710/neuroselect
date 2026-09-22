@@ -1,0 +1,51 @@
+{
+  "revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "source": "git object fetched from https://github.com/facebookresearch/brain2qwerty.git",
+  "declared_direct_dependencies": {
+    "neuralset": "0.2.2",
+    "neuraltrain": "0.2.2",
+    "neuralfetch": "0.2.2",
+    "exca": "0.5.22",
+    "mne": "1.11.0",
+    "torch": "2.6.0",
+    "numpy": "2.2.6",
+    "scipy": "1.14.1",
+    "scikit-learn": "1.8.0",
+    "pandas": "2.2.3",
+    "pydantic": "2.12.5",
+    "lightning": "2.5.2",
+    "torchmetrics": "1.7.3"
+  },
+  "lockfile_versions": {
+    "neuralset": "0.2.2",
+    "neuraltrain": "0.2.2",
+    "neuralfetch": "0.2.2",
+    "exca": "0.5.22",
+    "mne": "1.11.0",
+    "torch": "2.6.0",
+    "numpy": "2.2.6",
+    "scipy": "1.14.1",
+    "scikit-learn": "1.8.0",
+    "pandas": "2.2.3",
+    "pydantic": "2.12.5",
+    "lightning": "2.5.2",
+    "torchmetrics": "1.7.3"
+  },
+  "installed_versions": {
+    "neuralset": "0.2.2",
+    "neuraltrain": null,
+    "neuralfetch": "0.2.2",
+    "exca": "0.5.29",
+    "mne": "1.11.0",
+    "torch": "2.13.0+cpu",
+    "numpy": "2.4.4",
+    "scipy": "1.15.2",
+    "scikit-learn": "1.5.2",
+    "pandas": "3.0.1",
+    "pydantic": "2.13.4",
+    "lightning": null,
+    "torchmetrics": null
+  },
+  "pyproject_materially_relevant": "pyproject.toml and requirements.lock are fully pinned; lock targets Linux x86-64 with CUDA 12.4.",
+  "dependency_match_notes": "Current environment differs from the exact lock for exca, torch, numpy, scipy, scikit-learn, pandas, pydantic, and lacks neuraltrain/lightning/torchmetrics."
+}

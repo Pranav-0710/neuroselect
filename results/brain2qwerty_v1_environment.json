@@ -1,0 +1,200 @@
+{
+  "environment_name": "neuroselect-brain2qwerty-v1",
+  "creation_method": "Python venv using Python 3.13.7",
+  "environment_path": "C:\\Users\\prana\\Envs\\neuroselect-brain2qwerty-v1",
+  "official_checkout_path": "C:\\Users\\prana\\Envs\\brain2qwerty-v1-checkout",
+  "python_version": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+  "operating_system": "Windows-11-10.0.26200-SP0",
+  "cpu": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+  "gpu_available": false,
+  "cuda_available": false,
+  "torch_cuda_version": null,
+  "official_git_revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "packages": [
+    {
+      "package": "neuralset",
+      "requested_version": "0.2.2",
+      "installed_version": "0.2.2",
+      "exact_match": true
+    },
+    {
+      "package": "neuraltrain",
+      "requested_version": "0.2.2",
+      "installed_version": "0.2.2",
+      "exact_match": true
+    },
+    {
+      "package": "neuralfetch",
+      "requested_version": "0.2.2",
+      "installed_version": "0.2.2",
+      "exact_match": true
+    },
+    {
+      "package": "exca",
+      "requested_version": "0.5.22",
+      "installed_version": "0.5.22",
+      "exact_match": true
+    },
+    {
+      "package": "mne",
+      "requested_version": "1.11.0",
+      "installed_version": "1.11.0",
+      "exact_match": true
+    },
+    {
+      "package": "torch",
+      "requested_version": "2.6.0",
+      "installed_version": "2.6.0",
+      "exact_match": true
+    },
+    {
+      "package": "numpy",
+      "requested_version": "2.2.6",
+      "installed_version": "2.2.6",
+      "exact_match": true
+    },
+    {
+      "package": "scipy",
+      "requested_version": "1.14.1",
+      "installed_version": "1.14.1",
+      "exact_match": true
+    },
+    {
+      "package": "scikit-learn",
+      "requested_version": "1.8.0",
+      "installed_version": "1.8.0",
+      "exact_match": true
+    },
+    {
+      "package": "pandas",
+      "requested_version": "2.2.3",
+      "installed_version": "2.2.3",
+      "exact_match": true
+    },
+    {
+      "package": "pydantic",
+      "requested_version": "2.12.5",
+      "installed_version": "2.12.5",
+      "exact_match": true
+    },
+    {
+      "package": "lightning",
+      "requested_version": "2.5.2",
+      "installed_version": "2.5.2",
+      "exact_match": true
+    },
+    {
+      "package": "torchmetrics",
+      "requested_version": "1.7.3",
+      "installed_version": "1.7.3",
+      "exact_match": true
+    },
+    {
+      "package": "dtw-python",
+      "requested_version": "1.7.4",
+      "installed_version": "1.7.4",
+      "exact_match": true
+    }
+  ],
+  "import_results": {
+    "neuralset": {
+      "success": true,
+      "version": "0.2.2"
+    },
+    "neuraltrain": {
+      "success": true,
+      "version": "0.2.2"
+    },
+    "neuralfetch": {
+      "success": true,
+      "version": "0.2.2"
+    },
+    "exca": {
+      "success": true,
+      "version": "0.5.22"
+    },
+    "mne": {
+      "success": true,
+      "version": "1.11.0"
+    },
+    "torch": {
+      "success": true,
+      "version": "2.6.0"
+    },
+    "numpy": {
+      "success": true,
+      "version": "2.2.6"
+    },
+    "scipy": {
+      "success": true,
+      "version": "1.14.1"
+    },
+    "sklearn": {
+      "success": true,
+      "version": "1.8.0"
+    },
+    "pandas": {
+      "success": true,
+      "version": "2.2.3"
+    },
+    "pydantic": {
+      "success": true,
+      "version": "2.12.5"
+    },
+    "lightning": {
+      "success": true,
+      "version": "2.5.2"
+    },
+    "torchmetrics": {
+      "success": true,
+      "version": "1.7.3"
+    },
+    "dtw": {
+      "success": true,
+      "version": "1.7.4"
+    }
+  },
+  "exca": {
+    "version": "0.5.22",
+    "MapInfra_imported": true,
+    "api_probe": "C:\\Users\\prana\\Envs\\brain2qwerty-v1-smoke.json"
+  },
+  "meg_file": {
+    "success": true,
+    "channel_count": 309,
+    "sampling_frequency_hz": 1000.0,
+    "duration_seconds": 890.999,
+    "meg_channel_count": 306,
+    "short_crop_shape": [
+      309,
+      1000
+    ],
+    "short_crop_finite": true
+  },
+  "official_preprocessing_smoke_test": {
+    "raw_loading": true,
+    "channel_selection": true,
+    "filtering": true,
+    "resampling": true,
+    "scaling": true,
+    "materialization": "not_run; direct in-memory extractor preprocessing succeeded",
+    "event_level_output_shape": [
+      306,
+      3000
+    ],
+    "output_frequency_hz": 50.0,
+    "dtype": "float32",
+    "finite": true
+  },
+  "event_extraction_smoke_test": {
+    "success": false,
+    "exception_type": "ValueError",
+    "error": "not enough values to unpack (expected 3, got 1)"
+  },
+  "constraints": {
+    "model_training": false,
+    "neuroselect_source_changed": false,
+    "dataset_download": false,
+    "full_dataset_download": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "requested_revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "starting_head": "0ebaff2bcf2349757645249d98263341a2e5bdaa",
+  "final_head": "0ebaff2bcf2349757645249d98263341a2e5bdaa",
+  "commit_available": true,
+  "commit_restored": false,
+  "temporary_exact_checkout_verified": true,
+  "remote_status": "https://github.com/facebookresearch/brain2qwerty.git exposes requested revision as HEAD; exact object fetched successfully. The project root was restored to its original NeuroSelect main HEAD because vendor/brain2qwerty is not a nested Git repository.",
+  "notes": "git -C vendor/brain2qwerty resolves to the NeuroSelect root repository. The official commit was fetched into the root object database and temporarily checked out/verified, then main was restored. No source or dataset files were changed by this task.",
+  "repository_root": "Z:/PROJECTS/PROJECTS/Meta project brain",
+  "vendor_path": "vendor/brain2qwerty",
+  "nested_git_repository": false,
+  "remote_urls": {
+    "origin": "https://github.com/Pranav-0710/neuroselect.git",
+    "official_checked": "https://github.com/facebookresearch/brain2qwerty.git"
+  },
+  "local_branches_before_restore": [
+    "main"
+  ],
+  "local_tags_before_restore": [],
+  "requested_object_present_before_fetch": false,
+  "requested_object_present_after_fetch": true,
+  "official_remote_head": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "root_worktree_restored": true
+}

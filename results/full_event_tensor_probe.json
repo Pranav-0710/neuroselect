@@ -1,0 +1,1565 @@
+{
+  "experiment": "5H_full_event_tensor_linear_probe",
+  "seed": 33,
+  "trials": [
+    "2.0_S22_1_block1",
+    "3.0_S22_1_block1",
+    "4.0_S22_1_block1",
+    "5.0_S22_1_block1",
+    "6.0_S22_1_block1",
+    "7.0_S22_1_block1",
+    "8.0_S22_1_block1",
+    "9.0_S22_1_block1"
+  ],
+  "event_count": 210,
+  "class_counts": {
+    " ": 32,
+    "a": 20,
+    "b": 2,
+    "c": 15,
+    "d": 5,
+    "e": 28,
+    "g": 2,
+    "i": 10,
+    "l": 18,
+    "m": 6,
+    "n": 10,
+    "o": 18,
+    "p": 3,
+    "r": 16,
+    "s": 15,
+    "t": 6,
+    "u": 2,
+    "v": 1,
+    "x": 1
+  },
+  "window": {
+    "start_seconds": -0.2,
+    "end_seconds": 0.3,
+    "sampling_rate_hz": 50.0,
+    "samples": 25
+  },
+  "feature_dimensionality": {
+    "tensor_shape": [
+      25,
+      306
+    ],
+    "flattened_features": 7650,
+    "flattening_order": "row-major time then channel"
+  },
+  "pca_configuration": {
+    "variance_target": 0.95,
+    "maximum_components": 200,
+    "solver": "full",
+    "fit_scope": "training events only per fold"
+  },
+  "scaler_configuration": {
+    "type": "StandardScaler",
+    "fit_scope": "training events only per fold"
+  },
+  "classifier_configuration": {
+    "type": "LogisticRegression",
+    "class_weight": "balanced",
+    "max_iter": 1000,
+    "random_state": 33
+  },
+  "leave_one_trial_out": {
+    "folds": [
+      {
+        "held_out_trial": "2.0_S22_1_block1",
+        "n_train_events": 184,
+        "n_test_events": 26,
+        "train_classes": [
+          " ",
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "g",
+          "i",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "r",
+          "s",
+          "t",
+          "u"
+        ],
+        "held_out_classes": [
+          " ",
+          "a",
+          "c",
+          "d",
+          "e",
+          "i",
+          "l",
+          "o",
+          "s",
+          "t",
+          "v",
+          "x"
+        ],
+        "held_out_classes_absent_from_train": [
+          "v",
+          "x"
+        ],
+        "n_classes_present_in_train": 17,
+        "n_held_out_classes_absent_from_train": 2,
+        "metrics": {
+          "accuracy": 0.07692307692307693,
+          "macro_f1": 0.021449704142011836,
+          "balanced_accuracy": 0.041666666666666664
+        },
+        "majority_metrics": {
+          "accuracy": 0.15384615384615385,
+          "macro_f1": 0.022222222222222223,
+          "balanced_accuracy": 0.08333333333333333
+        },
+        "predicted_class_distribution": {
+          " ": 12,
+          "a": 9,
+          "c": 3,
+          "n": 2
+        },
+        "preprocessing": {
+          "n_components": 79,
+          "explained_variance_ratio_sum": 0.9505748152732849,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      },
+      {
+        "held_out_trial": "3.0_S22_1_block1",
+        "n_train_events": 187,
+        "n_test_events": 23,
+        "train_classes": [
+          " ",
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "g",
+          "i",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "x"
+        ],
+        "held_out_classes": [
+          " ",
+          "a",
+          "c",
+          "e",
+          "g",
+          "l",
+          "m",
+          "n",
+          "o",
+          "r",
+          "s",
+          "t",
+          "u"
+        ],
+        "held_out_classes_absent_from_train": [],
+        "n_classes_present_in_train": 19,
+        "n_held_out_classes_absent_from_train": 0,
+        "metrics": {
+          "accuracy": 0.043478260869565216,
+          "macro_f1": 0.02040816326530612,
+          "balanced_accuracy": 0.019230769230769232
+        },
+        "majority_metrics": {
+          "accuracy": 0.17391304347826086,
+          "macro_f1": 0.02279202279202279,
+          "balanced_accuracy": 0.07692307692307693
+        },
+        "predicted_class_distribution": {
+          " ": 3,
+          "a": 1,
+          "i": 11,
+          "l": 1,
+          "o": 1,
+          "s": 6
+        },
+        "preprocessing": {
+          "n_components": 79,
+          "explained_variance_ratio_sum": 0.9503087401390076,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      },
+      {
+        "held_out_trial": "4.0_S22_1_block1",
+        "n_train_events": 179,
+        "n_test_events": 31,
+        "train_classes": [
+          " ",
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "g",
+          "i",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "x"
+        ],
+        "held_out_classes": [
+          " ",
+          "a",
+          "b",
+          "c",
+          "e",
+          "i",
+          "l",
+          "m",
+          "n",
+          "o",
+          "r",
+          "s",
+          "t",
+          "u"
+        ],
+        "held_out_classes_absent_from_train": [],
+        "n_classes_present_in_train": 19,
+        "n_held_out_classes_absent_from_train": 0,
+        "metrics": {
+          "accuracy": 0.12903225806451613,
+          "macro_f1": 0.03535353535353535,
+          "balanced_accuracy": 0.07142857142857142
+        },
+        "majority_metrics": {
+          "accuracy": 0.12903225806451613,
+          "macro_f1": 0.016326530612244896,
+          "balanced_accuracy": 0.07142857142857142
+        },
+        "predicted_class_distribution": {
+          " ": 18,
+          "a": 2,
+          "e": 5,
+          "l": 2,
+          "o": 1,
+          "s": 2,
+          "t": 1
+        },
+        "preprocessing": {
+          "n_components": 74,
+          "explained_variance_ratio_sum": 0.95005863904953,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      },
+      {
+        "held_out_trial": "5.0_S22_1_block1",
+        "n_train_events": 183,
+        "n_test_events": 27,
+        "train_classes": [
+          " ",
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "g",
+          "i",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "x"
+        ],
+        "held_out_classes": [
+          " ",
+          "a",
+          "c",
+          "d",
+          "e",
+          "i",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "r",
+          "s",
+          "t"
+        ],
+        "held_out_classes_absent_from_train": [],
+        "n_classes_present_in_train": 19,
+        "n_held_out_classes_absent_from_train": 0,
+        "metrics": {
+          "accuracy": 0.1111111111111111,
+          "macro_f1": 0.03439153439153439,
+          "balanced_accuracy": 0.08928571428571429
+        },
+        "majority_metrics": {
+          "accuracy": 0.14814814814814814,
+          "macro_f1": 0.018433179723502304,
+          "balanced_accuracy": 0.07142857142857142
+        },
+        "predicted_class_distribution": {
+          " ": 2,
+          "a": 25
+        },
+        "preprocessing": {
+          "n_components": 91,
+          "explained_variance_ratio_sum": 0.9505899548530579,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      },
+      {
+        "held_out_trial": "6.0_S22_1_block1",
+        "n_train_events": 186,
+        "n_test_events": 24,
+        "train_classes": [
+          " ",
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "g",
+          "i",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "x"
+        ],
+        "held_out_classes": [
+          " ",
+          "a",
+          "c",
+          "e",
+          "g",
+          "i",
+          "l",
+          "m",
+          "n",
+          "o",
+          "r",
+          "t"
+        ],
+        "held_out_classes_absent_from_train": [],
+        "n_classes_present_in_train": 19,
+        "n_held_out_classes_absent_from_train": 0,
+        "metrics": {
+          "accuracy": 0.125,
+          "macro_f1": 0.04648526077097505,
+          "balanced_accuracy": 0.06944444444444443
+        },
+        "majority_metrics": {
+          "accuracy": 0.16666666666666666,
+          "macro_f1": 0.023809523809523808,
+          "balanced_accuracy": 0.08333333333333333
+        },
+        "predicted_class_distribution": {
+          " ": 10,
+          "e": 4,
+          "o": 5,
+          "p": 2,
+          "r": 1,
+          "s": 1,
+          "t": 1
+        },
+        "preprocessing": {
+          "n_components": 81,
+          "explained_variance_ratio_sum": 0.9506325125694275,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      },
+      {
+        "held_out_trial": "7.0_S22_1_block1",
+        "n_train_events": 185,
+        "n_test_events": 25,
+        "train_classes": [
+          " ",
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "g",
+          "i",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "x"
+        ],
+        "held_out_classes": [
+          " ",
+          "a",
+          "b",
+          "c",
+          "e",
+          "i",
+          "l",
+          "o",
+          "r",
+          "s"
+        ],
+        "held_out_classes_absent_from_train": [],
+        "n_classes_present_in_train": 19,
+        "n_held_out_classes_absent_from_train": 0,
+        "metrics": {
+          "accuracy": 0.08,
+          "macro_f1": 0.03636363636363636,
+          "balanced_accuracy": 0.05
+        },
+        "majority_metrics": {
+          "accuracy": 0.16,
+          "macro_f1": 0.027586206896551724,
+          "balanced_accuracy": 0.1
+        },
+        "predicted_class_distribution": {
+          " ": 7,
+          "c": 1,
+          "e": 6,
+          "i": 3,
+          "l": 3,
+          "r": 5
+        },
+        "preprocessing": {
+          "n_components": 78,
+          "explained_variance_ratio_sum": 0.9500144720077515,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      },
+      {
+        "held_out_trial": "8.0_S22_1_block1",
+        "n_train_events": 179,
+        "n_test_events": 31,
+        "train_classes": [
+          " ",
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "g",
+          "i",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "x"
+        ],
+        "held_out_classes": [
+          " ",
+          "a",
+          "c",
+          "e",
+          "i",
+          "l",
+          "n",
+          "o",
+          "p",
+          "r",
+          "s",
+          "t"
+        ],
+        "held_out_classes_absent_from_train": [],
+        "n_classes_present_in_train": 19,
+        "n_held_out_classes_absent_from_train": 0,
+        "metrics": {
+          "accuracy": 0.0967741935483871,
+          "macro_f1": 0.06712962962962962,
+          "balanced_accuracy": 0.10416666666666667
+        },
+        "majority_metrics": {
+          "accuracy": 0.12903225806451613,
+          "macro_f1": 0.019047619047619046,
+          "balanced_accuracy": 0.08333333333333333
+        },
+        "predicted_class_distribution": {
+          " ": 9,
+          "c": 6,
+          "e": 2,
+          "l": 1,
+          "n": 4,
+          "o": 1,
+          "p": 2,
+          "r": 5,
+          "s": 1
+        },
+        "preprocessing": {
+          "n_components": 78,
+          "explained_variance_ratio_sum": 0.9507465362548828,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      },
+      {
+        "held_out_trial": "9.0_S22_1_block1",
+        "n_train_events": 187,
+        "n_test_events": 23,
+        "train_classes": [
+          " ",
+          "a",
+          "b",
+          "c",
+          "d",
+          "e",
+          "g",
+          "i",
+          "l",
+          "m",
+          "n",
+          "o",
+          "p",
+          "r",
+          "s",
+          "t",
+          "u",
+          "v",
+          "x"
+        ],
+        "held_out_classes": [
+          " ",
+          "a",
+          "c",
+          "e",
+          "i",
+          "l",
+          "m",
+          "n",
+          "s"
+        ],
+        "held_out_classes_absent_from_train": [],
+        "n_classes_present_in_train": 19,
+        "n_held_out_classes_absent_from_train": 0,
+        "metrics": {
+          "accuracy": 0.08695652173913043,
+          "macro_f1": 0.06565656565656565,
+          "balanced_accuracy": 0.08333333333333333
+        },
+        "majority_metrics": {
+          "accuracy": 0.17391304347826086,
+          "macro_f1": 0.03292181069958847,
+          "balanced_accuracy": 0.1111111111111111
+        },
+        "predicted_class_distribution": {
+          " ": 5,
+          "a": 1,
+          "c": 4,
+          "e": 2,
+          "m": 1,
+          "o": 5,
+          "r": 3,
+          "s": 2
+        },
+        "preprocessing": {
+          "n_components": 80,
+          "explained_variance_ratio_sum": 0.9507083892822266,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      }
+    ],
+    "aggregate": {
+      "pooled_event_count": 210,
+      "metrics": {
+        "accuracy": 0.09523809523809523,
+        "macro_f1": 0.04001777873281681,
+        "balanced_accuracy": 0.04496658312447786
+      },
+      "majority_metrics": {
+        "accuracy": 0.1523809523809524,
+        "macro_f1": 0.013919095258808177,
+        "balanced_accuracy": 0.05263157894736842
+      },
+      "mean_fold_metrics": {
+        "accuracy": 0.09365942778197336,
+        "macro_f1": 0.040904753696649296,
+        "balanced_accuracy": 0.06606952075702076
+      },
+      "n_folds_with_unavailable_held_out_classes": 1
+    }
+  },
+  "comparison_to_5f_mean_std": {
+    "five_f_baseline": {
+      "accuracy": 0.14185661256221682,
+      "macro_f1": 0.08027174156375837,
+      "balanced_accuracy": 0.11410205535205535,
+      "majority_accuracy": 0.12861655600319474
+    },
+    "difference_full_tensor_minus_5f": {
+      "accuracy": -0.04661851732412159,
+      "macro_f1": -0.040253962830941556,
+      "balanced_accuracy": -0.06913547222757749,
+      "majority_accuracy_difference": 0.02376439637775765
+    }
+  },
+  "within_trial": {
+    "folds": [
+      {
+        "trial_id": "2.0_S22_1_block1",
+        "n_train_events": 18,
+        "n_test_events": 8,
+        "metrics": {
+          "accuracy": 0.0,
+          "macro_f1": 0.0,
+          "balanced_accuracy": 0.0
+        },
+        "train_classes": [
+          " ",
+          "a",
+          "c",
+          "d",
+          "e",
+          "l",
+          "s",
+          "t",
+          "v",
+          "x"
+        ],
+        "test_classes": [
+          "a",
+          "c",
+          "d",
+          "e",
+          "i",
+          "l",
+          "o"
+        ],
+        "held_out_classes_absent_from_train": [
+          "i",
+          "o"
+        ],
+        "preprocessing": {
+          "n_components": 14,
+          "explained_variance_ratio_sum": 0.9532310366630554,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      },
+      {
+        "trial_id": "3.0_S22_1_block1",
+        "n_train_events": 16,
+        "n_test_events": 7,
+        "metrics": {
+          "accuracy": 0.14285714285714285,
+          "macro_f1": 0.04081632653061224,
+          "balanced_accuracy": 0.16666666666666666
+        },
+        "train_classes": [
+          " ",
+          "c",
+          "e",
+          "l",
+          "m",
+          "n",
+          "o",
+          "r",
+          "s",
+          "t",
+          "u"
+        ],
+        "test_classes": [
+          " ",
+          "a",
+          "e",
+          "g",
+          "n",
+          "r"
+        ],
+        "held_out_classes_absent_from_train": [
+          "a",
+          "g"
+        ],
+        "preprocessing": {
+          "n_components": 13,
+          "explained_variance_ratio_sum": 0.9614459276199341,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      },
+      {
+        "trial_id": "4.0_S22_1_block1",
+        "n_train_events": 21,
+        "n_test_events": 10,
+        "metrics": {
+          "accuracy": 0.1,
+          "macro_f1": 0.031746031746031744,
+          "balanced_accuracy": 0.125
+        },
+        "train_classes": [
+          " ",
+          "a",
+          "b",
+          "e",
+          "i",
+          "l",
+          "m",
+          "n",
+          "o",
+          "r",
+          "s",
+          "t",
+          "u"
+        ],
+        "test_classes": [
+          " ",
+          "a",
+          "c",
+          "e",
+          "i",
+          "l",
+          "r",
+          "s"
+        ],
+        "held_out_classes_absent_from_train": [
+          "c"
+        ],
+        "preprocessing": {
+          "n_components": 18,
+          "explained_variance_ratio_sum": 0.9659759998321533,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      },
+      {
+        "trial_id": "5.0_S22_1_block1",
+        "n_train_events": 18,
+        "n_test_events": 9,
+        "metrics": {
+          "accuracy": 0.0,
+          "macro_f1": 0.0,
+          "balanced_accuracy": 0.0
+        },
+        "train_classes": [
+          " ",
+          "a",
+          "c",
+          "d",
+          "e",
+          "i",
+          "l",
+          "m",
+          "o",
+          "p",
+          "r",
+          "s"
+        ],
+        "test_classes": [
+          " ",
+          "a",
+          "c",
+          "e",
+          "i",
+          "n",
+          "o",
+          "t"
+        ],
+        "held_out_classes_absent_from_train": [
+          "n",
+          "t"
+        ],
+        "preprocessing": {
+          "n_components": 12,
+          "explained_variance_ratio_sum": 0.9575022459030151,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      },
+      {
+        "trial_id": "6.0_S22_1_block1",
+        "n_train_events": 16,
+        "n_test_events": 8,
+        "metrics": {
+          "accuracy": 0.125,
+          "macro_f1": 0.037037037037037035,
+          "balanced_accuracy": 0.16666666666666666
+        },
+        "train_classes": [
+          " ",
+          "a",
+          "c",
+          "e",
+          "g",
+          "i",
+          "l",
+          "m",
+          "o",
+          "r",
+          "t"
+        ],
+        "test_classes": [
+          " ",
+          "e",
+          "l",
+          "n",
+          "o",
+          "r"
+        ],
+        "held_out_classes_absent_from_train": [
+          "n"
+        ],
+        "preprocessing": {
+          "n_components": 13,
+          "explained_variance_ratio_sum": 0.9568162560462952,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      },
+      {
+        "trial_id": "7.0_S22_1_block1",
+        "n_train_events": 17,
+        "n_test_events": 8,
+        "metrics": {
+          "accuracy": 0.125,
+          "macro_f1": 0.037037037037037035,
+          "balanced_accuracy": 0.16666666666666666
+        },
+        "train_classes": [
+          " ",
+          "a",
+          "b",
+          "c",
+          "e",
+          "l",
+          "o",
+          "r"
+        ],
+        "test_classes": [
+          " ",
+          "a",
+          "c",
+          "i",
+          "l",
+          "s"
+        ],
+        "held_out_classes_absent_from_train": [
+          "i",
+          "s"
+        ],
+        "preprocessing": {
+          "n_components": 14,
+          "explained_variance_ratio_sum": 0.9658157825469971,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      },
+      {
+        "trial_id": "8.0_S22_1_block1",
+        "n_train_events": 21,
+        "n_test_events": 10,
+        "metrics": {
+          "accuracy": 0.0,
+          "macro_f1": 0.0,
+          "balanced_accuracy": 0.0
+        },
+        "train_classes": [
+          " ",
+          "a",
+          "c",
+          "e",
+          "i",
+          "n",
+          "o",
+          "p",
+          "r",
+          "s"
+        ],
+        "test_classes": [
+          " ",
+          "e",
+          "l",
+          "n",
+          "r",
+          "t"
+        ],
+        "held_out_classes_absent_from_train": [
+          "l",
+          "t"
+        ],
+        "preprocessing": {
+          "n_components": 17,
+          "explained_variance_ratio_sum": 0.9620457887649536,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      },
+      {
+        "trial_id": "9.0_S22_1_block1",
+        "n_train_events": 16,
+        "n_test_events": 7,
+        "metrics": {
+          "accuracy": 0.14285714285714285,
+          "macro_f1": 0.04081632653061224,
+          "balanced_accuracy": 0.14285714285714285
+        },
+        "train_classes": [
+          " ",
+          "a",
+          "c",
+          "e",
+          "l",
+          "m",
+          "n",
+          "s"
+        ],
+        "test_classes": [
+          " ",
+          "a",
+          "e",
+          "i",
+          "l",
+          "n",
+          "s"
+        ],
+        "held_out_classes_absent_from_train": [
+          "i"
+        ],
+        "preprocessing": {
+          "n_components": 12,
+          "explained_variance_ratio_sum": 0.9622088670730591,
+          "scaler": "StandardScaler fit on training events only",
+          "pca": "PCA fit on training events only"
+        }
+      }
+    ],
+    "aggregate": {
+      "accuracy": 0.07462686567164178,
+      "macro_f1": 0.03597141774481676,
+      "balanced_accuracy": 0.05201465201465202
+    }
+  },
+  "permutation_control": {
+    "feature_column_permutation_seed": 33,
+    "procedure": "one fixed permutation of flattened feature columns; labels unchanged",
+    "leave_one_trial_out": {
+      "folds": [
+        {
+          "held_out_trial": "2.0_S22_1_block1",
+          "n_train_events": 184,
+          "n_test_events": 26,
+          "train_classes": [
+            " ",
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "g",
+            "i",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "r",
+            "s",
+            "t",
+            "u"
+          ],
+          "held_out_classes": [
+            " ",
+            "a",
+            "c",
+            "d",
+            "e",
+            "i",
+            "l",
+            "o",
+            "s",
+            "t",
+            "v",
+            "x"
+          ],
+          "held_out_classes_absent_from_train": [
+            "v",
+            "x"
+          ],
+          "n_classes_present_in_train": 17,
+          "n_held_out_classes_absent_from_train": 2,
+          "metrics": {
+            "accuracy": 0.07692307692307693,
+            "macro_f1": 0.021449704142011836,
+            "balanced_accuracy": 0.041666666666666664
+          },
+          "majority_metrics": {
+            "accuracy": 0.15384615384615385,
+            "macro_f1": 0.022222222222222223,
+            "balanced_accuracy": 0.08333333333333333
+          },
+          "predicted_class_distribution": {
+            " ": 12,
+            "a": 9,
+            "c": 3,
+            "n": 2
+          },
+          "preprocessing": {
+            "n_components": 79,
+            "explained_variance_ratio_sum": 0.9505748152732849,
+            "scaler": "StandardScaler fit on training events only",
+            "pca": "PCA fit on training events only"
+          }
+        },
+        {
+          "held_out_trial": "3.0_S22_1_block1",
+          "n_train_events": 187,
+          "n_test_events": 23,
+          "train_classes": [
+            " ",
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "g",
+            "i",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "x"
+          ],
+          "held_out_classes": [
+            " ",
+            "a",
+            "c",
+            "e",
+            "g",
+            "l",
+            "m",
+            "n",
+            "o",
+            "r",
+            "s",
+            "t",
+            "u"
+          ],
+          "held_out_classes_absent_from_train": [],
+          "n_classes_present_in_train": 19,
+          "n_held_out_classes_absent_from_train": 0,
+          "metrics": {
+            "accuracy": 0.043478260869565216,
+            "macro_f1": 0.02040816326530612,
+            "balanced_accuracy": 0.019230769230769232
+          },
+          "majority_metrics": {
+            "accuracy": 0.17391304347826086,
+            "macro_f1": 0.02279202279202279,
+            "balanced_accuracy": 0.07692307692307693
+          },
+          "predicted_class_distribution": {
+            " ": 3,
+            "a": 1,
+            "i": 11,
+            "l": 1,
+            "o": 1,
+            "s": 6
+          },
+          "preprocessing": {
+            "n_components": 79,
+            "explained_variance_ratio_sum": 0.9503087401390076,
+            "scaler": "StandardScaler fit on training events only",
+            "pca": "PCA fit on training events only"
+          }
+        },
+        {
+          "held_out_trial": "4.0_S22_1_block1",
+          "n_train_events": 179,
+          "n_test_events": 31,
+          "train_classes": [
+            " ",
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "g",
+            "i",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "x"
+          ],
+          "held_out_classes": [
+            " ",
+            "a",
+            "b",
+            "c",
+            "e",
+            "i",
+            "l",
+            "m",
+            "n",
+            "o",
+            "r",
+            "s",
+            "t",
+            "u"
+          ],
+          "held_out_classes_absent_from_train": [],
+          "n_classes_present_in_train": 19,
+          "n_held_out_classes_absent_from_train": 0,
+          "metrics": {
+            "accuracy": 0.12903225806451613,
+            "macro_f1": 0.03535353535353535,
+            "balanced_accuracy": 0.07142857142857142
+          },
+          "majority_metrics": {
+            "accuracy": 0.12903225806451613,
+            "macro_f1": 0.016326530612244896,
+            "balanced_accuracy": 0.07142857142857142
+          },
+          "predicted_class_distribution": {
+            " ": 18,
+            "a": 2,
+            "e": 5,
+            "l": 2,
+            "o": 1,
+            "s": 2,
+            "t": 1
+          },
+          "preprocessing": {
+            "n_components": 74,
+            "explained_variance_ratio_sum": 0.95005863904953,
+            "scaler": "StandardScaler fit on training events only",
+            "pca": "PCA fit on training events only"
+          }
+        },
+        {
+          "held_out_trial": "5.0_S22_1_block1",
+          "n_train_events": 183,
+          "n_test_events": 27,
+          "train_classes": [
+            " ",
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "g",
+            "i",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "x"
+          ],
+          "held_out_classes": [
+            " ",
+            "a",
+            "c",
+            "d",
+            "e",
+            "i",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "r",
+            "s",
+            "t"
+          ],
+          "held_out_classes_absent_from_train": [],
+          "n_classes_present_in_train": 19,
+          "n_held_out_classes_absent_from_train": 0,
+          "metrics": {
+            "accuracy": 0.1111111111111111,
+            "macro_f1": 0.03439153439153439,
+            "balanced_accuracy": 0.08928571428571429
+          },
+          "majority_metrics": {
+            "accuracy": 0.14814814814814814,
+            "macro_f1": 0.018433179723502304,
+            "balanced_accuracy": 0.07142857142857142
+          },
+          "predicted_class_distribution": {
+            " ": 2,
+            "a": 25
+          },
+          "preprocessing": {
+            "n_components": 91,
+            "explained_variance_ratio_sum": 0.9505900740623474,
+            "scaler": "StandardScaler fit on training events only",
+            "pca": "PCA fit on training events only"
+          }
+        },
+        {
+          "held_out_trial": "6.0_S22_1_block1",
+          "n_train_events": 186,
+          "n_test_events": 24,
+          "train_classes": [
+            " ",
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "g",
+            "i",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "x"
+          ],
+          "held_out_classes": [
+            " ",
+            "a",
+            "c",
+            "e",
+            "g",
+            "i",
+            "l",
+            "m",
+            "n",
+            "o",
+            "r",
+            "t"
+          ],
+          "held_out_classes_absent_from_train": [],
+          "n_classes_present_in_train": 19,
+          "n_held_out_classes_absent_from_train": 0,
+          "metrics": {
+            "accuracy": 0.125,
+            "macro_f1": 0.04648526077097505,
+            "balanced_accuracy": 0.06944444444444443
+          },
+          "majority_metrics": {
+            "accuracy": 0.16666666666666666,
+            "macro_f1": 0.023809523809523808,
+            "balanced_accuracy": 0.08333333333333333
+          },
+          "predicted_class_distribution": {
+            " ": 10,
+            "e": 4,
+            "o": 5,
+            "p": 2,
+            "r": 1,
+            "s": 1,
+            "t": 1
+          },
+          "preprocessing": {
+            "n_components": 81,
+            "explained_variance_ratio_sum": 0.950632631778717,
+            "scaler": "StandardScaler fit on training events only",
+            "pca": "PCA fit on training events only"
+          }
+        },
+        {
+          "held_out_trial": "7.0_S22_1_block1",
+          "n_train_events": 185,
+          "n_test_events": 25,
+          "train_classes": [
+            " ",
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "g",
+            "i",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "x"
+          ],
+          "held_out_classes": [
+            " ",
+            "a",
+            "b",
+            "c",
+            "e",
+            "i",
+            "l",
+            "o",
+            "r",
+            "s"
+          ],
+          "held_out_classes_absent_from_train": [],
+          "n_classes_present_in_train": 19,
+          "n_held_out_classes_absent_from_train": 0,
+          "metrics": {
+            "accuracy": 0.08,
+            "macro_f1": 0.03636363636363636,
+            "balanced_accuracy": 0.05
+          },
+          "majority_metrics": {
+            "accuracy": 0.16,
+            "macro_f1": 0.027586206896551724,
+            "balanced_accuracy": 0.1
+          },
+          "predicted_class_distribution": {
+            " ": 7,
+            "c": 1,
+            "e": 6,
+            "i": 3,
+            "l": 3,
+            "r": 5
+          },
+          "preprocessing": {
+            "n_components": 78,
+            "explained_variance_ratio_sum": 0.9500144720077515,
+            "scaler": "StandardScaler fit on training events only",
+            "pca": "PCA fit on training events only"
+          }
+        },
+        {
+          "held_out_trial": "8.0_S22_1_block1",
+          "n_train_events": 179,
+          "n_test_events": 31,
+          "train_classes": [
+            " ",
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "g",
+            "i",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "x"
+          ],
+          "held_out_classes": [
+            " ",
+            "a",
+            "c",
+            "e",
+            "i",
+            "l",
+            "n",
+            "o",
+            "p",
+            "r",
+            "s",
+            "t"
+          ],
+          "held_out_classes_absent_from_train": [],
+          "n_classes_present_in_train": 19,
+          "n_held_out_classes_absent_from_train": 0,
+          "metrics": {
+            "accuracy": 0.12903225806451613,
+            "macro_f1": 0.08697089947089946,
+            "balanced_accuracy": 0.14583333333333334
+          },
+          "majority_metrics": {
+            "accuracy": 0.12903225806451613,
+            "macro_f1": 0.019047619047619046,
+            "balanced_accuracy": 0.08333333333333333
+          },
+          "predicted_class_distribution": {
+            " ": 9,
+            "c": 6,
+            "e": 2,
+            "l": 1,
+            "n": 5,
+            "p": 2,
+            "r": 5,
+            "s": 1
+          },
+          "preprocessing": {
+            "n_components": 78,
+            "explained_variance_ratio_sum": 0.9507465362548828,
+            "scaler": "StandardScaler fit on training events only",
+            "pca": "PCA fit on training events only"
+          }
+        },
+        {
+          "held_out_trial": "9.0_S22_1_block1",
+          "n_train_events": 187,
+          "n_test_events": 23,
+          "train_classes": [
+            " ",
+            "a",
+            "b",
+            "c",
+            "d",
+            "e",
+            "g",
+            "i",
+            "l",
+            "m",
+            "n",
+            "o",
+            "p",
+            "r",
+            "s",
+            "t",
+            "u",
+            "v",
+            "x"
+          ],
+          "held_out_classes": [
+            " ",
+            "a",
+            "c",
+            "e",
+            "i",
+            "l",
+            "m",
+            "n",
+            "s"
+          ],
+          "held_out_classes_absent_from_train": [],
+          "n_classes_present_in_train": 19,
+          "n_held_out_classes_absent_from_train": 0,
+          "metrics": {
+            "accuracy": 0.08695652173913043,
+            "macro_f1": 0.06565656565656565,
+            "balanced_accuracy": 0.08333333333333333
+          },
+          "majority_metrics": {
+            "accuracy": 0.17391304347826086,
+            "macro_f1": 0.03292181069958847,
+            "balanced_accuracy": 0.1111111111111111
+          },
+          "predicted_class_distribution": {
+            " ": 5,
+            "a": 1,
+            "c": 4,
+            "e": 2,
+            "m": 1,
+            "o": 5,
+            "r": 3,
+            "s": 2
+          },
+          "preprocessing": {
+            "n_components": 80,
+            "explained_variance_ratio_sum": 0.950708270072937,
+            "scaler": "StandardScaler fit on training events only",
+            "pca": "PCA fit on training events only"
+          }
+        }
+      ],
+      "aggregate": {
+        "pooled_event_count": 210,
+        "metrics": {
+          "accuracy": 0.1,
+          "macro_f1": 0.04593591848447298,
+          "balanced_accuracy": 0.050229741019214715
+        },
+        "majority_metrics": {
+          "accuracy": 0.1523809523809524,
+          "macro_f1": 0.013919095258808177,
+          "balanced_accuracy": 0.05263157894736842
+        },
+        "mean_fold_metrics": {
+          "accuracy": 0.09769168584648949,
+          "macro_f1": 0.04338491242680803,
+          "balanced_accuracy": 0.07127785409035409
+        },
+        "n_folds_with_unavailable_held_out_classes": 1
+      }
+    }
+  },
+  "verification": {
+    "existing_8_trials_only": true,
+    "existing_processed_signals": true,
+    "exact_event_centered_window": [
+      -0.2,
+      0.3
+    ],
+    "event_tensor_shape": [
+      25,
+      306
+    ],
+    "flattening_consistent": true,
+    "scaler_training_fold_only": true,
+    "pca_training_fold_only": true,
+    "held_out_fold_excluded_from_preprocessing_fit": true,
+    "classifier_training_events_only": true,
+    "balanced_class_weights": true,
+    "seed_33": true,
+    "no_ctc_retraining": true,
+    "no_architecture_change": true,
+    "no_llm": true,
+    "no_evidence_selector": true,
+    "no_preprocessing_change": true,
+    "all_metrics_finite": true
+  }
+}

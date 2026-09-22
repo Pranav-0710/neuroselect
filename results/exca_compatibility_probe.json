@@ -1,0 +1,38 @@
+{
+  "revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "installed_exca": "0.5.29",
+  "declared_exca": "0.5.22",
+  "materialization_class": "exca.map.MapInfra",
+  "materialization_decorator": "MapInfra.apply(item_uid=...)",
+  "materialization_input_contract": "decorated method accepts one iterable of items and yields one output per item; DataFrame is a valid cache type for exca, but the decorated extractor method operates on typed event objects, not a raw pandas DataFrame.",
+  "dataframe_wrapper_probe": {
+    "status": "failed",
+    "exception_type": "TypeError",
+    "message": "Unsupported type <class 'pandas.DataFrame'> for            type  ...                   button_UID\n0           Meg  ...                          NaN\n1          Word  ...                          NaN\n2          Word  ...                          NaN\n3          Word  ...                          NaN\n4          Word  ...                          NaN\n...         ...  ...                          ...\n2738  Keystroke  ...  65.0_S22_1_block1_button_27\n2739  Keystroke  ...  65.0_S22_1_block1_button_28\n2740  Keystroke  ...  65.0_S22_1_block1_button_29\n2741  Keystroke  ...  65.0_S22_1_block1_button_30\n2742  Keystroke  ...  65.0_S22_1_block1_button_31\n\n[2743 rows x 26 columns]\n(bypass this error at your own risks by exporting CONFDICT_UID_TYPE_BYPASS=1)"
+  },
+  "direct_meg_extractor_probe": {
+    "status": "succeeded",
+    "output_type": "MneTimedArray",
+    "frequency": 50.0,
+    "data_shape": [
+      306,
+      250
+    ],
+    "dtype": "float32",
+    "finite": true,
+    "note": "short 5-second crop used only for API smoke test; no cache or model training"
+  },
+  "cause_assessment": {
+    "wrong_api_usage": "likely for the previous direct DataFrame call: EventsTransform.run expects standardized event objects/sequence rather than the raw pandas DataFrame in this installed API.",
+    "wrong_exca_version": "possible contributor: declared 0.5.22, installed 0.5.29; not isolated here because packages were not changed.",
+    "compatibility_issue": "not established as sole cause; direct MegExtractor preprocessing on a short crop succeeded.",
+    "another_reason": "the project compatibility bridge calls the private _run method because the public wrapper rejects the DataFrame input; exact behavior at 0.5.22 remains unverified without installing that version."
+  },
+  "raw_file_probe": {
+    "path": "data\\raw\\spanishbcbl_s22\\MEG\\FIF\\22_9788\\231214\\block1.fif",
+    "exists": true,
+    "bytes": 1107644612
+  },
+  "no_model_training": true,
+  "no_dataset_download": true
+}

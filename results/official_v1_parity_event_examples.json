@@ -1,0 +1,306 @@
+{
+  "trial_id": "2.0_S22_1_block1",
+  "events_compared": 5,
+  "examples": [
+    {
+      "event_index": 2,
+      "event_timestamp": 383.644,
+      "raw_button": "<space>",
+      "mapped_label": " ",
+      "official": {
+        "window_start": 383.444,
+        "window_end": 383.944,
+        "shape_before_transpose": [
+          306,
+          25
+        ],
+        "shape_after_transpose": [
+          25,
+          306
+        ],
+        "orientation": "T,C after explicit audit transpose",
+        "summary": {
+          "shape": [
+            25,
+            306
+          ],
+          "dtype": "float32",
+          "mean": 0.030972979962825775,
+          "std": 0.33292707800865173,
+          "min": -2.107271194458008,
+          "max": 2.3568766117095947,
+          "nan_count": 0,
+          "inf_count": 0,
+          "sha256": "dd37794f9ccdb971ec50941e511c0def962b2dc072a7ebac17164ea81ae6aad4"
+        }
+      },
+      "neuroselect": {
+        "event_timestamp": 383.644,
+        "window_start_sample": 8,
+        "window_stop_sample": 33,
+        "window_start": 383.43600000000004,
+        "window_end": 383.93600000000004,
+        "orientation": "T,C",
+        "tensor": {
+          "shape": [
+            25,
+            306
+          ],
+          "dtype": "float32",
+          "mean": 0.06664856523275375,
+          "std": 0.4029264450073242,
+          "min": -2.36527681350708,
+          "max": 2.3145883083343506,
+          "nan_count": 0,
+          "inf_count": 0,
+          "sha256": "e883dfeb74b7441bcd8a47d12404d58b88869e38be8affad826117f3e5e33848"
+        }
+      },
+      "difference": {
+        "mean_absolute": 0.14080117642879486,
+        "max_absolute": 0.7157015204429626,
+        "same_checksum": false
+      }
+    },
+    {
+      "event_index": 3,
+      "event_timestamp": 383.901,
+      "raw_button": "t",
+      "mapped_label": "t",
+      "official": {
+        "window_start": 383.701,
+        "window_end": 384.201,
+        "shape_before_transpose": [
+          306,
+          25
+        ],
+        "shape_after_transpose": [
+          25,
+          306
+        ],
+        "orientation": "T,C after explicit audit transpose",
+        "summary": {
+          "shape": [
+            25,
+            306
+          ],
+          "dtype": "float32",
+          "mean": 0.019016364589333534,
+          "std": 0.33481675386428833,
+          "min": -2.6288774013519287,
+          "max": 2.3700594902038574,
+          "nan_count": 0,
+          "inf_count": 0,
+          "sha256": "4d213a75c7afe55abd04775c65704f9b2f61309985ec528c5bfe08b2fdcfd699"
+        }
+      },
+      "neuroselect": {
+        "event_timestamp": 383.901,
+        "window_start_sample": 21,
+        "window_stop_sample": 46,
+        "window_start": 383.696,
+        "window_end": 384.196,
+        "orientation": "T,C",
+        "tensor": {
+          "shape": [
+            25,
+            306
+          ],
+          "dtype": "float32",
+          "mean": 0.11313626915216446,
+          "std": 0.4937761425971985,
+          "min": -2.014739990234375,
+          "max": 2.9467101097106934,
+          "nan_count": 0,
+          "inf_count": 0,
+          "sha256": "36ab2d5001a01fef8375131b27f040dcb13ae54019b6b59a3c773c0b42897540"
+        }
+      },
+      "difference": {
+        "mean_absolute": 0.29360440373420715,
+        "max_absolute": 1.7509350776672363,
+        "same_checksum": false
+      }
+    },
+    {
+      "event_index": 4,
+      "event_timestamp": 383.985,
+      "raw_button": "a",
+      "mapped_label": "a",
+      "official": {
+        "window_start": 383.785,
+        "window_end": 384.285,
+        "shape_before_transpose": [
+          306,
+          25
+        ],
+        "shape_after_transpose": [
+          25,
+          306
+        ],
+        "orientation": "T,C after explicit audit transpose",
+        "summary": {
+          "shape": [
+            25,
+            306
+          ],
+          "dtype": "float32",
+          "mean": 0.034291770309209824,
+          "std": 0.3398865759372711,
+          "min": -2.629484176635742,
+          "max": 2.433415174484253,
+          "nan_count": 0,
+          "inf_count": 0,
+          "sha256": "792556e5b421310a6e4ca292b4151767a7ab67d83ef46598881ceee4b23d771a"
+        }
+      },
+      "neuroselect": {
+        "event_timestamp": 383.985,
+        "window_start_sample": 25,
+        "window_stop_sample": 50,
+        "window_start": 383.776,
+        "window_end": 384.276,
+        "orientation": "T,C",
+        "tensor": {
+          "shape": [
+            25,
+            306
+          ],
+          "dtype": "float32",
+          "mean": 0.12662801146507263,
+          "std": 0.5158690214157104,
+          "min": -2.014739990234375,
+          "max": 3.0751113891601562,
+          "nan_count": 0,
+          "inf_count": 0,
+          "sha256": "3da2ec0f3f8de1dfcb2e32e4ea7e17e59e35811542c875f9c4a36a8fc9126506"
+        }
+      },
+      "difference": {
+        "mean_absolute": 0.297594279050827,
+        "max_absolute": 1.8272514343261719,
+        "same_checksum": false
+      }
+    },
+    {
+      "event_index": 5,
+      "event_timestamp": 384.228,
+      "raw_button": "s",
+      "mapped_label": "s",
+      "official": {
+        "window_start": 384.028,
+        "window_end": 384.528,
+        "shape_before_transpose": [
+          306,
+          25
+        ],
+        "shape_after_transpose": [
+          25,
+          306
+        ],
+        "orientation": "T,C after explicit audit transpose",
+        "summary": {
+          "shape": [
+            25,
+            306
+          ],
+          "dtype": "float32",
+          "mean": 0.007320581469684839,
+          "std": 0.33469489216804504,
+          "min": -2.085172653198242,
+          "max": 2.7451233863830566,
+          "nan_count": 0,
+          "inf_count": 0,
+          "sha256": "82ea0014431c70c23f12bdcc534feb651d9119716de0f85365f6780a88d0fad8"
+        }
+      },
+      "neuroselect": {
+        "event_timestamp": 384.228,
+        "window_start_sample": 38,
+        "window_stop_sample": 63,
+        "window_start": 384.036,
+        "window_end": 384.536,
+        "orientation": "T,C",
+        "tensor": {
+          "shape": [
+            25,
+            306
+          ],
+          "dtype": "float32",
+          "mean": 0.1569388210773468,
+          "std": 0.6194303035736084,
+          "min": -3.505446434020996,
+          "max": 3.6638944149017334,
+          "nan_count": 0,
+          "inf_count": 0,
+          "sha256": "34b805b43271904ceb90d3a74870cc5962551db9059ab39eea6742c76a433e4d"
+        }
+      },
+      "difference": {
+        "mean_absolute": 0.4246107041835785,
+        "max_absolute": 3.3247814178466797,
+        "same_checksum": false
+      }
+    },
+    {
+      "event_index": 6,
+      "event_timestamp": 384.318,
+      "raw_button": "a",
+      "mapped_label": "a",
+      "official": {
+        "window_start": 384.118,
+        "window_end": 384.618,
+        "shape_before_transpose": [
+          306,
+          25
+        ],
+        "shape_after_transpose": [
+          25,
+          306
+        ],
+        "orientation": "T,C after explicit audit transpose",
+        "summary": {
+          "shape": [
+            25,
+            306
+          ],
+          "dtype": "float32",
+          "mean": -0.00012414595403242856,
+          "std": 0.3484383225440979,
+          "min": -3.401080369949341,
+          "max": 2.523332118988037,
+          "nan_count": 0,
+          "inf_count": 0,
+          "sha256": "8537e9caf5c78df85fc7649c50a9ab0dbf10f066dba81c214de66c64ff22a0de"
+        }
+      },
+      "neuroselect": {
+        "event_timestamp": 384.318,
+        "window_start_sample": 42,
+        "window_stop_sample": 67,
+        "window_start": 384.116,
+        "window_end": 384.616,
+        "orientation": "T,C",
+        "tensor": {
+          "shape": [
+            25,
+            306
+          ],
+          "dtype": "float32",
+          "mean": 0.15302389860153198,
+          "std": 0.6523399949073792,
+          "min": -3.505446434020996,
+          "max": 3.9260263442993164,
+          "nan_count": 0,
+          "inf_count": 0,
+          "sha256": "b61ed88176cee3b74ec88a29e598316304bdaa320344b22e8e4eaf87ffecd6c1"
+        }
+      },
+      "difference": {
+        "mean_absolute": 0.3870232403278351,
+        "max_absolute": 2.7611701488494873,
+        "same_checksum": false
+      }
+    }
+  ]
+}
