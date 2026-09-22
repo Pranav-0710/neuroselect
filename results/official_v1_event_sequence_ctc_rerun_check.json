@@ -1,0 +1,48 @@
+{
+  "experiment": "official_v1_event_sequence_ctc_baseline_rerun",
+  "date": "2026-09-22",
+  "script": "scripts/official_v1_event_sequence_ctc_baseline.py",
+  "reference_artifact": "results/official_v1_event_sequence_ctc_baseline.json",
+  "official_revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "configuration": {
+    "representation": "official_v1_event_sequence",
+    "model": "ConvCTC (Conv1D + BiGRU + Linear + CTC), unchanged",
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "gradient_clip_max_norm": 1.0,
+    "epochs": 300,
+    "seeds": [33, 123, 777],
+    "train_trials": [2, 3, 4, 5, 6, 7],
+    "evaluation_trials": [8, 9],
+    "decoder": "existing greedy CTC decoder"
+  },
+  "runtime_minutes": 45.4,
+  "environment": "NeuroSelect Python 3.13.7 environment, CPU",
+  "reproducibility": {
+    "input_sequence_sha256_identical_all_8_trials": true,
+    "per_seed_aggregates_identical": true,
+    "evaluation_decoded_strings_identical": true,
+    "figures_byte_identical": true,
+    "cross_seed": {
+      "train_cer_mean": 0.021630707241080422,
+      "train_cer_std": 0.001521571023279981,
+      "evaluation_cer_mean": 0.9193899782135077,
+      "evaluation_cer_std": 0.1573015175818239
+    },
+    "std_convention": "population (numpy ddof=0)"
+  },
+  "integrity": {
+    "raw_fif_sha256": "634BF9C57EC7B6AE0697E50750233C4EED27F96E3A7493341BC21A14BEAEF7D0",
+    "mat_log_sha256": "87CD3B3A1A4512DB31004B76528A23A4C39C96DFF68E91EC75C4C301F8C96BC6",
+    "raw_and_mat_unchanged_before_after": true,
+    "vendor_src_and_historical_preprocessing_git_diff_lines": 0,
+    "all_losses_and_metrics_finite": true,
+    "checkpoints_saved": false,
+    "data_downloaded": false
+  },
+  "tests_after_run": {
+    "command": "python -m pytest tests -q (PYTHONPATH=src, writable --basetemp)",
+    "result": "17 passed"
+  },
+  "interpretation": "B. Corrected representation improves training but not transfer"
+}
