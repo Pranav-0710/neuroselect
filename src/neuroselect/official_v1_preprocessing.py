@@ -150,13 +150,34 @@ class NeuroSelectOfficialV1EventPreprocessing:
         )
         if window is None:
             raise ValueError("Event window is outside the extended overlap")
-        _window_start, _window_duration, window_slice = window
+        window_time, window_duration, window_slice = window
         window_start = extended_slice.start + window_slice.start
         window_stop = window_start + (window_slice.stop - window_slice.start)
         channel_time = corrected_extended[window_slice]
-        if channel_time.shape[0] != int(round(event_duration * SAMPLING_RATE)):
-            raise ValueError("Official overlap returned an incomplete event window")
-        tensor = np.clip(channel_time, *CLAMP).astype(np.float32)
+
+        # The official extractor never returns the overlap directly. It allocates
+        # a zero TimedArray covering the full requested duration and adds the
+        # overlap into it, which resolves both sides through the same
+        # `_overlap_slice` (neuralset.base.TimedArray.__iadd__). For a
+        # full-length overlap that placement is the identity. When the keypress
+        # falls exactly halfway between two 50 Hz samples the overlap is one
+        # sample short, and the official output keeps a single zero sample at
+        # whichever edge the rounding leaves free.
+        expected_samples = int(round(event_duration * SAMPLING_RATE))
+        output_placement = overlap_slice(
+            event_start, event_duration, window_time, window_duration
+        )
+        source_placement = overlap_slice(
+            window_time, window_duration, event_start, event_duration
+        )
+        if output_placement is None or source_placement is None:
+            raise ValueError("Official output placement does not overlap the event window")
+        _, _, output_slice = output_placement
+        _, _, source_slice = source_placement
+        placed = np.zeros((expected_samples, CHANNEL_COUNT), dtype=channel_time.dtype)
+        placed[output_slice] = channel_time[source_slice]
+        zero_filled_samples = expected_samples - (output_slice.stop - output_slice.start)
+        tensor = np.clip(placed, *CLAMP).astype(np.float32)
         return OfficialV1Event(
             tensor=tensor,
             event_time_seconds=float(event_time_seconds),
@@ -177,7 +198,9 @@ class NeuroSelectOfficialV1EventPreprocessing:
                 "event_sample_index": int(round((event_time_seconds - signal_start) * SAMPLING_RATE)),
                 "window_start_sample_index": window_start,
                 "window_end_sample_index_exclusive": window_stop,
-                "zero_padded": False,
+                "official_overlap_samples": int(channel_time.shape[0]),
+                "zero_filled_samples": int(zero_filled_samples),
+                "zero_padded": bool(zero_filled_samples > 0),
                 "preprocessing_order": [
                     "MEG channel selection",
                     "continuous filter",
@@ -185,6 +208,7 @@ class NeuroSelectOfficialV1EventPreprocessing:
                     "continuous RobustScaler",
                     "event-window extraction",
                     "per-event baseline",
+                    "official output placement",
                     "per-event clamp",
                 ],
             },

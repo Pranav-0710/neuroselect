@@ -25,3 +25,6 @@ results/*.pt
 
 # Caveman-compress backups (originals live in git history)
 *.original.md
+
+# Per-process run logs (results are in the aggregated artifacts)
+results/runs/**/log_*.txt

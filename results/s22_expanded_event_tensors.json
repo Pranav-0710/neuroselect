@@ -1,0 +1,2021 @@
+{
+  "task": "Step 3 official-v1 event tensors for all four S22 blocks",
+  "official_revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "preprocessing_variant": "official_v1_compatible",
+  "preprocessing_module": "src/neuroselect/official_v1_preprocessing.py",
+  "preprocessing_order": [
+    "select 306 MEG channels",
+    "continuous 0.1-20 Hz filter",
+    "continuous resample to 50 Hz",
+    "continuous RobustScaler",
+    "official overlap/sample-index semantics",
+    "event window [-0.2, +0.3] s",
+    "official per-event baseline",
+    "official clamp [-5, +5]"
+  ],
+  "storage": {
+    "tensor_file": "data/processed/s22_official_v1/events.npy",
+    "index_file": "data/processed/s22_official_v1/index.jsonl",
+    "layout": "(event, time, channel) float32, one row per keystroke, memory-mapped",
+    "bytes": 295290128,
+    "duplication": "single slab; splits are row-index views, never copies"
+  },
+  "blocks": [
+    {
+      "block": "session1/block1",
+      "session": "1",
+      "task": "block1",
+      "fif": "MEG/FIF/22_9788/231214/block1.fif",
+      "fif_sha256": "634bf9c57ec7b6ae0697e50750233c4eed27f96e3a7493341bc21a14beaef7d0",
+      "recording_start_seconds": 308.0,
+      "continuous_samples_50hz": 44550,
+      "continuous_duration_seconds": 891.0,
+      "sentences": 64,
+      "events": 2040,
+      "row_range": [
+        0,
+        2040
+      ],
+      "all_finite": true,
+      "value_min": -5.0,
+      "value_max": 5.0,
+      "value_mean": -0.001634129323065281,
+      "value_std": 0.35338619351387024,
+      "clamp_saturated_fraction": 8.227604767397155e-05,
+      "tensor_sha256": "90dd993a786ce440edd3174466408b3aaec2de676a93f3d0883ef243c30596cf",
+      "sentence_audit": [
+        {
+          "sentence_UID": "2.0_S22_1_block1",
+          "trial_id": 2,
+          "events": 30,
+          "target_length": 30,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "3.0_S22_1_block1",
+          "trial_id": 3,
+          "events": 27,
+          "target_length": 27,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "4.0_S22_1_block1",
+          "trial_id": 4,
+          "events": 34,
+          "target_length": 34,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "5.0_S22_1_block1",
+          "trial_id": 5,
+          "events": 31,
+          "target_length": 31,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "6.0_S22_1_block1",
+          "trial_id": 6,
+          "events": 28,
+          "target_length": 28,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "7.0_S22_1_block1",
+          "trial_id": 7,
+          "events": 29,
+          "target_length": 29,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "8.0_S22_1_block1",
+          "trial_id": 8,
+          "events": 34,
+          "target_length": 34,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "9.0_S22_1_block1",
+          "trial_id": 9,
+          "events": 27,
+          "target_length": 27,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "10.0_S22_1_block1",
+          "trial_id": 10,
+          "events": 35,
+          "target_length": 35,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "11.0_S22_1_block1",
+          "trial_id": 11,
+          "events": 39,
+          "target_length": 39,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "12.0_S22_1_block1",
+          "trial_id": 12,
+          "events": 30,
+          "target_length": 30,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "13.0_S22_1_block1",
+          "trial_id": 13,
+          "events": 26,
+          "target_length": 26,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "14.0_S22_1_block1",
+          "trial_id": 14,
+          "events": 31,
+          "target_length": 31,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "15.0_S22_1_block1",
+          "trial_id": 15,
+          "events": 39,
+          "target_length": 39,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "16.0_S22_1_block1",
+          "trial_id": 16,
+          "events": 31,
+          "target_length": 31,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "17.0_S22_1_block1",
+          "trial_id": 17,
+          "events": 26,
+          "target_length": 26,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "18.0_S22_1_block1",
+          "trial_id": 18,
+          "events": 32,
+          "target_length": 32,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "19.0_S22_1_block1",
+          "trial_id": 19,
+          "events": 33,
+          "target_length": 33,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "20.0_S22_1_block1",
+          "trial_id": 20,
+          "events": 33,
+          "target_length": 33,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "21.0_S22_1_block1",
+          "trial_id": 21,
+          "events": 35,
+          "target_length": 35,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "22.0_S22_1_block1",
+          "trial_id": 22,
+          "events": 30,
+          "target_length": 30,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "23.0_S22_1_block1",
+          "trial_id": 23,
+          "events": 28,
+          "target_length": 28,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "24.0_S22_1_block1",
+          "trial_id": 24,
+          "events": 28,
+          "target_length": 28,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "25.0_S22_1_block1",
+          "trial_id": 25,
+          "events": 33,
+          "target_length": 33,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "26.0_S22_1_block1",
+          "trial_id": 26,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "27.0_S22_1_block1",
+          "trial_id": 27,
+          "events": 32,
+          "target_length": 32,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "28.0_S22_1_block1",
+          "trial_id": 28,
+          "events": 26,
+          "target_length": 26,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "29.0_S22_1_block1",
+          "trial_id": 29,
+          "events": 39,
+          "target_length": 39,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "30.0_S22_1_block1",
+          "trial_id": 30,
+          "events": 26,
+          "target_length": 26,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "31.0_S22_1_block1",
+          "trial_id": 31,
+          "events": 33,
+          "target_length": 33,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "32.0_S22_1_block1",
+          "trial_id": 32,
+          "events": 30,
+          "target_length": 30,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "33.0_S22_1_block1",
+          "trial_id": 33,
+          "events": 33,
+          "target_length": 33,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "34.0_S22_1_block1",
+          "trial_id": 34,
+          "events": 36,
+          "target_length": 36,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "35.0_S22_1_block1",
+          "trial_id": 35,
+          "events": 35,
+          "target_length": 35,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "36.0_S22_1_block1",
+          "trial_id": 36,
+          "events": 28,
+          "target_length": 28,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "37.0_S22_1_block1",
+          "trial_id": 37,
+          "events": 31,
+          "target_length": 31,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "38.0_S22_1_block1",
+          "trial_id": 38,
+          "events": 33,
+          "target_length": 33,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "39.0_S22_1_block1",
+          "trial_id": 39,
+          "events": 27,
+          "target_length": 27,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "40.0_S22_1_block1",
+          "trial_id": 40,
+          "events": 43,
+          "target_length": 43,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "41.0_S22_1_block1",
+          "trial_id": 41,
+          "events": 44,
+          "target_length": 44,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "42.0_S22_1_block1",
+          "trial_id": 42,
+          "events": 13,
+          "target_length": 13,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "43.0_S22_1_block1",
+          "trial_id": 43,
+          "events": 35,
+          "target_length": 35,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "44.0_S22_1_block1",
+          "trial_id": 44,
+          "events": 29,
+          "target_length": 29,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "45.0_S22_1_block1",
+          "trial_id": 45,
+          "events": 34,
+          "target_length": 34,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "46.0_S22_1_block1",
+          "trial_id": 46,
+          "events": 34,
+          "target_length": 34,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "47.0_S22_1_block1",
+          "trial_id": 47,
+          "events": 29,
+          "target_length": 29,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "48.0_S22_1_block1",
+          "trial_id": 48,
+          "events": 42,
+          "target_length": 42,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "49.0_S22_1_block1",
+          "trial_id": 49,
+          "events": 31,
+          "target_length": 31,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "50.0_S22_1_block1",
+          "trial_id": 50,
+          "events": 38,
+          "target_length": 38,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "51.0_S22_1_block1",
+          "trial_id": 51,
+          "events": 36,
+          "target_length": 36,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "52.0_S22_1_block1",
+          "trial_id": 52,
+          "events": 24,
+          "target_length": 24,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "53.0_S22_1_block1",
+          "trial_id": 53,
+          "events": 31,
+          "target_length": 31,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "54.0_S22_1_block1",
+          "trial_id": 54,
+          "events": 27,
+          "target_length": 27,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "55.0_S22_1_block1",
+          "trial_id": 55,
+          "events": 37,
+          "target_length": 37,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "56.0_S22_1_block1",
+          "trial_id": 56,
+          "events": 24,
+          "target_length": 24,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "57.0_S22_1_block1",
+          "trial_id": 57,
+          "events": 33,
+          "target_length": 33,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "58.0_S22_1_block1",
+          "trial_id": 58,
+          "events": 22,
+          "target_length": 22,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "59.0_S22_1_block1",
+          "trial_id": 59,
+          "events": 35,
+          "target_length": 35,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "60.0_S22_1_block1",
+          "trial_id": 60,
+          "events": 32,
+          "target_length": 32,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "61.0_S22_1_block1",
+          "trial_id": 61,
+          "events": 36,
+          "target_length": 36,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "62.0_S22_1_block1",
+          "trial_id": 62,
+          "events": 28,
+          "target_length": 28,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "63.0_S22_1_block1",
+          "trial_id": 63,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "64.0_S22_1_block1",
+          "trial_id": 64,
+          "events": 32,
+          "target_length": 32,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "65.0_S22_1_block1",
+          "trial_id": 65,
+          "events": 31,
+          "target_length": 31,
+          "target_matches_keystrokes": true
+        }
+      ],
+      "zero_filled_events": 7,
+      "zero_filled_event_fraction": 0.003431372549019608
+    },
+    {
+      "block": "session1/block2",
+      "session": "1",
+      "task": "block2",
+      "fif": "MEG/FIF/22_9788/231214/block2.fif",
+      "fif_sha256": "b827b6d4e5101a53ba8c6e248cc30cb50501db1628cda8768f68e588a055744e",
+      "recording_start_seconds": 59.0,
+      "continuous_samples_50hz": 56850,
+      "continuous_duration_seconds": 1137.0,
+      "sentences": 64,
+      "events": 2755,
+      "row_range": [
+        2040,
+        4795
+      ],
+      "all_finite": true,
+      "value_min": -5.0,
+      "value_max": 5.0,
+      "value_mean": -0.0013074299786239862,
+      "value_std": 0.40703195333480835,
+      "clamp_saturated_fraction": 0.0007446472842010367,
+      "tensor_sha256": "2ded6fe7bb6f7a4102d55e55ae9fba5fc02d08e8c603f21e61ae8af667a2efc2",
+      "sentence_audit": [
+        {
+          "sentence_UID": "2.0_S22_1_block2",
+          "trial_id": 2,
+          "events": 50,
+          "target_length": 50,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "3.0_S22_1_block2",
+          "trial_id": 3,
+          "events": 35,
+          "target_length": 35,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "4.0_S22_1_block2",
+          "trial_id": 4,
+          "events": 47,
+          "target_length": 47,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "5.0_S22_1_block2",
+          "trial_id": 5,
+          "events": 34,
+          "target_length": 34,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "6.0_S22_1_block2",
+          "trial_id": 6,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "7.0_S22_1_block2",
+          "trial_id": 7,
+          "events": 43,
+          "target_length": 43,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "8.0_S22_1_block2",
+          "trial_id": 8,
+          "events": 47,
+          "target_length": 47,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "9.0_S22_1_block2",
+          "trial_id": 9,
+          "events": 48,
+          "target_length": 48,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "10.0_S22_1_block2",
+          "trial_id": 10,
+          "events": 50,
+          "target_length": 50,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "11.0_S22_1_block2",
+          "trial_id": 11,
+          "events": 45,
+          "target_length": 45,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "12.0_S22_1_block2",
+          "trial_id": 12,
+          "events": 53,
+          "target_length": 53,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "13.0_S22_1_block2",
+          "trial_id": 13,
+          "events": 55,
+          "target_length": 55,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "14.0_S22_1_block2",
+          "trial_id": 14,
+          "events": 56,
+          "target_length": 56,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "15.0_S22_1_block2",
+          "trial_id": 15,
+          "events": 45,
+          "target_length": 45,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "16.0_S22_1_block2",
+          "trial_id": 16,
+          "events": 50,
+          "target_length": 50,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "17.0_S22_1_block2",
+          "trial_id": 17,
+          "events": 38,
+          "target_length": 38,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "18.0_S22_1_block2",
+          "trial_id": 18,
+          "events": 46,
+          "target_length": 46,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "19.0_S22_1_block2",
+          "trial_id": 19,
+          "events": 43,
+          "target_length": 43,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "20.0_S22_1_block2",
+          "trial_id": 20,
+          "events": 43,
+          "target_length": 43,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "21.0_S22_1_block2",
+          "trial_id": 21,
+          "events": 46,
+          "target_length": 46,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "22.0_S22_1_block2",
+          "trial_id": 22,
+          "events": 30,
+          "target_length": 30,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "23.0_S22_1_block2",
+          "trial_id": 23,
+          "events": 27,
+          "target_length": 27,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "24.0_S22_1_block2",
+          "trial_id": 24,
+          "events": 46,
+          "target_length": 46,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "25.0_S22_1_block2",
+          "trial_id": 25,
+          "events": 37,
+          "target_length": 37,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "26.0_S22_1_block2",
+          "trial_id": 26,
+          "events": 38,
+          "target_length": 38,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "27.0_S22_1_block2",
+          "trial_id": 27,
+          "events": 45,
+          "target_length": 45,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "28.0_S22_1_block2",
+          "trial_id": 28,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "29.0_S22_1_block2",
+          "trial_id": 29,
+          "events": 43,
+          "target_length": 43,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "30.0_S22_1_block2",
+          "trial_id": 30,
+          "events": 46,
+          "target_length": 46,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "31.0_S22_1_block2",
+          "trial_id": 31,
+          "events": 40,
+          "target_length": 40,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "32.0_S22_1_block2",
+          "trial_id": 32,
+          "events": 39,
+          "target_length": 39,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "33.0_S22_1_block2",
+          "trial_id": 33,
+          "events": 53,
+          "target_length": 53,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "34.0_S22_1_block2",
+          "trial_id": 34,
+          "events": 39,
+          "target_length": 39,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "35.0_S22_1_block2",
+          "trial_id": 35,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "36.0_S22_1_block2",
+          "trial_id": 36,
+          "events": 47,
+          "target_length": 47,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "37.0_S22_1_block2",
+          "trial_id": 37,
+          "events": 64,
+          "target_length": 64,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "38.0_S22_1_block2",
+          "trial_id": 38,
+          "events": 35,
+          "target_length": 35,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "39.0_S22_1_block2",
+          "trial_id": 39,
+          "events": 46,
+          "target_length": 46,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "40.0_S22_1_block2",
+          "trial_id": 40,
+          "events": 40,
+          "target_length": 40,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "41.0_S22_1_block2",
+          "trial_id": 41,
+          "events": 40,
+          "target_length": 40,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "42.0_S22_1_block2",
+          "trial_id": 42,
+          "events": 44,
+          "target_length": 44,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "43.0_S22_1_block2",
+          "trial_id": 43,
+          "events": 39,
+          "target_length": 39,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "44.0_S22_1_block2",
+          "trial_id": 44,
+          "events": 49,
+          "target_length": 49,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "45.0_S22_1_block2",
+          "trial_id": 45,
+          "events": 48,
+          "target_length": 48,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "46.0_S22_1_block2",
+          "trial_id": 46,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "47.0_S22_1_block2",
+          "trial_id": 47,
+          "events": 51,
+          "target_length": 51,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "48.0_S22_1_block2",
+          "trial_id": 48,
+          "events": 35,
+          "target_length": 35,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "49.0_S22_1_block2",
+          "trial_id": 49,
+          "events": 42,
+          "target_length": 42,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "50.0_S22_1_block2",
+          "trial_id": 50,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "51.0_S22_1_block2",
+          "trial_id": 51,
+          "events": 42,
+          "target_length": 42,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "52.0_S22_1_block2",
+          "trial_id": 52,
+          "events": 37,
+          "target_length": 37,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "53.0_S22_1_block2",
+          "trial_id": 53,
+          "events": 44,
+          "target_length": 44,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "54.0_S22_1_block2",
+          "trial_id": 54,
+          "events": 40,
+          "target_length": 40,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "55.0_S22_1_block2",
+          "trial_id": 55,
+          "events": 42,
+          "target_length": 42,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "56.0_S22_1_block2",
+          "trial_id": 56,
+          "events": 34,
+          "target_length": 34,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "57.0_S22_1_block2",
+          "trial_id": 57,
+          "events": 37,
+          "target_length": 37,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "58.0_S22_1_block2",
+          "trial_id": 58,
+          "events": 36,
+          "target_length": 36,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "59.0_S22_1_block2",
+          "trial_id": 59,
+          "events": 42,
+          "target_length": 42,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "60.0_S22_1_block2",
+          "trial_id": 60,
+          "events": 49,
+          "target_length": 49,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "61.0_S22_1_block2",
+          "trial_id": 61,
+          "events": 43,
+          "target_length": 43,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "62.0_S22_1_block2",
+          "trial_id": 62,
+          "events": 45,
+          "target_length": 45,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "63.0_S22_1_block2",
+          "trial_id": 63,
+          "events": 37,
+          "target_length": 37,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "64.0_S22_1_block2",
+          "trial_id": 64,
+          "events": 39,
+          "target_length": 39,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "65.0_S22_1_block2",
+          "trial_id": 65,
+          "events": 46,
+          "target_length": 46,
+          "target_matches_keystrokes": true
+        }
+      ],
+      "zero_filled_events": 8,
+      "zero_filled_event_fraction": 0.0029038112522686023
+    },
+    {
+      "block": "session2/block1",
+      "session": "2",
+      "task": "block1",
+      "fif": "MEG/FIF/22_9788/231222/Block1.fif",
+      "fif_sha256": "dcbcb8f6c693e36be8d7632380103e4bfe35236fc6ee352f837d9257cc2dac82",
+      "recording_start_seconds": 272.0,
+      "continuous_samples_50hz": 62850,
+      "continuous_duration_seconds": 1257.0,
+      "sentences": 64,
+      "events": 2792,
+      "row_range": [
+        4795,
+        7587
+      ],
+      "all_finite": true,
+      "value_min": -5.0,
+      "value_max": 5.0,
+      "value_mean": -0.0006277617067098618,
+      "value_std": 0.35423046350479126,
+      "clamp_saturated_fraction": 0.00026888214693709386,
+      "tensor_sha256": "bcc681e2d61abaa4c4ff4ca09426e131e6e39a0c3e32a6509c2224cba2b8e977",
+      "sentence_audit": [
+        {
+          "sentence_UID": "2.0_S22_2_block1",
+          "trial_id": 2,
+          "events": 50,
+          "target_length": 50,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "3.0_S22_2_block1",
+          "trial_id": 3,
+          "events": 39,
+          "target_length": 39,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "4.0_S22_2_block1",
+          "trial_id": 4,
+          "events": 48,
+          "target_length": 48,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "5.0_S22_2_block1",
+          "trial_id": 5,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "6.0_S22_2_block1",
+          "trial_id": 6,
+          "events": 37,
+          "target_length": 37,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "7.0_S22_2_block1",
+          "trial_id": 7,
+          "events": 54,
+          "target_length": 54,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "8.0_S22_2_block1",
+          "trial_id": 8,
+          "events": 52,
+          "target_length": 52,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "9.0_S22_2_block1",
+          "trial_id": 9,
+          "events": 38,
+          "target_length": 38,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "10.0_S22_2_block1",
+          "trial_id": 10,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "11.0_S22_2_block1",
+          "trial_id": 11,
+          "events": 45,
+          "target_length": 45,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "12.0_S22_2_block1",
+          "trial_id": 12,
+          "events": 38,
+          "target_length": 38,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "13.0_S22_2_block1",
+          "trial_id": 13,
+          "events": 39,
+          "target_length": 39,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "14.0_S22_2_block1",
+          "trial_id": 14,
+          "events": 35,
+          "target_length": 35,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "15.0_S22_2_block1",
+          "trial_id": 15,
+          "events": 43,
+          "target_length": 43,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "16.0_S22_2_block1",
+          "trial_id": 16,
+          "events": 45,
+          "target_length": 45,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "17.0_S22_2_block1",
+          "trial_id": 17,
+          "events": 50,
+          "target_length": 50,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "18.0_S22_2_block1",
+          "trial_id": 18,
+          "events": 35,
+          "target_length": 35,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "19.0_S22_2_block1",
+          "trial_id": 19,
+          "events": 44,
+          "target_length": 44,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "20.0_S22_2_block1",
+          "trial_id": 20,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "21.0_S22_2_block1",
+          "trial_id": 21,
+          "events": 43,
+          "target_length": 43,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "22.0_S22_2_block1",
+          "trial_id": 22,
+          "events": 49,
+          "target_length": 49,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "23.0_S22_2_block1",
+          "trial_id": 23,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "24.0_S22_2_block1",
+          "trial_id": 24,
+          "events": 46,
+          "target_length": 46,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "25.0_S22_2_block1",
+          "trial_id": 25,
+          "events": 58,
+          "target_length": 58,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "26.0_S22_2_block1",
+          "trial_id": 26,
+          "events": 46,
+          "target_length": 46,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "27.0_S22_2_block1",
+          "trial_id": 27,
+          "events": 48,
+          "target_length": 48,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "28.0_S22_2_block1",
+          "trial_id": 28,
+          "events": 42,
+          "target_length": 42,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "29.0_S22_2_block1",
+          "trial_id": 29,
+          "events": 63,
+          "target_length": 63,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "30.0_S22_2_block1",
+          "trial_id": 30,
+          "events": 53,
+          "target_length": 53,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "31.0_S22_2_block1",
+          "trial_id": 31,
+          "events": 36,
+          "target_length": 36,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "32.0_S22_2_block1",
+          "trial_id": 32,
+          "events": 48,
+          "target_length": 48,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "33.0_S22_2_block1",
+          "trial_id": 33,
+          "events": 38,
+          "target_length": 38,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "34.0_S22_2_block1",
+          "trial_id": 34,
+          "events": 45,
+          "target_length": 45,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "35.0_S22_2_block1",
+          "trial_id": 35,
+          "events": 37,
+          "target_length": 37,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "36.0_S22_2_block1",
+          "trial_id": 36,
+          "events": 37,
+          "target_length": 37,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "37.0_S22_2_block1",
+          "trial_id": 37,
+          "events": 46,
+          "target_length": 46,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "38.0_S22_2_block1",
+          "trial_id": 38,
+          "events": 47,
+          "target_length": 47,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "39.0_S22_2_block1",
+          "trial_id": 39,
+          "events": 37,
+          "target_length": 37,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "40.0_S22_2_block1",
+          "trial_id": 40,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "41.0_S22_2_block1",
+          "trial_id": 41,
+          "events": 42,
+          "target_length": 42,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "42.0_S22_2_block1",
+          "trial_id": 42,
+          "events": 50,
+          "target_length": 50,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "43.0_S22_2_block1",
+          "trial_id": 43,
+          "events": 46,
+          "target_length": 46,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "44.0_S22_2_block1",
+          "trial_id": 44,
+          "events": 39,
+          "target_length": 39,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "45.0_S22_2_block1",
+          "trial_id": 45,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "46.0_S22_2_block1",
+          "trial_id": 46,
+          "events": 47,
+          "target_length": 47,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "47.0_S22_2_block1",
+          "trial_id": 47,
+          "events": 42,
+          "target_length": 42,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "48.0_S22_2_block1",
+          "trial_id": 48,
+          "events": 49,
+          "target_length": 49,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "49.0_S22_2_block1",
+          "trial_id": 49,
+          "events": 45,
+          "target_length": 45,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "50.0_S22_2_block1",
+          "trial_id": 50,
+          "events": 39,
+          "target_length": 39,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "51.0_S22_2_block1",
+          "trial_id": 51,
+          "events": 44,
+          "target_length": 44,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "52.0_S22_2_block1",
+          "trial_id": 52,
+          "events": 43,
+          "target_length": 43,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "53.0_S22_2_block1",
+          "trial_id": 53,
+          "events": 40,
+          "target_length": 40,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "54.0_S22_2_block1",
+          "trial_id": 54,
+          "events": 44,
+          "target_length": 44,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "55.0_S22_2_block1",
+          "trial_id": 55,
+          "events": 43,
+          "target_length": 43,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "56.0_S22_2_block1",
+          "trial_id": 56,
+          "events": 44,
+          "target_length": 44,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "57.0_S22_2_block1",
+          "trial_id": 57,
+          "events": 53,
+          "target_length": 53,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "58.0_S22_2_block1",
+          "trial_id": 58,
+          "events": 42,
+          "target_length": 42,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "59.0_S22_2_block1",
+          "trial_id": 59,
+          "events": 36,
+          "target_length": 36,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "60.0_S22_2_block1",
+          "trial_id": 60,
+          "events": 39,
+          "target_length": 39,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "61.0_S22_2_block1",
+          "trial_id": 61,
+          "events": 34,
+          "target_length": 34,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "62.0_S22_2_block1",
+          "trial_id": 62,
+          "events": 44,
+          "target_length": 44,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "63.0_S22_2_block1",
+          "trial_id": 63,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "64.0_S22_2_block1",
+          "trial_id": 64,
+          "events": 48,
+          "target_length": 48,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "65.0_S22_2_block1",
+          "trial_id": 65,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        }
+      ],
+      "zero_filled_events": 6,
+      "zero_filled_event_fraction": 0.002148997134670487
+    },
+    {
+      "block": "session2/block2",
+      "session": "2",
+      "task": "block2",
+      "fif": "MEG/FIF/22_9788/231222/Block2.fif",
+      "fif_sha256": "659d8f5cb3a9a3786157afecc6b9881adf027d699b2b793c6b3095f802436c33",
+      "recording_start_seconds": 10.0,
+      "continuous_samples_50hz": 45700,
+      "continuous_duration_seconds": 914.0,
+      "sentences": 64,
+      "events": 2063,
+      "row_range": [
+        7587,
+        9650
+      ],
+      "all_finite": true,
+      "value_min": -5.0,
+      "value_max": 5.0,
+      "value_mean": 0.0019279062980785966,
+      "value_std": 0.30864495038986206,
+      "clamp_saturated_fraction": 8.820202826646897e-05,
+      "tensor_sha256": "22647cfd7eb25c270d23753ff8a2ee816daad7f95d3d1faff93f140dcbde564b",
+      "sentence_audit": [
+        {
+          "sentence_UID": "2.0_S22_2_block2",
+          "trial_id": 2,
+          "events": 42,
+          "target_length": 42,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "3.0_S22_2_block2",
+          "trial_id": 3,
+          "events": 33,
+          "target_length": 33,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "4.0_S22_2_block2",
+          "trial_id": 4,
+          "events": 27,
+          "target_length": 27,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "5.0_S22_2_block2",
+          "trial_id": 5,
+          "events": 43,
+          "target_length": 43,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "6.0_S22_2_block2",
+          "trial_id": 6,
+          "events": 40,
+          "target_length": 40,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "7.0_S22_2_block2",
+          "trial_id": 7,
+          "events": 30,
+          "target_length": 30,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "8.0_S22_2_block2",
+          "trial_id": 8,
+          "events": 28,
+          "target_length": 28,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "9.0_S22_2_block2",
+          "trial_id": 9,
+          "events": 36,
+          "target_length": 36,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "10.0_S22_2_block2",
+          "trial_id": 10,
+          "events": 31,
+          "target_length": 31,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "11.0_S22_2_block2",
+          "trial_id": 11,
+          "events": 33,
+          "target_length": 33,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "12.0_S22_2_block2",
+          "trial_id": 12,
+          "events": 29,
+          "target_length": 29,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "13.0_S22_2_block2",
+          "trial_id": 13,
+          "events": 32,
+          "target_length": 32,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "14.0_S22_2_block2",
+          "trial_id": 14,
+          "events": 30,
+          "target_length": 30,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "15.0_S22_2_block2",
+          "trial_id": 15,
+          "events": 39,
+          "target_length": 39,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "16.0_S22_2_block2",
+          "trial_id": 16,
+          "events": 36,
+          "target_length": 36,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "17.0_S22_2_block2",
+          "trial_id": 17,
+          "events": 33,
+          "target_length": 33,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "18.0_S22_2_block2",
+          "trial_id": 18,
+          "events": 32,
+          "target_length": 32,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "19.0_S22_2_block2",
+          "trial_id": 19,
+          "events": 29,
+          "target_length": 29,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "20.0_S22_2_block2",
+          "trial_id": 20,
+          "events": 29,
+          "target_length": 29,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "21.0_S22_2_block2",
+          "trial_id": 21,
+          "events": 37,
+          "target_length": 37,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "22.0_S22_2_block2",
+          "trial_id": 22,
+          "events": 22,
+          "target_length": 22,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "23.0_S22_2_block2",
+          "trial_id": 23,
+          "events": 34,
+          "target_length": 34,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "24.0_S22_2_block2",
+          "trial_id": 24,
+          "events": 31,
+          "target_length": 31,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "25.0_S22_2_block2",
+          "trial_id": 25,
+          "events": 32,
+          "target_length": 32,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "26.0_S22_2_block2",
+          "trial_id": 26,
+          "events": 36,
+          "target_length": 36,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "27.0_S22_2_block2",
+          "trial_id": 27,
+          "events": 35,
+          "target_length": 35,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "28.0_S22_2_block2",
+          "trial_id": 28,
+          "events": 28,
+          "target_length": 28,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "29.0_S22_2_block2",
+          "trial_id": 29,
+          "events": 33,
+          "target_length": 33,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "30.0_S22_2_block2",
+          "trial_id": 30,
+          "events": 34,
+          "target_length": 34,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "31.0_S22_2_block2",
+          "trial_id": 31,
+          "events": 35,
+          "target_length": 35,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "32.0_S22_2_block2",
+          "trial_id": 32,
+          "events": 40,
+          "target_length": 40,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "33.0_S22_2_block2",
+          "trial_id": 33,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "34.0_S22_2_block2",
+          "trial_id": 34,
+          "events": 34,
+          "target_length": 34,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "35.0_S22_2_block2",
+          "trial_id": 35,
+          "events": 28,
+          "target_length": 28,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "36.0_S22_2_block2",
+          "trial_id": 36,
+          "events": 27,
+          "target_length": 27,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "37.0_S22_2_block2",
+          "trial_id": 37,
+          "events": 28,
+          "target_length": 28,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "38.0_S22_2_block2",
+          "trial_id": 38,
+          "events": 26,
+          "target_length": 26,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "39.0_S22_2_block2",
+          "trial_id": 39,
+          "events": 31,
+          "target_length": 31,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "40.0_S22_2_block2",
+          "trial_id": 40,
+          "events": 31,
+          "target_length": 31,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "41.0_S22_2_block2",
+          "trial_id": 41,
+          "events": 33,
+          "target_length": 33,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "42.0_S22_2_block2",
+          "trial_id": 42,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "43.0_S22_2_block2",
+          "trial_id": 43,
+          "events": 30,
+          "target_length": 30,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "44.0_S22_2_block2",
+          "trial_id": 44,
+          "events": 33,
+          "target_length": 33,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "45.0_S22_2_block2",
+          "trial_id": 45,
+          "events": 36,
+          "target_length": 36,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "46.0_S22_2_block2",
+          "trial_id": 46,
+          "events": 24,
+          "target_length": 24,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "47.0_S22_2_block2",
+          "trial_id": 47,
+          "events": 29,
+          "target_length": 29,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "48.0_S22_2_block2",
+          "trial_id": 48,
+          "events": 41,
+          "target_length": 41,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "49.0_S22_2_block2",
+          "trial_id": 49,
+          "events": 33,
+          "target_length": 33,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "50.0_S22_2_block2",
+          "trial_id": 50,
+          "events": 26,
+          "target_length": 26,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "51.0_S22_2_block2",
+          "trial_id": 51,
+          "events": 31,
+          "target_length": 31,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "52.0_S22_2_block2",
+          "trial_id": 52,
+          "events": 32,
+          "target_length": 32,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "53.0_S22_2_block2",
+          "trial_id": 53,
+          "events": 34,
+          "target_length": 34,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "54.0_S22_2_block2",
+          "trial_id": 54,
+          "events": 31,
+          "target_length": 31,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "55.0_S22_2_block2",
+          "trial_id": 55,
+          "events": 35,
+          "target_length": 35,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "56.0_S22_2_block2",
+          "trial_id": 56,
+          "events": 26,
+          "target_length": 26,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "57.0_S22_2_block2",
+          "trial_id": 57,
+          "events": 30,
+          "target_length": 30,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "58.0_S22_2_block2",
+          "trial_id": 58,
+          "events": 37,
+          "target_length": 37,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "59.0_S22_2_block2",
+          "trial_id": 59,
+          "events": 31,
+          "target_length": 31,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "60.0_S22_2_block2",
+          "trial_id": 60,
+          "events": 35,
+          "target_length": 35,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "61.0_S22_2_block2",
+          "trial_id": 61,
+          "events": 28,
+          "target_length": 28,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "62.0_S22_2_block2",
+          "trial_id": 62,
+          "events": 31,
+          "target_length": 31,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "63.0_S22_2_block2",
+          "trial_id": 63,
+          "events": 30,
+          "target_length": 30,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "64.0_S22_2_block2",
+          "trial_id": 64,
+          "events": 24,
+          "target_length": 24,
+          "target_matches_keystrokes": true
+        },
+        {
+          "sentence_UID": "65.0_S22_2_block2",
+          "trial_id": 65,
+          "events": 27,
+          "target_length": 27,
+          "target_matches_keystrokes": true
+        }
+      ],
+      "zero_filled_events": 13,
+      "zero_filled_event_fraction": 0.006301502666020358
+    }
+  ],
+  "totals": {
+    "events": 9650,
+    "sentences": 256,
+    "blocks": 4,
+    "sessions": 2
+  },
+  "label_distribution": {
+    " ": 1258,
+    "@": 14,
+    "a": 1135,
+    "b": 96,
+    "c": 468,
+    "d": 303,
+    "e": 1002,
+    "f": 64,
+    "g": 119,
+    "h": 14,
+    "i": 589,
+    "j": 28,
+    "l": 814,
+    "m": 175,
+    "n": 566,
+    "o": 771,
+    "p": 210,
+    "q": 15,
+    "r": 535,
+    "s": 865,
+    "t": 310,
+    "u": 171,
+    "v": 88,
+    "x": 24,
+    "y": 8,
+    "z": 8
+  },
+  "verification": {
+    "expected_events": 9650,
+    "written_events": 9650,
+    "shape": [
+      9650,
+      25,
+      306
+    ],
+    "dtype": "float32",
+    "channels_per_event": 306,
+    "samples_per_event": 25,
+    "sentences_covered": 256,
+    "sentences_expected": 256,
+    "historical_preprocessing_used": false,
+    "no_neuroselect_padding": true,
+    "no_neuroselect_padding_note": "NeuroSelect adds no padding of its own. The only zeros are the official extractor's own right-edge fill, counted in zero_fill and verified against the official extractor in results/official_v1_boundary_event_parity.json.",
+    "checks": {
+      "event_count_matches": true,
+      "shape_correct": true,
+      "dtype_is_float32": true,
+      "all_finite": true,
+      "channel_names_identical_across_blocks": true,
+      "all_labels_in_vocabulary": true,
+      "all_256_sentences_covered": true,
+      "label_target_consistency_checked_per_sentence": true,
+      "at_most_one_zero_filled_sample_per_event": true,
+      "official_v1_preprocessing_used": true
+    },
+    "zero_fill": {
+      "definition": "a time slice whose 306 channels are all exactly zero",
+      "cause": "the official MegExtractor adds a one-sample-short overlap into a zero array of the requested duration when the window start lands exactly halfway between two 50 Hz samples",
+      "zero_filled_events": 34,
+      "zero_filled_event_fraction": 0.003523316062176166,
+      "zero_filled_samples_total": 34,
+      "max_zero_samples_in_one_event": 1,
+      "position_histogram": {
+        "0": 17,
+        "24": 17
+      },
+      "per_block": {
+        "session1/block1": {
+          "events": 2040,
+          "zero_filled_events": 7
+        },
+        "session1/block2": {
+          "events": 2755,
+          "zero_filled_events": 8
+        },
+        "session2/block1": {
+          "events": 2792,
+          "zero_filled_events": 6
+        },
+        "session2/block2": {
+          "events": 2063,
+          "zero_filled_events": 13
+        }
+      }
+    },
+    "status": "PASS"
+  },
+  "training_run": false,
+  "model_used": false
+}
