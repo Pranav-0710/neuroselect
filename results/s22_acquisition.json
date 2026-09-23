@@ -1,0 +1,82 @@
+{
+  "task": "5X S22 targeted acquisition",
+  "repository": "bcbl190626/SpanishBCBL",
+  "revision": "88f9096c6ce3a3fb17cc7b8e3131ff7f96da5684",
+  "downloads": [
+    {
+      "remote_path": "MEG/FIF/22_9788/231214/block2.fif",
+      "local_path": "data\\raw\\spanishbcbl_s22\\MEG\\FIF\\22_9788\\231214\\block2.fif",
+      "expected_sha256": "b827b6d4e5101a53ba8c6e248cc30cb50501db1628cda8768f68e588a055744e",
+      "actual_sha256": "b827b6d4e5101a53ba8c6e248cc30cb50501db1628cda8768f68e588a055744e",
+      "sha256_verified": true,
+      "expected_size_bytes": 1411728256,
+      "actual_size_bytes": 1411728256,
+      "size_verified": true,
+      "seconds": 56.7
+    },
+    {
+      "remote_path": "MEG/logs/S22-session1_block2_list2.mat",
+      "local_path": "data\\raw\\spanishbcbl_s22\\MEG\\logs\\S22-session1_block2_list2.mat",
+      "expected_sha256": "d70a6bd029811e9c44a70c00a4fa93bf1ee36cc53fc6bb1e9582e5f5e166a27c",
+      "actual_sha256": "d70a6bd029811e9c44a70c00a4fa93bf1ee36cc53fc6bb1e9582e5f5e166a27c",
+      "sha256_verified": true,
+      "expected_size_bytes": 285603,
+      "actual_size_bytes": 285603,
+      "size_verified": true,
+      "seconds": 1.8
+    },
+    {
+      "remote_path": "MEG/FIF/22_9788/231222/Block1.fif",
+      "local_path": "data\\raw\\spanishbcbl_s22\\MEG\\FIF\\22_9788\\231222\\Block1.fif",
+      "expected_sha256": "dcbcb8f6c693e36be8d7632380103e4bfe35236fc6ee352f837d9257cc2dac82",
+      "actual_sha256": "dcbcb8f6c693e36be8d7632380103e4bfe35236fc6ee352f837d9257cc2dac82",
+      "sha256_verified": true,
+      "expected_size_bytes": 1560050432,
+      "actual_size_bytes": 1560050432,
+      "size_verified": true,
+      "seconds": 49.7
+    },
+    {
+      "remote_path": "MEG/logs/S22-session2_block1_list2.mat",
+      "local_path": "data\\raw\\spanishbcbl_s22\\MEG\\logs\\S22-session2_block1_list2.mat",
+      "expected_sha256": "dbdff992d8c31428dcf9b962df43a650cfdcc77559f40cc4a7bbce938ffb03de",
+      "actual_sha256": "dbdff992d8c31428dcf9b962df43a650cfdcc77559f40cc4a7bbce938ffb03de",
+      "sha256_verified": true,
+      "expected_size_bytes": 289761,
+      "actual_size_bytes": 289761,
+      "size_verified": true,
+      "seconds": 1.4
+    },
+    {
+      "remote_path": "MEG/FIF/22_9788/231222/Block2.fif",
+      "local_path": "data\\raw\\spanishbcbl_s22\\MEG\\FIF\\22_9788\\231222\\Block2.fif",
+      "expected_sha256": "659d8f5cb3a9a3786157afecc6b9881adf027d699b2b793c6b3095f802436c33",
+      "actual_sha256": "659d8f5cb3a9a3786157afecc6b9881adf027d699b2b793c6b3095f802436c33",
+      "sha256_verified": true,
+      "expected_size_bytes": 1136070372,
+      "actual_size_bytes": 1136070372,
+      "size_verified": true,
+      "seconds": 56.7
+    },
+    {
+      "remote_path": "MEG/logs/S22-session2_block2_list1.mat",
+      "local_path": "data\\raw\\spanishbcbl_s22\\MEG\\logs\\S22-session2_block2_list1.mat",
+      "expected_sha256": "96085ee480ba53b0d09be0ffb1b041fd9e9526917c601357596670ed103d0992",
+      "actual_sha256": "96085ee480ba53b0d09be0ffb1b041fd9e9526917c601357596670ed103d0992",
+      "sha256_verified": true,
+      "expected_size_bytes": 220934,
+      "actual_size_bytes": 220934,
+      "size_verified": true,
+      "seconds": 4.2
+    }
+  ],
+  "all_verified": true,
+  "total_downloaded_bytes": 4108645358,
+  "protected_files_unchanged": true,
+  "protected_file_hashes": {
+    "MEG/FIF/22_9788/231214/block1.fif": "634bf9c57ec7b6ae0697e50750233c4eed27f96e3a7493341bc21a14beaef7d0",
+    "MEG/logs/S22-session1_block1_list1.mat": "87cd3b3a1a4512db31004b76528a23a4c39c96dff68e91ec75c4c301f8c96bc6"
+  },
+  "tapping_downloaded": false,
+  "decoder_or_classifier_run": false
+}
