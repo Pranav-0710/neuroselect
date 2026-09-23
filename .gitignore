@@ -22,3 +22,6 @@ results/real_overfit_two/
 results/*.pt
 
 # Keep small manifests, reports, and figures under version control.
+
+# Caveman-compress backups (originals live in git history)
+*.original.md
