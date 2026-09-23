@@ -292,3 +292,46 @@ leakage checks are completed.
 - Artifacts: `results/no_signal_target_permutation.json`,
   `results/figures/debug/no_signal_target_permutation.png`,
   `results/figures/debug/no_signal_control_outputs.png`.
+
+## Phase 5W — S22 data-scale inventory (metadata only)
+
+- Listed the SpanishBCBL Hugging Face repository at revision
+  `88f9096c6ce3a3fb17cc7b8e3131ff7f96da5684` without downloading anything.
+- S22 has two recordings: `22_9788/231214` (session 1) and `22_9788/231222`
+  (session 2), each with two typing blocks plus a tapping localizer.
+- Local `block1.fif` and its MAT log match the remote LFS SHA-256 exactly.
+- Three typing blocks were missing locally: 4.11 GB of FIF + MAT.
+- Artifacts: `results/s22_data_scale_inventory.json`,
+  `results/figures/debug/s22_data_scale_inventory.png`.
+
+## Phase 5X — Targeted S22 acquisition and sentence-overlap audit
+
+- Downloaded exactly three typing FIFs and three MAT logs at the pinned
+  revision; all six SHA-256 and size checks passed
+  (`4,108,645,358` bytes). Tapping recordings were not downloaded and the
+  existing `block1.fif`/MAT were left untouched.
+- Official extraction over all four blocks produced `12,952` events:
+  `9,650` keystrokes, `3,042` words, `256` production sentences, with trials
+  `2–65` in every block.
+
+  | Block | Events | Keystrokes | Words | Sentences |
+  |---|---:|---:|---:|---:|
+  | session 1 / block1 (list1) | 2,743 | 2,040 | 638 | 64 |
+  | session 1 / block2 (list2) | 3,700 | 2,755 | 880 | 64 |
+  | session 2 / block1 (list2) | 3,741 | 2,792 | 884 | 64 |
+  | session 2 / block2 (list1) | 2,768 | 2,063 | 640 | 64 |
+
+- The block-1 rows reproduce the historical `events_clean.pkl` exactly
+  (2,743/2,743 row match); only pandas-version string formatting of
+  `sentence_UID`/`button_unique_id` differs. The handoff's
+  `2918/2119/666/132` figures were the raw pre-cleaning counts.
+- Sentence-list overlap is now **verified, not inferred**: list1 blocks
+  (s1b1, s2b2) share 64/64 sentences, list2 blocks (s1b2, s2b1) share 64/64,
+  and all cross-list pairs share 0. S22 has `128` unique sentences, each
+  typed exactly twice — once per session.
+- Consequence: cross-session splits are not sentence-disjoint by default.
+- No decoder, classifier or training was run. Artifacts:
+  `results/s22_acquisition.json`,
+  `results/s22_official_event_extraction.json`,
+  `results/figures/debug/s22_sentence_overlap.png`,
+  `data/raw/spanishbcbl_s22/events_clean_all_blocks.pkl` (untracked data).
