@@ -1,0 +1,886 @@
+{
+  "task": "official-v1 right-edge output-placement parity",
+  "why": "TimedArray.overlap returns 24 of 25 samples when the window start lands exactly halfway between two 50 Hz samples. The official MegExtractor adds that overlap into a zero TimedArray of the requested duration, so its output is 25 samples with one zero. The gated implementation previously raised instead of reproducing this.",
+  "official_revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "extractor": {
+    "class": "neuralset.extractors.MegExtractor",
+    "frequency": 50.0,
+    "filter": [
+      0.1,
+      20.0
+    ],
+    "baseline": [
+      0.0,
+      0.2
+    ],
+    "picks": [
+      "meg"
+    ],
+    "scaler": "RobustScaler",
+    "clamp": 5.0
+  },
+  "blocks": [
+    {
+      "block": "session1/block1",
+      "fif": "MEG/FIF/22_9788/231214/block1.fif",
+      "keystrokes": 2040,
+      "boundary_events": 7,
+      "boundary_fraction": 0.003431372549019608,
+      "control_events": 8,
+      "boundary_exact_matches": 7,
+      "control_exact_matches": 8,
+      "boundary_max_absolute_difference": 0.0,
+      "control_max_absolute_difference": 0.0
+    },
+    {
+      "block": "session1/block2",
+      "fif": "MEG/FIF/22_9788/231214/block2.fif",
+      "keystrokes": 2755,
+      "boundary_events": 8,
+      "boundary_fraction": 0.0029038112522686023,
+      "control_events": 8,
+      "boundary_exact_matches": 8,
+      "control_exact_matches": 8,
+      "boundary_max_absolute_difference": 0.0,
+      "control_max_absolute_difference": 0.0
+    },
+    {
+      "block": "session2/block1",
+      "fif": "MEG/FIF/22_9788/231222/Block1.fif",
+      "keystrokes": 2792,
+      "boundary_events": 6,
+      "boundary_fraction": 0.002148997134670487,
+      "control_events": 8,
+      "boundary_exact_matches": 6,
+      "control_exact_matches": 8,
+      "boundary_max_absolute_difference": 0.0,
+      "control_max_absolute_difference": 0.0
+    },
+    {
+      "block": "session2/block2",
+      "fif": "MEG/FIF/22_9788/231222/Block2.fif",
+      "keystrokes": 2063,
+      "boundary_events": 13,
+      "boundary_fraction": 0.006301502666020358,
+      "control_events": 8,
+      "boundary_exact_matches": 13,
+      "control_exact_matches": 8,
+      "boundary_max_absolute_difference": 0.0,
+      "control_max_absolute_difference": 0.0
+    }
+  ],
+  "boundary_events": [
+    {
+      "block": "session1/block1",
+      "timestamp_seconds": 481.13,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block1",
+      "timestamp_seconds": 510.03,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block1",
+      "timestamp_seconds": 981.27,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block1",
+      "timestamp_seconds": 1002.51,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block1",
+      "timestamp_seconds": 1018.03,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block1",
+      "timestamp_seconds": 1089.51,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block1",
+      "timestamp_seconds": 1185.89,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 135.17,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 212.41,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 427.29,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 437.41,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 518.35,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 811.27,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 815.03,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 993.15,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block1",
+      "timestamp_seconds": 470.25,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block1",
+      "timestamp_seconds": 955.63,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block1",
+      "timestamp_seconds": 988.39,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block1",
+      "timestamp_seconds": 1105.51,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block1",
+      "timestamp_seconds": 1108.51,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block1",
+      "timestamp_seconds": 1207.03,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 89.39,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 111.63,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 151.85,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 166.13,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 174.09,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 198.25,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 225.13,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 341.29,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 356.41,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 411.61,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 447.61,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 509.17,
+      "official_zero_sample_positions": [
+        24
+      ],
+      "gated_zero_sample_positions": [
+        24
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 853.51,
+      "official_zero_sample_positions": [
+        0
+      ],
+      "gated_zero_sample_positions": [
+        0
+      ],
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    }
+  ],
+  "control_events": [
+    {
+      "block": "session1/block1",
+      "timestamp_seconds": 383.276,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block1",
+      "timestamp_seconds": 480.522,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block1",
+      "timestamp_seconds": 583.503,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block1",
+      "timestamp_seconds": 677.088,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block1",
+      "timestamp_seconds": 778.735,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block1",
+      "timestamp_seconds": 873.421,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block1",
+      "timestamp_seconds": 994.048,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block1",
+      "timestamp_seconds": 1098.462,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 129.736,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 253.148,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 384.41,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 518.784,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 657.033,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 795.424,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 929.481,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session1/block2",
+      "timestamp_seconds": 1052.642,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block1",
+      "timestamp_seconds": 449.055,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block1",
+      "timestamp_seconds": 567.567,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block1",
+      "timestamp_seconds": 715.795,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block1",
+      "timestamp_seconds": 839.963,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block1",
+      "timestamp_seconds": 972.703,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block1",
+      "timestamp_seconds": 1109.872,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block1",
+      "timestamp_seconds": 1249.192,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block1",
+      "timestamp_seconds": 1382.718,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 71.744,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 163.59,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 266.751,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 368.613,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 474.739,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 587.875,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 709.491,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    },
+    {
+      "block": "session2/block2",
+      "timestamp_seconds": 807.911,
+      "shape_equal_after_transpose": true,
+      "maximum_absolute_difference": 0.0,
+      "rmse": 0.0,
+      "exact_hash_equal_after_transpose": true,
+      "both_finite": true
+    }
+  ],
+  "verification": {
+    "all_boundary_events_match_official_exactly": true,
+    "all_control_events_match_official_exactly": true,
+    "boundary_maximum_absolute_difference": 0.0,
+    "control_maximum_absolute_difference": 0.0,
+    "boundary_events_compared": 34,
+    "control_events_compared": 32,
+    "gated_zero_positions_match_official": true,
+    "status": "PASS"
+  },
+  "training_run": false,
+  "decoder_or_classifier_run": false
+}
