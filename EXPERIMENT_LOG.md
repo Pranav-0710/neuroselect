@@ -335,3 +335,35 @@ leakage checks are completed.
   `results/s22_official_event_extraction.json`,
   `results/figures/debug/s22_sentence_overlap.png`,
   `data/raw/spanishbcbl_s22/events_clean_all_blocks.pkl` (untracked data).
+
+## Phase 5Y — Split-ladder design and leakage audit (metadata only)
+
+- Wrote a pandas-independent sentence manifest
+  (`data/manifests/s22_sentence_block_metadata.jsonl`, 256 records).
+- Sentence grouping uses the **exact presented stimulus text**. Typed text
+  cannot group sentences across sessions: 256 records contain only 195 unique
+  typed strings (134 appear once, 61 twice) because typing errors differ
+  between sessions, whereas presented text gives exactly 128 texts × 2.
+- List membership was derived from exact sentence-text set equality between
+  blocks, then cross-checked against the log filenames; the two agree.
+- Word events include RSVP presentation words, so produced words
+  (`is_percep == False`, 1,518) are counted separately from perceptual words
+  (1,524).
+
+  | Block | List | Sentences | Keystrokes | Typed words | Mean target chars |
+  |---|---|---:|---:|---:|---:|
+  | session1/block1 | list1 | 64 | 2,040 | 318 | 31.9 |
+  | session1/block2 | list2 | 64 | 2,755 | 438 | 43.0 |
+  | session2/block1 | list2 | 64 | 2,792 | 442 | 43.6 |
+  | session2/block2 | list1 | 64 | 2,063 | 320 | 32.2 |
+
+- Splits A–E are sentence-disjoint (text, group, typed-string and UID overlap
+  all zero). F and G are explicitly labelled CROSS-SESSION WITH SENTENCE
+  OVERLAP (64/64 texts shared; 35 and 26 typed strings identical).
+- `trial_id` is block-scoped (2–65 in every block), so raw trial numbers
+  coincide across blocks by construction; the block-scoped
+  `(session, block, trial)` overlap is zero for every split.
+- Overall status: PASS. No training, no preprocessing change, no downloads.
+- Artifacts: `results/s22_split_ladder_audit.json`,
+  `results/figures/debug/s22_split_ladder.png`,
+  `data/manifests/split_[A-G]_*.json`.

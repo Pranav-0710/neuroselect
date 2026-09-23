@@ -1,0 +1,595 @@
+{
+  "task": "5Y S22 split-ladder design and validation (metadata only)",
+  "events_source": "data/raw/spanishbcbl_s22/events_clean_all_blocks.pkl",
+  "sentence_metadata": "data/manifests/s22_sentence_block_metadata.jsonl",
+  "dataset_counts": {
+    "total_events": 12952,
+    "keystrokes": 9650,
+    "produced_words": 1518,
+    "perceptual_words": 1524,
+    "production_sentences": 256,
+    "blocks": 4,
+    "sessions": 2
+  },
+  "sentence_structure": {
+    "total_sentence_records": 256,
+    "unique_presented_texts": 128,
+    "presented_appearing_once": 0,
+    "presented_appearing_twice": 128,
+    "presented_appearing_more_than_twice": 0,
+    "unique_typed_texts": 195,
+    "typed_appearing_once": 134,
+    "typed_appearing_twice": 61,
+    "typed_appearing_more_than_twice": 0,
+    "grouping_key": "exact presented stimulus text (unnormalized)",
+    "grouping_note": "Typed text cannot group sentences across sessions: the same stimulus is typed with different errors, so typed strings do not pair up.",
+    "expectation_met": true
+  },
+  "block_statistics": {
+    "session1/block1": {
+      "session": "1",
+      "block": "block1",
+      "list_id_derived_from_text": "list1",
+      "list_id_from_log_filename": "list1",
+      "sentence_count": 64,
+      "unique_presented_texts": 64,
+      "unique_sentence_groups": 64,
+      "total_keystrokes": 2040,
+      "total_words": 318,
+      "total_perceptual_words": 320,
+      "trial_id_range": [
+        2,
+        65
+      ],
+      "target_characters": {
+        "mean": 31.875,
+        "median": 32.0,
+        "std": 5.322417214010942,
+        "min": 13.0,
+        "max": 44.0
+      }
+    },
+    "session1/block2": {
+      "session": "1",
+      "block": "block2",
+      "list_id_derived_from_text": "list2",
+      "list_id_from_log_filename": "list2",
+      "sentence_count": 64,
+      "unique_presented_texts": 64,
+      "unique_sentence_groups": 64,
+      "total_keystrokes": 2755,
+      "total_words": 438,
+      "total_perceptual_words": 442,
+      "trial_id_range": [
+        2,
+        65
+      ],
+      "target_characters": {
+        "mean": 43.046875,
+        "median": 43.0,
+        "std": 6.315728598853421,
+        "min": 27.0,
+        "max": 64.0
+      }
+    },
+    "session2/block1": {
+      "session": "2",
+      "block": "block1",
+      "list_id_derived_from_text": "list2",
+      "list_id_from_log_filename": "list2",
+      "sentence_count": 64,
+      "unique_presented_texts": 64,
+      "unique_sentence_groups": 64,
+      "total_keystrokes": 2792,
+      "total_words": 442,
+      "total_perceptual_words": 442,
+      "trial_id_range": [
+        2,
+        65
+      ],
+      "target_characters": {
+        "mean": 43.625,
+        "median": 43.0,
+        "std": 5.6747797314080834,
+        "min": 34.0,
+        "max": 63.0
+      }
+    },
+    "session2/block2": {
+      "session": "2",
+      "block": "block2",
+      "list_id_derived_from_text": "list1",
+      "list_id_from_log_filename": "list1",
+      "sentence_count": 64,
+      "unique_presented_texts": 64,
+      "unique_sentence_groups": 64,
+      "total_keystrokes": 2063,
+      "total_words": 320,
+      "total_perceptual_words": 320,
+      "trial_id_range": [
+        2,
+        65
+      ],
+      "target_characters": {
+        "mean": 32.234375,
+        "median": 32.0,
+        "std": 4.619057626764901,
+        "min": 22.0,
+        "max": 43.0
+      }
+    }
+  },
+  "block_structure_checks": {
+    "every_block_has_64_production_sentences": true,
+    "list1_blocks_share_identical_text_sets": true,
+    "list2_blocks_share_identical_text_sets": true,
+    "list1_list2_text_overlap": 0,
+    "same_list_cross_session_shared_texts": 64,
+    "all_four_blocks_present": true,
+    "derived_list_assignment_matches_log_filenames": true
+  },
+  "list_membership_method": "Derived from exact sentence-text set equality between blocks, then cross-checked against log filenames.",
+  "splits": {
+    "A_same_session": {
+      "purpose": "Same-session block transfer with sentence-disjoint test data (session 1).",
+      "classification": "SENTENCE-DISJOINT",
+      "sentence_disjoint_claimed": true,
+      "statistics": {
+        "train_sentence_count": 64,
+        "test_sentence_count": 64,
+        "train_unique_sentences": 64,
+        "test_unique_sentences": 64,
+        "train_keystrokes": 2040,
+        "test_keystrokes": 2755,
+        "train_sessions": [
+          "1"
+        ],
+        "test_sessions": [
+          "1"
+        ],
+        "train_blocks": [
+          "session1/block1"
+        ],
+        "test_blocks": [
+          "session1/block2"
+        ],
+        "train_lists": [
+          "list1"
+        ],
+        "test_lists": [
+          "list2"
+        ],
+        "mean_train_keystrokes_per_sentence": 31.875,
+        "mean_test_keystrokes_per_sentence": 43.046875,
+        "train_target_characters": {
+          "mean": 31.875,
+          "median": 32.0,
+          "std": 5.322417214010942,
+          "min": 13.0,
+          "max": 44.0
+        },
+        "test_target_characters": {
+          "mean": 43.046875,
+          "median": 43.0,
+          "std": 6.315728598853421,
+          "min": 27.0,
+          "max": 64.0
+        }
+      },
+      "leakage": {
+        "exact_presented_text_overlap": 0,
+        "typed_target_string_overlap": 0,
+        "unique_sentence_group_overlap": 0,
+        "sentence_UID_overlap": 0,
+        "block_scoped_trial_overlap": 0,
+        "raw_trial_id_overlap": 64,
+        "raw_trial_id_note": "trial_id is block-scoped (2-65 in every block); identical numbers refer to different recordings, so the block-scoped check is the meaningful one.",
+        "record_overlap": 0,
+        "sentence_disjoint": true
+      },
+      "cross_session": false,
+      "cross_block": true,
+      "cross_list": true,
+      "status": "PASS"
+    },
+    "B_same_session": {
+      "purpose": "Same-session block transfer with sentence-disjoint test data (session 2).",
+      "classification": "SENTENCE-DISJOINT",
+      "sentence_disjoint_claimed": true,
+      "statistics": {
+        "train_sentence_count": 64,
+        "test_sentence_count": 64,
+        "train_unique_sentences": 64,
+        "test_unique_sentences": 64,
+        "train_keystrokes": 2063,
+        "test_keystrokes": 2792,
+        "train_sessions": [
+          "2"
+        ],
+        "test_sessions": [
+          "2"
+        ],
+        "train_blocks": [
+          "session2/block2"
+        ],
+        "test_blocks": [
+          "session2/block1"
+        ],
+        "train_lists": [
+          "list1"
+        ],
+        "test_lists": [
+          "list2"
+        ],
+        "mean_train_keystrokes_per_sentence": 32.234375,
+        "mean_test_keystrokes_per_sentence": 43.625,
+        "train_target_characters": {
+          "mean": 32.234375,
+          "median": 32.0,
+          "std": 4.619057626764901,
+          "min": 22.0,
+          "max": 43.0
+        },
+        "test_target_characters": {
+          "mean": 43.625,
+          "median": 43.0,
+          "std": 5.6747797314080834,
+          "min": 34.0,
+          "max": 63.0
+        }
+      },
+      "leakage": {
+        "exact_presented_text_overlap": 0,
+        "typed_target_string_overlap": 0,
+        "unique_sentence_group_overlap": 0,
+        "sentence_UID_overlap": 0,
+        "block_scoped_trial_overlap": 0,
+        "raw_trial_id_overlap": 64,
+        "raw_trial_id_note": "trial_id is block-scoped (2-65 in every block); identical numbers refer to different recordings, so the block-scoped check is the meaningful one.",
+        "record_overlap": 0,
+        "sentence_disjoint": true
+      },
+      "cross_session": false,
+      "cross_block": true,
+      "cross_list": true,
+      "status": "PASS"
+    },
+    "C_sentence_disjoint": {
+      "purpose": "Sentence-disjoint generalization pooled across all available sessions and blocks.",
+      "classification": "SENTENCE-DISJOINT",
+      "sentence_disjoint_claimed": true,
+      "statistics": {
+        "train_sentence_count": 128,
+        "test_sentence_count": 128,
+        "train_unique_sentences": 64,
+        "test_unique_sentences": 64,
+        "train_keystrokes": 4103,
+        "test_keystrokes": 5547,
+        "train_sessions": [
+          "1",
+          "2"
+        ],
+        "test_sessions": [
+          "1",
+          "2"
+        ],
+        "train_blocks": [
+          "session1/block1",
+          "session2/block2"
+        ],
+        "test_blocks": [
+          "session1/block2",
+          "session2/block1"
+        ],
+        "train_lists": [
+          "list1"
+        ],
+        "test_lists": [
+          "list2"
+        ],
+        "mean_train_keystrokes_per_sentence": 32.0546875,
+        "mean_test_keystrokes_per_sentence": 43.3359375,
+        "train_target_characters": {
+          "mean": 32.0546875,
+          "median": 32.0,
+          "std": 4.986401184957319,
+          "min": 13.0,
+          "max": 44.0
+        },
+        "test_target_characters": {
+          "mean": 43.3359375,
+          "median": 43.0,
+          "std": 6.010768128624973,
+          "min": 27.0,
+          "max": 64.0
+        }
+      },
+      "leakage": {
+        "exact_presented_text_overlap": 0,
+        "typed_target_string_overlap": 0,
+        "unique_sentence_group_overlap": 0,
+        "sentence_UID_overlap": 0,
+        "block_scoped_trial_overlap": 0,
+        "raw_trial_id_overlap": 64,
+        "raw_trial_id_note": "trial_id is block-scoped (2-65 in every block); identical numbers refer to different recordings, so the block-scoped check is the meaningful one.",
+        "record_overlap": 0,
+        "sentence_disjoint": true
+      },
+      "cross_session": false,
+      "cross_block": false,
+      "cross_list": true,
+      "status": "PASS"
+    },
+    "D_cross_session_sentence_disjoint": {
+      "purpose": "Cross-session and sentence-disjoint transfer (session 1 list1 -> session 2 list2).",
+      "classification": "SENTENCE-DISJOINT",
+      "sentence_disjoint_claimed": true,
+      "statistics": {
+        "train_sentence_count": 64,
+        "test_sentence_count": 64,
+        "train_unique_sentences": 64,
+        "test_unique_sentences": 64,
+        "train_keystrokes": 2040,
+        "test_keystrokes": 2792,
+        "train_sessions": [
+          "1"
+        ],
+        "test_sessions": [
+          "2"
+        ],
+        "train_blocks": [
+          "session1/block1"
+        ],
+        "test_blocks": [
+          "session2/block1"
+        ],
+        "train_lists": [
+          "list1"
+        ],
+        "test_lists": [
+          "list2"
+        ],
+        "mean_train_keystrokes_per_sentence": 31.875,
+        "mean_test_keystrokes_per_sentence": 43.625,
+        "train_target_characters": {
+          "mean": 31.875,
+          "median": 32.0,
+          "std": 5.322417214010942,
+          "min": 13.0,
+          "max": 44.0
+        },
+        "test_target_characters": {
+          "mean": 43.625,
+          "median": 43.0,
+          "std": 5.6747797314080834,
+          "min": 34.0,
+          "max": 63.0
+        }
+      },
+      "leakage": {
+        "exact_presented_text_overlap": 0,
+        "typed_target_string_overlap": 0,
+        "unique_sentence_group_overlap": 0,
+        "sentence_UID_overlap": 0,
+        "block_scoped_trial_overlap": 0,
+        "raw_trial_id_overlap": 64,
+        "raw_trial_id_note": "trial_id is block-scoped (2-65 in every block); identical numbers refer to different recordings, so the block-scoped check is the meaningful one.",
+        "record_overlap": 0,
+        "sentence_disjoint": true
+      },
+      "cross_session": true,
+      "cross_block": false,
+      "cross_list": true,
+      "status": "PASS"
+    },
+    "E_cross_session_sentence_disjoint": {
+      "purpose": "Cross-session and sentence-disjoint transfer in the opposite direction (session 1 list2 -> session 2 list1).",
+      "classification": "SENTENCE-DISJOINT",
+      "sentence_disjoint_claimed": true,
+      "statistics": {
+        "train_sentence_count": 64,
+        "test_sentence_count": 64,
+        "train_unique_sentences": 64,
+        "test_unique_sentences": 64,
+        "train_keystrokes": 2755,
+        "test_keystrokes": 2063,
+        "train_sessions": [
+          "1"
+        ],
+        "test_sessions": [
+          "2"
+        ],
+        "train_blocks": [
+          "session1/block2"
+        ],
+        "test_blocks": [
+          "session2/block2"
+        ],
+        "train_lists": [
+          "list2"
+        ],
+        "test_lists": [
+          "list1"
+        ],
+        "mean_train_keystrokes_per_sentence": 43.046875,
+        "mean_test_keystrokes_per_sentence": 32.234375,
+        "train_target_characters": {
+          "mean": 43.046875,
+          "median": 43.0,
+          "std": 6.315728598853421,
+          "min": 27.0,
+          "max": 64.0
+        },
+        "test_target_characters": {
+          "mean": 32.234375,
+          "median": 32.0,
+          "std": 4.619057626764901,
+          "min": 22.0,
+          "max": 43.0
+        }
+      },
+      "leakage": {
+        "exact_presented_text_overlap": 0,
+        "typed_target_string_overlap": 0,
+        "unique_sentence_group_overlap": 0,
+        "sentence_UID_overlap": 0,
+        "block_scoped_trial_overlap": 0,
+        "raw_trial_id_overlap": 64,
+        "raw_trial_id_note": "trial_id is block-scoped (2-65 in every block); identical numbers refer to different recordings, so the block-scoped check is the meaningful one.",
+        "record_overlap": 0,
+        "sentence_disjoint": true
+      },
+      "cross_session": true,
+      "cross_block": false,
+      "cross_list": true,
+      "status": "PASS"
+    },
+    "F_cross_session_sentence_overlap": {
+      "purpose": "CROSS-SESSION WITH SENTENCE OVERLAP (list1 session 1 -> list1 session 2). Adaptation only; never a sentence-generalization benchmark.",
+      "classification": "CROSS-SESSION WITH SENTENCE OVERLAP",
+      "sentence_disjoint_claimed": false,
+      "statistics": {
+        "train_sentence_count": 64,
+        "test_sentence_count": 64,
+        "train_unique_sentences": 64,
+        "test_unique_sentences": 64,
+        "train_keystrokes": 2040,
+        "test_keystrokes": 2063,
+        "train_sessions": [
+          "1"
+        ],
+        "test_sessions": [
+          "2"
+        ],
+        "train_blocks": [
+          "session1/block1"
+        ],
+        "test_blocks": [
+          "session2/block2"
+        ],
+        "train_lists": [
+          "list1"
+        ],
+        "test_lists": [
+          "list1"
+        ],
+        "mean_train_keystrokes_per_sentence": 31.875,
+        "mean_test_keystrokes_per_sentence": 32.234375,
+        "train_target_characters": {
+          "mean": 31.875,
+          "median": 32.0,
+          "std": 5.322417214010942,
+          "min": 13.0,
+          "max": 44.0
+        },
+        "test_target_characters": {
+          "mean": 32.234375,
+          "median": 32.0,
+          "std": 4.619057626764901,
+          "min": 22.0,
+          "max": 43.0
+        }
+      },
+      "leakage": {
+        "exact_presented_text_overlap": 64,
+        "typed_target_string_overlap": 35,
+        "unique_sentence_group_overlap": 64,
+        "sentence_UID_overlap": 0,
+        "block_scoped_trial_overlap": 0,
+        "raw_trial_id_overlap": 64,
+        "raw_trial_id_note": "trial_id is block-scoped (2-65 in every block); identical numbers refer to different recordings, so the block-scoped check is the meaningful one.",
+        "record_overlap": 0,
+        "sentence_disjoint": false
+      },
+      "cross_session": true,
+      "cross_block": true,
+      "cross_list": false,
+      "status": "PASS"
+    },
+    "G_cross_session_sentence_overlap": {
+      "purpose": "CROSS-SESSION WITH SENTENCE OVERLAP (list2 session 1 -> list2 session 2). Adaptation only; never a sentence-generalization benchmark.",
+      "classification": "CROSS-SESSION WITH SENTENCE OVERLAP",
+      "sentence_disjoint_claimed": false,
+      "statistics": {
+        "train_sentence_count": 64,
+        "test_sentence_count": 64,
+        "train_unique_sentences": 64,
+        "test_unique_sentences": 64,
+        "train_keystrokes": 2755,
+        "test_keystrokes": 2792,
+        "train_sessions": [
+          "1"
+        ],
+        "test_sessions": [
+          "2"
+        ],
+        "train_blocks": [
+          "session1/block2"
+        ],
+        "test_blocks": [
+          "session2/block1"
+        ],
+        "train_lists": [
+          "list2"
+        ],
+        "test_lists": [
+          "list2"
+        ],
+        "mean_train_keystrokes_per_sentence": 43.046875,
+        "mean_test_keystrokes_per_sentence": 43.625,
+        "train_target_characters": {
+          "mean": 43.046875,
+          "median": 43.0,
+          "std": 6.315728598853421,
+          "min": 27.0,
+          "max": 64.0
+        },
+        "test_target_characters": {
+          "mean": 43.625,
+          "median": 43.0,
+          "std": 5.6747797314080834,
+          "min": 34.0,
+          "max": 63.0
+        }
+      },
+      "leakage": {
+        "exact_presented_text_overlap": 64,
+        "typed_target_string_overlap": 26,
+        "unique_sentence_group_overlap": 64,
+        "sentence_UID_overlap": 0,
+        "block_scoped_trial_overlap": 0,
+        "raw_trial_id_overlap": 64,
+        "raw_trial_id_note": "trial_id is block-scoped (2-65 in every block); identical numbers refer to different recordings, so the block-scoped check is the meaningful one.",
+        "record_overlap": 0,
+        "sentence_disjoint": false
+      },
+      "cross_session": true,
+      "cross_block": true,
+      "cross_list": false,
+      "status": "PASS"
+    }
+  },
+  "verification": {
+    "all_256_production_records_included": true,
+    "128_unique_presented_texts": true,
+    "each_unique_sentence_appears_twice": true,
+    "list1_list2_overlap_zero": true,
+    "same_list_cross_session_overlap_64": true,
+    "all_four_blocks_represented": true,
+    "split_A_leakage_audit_passes": true,
+    "split_B_leakage_audit_passes": true,
+    "split_C_leakage_audit_passes": true,
+    "split_D_leakage_audit_passes": true,
+    "split_E_leakage_audit_passes": true,
+    "F_and_G_marked_sentence_overlapping": true,
+    "no_model_training": true,
+    "no_classifier_training": true,
+    "no_preprocessing_change": true,
+    "no_raw_data_modification": true,
+    "no_downloads": true
+  },
+  "overall_status": "PASS",
+  "figures": [
+    "results/figures/debug/s22_split_ladder.png"
+  ]
+}
