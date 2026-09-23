@@ -244,23 +244,30 @@ def main() -> None:
         if arguments.batch > 1:
             groups = [group[i:i + arguments.batch] for group in groups for i in range(0, len(group), arguments.batch)]
 
-    cached = {
-        record["sentence_UID"]: torch.from_numpy(np.ascontiguousarray(sequence_of(slab, record))).float()
-        for group in groups for record in group
-    }
+    # Every group is fixed for the whole run, so stack each one once. This holds
+    # exactly the same bytes as caching per sentence would, but removes a fresh
+    # (B, T, 306) allocation on every one of the 300 x len(groups) steps.
+    batches = []
+    for group in groups:
+        signals = torch.stack([
+            torch.from_numpy(np.ascontiguousarray(sequence_of(slab, record))).float()
+            for record in group
+        ])
+        batches.append((
+            signals,
+            torch.cat([encoded[record["sentence_UID"]] for record in group]),
+            torch.tensor([record["events"] * EVENT_SAMPLES for record in group], dtype=torch.long),
+            torch.tensor([len(encoded[record["sentence_UID"]]) for record in group], dtype=torch.long),
+        ))
 
     rng = np.random.default_rng(arguments.seed)
     losses = []
     started = time.time()
-    for _epoch in range(arguments.epochs):
+    for epoch in range(arguments.epochs):
         model.train()
         epoch_losses = []
-        for index in rng.permutation(len(groups)):
-            group = groups[index]
-            signals = torch.stack([cached[record["sentence_UID"]] for record in group])
-            target_ids = torch.cat([encoded[record["sentence_UID"]] for record in group])
-            input_lengths = torch.tensor([record["events"] * EVENT_SAMPLES for record in group], dtype=torch.long)
-            target_lengths = torch.tensor([len(encoded[record["sentence_UID"]]) for record in group], dtype=torch.long)
+        for index in rng.permutation(len(batches)):
+            signals, target_ids, input_lengths, target_lengths = batches[index]
             optimizer.zero_grad(set_to_none=True)
             logits = model(signals)
             log_probabilities = torch.log_softmax(logits, dim=-1).transpose(0, 1)
@@ -272,7 +279,11 @@ def main() -> None:
             optimizer.step()
             epoch_losses.append(float(loss.detach()))
         losses.append(float(np.mean(epoch_losses)))
+        if (epoch + 1) % 25 == 0:
+            print(f"epoch {epoch + 1}/{arguments.epochs} loss={losses[-1]:.4f} "
+                  f"elapsed={time.time() - started:.0f}s", flush=True)
     elapsed = time.time() - started
+    del batches
 
     train_predictions = [predict(model, slab, record, targets[record["sentence_UID"]]) for record in train_records]
     evaluation_predictions = [predict(model, slab, record, record["target"]) for record in test_records]
