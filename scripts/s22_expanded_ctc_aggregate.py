@@ -232,6 +232,7 @@ def split_summary(runs: list[dict]) -> dict:
         "train": across_seeds(runs, "train_aggregate"),
         "evaluation": across_seeds(runs, "evaluation_aggregate"),
         "evaluation_error_decomposition": error_decomposition(runs, "evaluation_predictions"),
+        "unrelated_sentence_reference": unrelated_sentence_reference(runs),
         "train_error_decomposition": error_decomposition(runs, "train_predictions"),
         "evaluation_character_distribution": character_distribution(runs, "evaluation_predictions"),
         "training_seconds_per_seed": [run["training_seconds"] for run in runs],
@@ -268,6 +269,19 @@ def main() -> None:
         "decoder": "existing verified greedy CTC decoder",
         "vocabulary": "SpanishBCBL 30-class vocabulary including blank",
         "seeds": list(SEEDS),
+        "reporting_framework": {
+            "primary_metric": "character_f1 (aligned-character precision/recall harmonic mean), under evaluation_error_decomposition",
+            "primary_metric_reason": (
+                "CER and recall are length-sensitive in opposite directions. Within the real-label "
+                "condition alone, held-out CER moves substantially with the decoded length ratio while "
+                "character F1 stays essentially flat, so CER conflates which characters are recovered "
+                "with how aggressively the decoder emits or withholds them."
+            ),
+            "secondary_metrics": "S/D/I rates per target character and the decoded-length ratio",
+            "control": "target permutation, a no-valid-signal-assignment control, not a competing decoder",
+            "reference": "length-matched training-sentence textual anchor (no model)",
+            "cer": "reported for continuity with earlier phases, explicitly interpreted as sensitive to output length",
+        },
         "primary_split": PRIMARY_SPLIT,
         "primary_split_reason": "C is sentence-disjoint and spans both sessions: train on both list1 blocks, evaluate on both list2 blocks.",
         "secondary_splits": [split for split in real_splits if split != PRIMARY_SPLIT],
@@ -326,9 +340,7 @@ def main() -> None:
                 "the optimization untouched. It is not a competing decoder and its CER is not an "
                 "accuracy baseline: it bounds what this setup produces when no valid assignment exists."
             ),
-            "unrelated_sentence_reference": unrelated_sentence_reference(
-                [runs[(CONTROL_SPLIT, "real", seed)] for seed in SEEDS if (CONTROL_SPLIT, "real", seed) in runs]
-            ),
+            "unrelated_sentence_reference": real_summary["unrelated_sentence_reference"],
             "error_decomposition_comparison": {
                 "why": (
                     "CER is normalized by target length, so a hypothesis that is simply shorter caps "
@@ -376,48 +388,97 @@ def main() -> None:
                 "significance_note": "Three seeds on one subject. No significance test is claimed.",
             },
             "previous_eight_trial_control_mean_eval_cer": PREVIOUS_EIGHT_TRIAL_CONTROL,
+            "conclusion": (
+                "Under this protocol, the correctly paired neural condition does not yet demonstrate an "
+                "advantage over the no-valid-signal-assignment control on length-robust character F1."
+            ),
+            "conclusion_scope": [
+                "One subject (S22).",
+                "One small set of recordings from that subject: four blocks across two sessions.",
+                "Three model seeds per condition.",
+                "The comparison is made on the split C evaluation partition.",
+                "This is not evidence that neural information is absent; it is a failure of this protocol "
+                "to demonstrate an advantage.",
+            ],
+            "anchor_wording": (
+                "A length-matched training-sentence textual anchor achieved higher character F1 than the "
+                "neural decoder on this development set. The anchor is well-formed Spanish text and so "
+                "benefits from ordinary language structure, while the decoder emits character soup; the "
+                "comparison shows that the decoder's output does not exceed a simple text prior in "
+                "character-level structure."
+            ),
         }
         CONTROL_OUT.write_text(json.dumps(control_artifact, indent=2, ensure_ascii=False), encoding="utf-8")
 
     # ---- CTC figure ---------------------------------------------------
+    # Character F1 leads; CER is shown beside the length ratio it tracks.
     CTC_FIGURE.parent.mkdir(parents=True, exist_ok=True)
     order = [PRIMARY_SPLIT] + [s for s in real_splits if s != PRIMARY_SPLIT]
-    figure, axes = plt.subplots(1, 3, figsize=(16, 5))
+    figure, axes = plt.subplots(2, 2, figsize=(15, 10))
     positions = np.arange(len(order))
     width = 0.35
-    train_cer = [ctc_summaries[s]["train"]["mean_cer"]["mean"] for s in order]
-    eval_cer = [ctc_summaries[s]["evaluation"]["mean_cer"]["mean"] for s in order]
-    eval_std = [ctc_summaries[s]["evaluation"]["mean_cer"]["std"] for s in order]
-    axes[0].bar(positions - width / 2, train_cer, width, label="train CER", color="#3a6ea5")
-    axes[0].bar(positions + width / 2, eval_cer, width, yerr=eval_std, capsize=4, label="held-out CER", color="#e0a458")
-    axes[0].axhline(PREVIOUS_EIGHT_TRIAL_CTC, color="grey", linestyle="--", linewidth=1.2,
-                    label=f"8-trial dev eval CER = {PREVIOUS_EIGHT_TRIAL_CTC}")
-    axes[0].axhline(1.0, color="black", linestyle=":", linewidth=1.0, label="CER = 1.0")
-    for position, value in zip(positions, eval_cer):
-        axes[0].text(position + width / 2, value, f"{value:.3f}", ha="center", va="bottom", fontsize=8)
-    axes[0].set_xticks(positions, [f"{s}{' (primary)' if s == PRIMARY_SPLIT else ''}" for s in order])
-    axes[0].set_ylabel("CER")
-    axes[0].set_title("Expanded-data CTC: CER by split (3 seeds)")
-    axes[0].legend(fontsize=7.5)
 
-    axes[1].bar(positions, [ctc_summaries[s]["evaluation"]["mean_blank_argmax_fraction"]["mean"] for s in order],
-                0.5, color="#7a4988")
+    top_left = axes[0][0]
+    f1 = [ctc_summaries[s]["evaluation_error_decomposition"]["character_f1"] for s in order]
+    per_seed_f1 = [[row["character_f1"] for row in ctc_summaries[s]["evaluation_error_decomposition"]["per_seed"]]
+                   for s in order]
+    top_left.bar(positions, f1, 0.55, color="#3a6ea5", label="held-out character F1")
+    for position, values in zip(positions, per_seed_f1):
+        top_left.scatter([position] * len(values), values, color="black", zorder=3, s=18,
+                         label="per seed" if position == 0 else None)
     for position, split in zip(positions, order):
-        value = ctc_summaries[split]["evaluation"]["mean_blank_argmax_fraction"]["mean"]
-        axes[1].text(position, value, f"{value:.3f}", ha="center", va="bottom", fontsize=8)
-    axes[1].set_xticks(positions, order)
-    axes[1].set_ylim(0, 1.05)
-    axes[1].set_ylabel("blank argmax fraction")
-    axes[1].set_title("Held-out blank regime")
+        anchor_value = ctc_summaries[split]["unrelated_sentence_reference"]["character_f1"]
+        top_left.plot([position - 0.3, position + 0.3], [anchor_value, anchor_value], color="#c8553d",
+                      linewidth=2, label="length-matched text anchor" if position == 0 else None)
+        top_left.text(position, f1[position], f"{f1[position]:.3f}", ha="center", va="bottom", fontsize=9)
+    if control_artifact:
+        value = control_summary["evaluation_error_decomposition"]["character_f1"]
+        top_left.plot([-0.3, 0.3], [value, value], color="#7a4988", linewidth=2, linestyle="--",
+                      label="no-valid-assignment control (C)")
+    top_left.set_xticks(positions, [f"{s}{' (primary)' if s == PRIMARY_SPLIT else ''}" for s in order])
+    top_left.set_ylabel("aligned-character F1")
+    top_left.set_title("PRIMARY: held-out character F1 (length-robust)")
+    top_left.legend(fontsize=7.5)
 
-    for split in order:
-        axes[2].plot(ctc_summaries[split]["ctc_loss"]["final_per_seed"], marker="o", label=f"{split} final")
-    axes[2].set_xticks(range(len(SEEDS)), [str(seed) for seed in SEEDS])
-    axes[2].set_xlabel("seed")
-    axes[2].set_ylabel("final training CTC loss")
-    axes[2].set_title("Final training loss per seed")
-    axes[2].legend(fontsize=8)
-    figure.suptitle("Step 5: corrected event-sequence CTC baseline on 9,650 keystrokes", fontsize=12)
+    top_right = axes[0][1]
+    eval_cer = [ctc_summaries[s]["evaluation_error_decomposition"]["micro_cer"] for s in order]
+    length = [ctc_summaries[s]["evaluation_error_decomposition"]["length_ratio"] for s in order]
+    top_right.bar(positions - width / 2, eval_cer, width, label="held-out CER", color="#e0a458")
+    top_right.bar(positions + width / 2, length, width, label="decoded / target length", color="#9bbfd4")
+    top_right.axhline(PREVIOUS_EIGHT_TRIAL_CTC, color="grey", linestyle="--", linewidth=1.2,
+                      label=f"8-trial dev eval CER = {PREVIOUS_EIGHT_TRIAL_CTC}")
+    for position, value in zip(positions, eval_cer):
+        top_right.text(position - width / 2, value, f"{value:.3f}", ha="center", va="bottom", fontsize=8)
+    top_right.set_xticks(positions, order)
+    top_right.set_title("CER is length-sensitive: CER beside decoded-length ratio")
+    top_right.legend(fontsize=7.5)
+
+    bottom_left = axes[1][0]
+    components = [("substitution_rate", "S/N"), ("deletion_rate", "D/N"), ("insertion_rate", "I/N")]
+    bars = 0.8 / len(components)
+    for index, (key, label) in enumerate(components):
+        bottom_left.bar(positions + (index - 1) * bars,
+                        [ctc_summaries[s]["evaluation_error_decomposition"][key] for s in order],
+                        bars, label=label)
+    bottom_left.set_xticks(positions, order)
+    bottom_left.set_ylabel("rate per target character")
+    bottom_left.set_title("Held-out error decomposition: CER = (S + D + I) / N")
+    bottom_left.legend(fontsize=8)
+
+    bottom_right = axes[1][1]
+    train_f1 = [ctc_summaries[s]["train_error_decomposition"]["character_f1"] for s in order]
+    bottom_right.bar(positions - width / 2, train_f1, width, label="training character F1", color="#3a6ea5")
+    bottom_right.bar(positions + width / 2, f1, width, label="held-out character F1", color="#e0a458")
+    for position, value in zip(positions, train_f1):
+        bottom_right.text(position - width / 2, value, f"{value:.3f}", ha="center", va="bottom", fontsize=8)
+    bottom_right.set_xticks(positions, order)
+    bottom_right.set_ylim(0, 1.1)
+    bottom_right.set_ylabel("aligned-character F1")
+    bottom_right.set_title("Training fit vs held-out transfer")
+    bottom_right.legend(fontsize=8)
+
+    figure.suptitle("Step 5: event-sequence CTC on 9,650 keystrokes, 256 sentences, 4 blocks, 2 sessions",
+                    fontsize=13)
     figure.tight_layout()
     figure.savefig(CTC_FIGURE, dpi=160)
     plt.close(figure)
@@ -427,26 +488,38 @@ def main() -> None:
         figure, axes = plt.subplots(1, 3, figsize=(15, 5))
         labels = ["real labels", "permuted labels"]
         colours = ["#3a6ea5", "#c8553d"]
-        cer_values = [real_summary["evaluation"]["mean_cer"]["mean"], control_summary["evaluation"]["mean_cer"]["mean"]]
-        cer_errors = [real_summary["evaluation"]["mean_cer"]["std"], control_summary["evaluation"]["mean_cer"]["std"]]
-        axes[0].bar(labels, cer_values, yerr=cer_errors, capsize=5, color=colours)
-        for index, value in enumerate(cer_values):
-            axes[0].text(index, value, f"{value:.3f}", ha="center", va="bottom", fontsize=9)
-        axes[0].axhline(1.0, color="black", linestyle=":", linewidth=1.0)
-        axes[0].set_ylabel("held-out CER")
-        axes[0].set_title("Split C held-out CER")
-
-        keys = [("mean_blank_argmax_fraction", "blank fraction"),
-                ("mean_decoded_target_ratio", "decoded/target length"),
-                ("mean_most_frequent_character_fraction", "top-char fraction")]
-        positions = np.arange(len(keys))
         width = 0.35
-        axes[1].bar(positions - width / 2, [real_summary["evaluation"][k]["mean"] for k, _ in keys], width,
+        real_f1 = [row["character_f1"] for row in real_summary["evaluation_error_decomposition"]["per_seed"]]
+        control_f1 = [row["character_f1"] for row in control_summary["evaluation_error_decomposition"]["per_seed"]]
+        pooled = [real_summary["evaluation_error_decomposition"]["character_f1"],
+                  control_summary["evaluation_error_decomposition"]["character_f1"]]
+        axes[0].bar(labels, pooled, 0.55, color=colours)
+        for index, values in enumerate([real_f1, control_f1]):
+            axes[0].scatter([index] * len(values), values, color="black", zorder=3, s=22,
+                            label="per seed" if index == 0 else None)
+            axes[0].text(index, pooled[index], f"{pooled[index]:.3f}", ha="center", va="bottom", fontsize=9)
+        anchor_value = real_summary["unrelated_sentence_reference"]["character_f1"]
+        axes[0].axhline(anchor_value, color="#2e7d32", linewidth=2, linestyle="--",
+                        label=f"length-matched text anchor = {anchor_value:.3f}")
+        axes[0].set_ylabel("aligned-character F1")
+        axes[0].set_title("PRIMARY: held-out character F1 (length-robust)")
+        axes[0].legend(fontsize=7.5)
+
+        keys = [("micro_cer", "CER"), ("length_ratio", "decoded/target length")]
+        positions = np.arange(len(keys))
+        real_errors_side = real_summary["evaluation_error_decomposition"]
+        control_errors_side = control_summary["evaluation_error_decomposition"]
+        axes[1].bar(positions - width / 2, [real_errors_side[k] for k, _ in keys], width,
                     label="real labels", color=colours[0])
-        axes[1].bar(positions + width / 2, [control_summary["evaluation"][k]["mean"] for k, _ in keys], width,
+        axes[1].bar(positions + width / 2, [control_errors_side[k] for k, _ in keys], width,
                     label="permuted labels", color=colours[1])
+        for position, (key, _) in zip(positions, keys):
+            axes[1].text(position - width / 2, real_errors_side[key], f"{real_errors_side[key]:.3f}",
+                         ha="center", va="bottom", fontsize=8)
+            axes[1].text(position + width / 2, control_errors_side[key], f"{control_errors_side[key]:.3f}",
+                         ha="center", va="bottom", fontsize=8)
         axes[1].set_xticks(positions, [label for _, label in keys], fontsize=9)
-        axes[1].set_title("Held-out output statistics")
+        axes[1].set_title("Lower control CER tracks its shorter output")
         axes[1].legend(fontsize=8)
 
         real_errors = real_summary["evaluation_error_decomposition"]
