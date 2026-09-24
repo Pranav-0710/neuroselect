@@ -29,6 +29,134 @@ PREVIOUS_EIGHT_TRIAL_CTC = 0.9194
 PREVIOUS_EIGHT_TRIAL_CONTROL = 1.082
 
 
+def edit_components(reference: str, hypothesis: str) -> tuple[int, int, int, int]:
+    """Levenshtein alignment with backtrace.
+
+    Returns (substitutions, deletions, insertions, hits) against `reference`,
+    so that CER == (S + D + I) / len(reference). A deletion is a reference
+    character missing from the hypothesis; an insertion is a hypothesis
+    character absent from the reference.
+    """
+    rows, columns = len(reference) + 1, len(hypothesis) + 1
+    cost = [[0] * columns for _ in range(rows)]
+    for i in range(rows):
+        cost[i][0] = i
+    for j in range(columns):
+        cost[0][j] = j
+    for i in range(1, rows):
+        for j in range(1, columns):
+            cost[i][j] = min(
+                cost[i - 1][j] + 1,                                        # deletion
+                cost[i][j - 1] + 1,                                        # insertion
+                cost[i - 1][j - 1] + (reference[i - 1] != hypothesis[j - 1]),
+            )
+    substitutions = deletions = insertions = hits = 0
+    i, j = len(reference), len(hypothesis)
+    while i > 0 or j > 0:
+        if i > 0 and j > 0 and cost[i][j] == cost[i - 1][j - 1] and reference[i - 1] == hypothesis[j - 1]:
+            hits += 1
+            i, j = i - 1, j - 1
+        elif i > 0 and j > 0 and cost[i][j] == cost[i - 1][j - 1] + 1:
+            substitutions += 1
+            i, j = i - 1, j - 1
+        elif i > 0 and cost[i][j] == cost[i - 1][j] + 1:
+            deletions += 1
+            i -= 1
+        else:
+            insertions += 1
+            j -= 1
+    return substitutions, deletions, insertions, hits
+
+
+def rates(totals: dict) -> dict:
+    """Length-sensitive rates plus the length-robust aligned-character F1."""
+    reference = max(totals["reference_characters"], 1)
+    hypothesis = max(totals["hypothesis_characters"], 1)
+    precision = totals["hits"] / hypothesis
+    recall = totals["hits"] / reference
+    return {
+        "substitution_rate": totals["substitutions"] / reference,
+        "deletion_rate": totals["deletions"] / reference,
+        "insertion_rate": totals["insertions"] / reference,
+        "micro_cer": (totals["substitutions"] + totals["deletions"] + totals["insertions"]) / reference,
+        "hit_rate": recall,
+        "character_precision": precision,
+        "character_recall": recall,
+        "character_f1": (2 * precision * recall / (precision + recall)) if (precision + recall) else 0.0,
+        "length_ratio": totals["hypothesis_characters"] / reference,
+    }
+
+
+def error_decomposition(runs: list[dict], side: str) -> dict:
+    """Aggregate S/D/I over every held-out sentence of every seed.
+
+    Reported because CER alone cannot separate "decodes better" from "emits a
+    shorter string": CER is normalized by target length, so a short hypothesis
+    caps its own insertion count.
+    """
+    totals = {"substitutions": 0, "deletions": 0, "insertions": 0, "hits": 0,
+              "reference_characters": 0, "hypothesis_characters": 0}
+    per_seed = []
+    mismatches = 0
+    for run in runs:
+        seed_totals = dict.fromkeys(totals, 0)
+        for row in run[side]:
+            s, d, i, hits = edit_components(row["target"], row["decoded"])
+            if abs((s + d + i) / max(len(row["target"]), 1) - row["cer"]) > 1e-9:
+                mismatches += 1
+            for key, value in (("substitutions", s), ("deletions", d), ("insertions", i),
+                               ("hits", hits), ("reference_characters", len(row["target"])),
+                               ("hypothesis_characters", len(row["decoded"]))):
+                seed_totals[key] += value
+                totals[key] += value
+        per_seed.append({
+            "seed": run["seed"],
+            **rates(seed_totals),
+            **{f"{k}_count": v for k, v in seed_totals.items()},
+        })
+    return {
+        "definition": "CER = (S + D + I) / N, N = target characters; counts pooled over all seeds",
+        "length_robust_note": (
+            "CER and hit recall are both length-sensitive in opposite directions: a shorter hypothesis "
+            "caps its insertions and so lowers CER, while a longer hypothesis gets more chances to align "
+            "a character and so raises recall. character_f1 is the harmonic mean of aligned-character "
+            "precision and recall and is the length-robust comparison."
+        ),
+        "counts": totals,
+        **rates(totals),
+        "per_seed": per_seed,
+        "components_disagree_with_reported_cer": mismatches,
+    }
+
+
+def unrelated_sentence_reference(real_runs: list[dict]) -> dict:
+    """What character F1 does an unrelated real Spanish sentence already score?
+
+    No model and no randomness: every held-out sentence is scored against the
+    training sentence closest to it in length (ties broken by sentence UID).
+    This anchors the F1 scale, because Spanish letter statistics and a roughly
+    correct length alone recover a non-trivial share of characters.
+    """
+    run = real_runs[0]
+    training = sorted(
+        {row["sentence_UID"]: row["target"] for row in run["train_predictions"]}.items()
+    )
+    totals = {"substitutions": 0, "deletions": 0, "insertions": 0, "hits": 0,
+              "reference_characters": 0, "hypothesis_characters": 0}
+    for row in run["evaluation_predictions"]:
+        target = row["target"]
+        _, hypothesis = min(training, key=lambda item: (abs(len(item[1]) - len(target)), item[0]))
+        s, d, i, hits = edit_components(target, hypothesis)
+        for key, value in (("substitutions", s), ("deletions", d), ("insertions", i), ("hits", hits),
+                           ("reference_characters", len(target)), ("hypothesis_characters", len(hypothesis))):
+            totals[key] += value
+    return {
+        "what_it_is": "each held-out sentence scored against the length-matched training sentence; no model involved",
+        "counts": totals,
+        **rates(totals),
+    }
+
+
 def load_runs() -> dict[tuple[str, str, int], dict]:
     runs = {}
     for path in sorted(RUN_DIR.glob("*.json")):
@@ -103,6 +231,8 @@ def split_summary(runs: list[dict]) -> dict:
         },
         "train": across_seeds(runs, "train_aggregate"),
         "evaluation": across_seeds(runs, "evaluation_aggregate"),
+        "evaluation_error_decomposition": error_decomposition(runs, "evaluation_predictions"),
+        "train_error_decomposition": error_decomposition(runs, "train_predictions"),
         "evaluation_character_distribution": character_distribution(runs, "evaluation_predictions"),
         "training_seconds_per_seed": [run["training_seconds"] for run in runs],
         "example_decodes": [
@@ -189,6 +319,42 @@ def main() -> None:
                 "split": CONTROL_SPLIT,
                 "evaluation": real_summary["evaluation"],
                 "evaluation_character_distribution": real_summary["evaluation_character_distribution"],
+            },
+            "what_this_control_is": (
+                "A no-valid-signal-assignment control. Permuting the training targets destroys the "
+                "signal-to-sentence correspondence while leaving the signals, the sequence lengths and "
+                "the optimization untouched. It is not a competing decoder and its CER is not an "
+                "accuracy baseline: it bounds what this setup produces when no valid assignment exists."
+            ),
+            "unrelated_sentence_reference": unrelated_sentence_reference(
+                [runs[(CONTROL_SPLIT, "real", seed)] for seed in SEEDS if (CONTROL_SPLIT, "real", seed) in runs]
+            ),
+            "error_decomposition_comparison": {
+                "why": (
+                    "CER is normalized by target length, so a hypothesis that is simply shorter caps "
+                    "its own insertion count and can score a lower CER without decoding anything better. "
+                    "Reporting S, D and I separately alongside the length ratio shows directly whether "
+                    "a CER difference comes from better character recovery or from output length."
+                ),
+                "real_labels": {
+                    k: real_summary["evaluation_error_decomposition"][k]
+                    for k in ("substitution_rate", "deletion_rate", "insertion_rate", "hit_rate",
+                              "character_precision", "character_recall", "character_f1",
+                              "micro_cer", "length_ratio", "counts")
+                },
+                "permuted_labels": {
+                    k: control_summary["evaluation_error_decomposition"][k]
+                    for k in ("substitution_rate", "deletion_rate", "insertion_rate", "hit_rate",
+                              "character_precision", "character_recall", "character_f1",
+                              "micro_cer", "length_ratio", "counts")
+                },
+                "difference_control_minus_real": {
+                    k: control_summary["evaluation_error_decomposition"][k]
+                       - real_summary["evaluation_error_decomposition"][k]
+                    for k in ("substitution_rate", "deletion_rate", "insertion_rate", "hit_rate",
+                              "character_precision", "character_recall", "character_f1",
+                              "micro_cer", "length_ratio")
+                },
             },
             "comparison": {
                 "evaluation_cer": delta("mean_cer"),
@@ -283,22 +449,26 @@ def main() -> None:
         axes[1].set_title("Held-out output statistics")
         axes[1].legend(fontsize=8)
 
-        real_hist = real_summary["evaluation_character_distribution"]["histogram"]
-        control_hist = control_summary["evaluation_character_distribution"]["histogram"]
-        characters = sorted(set(real_hist) | set(control_hist),
-                            key=lambda c: -(real_hist.get(c, 0) + control_hist.get(c, 0)))[:12]
-        positions = np.arange(len(characters))
-        real_total = max(real_summary["evaluation_character_distribution"]["total_characters"], 1)
-        control_total = max(control_summary["evaluation_character_distribution"]["total_characters"], 1)
-        axes[2].bar(positions - width / 2, [real_hist.get(c, 0) / real_total for c in characters], width,
+        real_errors = real_summary["evaluation_error_decomposition"]
+        control_errors = control_summary["evaluation_error_decomposition"]
+        components = [("substitution_rate", "subst."), ("deletion_rate", "delet."),
+                      ("insertion_rate", "insert."), ("character_recall", "recall"),
+                      ("character_precision", "precision"), ("character_f1", "char F1")]
+        positions = np.arange(len(components))
+        axes[2].bar(positions - width / 2, [real_errors[k] for k, _ in components], width,
                     label="real labels", color=colours[0])
-        axes[2].bar(positions + width / 2, [control_hist.get(c, 0) / control_total for c in characters], width,
+        axes[2].bar(positions + width / 2, [control_errors[k] for k, _ in components], width,
                     label="permuted labels", color=colours[1])
-        axes[2].set_xticks(positions, [repr(c)[1:-1] if c != " " else "space" for c in characters], fontsize=8)
-        axes[2].set_ylabel("share of decoded characters")
-        axes[2].set_title("Decoded character-frequency concentration")
+        for position, (key, _) in zip(positions, components):
+            axes[2].text(position - width / 2, real_errors[key], f"{real_errors[key]:.2f}",
+                         ha="center", va="bottom", fontsize=7)
+            axes[2].text(position + width / 2, control_errors[key], f"{control_errors[key]:.2f}",
+                         ha="center", va="bottom", fontsize=7)
+        axes[2].set_xticks(positions, [label for _, label in components], fontsize=9)
+        axes[2].set_ylabel("rate per target character")
+        axes[2].set_title("Held-out error decomposition: CER = (S + D + I) / N")
         axes[2].legend(fontsize=8)
-        figure.suptitle("Step 6: target-permutation negative control (split C, shuffle seed 2026)", fontsize=12)
+        figure.suptitle("Step 6: no-valid-signal-assignment control (split C, target permutation, shuffle seed 2026)", fontsize=12)
         figure.tight_layout()
         figure.savefig(CONTROL_FIGURE, dpi=160)
         plt.close(figure)
