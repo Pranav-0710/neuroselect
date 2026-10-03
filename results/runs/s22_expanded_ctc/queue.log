@@ -1,0 +1,14 @@
+5 already finished, 7 to run, 5 at a time
+started C/control/777 pid=21812
+started E/real/33 pid=7396
+started E/real/123 pid=3272
+started E/real/777 pid=26912
+started D/real/33 pid=1752
+finished D/real/33: ok
+started D/real/123 pid=26440
+finished C/control/777: ok
+started D/real/777 pid=31932
+finished E/real/33: ok
+finished E/real/777: ok
+finished E/real/123: ok
+finished D/real/123: ok
