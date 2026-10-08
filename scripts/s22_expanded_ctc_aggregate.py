@@ -8,6 +8,7 @@ figures. Pure aggregation: nothing is trained here.
 from __future__ import annotations
 
 import collections
+import importlib.util
 import json
 import math
 from pathlib import Path
@@ -21,6 +22,9 @@ CTC_OUT = ROOT / "results/s22_expanded_ctc_baseline.json"
 CONTROL_OUT = ROOT / "results/s22_expanded_no_signal_control.json"
 CTC_FIGURE = ROOT / "results/figures/debug/s22_expanded_ctc.png"
 CONTROL_FIGURE = ROOT / "results/figures/debug/s22_no_signal_control.png"
+TRAINER = ROOT / "scripts/s22_expanded_ctc.py"
+METADATA = ROOT / "data/manifests/s22_sentence_block_metadata.jsonl"
+MANIFESTS = ROOT / "data/manifests"
 
 SEEDS = (33, 123, 777)
 PRIMARY_SPLIT = "C"
@@ -154,6 +158,63 @@ def unrelated_sentence_reference(real_runs: list[dict]) -> dict:
         "what_it_is": "each held-out sentence scored against the length-matched training sentence; no model involved",
         "counts": totals,
         **rates(totals),
+    }
+
+
+def stimulus_twin_audit(control_runs: list[dict]) -> dict:
+    """How many permuted training pairs are not actually invalid?
+
+    The derangement is drawn over sentence UIDs. In split C each list1 sentence
+    is typed once per session, so a UID can be mapped onto its own twin from the
+    other session: the signal then gets the text of the sentence it really
+    came from. Recomputed from the trainer's own derangement and checked against
+    the examples each run stored.
+    """
+    spec = importlib.util.spec_from_file_location("s22_expanded_ctc", TRAINER)
+    trainer = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(trainer)
+    manifest = json.loads((MANIFESTS / trainer.SPLIT_FILES[CONTROL_SPLIT]).read_text(encoding="utf-8"))
+    metadata = {}
+    for line in METADATA.read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            record = json.loads(line)
+            metadata[record["sentence_UID"]] = record
+    keys = manifest["train_sentence_UIDs"]
+    mapping, draws = trainer.derangement(keys, trainer.PERMUTATION_SEED)
+    reproduces = all(
+        metadata[mapping[example["sentence_UID"]]]["sentence_typed"] == example["assigned_target"]
+        for run in control_runs for example in run["target_permutation"]["mapping_examples"]
+    )
+    twins = [
+        {
+            "signal_sentence_UID": source,
+            "assigned_target_sentence_UID": target,
+            "stimulus_group": metadata[source]["unique_sentence_group_id"],
+            "signal_typed_text": metadata[source]["sentence_typed"],
+            "assigned_typed_text": metadata[target]["sentence_typed"],
+            "typed_text_identical": metadata[source]["sentence_typed"] == metadata[target]["sentence_typed"],
+        }
+        for source, target in mapping.items()
+        if metadata[source]["unique_sentence_group_id"] == metadata[target]["unique_sentence_group_id"]
+    ]
+    return {
+        "derangement_recomputed_from_trainer": True,
+        "recomputed_mapping_reproduces_stored_examples": reproduces,
+        "draws_until_derangement": draws,
+        "training_pairs": len(mapping),
+        "pairs_mapped_to_same_stimulus_other_session": len(twins),
+        "same_stimulus_fraction": len(twins) / len(mapping),
+        "pairs_with_identical_typed_text": sum(1 for twin in twins if twin["typed_text_identical"]),
+        "expected_same_stimulus_pairs_by_chance": len(mapping) / (len(mapping) - 1),
+        "twins": twins,
+        "effect": (
+            "These pairs give the control a little valid supervision, which pulls it toward the real "
+            "condition and so could only hide a real-label advantage, not create one. They cannot explain "
+            "the observed real/control equality: the control has valid supervision on this small fraction "
+            "of pairs against all of them for real labels, and every twin is a list1 sentence, none of which "
+            "is in the list2 evaluation set."
+        ),
+        "design_note": "Deranging at the stimulus-group level rather than the UID level would exclude twins.",
     }
 
 
@@ -332,6 +393,7 @@ def main() -> None:
                 "evaluation_targets": "correctly paired, never permuted",
             },
             "target_permutation": control_runs[0]["target_permutation"],
+            "target_permutation_audit": stimulus_twin_audit(control_runs),
             "control": control_summary,
             "real_reference": {
                 "split": CONTROL_SPLIT,

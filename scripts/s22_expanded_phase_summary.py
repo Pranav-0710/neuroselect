@@ -29,6 +29,7 @@ MANIFEST_DIR = ROOT / "data/manifests"
 
 TENSORS = ROOT / "results/s22_expanded_event_tensors.json"
 BOUNDARY = ROOT / "results/official_v1_boundary_event_parity.json"
+ENV_PARITY = ROOT / "results/s22_event_tensor_env_parity.json"
 SPLITS = ROOT / "results/s22_split_ladder_audit.json"
 PROBE = ROOT / "results/s22_expanded_event_probe.json"
 CTC = ROOT / "results/s22_expanded_ctc_baseline.json"
@@ -439,6 +440,13 @@ def main() -> None:
             "MegExtractor. See results/official_v1_boundary_event_parity.json."
         ),
         "boundary_parity_status": boundary["verification"]["status"] if boundary else None,
+        "event_tensor_env_parity_status": (read(ENV_PARITY) or {}).get("status"),
+        "event_tensor_env_parity_note": (
+            "The slab was written from the workspace environment, whose scipy, scikit-learn, pandas "
+            "and torch differ from the pinned environment. results/s22_event_tensor_env_parity.json "
+            "re-extracts a sample of every block inside the pinned environment and requires exact "
+            "equality with the stored rows."
+        ),
         "split_audit_status": splits["overall_status"] if splits else None,
     }
 
