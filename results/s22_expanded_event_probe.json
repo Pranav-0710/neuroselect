@@ -32,7 +32,7 @@
       "features_per_event": 7650,
       "pca_components_retained": 991,
       "pca_explained_variance": 0.9501057863235474,
-      "fit_seconds": 46.198824644088745,
+      "fit_seconds": 22.85161018371582,
       "train": {
         "events": 2040,
         "accuracy": 1.0,
@@ -41,7 +41,9 @@
         "majority_baseline_accuracy": 0.12450980392156863,
         "accuracy_minus_majority": 0.8754901960784314,
         "distinct_true_classes": 26,
-        "distinct_predicted_classes": 26
+        "distinct_predicted_classes": 26,
+        "chance_balanced_accuracy": 0.038461538461538464,
+        "balanced_accuracy_over_chance": 26.0
       },
       "test": {
         "events": 2755,
@@ -51,7 +53,9 @@
         "majority_baseline_accuracy": 0.13502722323049002,
         "accuracy_minus_majority": -0.03666061705989111,
         "distinct_true_classes": 26,
-        "distinct_predicted_classes": 4
+        "distinct_predicted_classes": 4,
+        "chance_balanced_accuracy": 0.038461538461538464,
+        "balanced_accuracy_over_chance": 1.0374481534007862
       },
       "per_fold_test": {
         "session1/block2": {
@@ -62,7 +66,9 @@
           "majority_baseline_accuracy": 0.13502722323049002,
           "accuracy_minus_majority": -0.03666061705989111,
           "distinct_true_classes": 26,
-          "distinct_predicted_classes": 4
+          "distinct_predicted_classes": 4,
+          "chance_balanced_accuracy": 0.038461538461538464,
+          "balanced_accuracy_over_chance": 1.0374481534007862
         }
       },
       "majority_class_id": 9,
@@ -196,7 +202,7 @@
       "features_per_event": 7650,
       "pca_components_retained": 910,
       "pca_explained_variance": 0.9500132203102112,
-      "fit_seconds": 52.94981908798218,
+      "fit_seconds": 25.282965421676636,
       "train": {
         "events": 2063,
         "accuracy": 1.0,
@@ -205,7 +211,9 @@
         "majority_baseline_accuracy": 0.12360639844886089,
         "accuracy_minus_majority": 0.8763936015511391,
         "distinct_true_classes": 26,
-        "distinct_predicted_classes": 26
+        "distinct_predicted_classes": 26,
+        "chance_balanced_accuracy": 0.038461538461538464,
+        "balanced_accuracy_over_chance": 26.0
       },
       "test": {
         "events": 2792,
@@ -215,7 +223,9 @@
         "majority_baseline_accuracy": 0.13502865329512895,
         "accuracy_minus_majority": -0.07199140401146133,
         "distinct_true_classes": 26,
-        "distinct_predicted_classes": 5
+        "distinct_predicted_classes": 5,
+        "chance_balanced_accuracy": 0.038461538461538464,
+        "balanced_accuracy_over_chance": 0.8991121223513798
       },
       "per_fold_test": {
         "session2/block1": {
@@ -226,7 +236,9 @@
           "majority_baseline_accuracy": 0.13502865329512895,
           "accuracy_minus_majority": -0.07199140401146133,
           "distinct_true_classes": 26,
-          "distinct_predicted_classes": 5
+          "distinct_predicted_classes": 5,
+          "chance_balanced_accuracy": 0.038461538461538464,
+          "balanced_accuracy_over_chance": 0.8991121223513798
         }
       },
       "majority_class_id": 9,
@@ -362,7 +374,7 @@
       "features_per_event": 7650,
       "pca_components_retained": 1334,
       "pca_explained_variance": 0.950066328048706,
-      "fit_seconds": 147.77739119529724,
+      "fit_seconds": 69.72780728340149,
       "train": {
         "events": 4103,
         "accuracy": 1.0,
@@ -371,7 +383,9 @@
         "majority_baseline_accuracy": 0.12405556909578357,
         "accuracy_minus_majority": 0.8759444309042165,
         "distinct_true_classes": 26,
-        "distinct_predicted_classes": 26
+        "distinct_predicted_classes": 26,
+        "chance_balanced_accuracy": 0.038461538461538464,
+        "balanced_accuracy_over_chance": 26.0
       },
       "test": {
         "events": 5547,
@@ -381,7 +395,9 @@
         "majority_baseline_accuracy": 0.1350279430322697,
         "accuracy_minus_majority": -0.06327744726879395,
         "distinct_true_classes": 26,
-        "distinct_predicted_classes": 3
+        "distinct_predicted_classes": 3,
+        "chance_balanced_accuracy": 0.038461538461538464,
+        "balanced_accuracy_over_chance": 0.9828314119154054
       },
       "per_fold_test": {
         "session1/block2": {
@@ -392,7 +408,9 @@
           "majority_baseline_accuracy": 0.13502722323049002,
           "accuracy_minus_majority": -0.05662431941923775,
           "distinct_true_classes": 26,
-          "distinct_predicted_classes": 2
+          "distinct_predicted_classes": 2,
+          "chance_balanced_accuracy": 0.038461538461538464,
+          "balanced_accuracy_over_chance": 1.069620417152481
         },
         "session2/block1": {
           "events": 2792,
@@ -402,7 +420,9 @@
           "majority_baseline_accuracy": 0.13502865329512895,
           "accuracy_minus_majority": -0.06984240687679084,
           "distinct_true_classes": 26,
-          "distinct_predicted_classes": 3
+          "distinct_predicted_classes": 3,
+          "chance_balanced_accuracy": 0.038461538461538464,
+          "balanced_accuracy_over_chance": 0.8958531180753403
         }
       },
       "majority_class_id": 9,
@@ -536,7 +556,7 @@
       "features_per_event": 7650,
       "pca_components_retained": 991,
       "pca_explained_variance": 0.9501057863235474,
-      "fit_seconds": 50.95374822616577,
+      "fit_seconds": 21.11311411857605,
       "train": {
         "events": 2040,
         "accuracy": 1.0,
@@ -545,7 +565,9 @@
         "majority_baseline_accuracy": 0.12450980392156863,
         "accuracy_minus_majority": 0.8754901960784314,
         "distinct_true_classes": 26,
-        "distinct_predicted_classes": 26
+        "distinct_predicted_classes": 26,
+        "chance_balanced_accuracy": 0.038461538461538464,
+        "balanced_accuracy_over_chance": 26.0
       },
       "test": {
         "events": 2792,
@@ -555,7 +577,9 @@
         "majority_baseline_accuracy": 0.13502865329512895,
         "accuracy_minus_majority": -0.05479942693409742,
         "distinct_true_classes": 26,
-        "distinct_predicted_classes": 21
+        "distinct_predicted_classes": 21,
+        "chance_balanced_accuracy": 0.038461538461538464,
+        "balanced_accuracy_over_chance": 1.6566816955383068
       },
       "per_fold_test": {
         "session2/block1": {
@@ -566,7 +590,9 @@
           "majority_baseline_accuracy": 0.13502865329512895,
           "accuracy_minus_majority": -0.05479942693409742,
           "distinct_true_classes": 26,
-          "distinct_predicted_classes": 21
+          "distinct_predicted_classes": 21,
+          "chance_balanced_accuracy": 0.038461538461538464,
+          "balanced_accuracy_over_chance": 1.6566816955383068
         }
       },
       "majority_class_id": 9,
@@ -700,7 +726,7 @@
       "features_per_event": 7650,
       "pca_components_retained": 986,
       "pca_explained_variance": 0.9500199556350708,
-      "fit_seconds": 86.66513729095459,
+      "fit_seconds": 35.07357954978943,
       "train": {
         "events": 2755,
         "accuracy": 1.0,
@@ -709,7 +735,9 @@
         "majority_baseline_accuracy": 0.13502722323049002,
         "accuracy_minus_majority": 0.86497277676951,
         "distinct_true_classes": 26,
-        "distinct_predicted_classes": 26
+        "distinct_predicted_classes": 26,
+        "chance_balanced_accuracy": 0.038461538461538464,
+        "balanced_accuracy_over_chance": 26.0
       },
       "test": {
         "events": 2063,
@@ -719,7 +747,9 @@
         "majority_baseline_accuracy": 0.12360639844886089,
         "accuracy_minus_majority": -0.0465341735336888,
         "distinct_true_classes": 26,
-        "distinct_predicted_classes": 11
+        "distinct_predicted_classes": 11,
+        "chance_balanced_accuracy": 0.038461538461538464,
+        "balanced_accuracy_over_chance": 0.9081462111635108
       },
       "per_fold_test": {
         "session2/block2": {
@@ -730,7 +760,9 @@
           "majority_baseline_accuracy": 0.12360639844886089,
           "accuracy_minus_majority": -0.0465341735336888,
           "distinct_true_classes": 26,
-          "distinct_predicted_classes": 11
+          "distinct_predicted_classes": 11,
+          "chance_balanced_accuracy": 0.038461538461538464,
+          "balanced_accuracy_over_chance": 0.9081462111635108
         }
       },
       "majority_class_id": 9,
@@ -852,6 +884,7 @@
       }
     }
   },
+  "primary_reference_metric": "balanced accuracy against uniform chance (1/26). Raw accuracy is below the majority baseline on every split because class_weight='balanced' trades majority-class accuracy for minority-class recall.",
   "interpretation_guard": "Per-event classification above a majority baseline shows that keystroke-locked event windows carry some class-linked information. It is not evidence of brain-to-text decoding.",
   "verification": {
     "official_v1_tensors_used": true,

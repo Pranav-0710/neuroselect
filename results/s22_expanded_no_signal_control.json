@@ -423,26 +423,7 @@
       ],
       "components_disagree_with_reported_cer": 0
     },
-    "unrelated_sentence_reference": {
-      "what_it_is": "each held-out sentence scored against the length-matched training sentence; no model involved",
-      "counts": {
-        "substitutions": 2914,
-        "deletions": 682,
-        "insertions": 422,
-        "hits": 1951,
-        "reference_characters": 5547,
-        "hypothesis_characters": 5287
-      },
-      "substitution_rate": 0.5253290066702723,
-      "deletion_rate": 0.12294934198665945,
-      "insertion_rate": 0.07607715882458987,
-      "micro_cer": 0.7243555074815216,
-      "hit_rate": 0.3517216513430683,
-      "character_precision": 0.36901834688859464,
-      "character_recall": 0.3517216513430683,
-      "character_f1": 0.36016245154144366,
-      "length_ratio": 0.9531278168379305
-    },
+    "unrelated_sentence_reference": null,
     "train_error_decomposition": {
       "definition": "CER = (S + D + I) / N, N = target characters; counts pooled over all seeds",
       "length_robust_note": "CER and hit recall are both length-sensitive in opposite directions: a shorter hypothesis caps its insertions and so lowers CER, while a longer hypothesis gets more chances to align a character and so raises recall. character_f1 is the harmonic mean of aligned-character precision and recall and is the length-robust comparison.",

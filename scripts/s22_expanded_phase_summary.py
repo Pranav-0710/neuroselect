@@ -8,11 +8,14 @@ and quantifies the data-scale change. Nothing is trained or downloaded here.
 from __future__ import annotations
 
 import hashlib
+import importlib.util
 import json
 import platform
+import re
 import statistics
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -59,6 +62,175 @@ def sha256_file(path: Path) -> str:
         for chunk in iter(lambda: handle.read(1 << 24), b""):
             digest.update(chunk)
     return digest.hexdigest()
+
+
+def load_aggregator():
+    """Reuse the aggregator's alignment so every F1 in the phase is computed one way."""
+    spec = importlib.util.spec_from_file_location(
+        "s22_expanded_ctc_aggregate", ROOT / "scripts/s22_expanded_ctc_aggregate.py"
+    )
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def eight_trial_f1(path: Path, aggregator) -> dict | None:
+    """Character F1 for an earlier 8-trial run, from its stored decoded strings."""
+    artifact = read(path)
+    if not artifact:
+        return None
+    pooled = dict.fromkeys(("substitutions", "deletions", "insertions", "hits",
+                            "reference_characters", "hypothesis_characters"), 0)
+    per_seed = []
+    for result in artifact["seed_results"]:
+        totals = dict.fromkeys(pooled, 0)
+        for row in result["evaluation_predictions"]:
+            s, d, i, hits = aggregator.edit_components(row["target"], row["decoded"])
+            for key, value in (("substitutions", s), ("deletions", d), ("insertions", i), ("hits", hits),
+                               ("reference_characters", len(row["target"])),
+                               ("hypothesis_characters", len(row["decoded"]))):
+                totals[key] += value
+                pooled[key] += value
+        per_seed.append({"seed": result["seed"],
+                         "evaluation_sentences": len(result["evaluation_predictions"]),
+                         **aggregator.rates(totals)})
+    return {"per_seed": per_seed, **aggregator.rates(pooled), "counts": pooled}
+
+
+def pearson(x: list[float], y: list[float]) -> float:
+    return float(np.corrcoef(np.asarray(x), np.asarray(y))[0, 1])
+
+
+def length_analysis(ctc: dict, control: dict | None) -> dict:
+    """Across every trained run: does CER track output length, and does F1?"""
+    rows = []
+    for split, summary in ctc["splits"].items():
+        for seed in summary["evaluation_error_decomposition"]["per_seed"]:
+            rows.append({"run": f"{split}/real/{seed['seed']}", **{k: seed[k] for k in (
+                "micro_cer", "character_f1", "length_ratio", "insertion_rate", "deletion_rate")}})
+    if control:
+        for seed in control["control"]["evaluation_error_decomposition"]["per_seed"]:
+            rows.append({"run": f"C/control/{seed['seed']}", **{k: seed[k] for k in (
+                "micro_cer", "character_f1", "length_ratio", "insertion_rate", "deletion_rate")}})
+    cer = [row["micro_cer"] for row in rows]
+    f1 = [row["character_f1"] for row in rows]
+    length = [row["length_ratio"] for row in rows]
+    return {
+        "runs": len(rows),
+        "per_run": rows,
+        "pearson_r_cer_vs_length_ratio": pearson(cer, length),
+        "pearson_r_character_f1_vs_length_ratio": pearson(f1, length),
+        "pearson_r_insertion_rate_vs_length_ratio": pearson([row["insertion_rate"] for row in rows], length),
+        "pearson_r_deletion_rate_vs_length_ratio": pearson([row["deletion_rate"] for row in rows], length),
+        "cer_range": [min(cer), max(cer)],
+        "character_f1_range": [min(f1), max(f1)],
+        "length_ratio_range": [min(length), max(length)],
+        "note": ("Descriptive correlations across the trained runs, not a hypothesis test. "
+                 "Each run is one seed of one condition."),
+    }
+
+
+def paired_control(ctc: dict, control: dict | None) -> dict | None:
+    """Split C real vs control, paired by seed.
+
+    For a given seed the two runs share the same initialization and the same
+    batch order (grouping is by sequence length, which the permutation leaves
+    unchanged); only the training targets differ. This is the tightest
+    comparison the design allows.
+    """
+    if not control:
+        return None
+    real = {row["seed"]: row for row in ctc["splits"]["C"]["evaluation_error_decomposition"]["per_seed"]}
+    permuted = {row["seed"]: row for row in control["control"]["evaluation_error_decomposition"]["per_seed"]}
+    pairs = []
+    for seed in sorted(set(real) & set(permuted)):
+        pairs.append({
+            "seed": seed,
+            "real_character_f1": real[seed]["character_f1"],
+            "control_character_f1": permuted[seed]["character_f1"],
+            "f1_real_minus_control": real[seed]["character_f1"] - permuted[seed]["character_f1"],
+            "real_cer": real[seed]["micro_cer"],
+            "control_cer": permuted[seed]["micro_cer"],
+            "cer_real_minus_control": real[seed]["micro_cer"] - permuted[seed]["micro_cer"],
+            "real_length_ratio": real[seed]["length_ratio"],
+            "control_length_ratio": permuted[seed]["length_ratio"],
+        })
+    differences = [pair["f1_real_minus_control"] for pair in pairs]
+    real_f1 = [pair["real_character_f1"] for pair in pairs]
+    control_f1 = [pair["control_character_f1"] for pair in pairs]
+    above = sum(1 for value in differences if value > 0)
+    within_spread = max(abs(value) for value in differences) <= max(
+        max(real_f1) - min(real_f1), max(control_f1) - min(control_f1)
+    )
+    return {
+        "design": "same seed = same initialization and same batch order; only the training targets differ",
+        "pairs": pairs,
+        "mean_f1_difference_real_minus_control": float(np.mean(differences)),
+        "pairs_with_real_above_control": above,
+        "pairs_total": len(pairs),
+        "f1_difference_range": [float(min(differences)), float(max(differences))],
+        "real_f1_seed_range": float(max(real_f1) - min(real_f1)),
+        "control_f1_seed_range": float(max(control_f1) - min(control_f1)),
+        "largest_pair_difference_within_seed_spread": bool(within_spread),
+        "chance_of_this_many_same_sign_pairs": 0.5 ** len(pairs) if above in (0, len(pairs)) else None,
+        "significance_testing_performed": False,
+        "reading": (
+            f"Real labels score above the control in {above} of {len(pairs)} seed pairs, by "
+            f"{min(differences):+.3f} to {max(differences):+.3f} character F1. "
+            + ("That is no larger than the spread between seeds within either condition. "
+               if within_spread else "That exceeds the spread between seeds within each condition. ")
+            + "No significance test was run, so this is not a demonstrated advantage."
+        ),
+    }
+
+
+def verify_raw_files(acquisition: dict | None) -> dict:
+    """Re-hash every raw FIF and MAT now, against the acquisition record."""
+    expected: dict[str, str] = {}
+    if acquisition:
+        for row in acquisition.get("downloads", []):
+            expected[row["remote_path"]] = row["actual_sha256"]
+        expected.update(acquisition.get("protected_file_hashes", {}))
+    data_root = ROOT / "data/raw/spanishbcbl_s22"
+    files = []
+    for path in sorted([*data_root.glob("MEG/FIF/**/*.fif"), *data_root.glob("MEG/logs/*.mat")]):
+        relative = path.relative_to(data_root).as_posix()
+        digest = sha256_file(path)
+        files.append({
+            "file": relative,
+            "sha256": digest,
+            "expected_sha256": expected.get(relative),
+            "matches": expected.get(relative) == digest,
+        })
+    return {
+        "files_hashed": len(files),
+        "all_match_acquisition_record": bool(files) and all(row["matches"] for row in files),
+        "files": files,
+        "hashed_at": "phase-summary run time (not copied from an earlier artifact)",
+    }
+
+
+def run_tests() -> dict:
+    """Run the full NeuroSelect suite and parse pytest's summary line."""
+    basetemp = tempfile.mkdtemp(prefix="neuroselect-pytest-")
+    result = subprocess.run(
+        [sys.executable, "-m", "pytest", "tests", "-q", "-p", "no:cacheprovider", f"--basetemp={basetemp}"],
+        cwd=ROOT, capture_output=True, text=True, env={**__import__("os").environ, "PYTHONPATH": "src"},
+    )
+    lines = [line for line in result.stdout.splitlines() if line.strip()]
+    summary = next((line for line in reversed(lines) if re.search(r"\d+ (passed|failed|error)", line)), "")
+    counts = {key: 0 for key in ("passed", "failed", "skipped", "errors")}
+    for number, word in re.findall(r"(\d+) (passed|failed|skipped|errors?|warnings?)", summary):
+        key = "errors" if word.startswith("error") else word
+        if key in counts:
+            counts[key] = int(number)
+    return {
+        "command": "python -m pytest tests -q",
+        "exit_code": result.returncode,
+        "summary_line": summary.strip("= ").strip(),
+        "collected": sum(counts.values()),
+        **counts,
+    }
 
 
 def read(path: Path) -> dict | None:
@@ -137,10 +309,27 @@ def main() -> None:
     }
 
     # ---- Step 7: baseline comparison ---------------------------------
+    aggregator = load_aggregator()
+    previous_real_f1 = eight_trial_f1(EIGHT_TRIAL, aggregator)
+    previous_control_f1 = eight_trial_f1(PERMUTATION_8, aggregator)
     comparison = None
     if ctc:
         primary = ctc["splits"][ctc["primary_split"]]
         comparison = {
+            "primary_metric": "character_f1",
+            "character_f1": {
+                "previous_8_trial_real": previous_real_f1,
+                "previous_8_trial_control": previous_control_f1,
+                "expanded_primary_C_real": primary["evaluation_error_decomposition"]["character_f1"],
+                "expanded_C_control": (
+                    control["control"]["evaluation_error_decomposition"]["character_f1"] if control else None
+                ),
+                "expanded_D_real": ctc["splits"]["D"]["evaluation_error_decomposition"]["character_f1"],
+                "expanded_E_real": ctc["splits"]["E"]["evaluation_error_decomposition"]["character_f1"],
+                "length_matched_text_anchor_C": primary["unrelated_sentence_reference"]["character_f1"],
+                "caveat": ("The 8-trial F1 rests on 2 held-out sentences per seed (6 sentence decodes in "
+                           "total), so it is far noisier than the expanded result on 128 sentences per seed."),
+            },
             "previous_event_sequence_ctc": {
                 "setting": "8 trials from one block of one session, 6 train / 2 evaluation, 240 keystrokes",
                 "mean_evaluation_cer": PREVIOUS["event_sequence_ctc_mean_eval_cer"],
@@ -221,6 +410,8 @@ def main() -> None:
     }
 
     # ---- Step 12: integrity -------------------------------------------
+    raw_file_check = verify_raw_files(acquisition)
+    tests = run_tests()
     vendor_dirty = git("status", "--porcelain", "--", "vendor/brain2qwerty").splitlines()
     historical_dirty = git("status", "--porcelain", "--", HISTORICAL_PREPROCESSING).splitlines()
     tests_dirty = git("status", "--porcelain", "--", "tests").splitlines()
@@ -232,10 +423,8 @@ def main() -> None:
         "historical_preprocessing_file": HISTORICAL_PREPROCESSING,
         "tests_unmodified": not tests_dirty,
         "raw_data_untracked_or_unchanged": not raw_dirty,
-        "raw_fif_hashes_match_acquisition_record": all(
-            acquisition_hashes.get(path.replace("data/raw/spanishbcbl_s22/", ""), digest) == digest
-            for path, digest in raw_hashes.items()
-        ) if acquisition_hashes else "acquisition record has no comparable hash list",
+        "raw_files": raw_file_check,
+        "raw_fif_and_mat_files_unchanged": raw_file_check["all_match_acquisition_record"],
         "no_dataset_download_this_phase": True,
         "evidence_selector_implemented": False,
         "llm_used": False,
@@ -265,6 +454,9 @@ def main() -> None:
         },
         "data_scale": data_scale,
         "baseline_comparison": comparison,
+        "length_analysis": length_analysis(ctc, control) if ctc else None,
+        "paired_real_vs_control": paired_control(ctc, control) if ctc else None,
+        "tests": tests,
         "reproducibility": reproducibility,
         "integrity": integrity,
         "headline_numbers": {
@@ -272,6 +464,12 @@ def main() -> None:
             "sentences": expanded["sentences"],
             "unique_sentence_texts": expanded["unique_sentence_texts"],
             "primary_ctc_split": ctc["primary_split"] if ctc else None,
+            "primary_ctc_evaluation_character_f1": (
+                ctc["splits"][ctc["primary_split"]]["evaluation_error_decomposition"]["character_f1"] if ctc else None
+            ),
+            "control_evaluation_character_f1": (
+                control["control"]["evaluation_error_decomposition"]["character_f1"] if control else None
+            ),
             "primary_ctc_evaluation_cer": comparison["expanded_primary"]["mean_evaluation_cer"] if comparison else None,
             "control_evaluation_cer": comparison["expanded_target_permutation_control"] if comparison else None,
             "primary_probe_test_accuracy": probe["reports"][probe["primary_split"]]["test"]["accuracy"] if probe else None,
@@ -307,7 +505,7 @@ def main() -> None:
     axes[2].bar(range(len(characters)), shares, color="#7a4988")
     axes[2].set_xticks(range(len(characters)), ["space" if c == " " else c for c in characters], fontsize=8)
     axes[2].set_ylabel("share of all events")
-    axes[2].set_title("Event class distribution (top 15 of 29)")
+    axes[2].set_title(f"Event class distribution (top {len(characters)} of {len(expanded['class_distribution'])} observed classes)")
     figure.suptitle("Expanded-data baseline phase: dataset summary", fontsize=12)
     figure.tight_layout()
     FIGURE_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -318,6 +516,7 @@ def main() -> None:
         "artifact": str(OUT_PATH.relative_to(ROOT)),
         "headline_numbers": artifact["headline_numbers"],
         "integrity": {k: v for k, v in integrity.items() if isinstance(v, (bool, str)) and k != "official_v1_preprocessing_semantics_note"},
+        "tests": tests,
     }, indent=2))
 
 
