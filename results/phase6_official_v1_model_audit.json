@@ -1,0 +1,229 @@
+{
+  "task": "Phase 6 Part 1: official Brain2Qwerty v1 model audit",
+  "official_revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "sources_inspected": [
+    "vendor/brain2qwerty/brain2qwerty_v1/config/model_config.py",
+    "vendor/brain2qwerty/brain2qwerty_v1/config/xp_config.py",
+    "vendor/brain2qwerty/brain2qwerty_v1/main.py",
+    "vendor/brain2qwerty/brain2qwerty_v1/pl_module.py",
+    "vendor/brain2qwerty/brain2qwerty_v1/utils.py",
+    "vendor/brain2qwerty/brain2qwerty_v1/metrics.py",
+    "vendor/brain2qwerty/brain2qwerty_v1/transforms.py",
+    "neuraltrain 0.2.2: models/simpleconv.py, models/common.py, models/transformer.py",
+    "neuralset 0.2.2: extractors/neuro.py (ChannelPositions, MegExtractor), dataloader.py",
+    "x-transformers 2.4.9 (realized module introspected)"
+  ],
+  "official_encoder_config": {
+    "name": "SimpleConvTimeAgg",
+    "time_agg_out": "att",
+    "dropout_input": 0.2,
+    "conv_dropout": 0.5,
+    "hidden": 2048,
+    "batch_norm": true,
+    "depth": 8,
+    "dilation_period": 3,
+    "kernel_size": 3,
+    "relu_leakiness": 0.01,
+    "initial_linear": 512,
+    "gelu": true,
+    "skip": true,
+    "scale": 0.1,
+    "subject_layers_config": {},
+    "merger_config": {
+      "n_virtual_channels": 270,
+      "fourier_emb_config": {
+        "n_freqs": null,
+        "total_dim": 2048,
+        "n_dims": 2
+      },
+      "dropout": 0.2,
+      "usage_penalty": 1.0,
+      "per_subject": true,
+      "embed_ref": false
+    }
+  },
+  "official_transformer_config": {
+    "name": "TransformerEncoder",
+    "alibi_pos_bias": true,
+    "depth": 4,
+    "heads": 2
+  },
+  "formulation": "Per-keystroke classification, not sequence transduction. Every keystroke window is encoded independently, keystrokes are grouped by sentence for a transformer, and each keystroke is classified into one of 29 characters. No CTC, no blank.",
+  "input": {
+    "neural_tensor": "(B, 306, 25): one keystroke window [-0.2, +0.3) s at 50 Hz, channels-first",
+    "batch_size": {
+      "train": 64,
+      "val": 2048,
+      "test": 2048
+    },
+    "batch_unit": "keystrokes, not sentences",
+    "realized_and_verified": {
+      "neuro": {
+        "official_shape": [
+          172,
+          306,
+          25
+        ],
+        "official_dtype": "torch.float32",
+        "slab_shape": [
+          172,
+          306,
+          25
+        ],
+        "slab_dtype": "torch.float32",
+        "exactly_equal": true,
+        "max_abs_difference": 0.0
+      },
+      "feature": {
+        "official_shape": [
+          172,
+          1
+        ],
+        "official_dtype": "torch.int64",
+        "slab_shape": [
+          172,
+          1
+        ],
+        "slab_dtype": "torch.int64",
+        "exactly_equal": true,
+        "max_abs_difference": 0.0
+      },
+      "subject_id": {
+        "official_shape": [
+          172,
+          1
+        ],
+        "official_dtype": "torch.int64",
+        "slab_shape": [
+          172,
+          1
+        ],
+        "slab_dtype": "torch.int64",
+        "exactly_equal": true,
+        "max_abs_difference": 0.0
+      },
+      "channel_positions": {
+        "official_shape": [
+          172,
+          306,
+          2
+        ],
+        "official_dtype": "torch.float32",
+        "slab_shape": [
+          172,
+          306,
+          2
+        ],
+        "slab_dtype": "torch.float32",
+        "exactly_equal": true,
+        "max_abs_difference": 0.0
+      }
+    }
+  },
+  "channel_positions": {
+    "extractor": "ChannelPositions2D (official subclass re-enabling 2D layouts for MEG)",
+    "source": "mne.find_layout(raw.info) 2D sensor layout",
+    "normalization": "min-max to [0, 1] per dimension; channels without a layout position set to -0.1 and masked",
+    "shape": "(B, 306, 2)",
+    "use": "Fourier-embedded (2D, 32 frequencies per dimension -> 2048 features) and used as keys of the per-subject spatial attention in the ChannelMerger",
+    "s22_realized": {
+      "masked_channels": 0,
+      "identical_across_blocks": true
+    }
+  },
+  "subject_conditioning": {
+    "subject_id": "LabelEncoder over the Meg events' subject field, shape (B, 1); 0 for S22",
+    "channel_merger": "per_subject=True: heads (n_subjects=200, 270, 2048) selected by subject id",
+    "subject_layers": "subject_layers_config={} in the official config parses to an enabled SubjectLayers with defaults: a per-subject 512->2048 linear map, weights (200, 512, 2048) + bias (200, 2048)",
+    "subject_slots": 200,
+    "per_subject_table_parameters": 320716800
+  },
+  "encoder": {
+    "class": "neuraltrain SimpleConvTimeAgg",
+    "stages": [
+      "input dropout 0.2 is applied to the first conv layer's input",
+      "ChannelMerger: 306 sensors -> 270 virtual channels via Fourier-position spatial attention (spatial dropout radius 0.2; usage_penalty 1.0 is computed but BrainModule never adds it to the loss)",
+      "initial_linear: Conv1d 270 -> 512, kernel 1",
+      "SubjectLayers: per-subject 512 -> 2048",
+      "ConvSequence: 8 x Conv1d 2048 -> 2048, kernel 3, dilations 1,2,4,1,2,4,1,2 (growth 2, period 3), BatchNorm, GELU (gelu=True overrides relu_leakiness), dropout 0.5, residual skip with LayerScale 0.1, no activation after the last layer",
+      "time aggregation: Bahdanau attention (hidden 256) over the 25 samples -> one 2048-d vector"
+    ],
+    "hidden": 2048,
+    "output": "(B, 2048), one embedding per keystroke"
+  },
+  "sentence_model": {
+    "class": "x-transformers Encoder via neuraltrain TransformerEncoder",
+    "realized": {
+      "class": "Encoder",
+      "layers": 4,
+      "heads": 2,
+      "norm": "ScaleNorm",
+      "rotary_positional_embedding": "RotaryEmbedding",
+      "relative_position_bias": "AlibiPositionalBias",
+      "attention_dropout": 0.1
+    },
+    "dimension": 2048,
+    "feed_forward_multiplier": 4,
+    "unspecified_settings_take_class_defaults": "the official config sets only alibi_pos_bias, depth and heads, so use_scalenorm=True, rotary_pos_emb=True, attn_dropout=0.1, ff_mult=4 and scale_residual=True apply",
+    "grouping": "BrainModule._transformer_forward groups the keystrokes of a batch by sentence_UID, pads, masks and runs the encoder. Grouping is within a batch only."
+  },
+  "target_and_loss": {
+    "target": "official LabelEncoder over Keystroke.button with BUTTON_MAPPING: 29 classes (letters, space, <special>, <number>; rare symbols fold into <special>)",
+    "relation_to_neuroselect_vocab": "official class = NeuroSelect SpanishBCBL id - 1 (no blank)",
+    "head": "Linear(2048, 29)",
+    "loss": "CrossEntropyLoss over keystrokes (mean over the batch)"
+  },
+  "decoding": {
+    "procedure": "argmax per keystroke -> CHAR_INDEX; exactly one character per keystroke",
+    "consequence": "The decoder is given the keystroke segmentation: output length always equals the number of keystrokes. Its CER is therefore not comparable with CTC CER, which must infer length.",
+    "language_model": "optional KenLM beam search is a separate post-processing script, not part of training"
+  },
+  "train_validation_test": {
+    "splitter": "Brain2QwertyV1Splitter: 80/10/10 by keystrokes over 19 pooled participants, TF-IDF cosine > 0.5 sentence clusters kept in one split, cluster order shuffled with seed 1",
+    "sampler": "SentenceGroupedDistributedSampler without shuffling: fixed sentence order every epoch; with 64-keystroke batches, sentences straddling a batch boundary reach the transformer in two parts",
+    "early_stopping": "EarlyStopping on val_CER, patience 30",
+    "checkpointing": "best val_CER checkpoint saved, but trainer.test runs on the final in-memory weights",
+    "official_cer_metric": "Levenshtein over each batch concatenated into one string, normalized per batch (not per sentence, despite its docstring)"
+  },
+  "optimization": {
+    "optimizer": "AdamW, lr 5e-5, weight decay 1e-4",
+    "scheduler": "OneCycleLR, max_lr 5e-5, pct_start 0.1, stepped per batch",
+    "gradient_clipping": null,
+    "epochs": 300,
+    "seed": 33,
+    "devices": "8 GPUs by default; CPU fallback when CUDA is absent",
+    "source_check": {
+      "n_epochs_300": true,
+      "patience_30": true
+    }
+  },
+  "parameters_measured": {
+    "uninitialized_lazy_parameters": 0,
+    "channel_merger": 110592000,
+    "channel_merger_heads_shape": [
+      200,
+      270,
+      2048
+    ],
+    "initial_linear": 138752,
+    "subject_layers": 210124800,
+    "subject_layers_weight_shape": [
+      200,
+      512,
+      2048
+    ],
+    "conv_encoder": 100724736,
+    "time_aggregation": 524803,
+    "sentence_transformer": 201383945,
+    "output_linear": 59421,
+    "total": 623548457
+  },
+  "corrections_to_earlier_audit": {
+    "earlier_artifact": "results/official_v1_style_baseline.json (commit c13a6e8)",
+    "rotary_positional_embedding": "earlier: false. Measured: RotaryEmbedding is active alongside ALiBi.",
+    "normalization": "earlier: x-transformers default (LayerNorm). Measured: ScaleNorm.",
+    "parameter_count": "earlier: not obtained. Measured: 623,548,457.",
+    "subject_layers": "earlier audit did not record them. Measured: 210,124,800 parameters."
+  },
+  "published_benchmark_reproduced": false
+}

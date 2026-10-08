@@ -459,3 +459,76 @@ from accessible signal subset and leakage checks done.
   `results/runs/s22_expanded_ctc/*.json`,
   `results/figures/debug/s22_expanded_{baseline_summary,event_probe,ctc}.png`,
   `results/figures/debug/s22_no_signal_control.png`.
+
+## Phase 6 — Official Brain2Qwerty v1 keystroke-level baseline
+
+- **Outcome D: official baseline cannot be executed reliably on this
+  hardware.** Nothing was trained.
+- **Formulation (audited from source).** Per-keystroke classification, not
+  CTC. Each `(306, 25)` keystroke window → per-subject channel merger
+  (306 → 270 virtual channels, Fourier-embedded 2D sensor layout) → 1×1 conv
+  270→512 → per-subject `SubjectLayers` 512→2048 → 8 × Conv1d 2048→2048 (k=3,
+  dilations 1,2,4 repeating, BatchNorm, GELU, dropout 0.5, LayerScale-0.1 skips)
+  → Bahdanau attention over time → one 2048-d vector. Keystrokes grouped by
+  sentence *within a batch* → x-transformers Encoder (4 layers, 2 heads, dim
+  2048) → `Linear(2048, 29)`, cross-entropy per keystroke, argmax decoding.
+  **One character per keystroke: the decoder is given the segmentation, so v1
+  CER is not comparable with CTC CER.**
+- Official schedule: AdamW lr 5e-5, wd 1e-4, OneCycleLR, no clipping, 300
+  epochs, batch 64 keystrokes, early stopping on val_CER (patience 30); the
+  unshuffled sentence-order sampler splits sentences across batch boundaries;
+  `trainer.test` uses final weights; the official `CER` metric is per batch,
+  not per sentence; the merger's `usage_penalty` is never added to the loss.
+- Corrections to the `c13a6e8` audit: the transformer uses **ScaleNorm** and
+  **rotary + ALiBi** (class defaults, since the config sets only ALiBi, depth
+  and heads). `subject_layers_config={}` parses to an *enabled* SubjectLayers.
+- **Parameters: 623,548,457**, of which 320,716,800 are 200-slot per-subject
+  tables (merger heads `(200, 270, 2048)`, subject layers `(200, 512, 2048)`);
+  S22 reaches one slot (304.4M reachable).
+- **The pinned env was incomplete for v1 training**: it lacked the official
+  lock's `x-transformers==2.4.9`, `einops`, `einx`, `loguru`, `frozendict`,
+  `Levenshtein`, `RapidFuzz`. Installed `--no-deps` from hashed wheels into a
+  separate overlay (`~/Envs/phase6-official-overlay`), plus Windows shim
+  `win32-setctime`; pinned env verified unchanged (`pip freeze` identical).
+- Windows deviation: the official study's exca event cache names files with the
+  timeline as JSON, which Windows rejects; events are rebuilt uncached and
+  verified identical to the stored 5X extraction (9,650/9,650 keystrokes).
+- **Smoke test PASS** (forward only, 172 keystrokes, one sentence per block):
+  slab-backed batches equal the official `SegmentDataset` batches exactly in
+  all four inputs (`neuro (B,306,25) f32`, `feature (B,1) i64`,
+  `subject_id = 0`, `channel_positions (306,2)` in [0,1], none masked,
+  identical across blocks). Finite logits and loss (untrained CE 3.53–3.61 vs
+  ln 29 = 3.37); decoding runs.
+- **Feasibility (measured):** training holds 4 fp32 copies of every parameter
+  = 9.29 GiB static, ~12.0 GiB for the process, against 3.1 GiB of available
+  commit with the model loaded (15.6 GiB RAM). Forward 48–66 ms/keystroke →
+  ~14 min/epoch on C; official 300 epochs = 71/35/48 h (C/D/E); 100-epoch
+  diagnostic = 24/12/16 h (12 runs ≈ 9 days); 2 h fits 8/16/12 epochs. No GPU-only
+  operations. Reduced epochs do not reduce memory, and architecture changes
+  were not allowed, so no lightweight diagnostic was run.
+- Not executed: Part 4 baseline, Part 5 control, Part 6 comparison, Part 7
+  signal ablation (ablating an untrained network would only show that random
+  weights respond to input). `phase6_signal_ablation.png` deliberately not
+  created.
+- **Text anchor** (length-matched training sentence, no model): character F1
+  C `0.345`, D `0.356`, E `0.345`; reproduces 5Z.
+- **Leakage audit.** Exact text, typed text, UID and stimulus-group overlap all
+  zero for C/D/E. **The official paraphrase rule fails:** 32 of 64 list2
+  sentences are a list1 sentence plus one modifier (TF-IDF cosine up to
+  `0.875`, e.g. `la investigacion recoge los conocimientos` →
+  `la investigacion real recoge los conocimientos`). The official splitter
+  (cosine > 0.5) would keep these together. Splits A–E are exact-text disjoint,
+  **not paraphrase-disjoint**. This can only inflate held-out scores, so the 5Z
+  null stands, but it confounds any future positive result on these splits.
+- Integrity: official source, historical preprocessing, official-v1
+  preprocessing and tests unchanged; earlier results unmodified; all 8 raw
+  files re-hashed and match; event pickles untouched; no dataset download; no
+  LLM, no Evidence Selector. pytest `17 passed`.
+- Artifacts: `results/phase6_master_report.json`,
+  `results/phase6_official_v1_model_audit.json`,
+  `results/phase6_official_v1_smoke_test.json`,
+  `results/phase6_official_v1_baseline.json`,
+  `results/phase6_official_v1_no_signal_control.json`,
+  `results/phase6_signal_dependence.json`, `results/phase6_text_anchor.json`,
+  `results/phase6_leakage_audit.json`,
+  `results/figures/debug/phase6_{real_vs_control,feasibility,outputs}.png`.

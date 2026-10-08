@@ -1,0 +1,212 @@
+{
+  "task": "Phase 6 Part 9: data/split leakage audit",
+  "splits": {
+    "C": {
+      "classification": "SENTENCE-DISJOINT",
+      "train_blocks": [
+        "session1/block1",
+        "session2/block2"
+      ],
+      "test_blocks": [
+        "session1/block2",
+        "session2/block1"
+      ],
+      "presented_text_overlap": 0,
+      "typed_text_overlap": 0,
+      "sentence_UID_overlap": 0,
+      "unique_sentence_group_overlap": 0,
+      "official_paraphrase_rule": {
+        "rule": "TF-IDF cosine similarity > threshold keeps sentences in one split (Brain2QwertyV1Splitter)",
+        "threshold": 0.5,
+        "tfidf_fit_on": "the presented sentences of this split's train and test sides",
+        "cross_split_pairs": 4096,
+        "pairs_above_threshold": 32,
+        "max_cross_split_cosine": 0.8749253854285167,
+        "mean_cross_split_cosine": 0.043064407840029115,
+        "examples_above_threshold": [
+          {
+            "train": "la investigacion recoge los conocimientos",
+            "test": "la investigacion real recoge los conocimientos",
+            "cosine": 0.8749253854285167
+          },
+          {
+            "train": "los elementos manifiestan los danos",
+            "test": "los elementos apropiados manifiestan los danos",
+            "cosine": 0.8675306553764839
+          },
+          {
+            "train": "la diversidad dificulta la relacion",
+            "test": "la diversidad previa dificulta la relacion",
+            "cosine": 0.8642254557915557
+          },
+          {
+            "train": "las calles marcan las lineas",
+            "test": "las calles marcan las lineas imaginarias",
+            "cosine": 0.8642254557915557
+          },
+          {
+            "train": "las bolas impactan las bandas",
+            "test": "las bolas blancas impactan las bandas",
+            "cosine": 0.8604329485023257
+          },
+          {
+            "train": "el centro describe las parabolas",
+            "test": "el centro describe las parabolas asociadas",
+            "cosine": 0.857564036927575
+          },
+          {
+            "train": "los paneles contienen la opcion",
+            "test": "los paneles contienen la opcion larga",
+            "cosine": 0.8572585288020149
+          },
+          {
+            "train": "los productos cumplen la propiedad",
+            "test": "los productos cumplen la propiedad asociada",
+            "cosine": 0.8572585288020149
+          }
+        ]
+      }
+    },
+    "D": {
+      "classification": "SENTENCE-DISJOINT",
+      "train_blocks": [
+        "session1/block1"
+      ],
+      "test_blocks": [
+        "session2/block1"
+      ],
+      "presented_text_overlap": 0,
+      "typed_text_overlap": 0,
+      "sentence_UID_overlap": 0,
+      "unique_sentence_group_overlap": 0,
+      "official_paraphrase_rule": {
+        "rule": "TF-IDF cosine similarity > threshold keeps sentences in one split (Brain2QwertyV1Splitter)",
+        "threshold": 0.5,
+        "tfidf_fit_on": "the presented sentences of this split's train and test sides",
+        "cross_split_pairs": 4096,
+        "pairs_above_threshold": 32,
+        "max_cross_split_cosine": 0.8749253854285167,
+        "mean_cross_split_cosine": 0.043064407840029115,
+        "examples_above_threshold": [
+          {
+            "train": "la investigacion recoge los conocimientos",
+            "test": "la investigacion real recoge los conocimientos",
+            "cosine": 0.8749253854285167
+          },
+          {
+            "train": "los elementos manifiestan los danos",
+            "test": "los elementos apropiados manifiestan los danos",
+            "cosine": 0.8675306553764839
+          },
+          {
+            "train": "la diversidad dificulta la relacion",
+            "test": "la diversidad previa dificulta la relacion",
+            "cosine": 0.8642254557915557
+          },
+          {
+            "train": "las calles marcan las lineas",
+            "test": "las calles marcan las lineas imaginarias",
+            "cosine": 0.8642254557915557
+          },
+          {
+            "train": "las bolas impactan las bandas",
+            "test": "las bolas blancas impactan las bandas",
+            "cosine": 0.8604329485023257
+          },
+          {
+            "train": "el centro describe las parabolas",
+            "test": "el centro describe las parabolas asociadas",
+            "cosine": 0.857564036927575
+          },
+          {
+            "train": "los paneles contienen la opcion",
+            "test": "los paneles contienen la opcion larga",
+            "cosine": 0.8572585288020149
+          },
+          {
+            "train": "los productos cumplen la propiedad",
+            "test": "los productos cumplen la propiedad asociada",
+            "cosine": 0.8572585288020149
+          }
+        ]
+      }
+    },
+    "E": {
+      "classification": "SENTENCE-DISJOINT",
+      "train_blocks": [
+        "session1/block2"
+      ],
+      "test_blocks": [
+        "session2/block2"
+      ],
+      "presented_text_overlap": 0,
+      "typed_text_overlap": 0,
+      "sentence_UID_overlap": 0,
+      "unique_sentence_group_overlap": 0,
+      "official_paraphrase_rule": {
+        "rule": "TF-IDF cosine similarity > threshold keeps sentences in one split (Brain2QwertyV1Splitter)",
+        "threshold": 0.5,
+        "tfidf_fit_on": "the presented sentences of this split's train and test sides",
+        "cross_split_pairs": 4096,
+        "pairs_above_threshold": 32,
+        "max_cross_split_cosine": 0.8749253854285167,
+        "mean_cross_split_cosine": 0.04306440784002912,
+        "examples_above_threshold": [
+          {
+            "train": "la investigacion real recoge los conocimientos",
+            "test": "la investigacion recoge los conocimientos",
+            "cosine": 0.8749253854285167
+          },
+          {
+            "train": "los elementos apropiados manifiestan los danos",
+            "test": "los elementos manifiestan los danos",
+            "cosine": 0.8675306553764839
+          },
+          {
+            "train": "la diversidad previa dificulta la relacion",
+            "test": "la diversidad dificulta la relacion",
+            "cosine": 0.8642254557915557
+          },
+          {
+            "train": "las calles marcan las lineas imaginarias",
+            "test": "las calles marcan las lineas",
+            "cosine": 0.8642254557915557
+          },
+          {
+            "train": "las bolas blancas impactan las bandas",
+            "test": "las bolas impactan las bandas",
+            "cosine": 0.8604329485023257
+          },
+          {
+            "train": "el centro describe las parabolas asociadas",
+            "test": "el centro describe las parabolas",
+            "cosine": 0.857564036927575
+          },
+          {
+            "train": "los paneles contienen la opcion larga",
+            "test": "los paneles contienen la opcion",
+            "cosine": 0.8572585288020149
+          },
+          {
+            "train": "los productos cumplen la propiedad asociada",
+            "test": "los productos cumplen la propiedad",
+            "cosine": 0.8572585288020149
+          }
+        ]
+      }
+    }
+  },
+  "checks": {
+    "no_presented_text_overlap": true,
+    "no_typed_text_overlap": true,
+    "no_sentence_UID_overlap": true,
+    "no_unique_sentence_group_overlap": true,
+    "official_paraphrase_rule_satisfied": false,
+    "model_inputs": "BrainModule.forward reads only batch.data['neuro'], ['subject_id'] and ['channel_positions']; the target batch.data['feature'] enters only the loss",
+    "target_text_fed_as_input": false,
+    "session_or_block_fed_as_input_or_target": false,
+    "subject_id_input": "official input; constant 0 for the single subject S22",
+    "normalization_fit": "official per-recording RobustScaler on the continuous label-free signal of each recording (transductive within a recording, as in the official pipeline); no PCA; BatchNorm running statistics come from training batches only",
+    "test_tensors_used_for_any_fit": false
+  }
+}

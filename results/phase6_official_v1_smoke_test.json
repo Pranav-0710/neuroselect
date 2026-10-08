@@ -1,0 +1,272 @@
+{
+  "task": "Phase 6 Part 2: official v1 smoke test (forward only)",
+  "official_revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "memory_at_start": {
+    "process_working_set_gb": 0.4155235290527344,
+    "process_peak_working_set_gb": 0.4155235290527344,
+    "process_private_commit_gb": 1.723541259765625,
+    "process_peak_private_commit_gb": 1.723541259765625,
+    "system_available_physical_gb": 2.898529052734375,
+    "system_total_physical_gb": 15.589859008789062,
+    "system_available_commit_gb": 3.665233612060547,
+    "system_commit_limit_gb": 26.680023193359375
+  },
+  "events": {
+    "rows": 12952,
+    "rebuilt_keystrokes": 9650,
+    "stored_keystrokes": 9650,
+    "identical_timeline_start_button": true
+  },
+  "memory_after_extractor_prepare": {
+    "process_working_set_gb": 0.057209014892578125,
+    "process_peak_working_set_gb": 5.741363525390625,
+    "process_private_commit_gb": 1.756317138671875,
+    "process_peak_private_commit_gb": 7.5732879638671875,
+    "system_available_physical_gb": 5.312099456787109,
+    "system_total_physical_gb": 15.589859008789062,
+    "system_available_commit_gb": 5.912353515625,
+    "system_commit_limit_gb": 28.74199676513672
+  },
+  "smoke_subset": {
+    "sentence_UIDs": [
+      "2.0_S22_1_block1",
+      "2.0_S22_1_block2",
+      "2.0_S22_2_block1",
+      "2.0_S22_2_block2"
+    ],
+    "keystrokes": 172,
+    "official_segments_kept": 172,
+    "batch_parity": {
+      "neuro": {
+        "official_shape": [
+          172,
+          306,
+          25
+        ],
+        "official_dtype": "torch.float32",
+        "slab_shape": [
+          172,
+          306,
+          25
+        ],
+        "slab_dtype": "torch.float32",
+        "exactly_equal": true,
+        "max_abs_difference": 0.0
+      },
+      "feature": {
+        "official_shape": [
+          172,
+          1
+        ],
+        "official_dtype": "torch.int64",
+        "slab_shape": [
+          172,
+          1
+        ],
+        "slab_dtype": "torch.int64",
+        "exactly_equal": true,
+        "max_abs_difference": 0.0
+      },
+      "subject_id": {
+        "official_shape": [
+          172,
+          1
+        ],
+        "official_dtype": "torch.int64",
+        "slab_shape": [
+          172,
+          1
+        ],
+        "slab_dtype": "torch.int64",
+        "exactly_equal": true,
+        "max_abs_difference": 0.0
+      },
+      "channel_positions": {
+        "official_shape": [
+          172,
+          306,
+          2
+        ],
+        "official_dtype": "torch.float32",
+        "slab_shape": [
+          172,
+          306,
+          2
+        ],
+        "slab_dtype": "torch.float32",
+        "exactly_equal": true,
+        "max_abs_difference": 0.0
+      }
+    },
+    "all_inputs_identical_to_official_segment_dataset": true,
+    "subject_ids": [
+      0
+    ],
+    "channel_positions_identical_across_all_keystrokes": true,
+    "channel_positions_masked_invalid": 0,
+    "channel_positions_range": [
+      0.0,
+      1.0
+    ],
+    "target_classes_official_vs_neuroselect_vocab": "official label = NeuroSelect vocab id - 1 (blank-free)"
+  },
+  "memory_before_model": {
+    "process_working_set_gb": 0.34860992431640625,
+    "process_peak_working_set_gb": 5.741363525390625,
+    "process_private_commit_gb": 1.8277359008789062,
+    "process_peak_private_commit_gb": 7.5732879638671875,
+    "system_available_physical_gb": 4.9824981689453125,
+    "system_total_physical_gb": 15.589859008789062,
+    "system_available_commit_gb": 5.8663787841796875,
+    "system_commit_limit_gb": 28.74199676513672
+  },
+  "parameters": {
+    "uninitialized_lazy_parameters": 0,
+    "channel_merger": 110592000,
+    "channel_merger_heads_shape": [
+      200,
+      270,
+      2048
+    ],
+    "initial_linear": 138752,
+    "subject_layers": 210124800,
+    "subject_layers_weight_shape": [
+      200,
+      512,
+      2048
+    ],
+    "conv_encoder": 100724736,
+    "time_aggregation": 524803,
+    "sentence_transformer": 201383945,
+    "output_linear": 59421,
+    "total": 623548457
+  },
+  "memory_after_model": {
+    "process_working_set_gb": 2.7320632934570312,
+    "process_peak_working_set_gb": 5.741363525390625,
+    "process_private_commit_gb": 4.492343902587891,
+    "process_peak_private_commit_gb": 7.5732879638671875,
+    "system_available_physical_gb": 2.5212020874023438,
+    "system_total_physical_gb": 15.589859008789062,
+    "system_available_commit_gb": 3.126575469970703,
+    "system_commit_limit_gb": 28.74199676513672
+  },
+  "realized_transformer": {
+    "class": "Encoder",
+    "layers": 4,
+    "heads": 2,
+    "norm": "ScaleNorm",
+    "rotary_positional_embedding": "RotaryEmbedding",
+    "relative_position_bias": "AlibiPositionalBias",
+    "attention_dropout": 0.1
+  },
+  "forward_check": {
+    "official_batch_size": 64,
+    "batches": 3,
+    "logits_finite": true,
+    "loss_finite": true,
+    "untrained_cross_entropy": [
+      3.6143133640289307,
+      3.5272083282470703,
+      3.54787540435791
+    ],
+    "chance_cross_entropy_ln29": 3.367295829986474,
+    "official_cer_metric_ran": true,
+    "decoding": "argmax per keystroke -> official CHAR_INDEX; one character per keystroke",
+    "decoded_examples_untrained": [
+      {
+        "block": "session1/block1",
+        "target": "la tasa excede las velocidades",
+        "decoded": "vvvvvvvvvvvfvvvvvvvvvvvvvvvvvv",
+        "cer": 0.9666666666666667
+      },
+      {
+        "block": "session1/block2",
+        "target": "los procesadoras el bit ejecutan las instrucciones",
+        "decoded": "ffffffffffffffffffffffffffffffffffffffffffffffffff",
+        "cer": 1.0
+      },
+      {
+        "block": "session2/block1",
+        "target": "la controversia en los diagnosticos cierra el paso",
+        "decoded": "ffffffvfffffffffffffffffffffffffffffffffffffffffff",
+        "cer": 1.0
+      },
+      {
+        "block": "session2/block2",
+        "target": "las interconexiones extienden la costumbre",
+        "decoded": "ffffffffffffffffffffffffffffffffffffffffff",
+        "cer": 1.0
+      }
+    ],
+    "forward_seconds_per_keystroke": 0.06617379933595657
+  },
+  "feasibility": {
+    "basis": "measured forward cost and exact parameter count; training cost extrapolated (backward ~2x forward)",
+    "exact_parameters": 623548457,
+    "per_subject_table_parameters": 320716800,
+    "per_subject_table_slots": 200,
+    "parameters_reachable_by_one_subject": 304435241,
+    "per_subject_note": "The channel-merger heads and the subject layers are tables over 200 subject slots (neuraltrain defaults; the official config sets merger per_subject=True and subject_layers_config={}, which parses to an enabled SubjectLayers). S22 reaches one slot.",
+    "training_static_memory_gb": 9.291596069931984,
+    "training_static_memory_breakdown": "4 fp32 copies of every parameter: weights, gradients, AdamW exp_avg, exp_avg_sq",
+    "process_baseline_commit_gb_after_imports": 1.723541259765625,
+    "estimated_training_process_commit_gb": 12.015137329697609,
+    "system_available_commit_gb_with_model_loaded": 3.126575469970703,
+    "system_available_physical_gb_with_model_loaded": 2.5212020874023438,
+    "system_total_physical_gb": 15.589859008789062,
+    "estimated_seconds_per_epoch": {
+      "C": 852.3619024176228,
+      "D": 423.60696585178755,
+      "E": 572.5335081458144
+    },
+    "estimated_hours_per_run": {
+      "official_300_epochs": {
+        "C": 71.0301585348019,
+        "D": 35.300580487648965,
+        "E": 47.711125678817865
+      },
+      "diagnostic_100_epochs": {
+        "C": 23.676719511600634,
+        "D": 11.766860162549653,
+        "E": 15.903708559605956
+      }
+    },
+    "epochs_fitting_2_hours": {
+      "C": 8,
+      "D": 16,
+      "E": 12
+    },
+    "optimizer_steps_per_epoch": {
+      "C": 65,
+      "D": 32,
+      "E": 44
+    }
+  },
+  "environment": {
+    "python_executable": "C:\\Users\\prana\\Envs\\neuroselect-brain2qwerty-v1\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.6.0+cpu",
+    "torch_threads": 16,
+    "cuda_available": false,
+    "cpu": {
+      "Name": "Intel(R) Core(TM) Ultra 7 155H",
+      "NumberOfCores": 16,
+      "NumberOfLogicalProcessors": 22,
+      "MaxClockSpeed": 3800
+    },
+    "overlay": "C:\\Users\\prana\\Envs\\phase6-official-overlay\\site"
+  },
+  "memory_at_end": {
+    "process_working_set_gb": 2.706958770751953,
+    "process_peak_working_set_gb": 5.741363525390625,
+    "process_private_commit_gb": 4.441078186035156,
+    "process_peak_private_commit_gb": 7.5732879638671875,
+    "system_available_physical_gb": 2.5913238525390625,
+    "system_total_physical_gb": 15.589859008789062,
+    "system_available_commit_gb": 2.9147300720214844,
+    "system_commit_limit_gb": 28.74199676513672
+  },
+  "seconds": 261.5040559768677,
+  "status": "PASS"
+}

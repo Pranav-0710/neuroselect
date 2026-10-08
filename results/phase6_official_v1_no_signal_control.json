@@ -1,0 +1,13 @@
+{
+  "task": "Phase 6 Part 5: no-valid-signal control with the official v1 architecture",
+  "execution_status": "NOT EXECUTED",
+  "reason": "Depends on training the official v1 model, which is not executable here (see the baseline artifact).",
+  "planned_specification": {
+    "signals": "unchanged",
+    "sequence_lengths": "unchanged",
+    "targets_permuted": "training sentences only, derangement, shuffle seed 2026, same permutation for seeds 33/123/777",
+    "evaluation_targets": "correctly paired",
+    "design_note": "Derange at the stimulus-group level: in split C a UID-level derangement maps 3 of 128 training sentences onto their own text from the other session (Phase 5Z)."
+  },
+  "results": null
+}

@@ -1,0 +1,368 @@
+{
+  "task": "Phase 6: official Brain2Qwerty v1 keystroke-level baseline on expanded S22",
+  "interpretation": "D",
+  "interpretation_text": "Official baseline cannot be executed reliably",
+  "interpretation_basis": [
+    "The exact official model needs about 12 GiB to train (623.5M parameters x 4 fp32 copies) against 3.1 GiB of available commit on this 15.6 GiB laptop.",
+    "Compute alone puts the official schedule at 35-71 hours per run and the 100-epoch diagnostic at 12-24 hours per run (12 runs, about 9 days); 2 hours buys 8-16 epochs.",
+    "No reduced-epoch run of the same architecture fits in memory, and changing the architecture was not allowed."
+  ],
+  "what_was_established": {
+    "official_model_runs_on_cpu": true,
+    "inputs_identical_to_official_dataloader": true,
+    "finite_logits_loss_and_decoding": true,
+    "official_formulation": "Per-keystroke classification, not sequence transduction. Every keystroke window is encoded independently, keystrokes are grouped by sentence for a transformer, and each keystroke is classified into one of 29 characters. No CTC, no blank."
+  },
+  "major_findings": {
+    "paraphrase_overlap_in_list_splits": {
+      "finding": "32 of the 64 list2 sentences are a list1 sentence with one inserted modifier (TF-IDF cosine up to 0.875). The official splitter's paraphrase rule (cosine > 0.5) would keep these pairs together. Splits A-E are exact-text disjoint but not paraphrase-disjoint.",
+      "pairs_above_official_threshold": {
+        "C": 32,
+        "D": 32,
+        "E": 32
+      },
+      "example": {
+        "train": "la investigacion recoge los conocimientos",
+        "test": "la investigacion real recoge los conocimientos",
+        "cosine": 0.8749253854285167
+      },
+      "consequence": "Can only inflate held-out scores, so the Phase 5Z null result stands; any future positive result on these splits would be confounded."
+    },
+    "official_environment_incomplete": "the pinned environment lacked x-transformers, einops, einx, loguru, frozendict, Levenshtein and RapidFuzz from the official lock",
+    "oracle_segmentation": "The decoder is given the keystroke segmentation: output length always equals the number of keystrokes. Its CER is therefore not comparable with CTC CER, which must infer length.",
+    "per_subject_tables": "320,716,800 of 623,548,457 parameters are 200-slot per-subject tables; S22 reaches one slot"
+  },
+  "reference_numbers_from_earlier_phases": {
+    "phase5Z_simplified_ctc_C_character_f1": 0.3133233082706766,
+    "phase5Z_ctc_control_C_character_f1": 0.3052585778219791,
+    "phase6_text_anchor_character_f1": {
+      "C": 0.3450249215432896,
+      "D": 0.3558327219369039,
+      "E": 0.3452784503631961
+    }
+  },
+  "parts": {
+    "1_audit": "results\\phase6_official_v1_model_audit.json",
+    "2_smoke_test": "PASS: results\\phase6_official_v1_smoke_test.json",
+    "3_splits": "C, D, E defined; F/G excluded",
+    "4_baseline": "NOT EXECUTED (memory and compute)",
+    "5_control": "NOT EXECUTED (depends on 4)",
+    "6_real_vs_control": "NOT AVAILABLE (depends on 4 and 5)",
+    "7_signal_dependence": "NOT EXECUTED (needs a trained model)",
+    "8_text_anchor": "results\\phase6_text_anchor.json",
+    "9_leakage": "exact checks PASS; official paraphrase rule FAILS (32 pairs per split)"
+  },
+  "artifacts": {
+    "audit": "results\\phase6_official_v1_model_audit.json",
+    "baseline": "results\\phase6_official_v1_baseline.json",
+    "control": "results\\phase6_official_v1_no_signal_control.json",
+    "dependence": "results\\phase6_signal_dependence.json",
+    "master": "results\\phase6_master_report.json",
+    "smoke_test": "results\\phase6_official_v1_smoke_test.json",
+    "text_anchor": "results\\phase6_text_anchor.json",
+    "leakage": "results\\phase6_leakage_audit.json",
+    "figures": [
+      "results\\figures\\debug\\phase6_real_vs_control.png",
+      "results\\figures\\debug\\phase6_outputs.png",
+      "results\\figures\\debug\\phase6_feasibility.png"
+    ],
+    "not_created": {
+      "results/figures/debug/phase6_signal_ablation.png": "Not created: the signal ablation needs a trained official model and none could be trained. Ablating an untrained network would measure only that random weights depend on their input."
+    }
+  },
+  "reproducibility": {
+    "git_commit": "44a3522fa738a2b3a7bf03512ab743482d078c66",
+    "official_brain2qwerty_revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+    "pinned_environment": {
+      "python": "C:\\Users\\prana\\Envs\\neuroselect-brain2qwerty-v1\\Scripts\\python.exe",
+      "packages": [
+        "aiohappyeyeballs==2.7.1",
+        "aiohttp==3.14.3",
+        "aiosignal==1.4.0",
+        "annotated-types==0.8.0",
+        "attrs==26.1.0",
+        "certifi==2026.7.22",
+        "charset-normalizer==3.5.1",
+        "cloudpickle==3.1.2",
+        "colorama==0.4.6",
+        "contourpy==1.4.0",
+        "cycler==0.12.1",
+        "decorator==5.3.1",
+        "dtw-python==1.7.4",
+        "exca==0.5.22",
+        "filelock==3.32.7",
+        "fonttools==4.65.0",
+        "frozenlist==1.8.0",
+        "fsspec==2026.7.0",
+        "h5py==3.16.0",
+        "idna==3.19",
+        "Jinja2==3.1.6",
+        "joblib==1.6.0",
+        "kiwisolver==1.5.1",
+        "lazy-loader==0.5",
+        "lightning==2.5.2",
+        "lightning-utilities==0.15.3",
+        "MarkupSafe==3.0.3",
+        "matplotlib==3.11.2",
+        "mne==1.11.0",
+        "mne-bids==0.19.0",
+        "mpmath==1.3.0",
+        "multidict==6.8.0",
+        "networkx==3.6.1",
+        "neuralfetch==0.2.2",
+        "neuralset==0.2.2",
+        "neuraltrain==0.2.2",
+        "nibabel==5.4.2",
+        "numpy==2.2.6",
+        "orjson==3.12.0",
+        "packaging==26.3",
+        "pandas==2.2.3",
+        "pillow==12.3.0",
+        "pip==26.2.1",
+        "platformdirs==4.11.8",
+        "pooch==1.9.0",
+        "propcache==0.5.4",
+        "pyarrow==25.0.1",
+        "pybv==0.8.1",
+        "pydantic==2.12.5",
+        "pydantic_core==2.41.5",
+        "pyparsing==3.3.2",
+        "python-dateutil==2.9.0.post0",
+        "pytorch-lightning==2.6.6",
+        "pytz==2026.3.post1",
+        "PyYAML==6.0.3",
+        "RapidFuzz==3.14.6",
+        "requests==2.34.2",
+        "scikit-learn==1.8.0",
+        "scipy==1.14.1",
+        "setuptools==84.0.0",
+        "six==1.17.0",
+        "submitit==1.5.4",
+        "sympy==1.13.1",
+        "threadpoolctl==3.7.0",
+        "torch==2.6.0",
+        "torchmetrics==1.7.3",
+        "torchvision==0.21.0",
+        "tqdm==4.70.1",
+        "typing-inspection==0.4.4",
+        "typing_extensions==4.16.0",
+        "tzdata==2026.4",
+        "ujson==6.0.0",
+        "urllib3==2.8.0",
+        "yarl==1.25.1"
+      ],
+      "unchanged": true
+    },
+    "overlay": {
+      "path": "C:\\Users\\prana\\Envs\\phase6-official-overlay\\site",
+      "why": "official requirements.lock pins these; the pinned environment did not contain them",
+      "packages_from_official_lock": {
+        "x-transformers": "2.4.9",
+        "einops": "0.8.1",
+        "einx": "0.3.0",
+        "loguru": "0.7.3",
+        "frozendict": "2.4.6",
+        "Levenshtein": "0.27.1",
+        "RapidFuzz": "3.13.0"
+      },
+      "windows_shim_not_in_lock": {
+        "win32-setctime": "1.2.0",
+        "reason": "loguru's Windows-only import"
+      },
+      "install": "pip install --no-deps --target <overlay>/site from locally hashed wheels",
+      "wheel_sha256": {
+        "einops-0.8.1-py3-none-any.whl": "919387eb55330f5757c6bea9165c5ff5cfe63a642682ea788a6d472576d81737",
+        "einx-0.3.0-py3-none-any.whl": "367d62bab8dbb8c4937308512abb6f746cc0920990589892ba0d281356d39345",
+        "frozendict-2.4.6-py313-none-any.whl": "7134a2bb95d4a16556bb5f2b9736dceb6ea848fa5b6f3f6c2d6dba93b44b4757",
+        "levenshtein-0.27.1-cp313-cp313-win_amd64.whl": "7dd60aa49c2d8d23e0ef6452c8329029f5d092f386a177e3385d315cabb78f2a",
+        "loguru-0.7.3-py3-none-any.whl": "31a33c10c8e1e10422bfd431aeb5d351c7cf7fa671e3c4df004162264b28220c",
+        "rapidfuzz-3.13.0-cp313-cp313-win_amd64.whl": "9a7c6232be5f809cd39da30ee5d24e6cadd919831e6020ec6c2391f4c3bc9264",
+        "win32_setctime-1.2.0-py3-none-any.whl": "95d644c4e708aba81dc3704a116d8cbc974d70b3bdb8be1d150e36be6e9d1390",
+        "x_transformers-2.4.9-py3-none-any.whl": "5f827ac7e2f4afc5746729c5f3009c056c47827f6bd0f96ea15e5c0191e17b47"
+      }
+    },
+    "windows_deviation": "Official study event cache disabled: exca names its cache files with the timeline as JSON, which Windows rejects. Events are rebuilt uncached and verified identical to the stored extraction.",
+    "raw_file_sha256": [
+      {
+        "file": "MEG/FIF/22_9788/231214/block1.fif",
+        "sha256": "634bf9c57ec7b6ae0697e50750233c4eed27f96e3a7493341bc21a14beaef7d0",
+        "matches_acquisition_record": true
+      },
+      {
+        "file": "MEG/FIF/22_9788/231214/block2.fif",
+        "sha256": "b827b6d4e5101a53ba8c6e248cc30cb50501db1628cda8768f68e588a055744e",
+        "matches_acquisition_record": true
+      },
+      {
+        "file": "MEG/FIF/22_9788/231222/Block1.fif",
+        "sha256": "dcbcb8f6c693e36be8d7632380103e4bfe35236fc6ee352f837d9257cc2dac82",
+        "matches_acquisition_record": true
+      },
+      {
+        "file": "MEG/FIF/22_9788/231222/Block2.fif",
+        "sha256": "659d8f5cb3a9a3786157afecc6b9881adf027d699b2b793c6b3095f802436c33",
+        "matches_acquisition_record": true
+      },
+      {
+        "file": "MEG/logs/S22-session1_block1_list1.mat",
+        "sha256": "87cd3b3a1a4512db31004b76528a23a4c39c96dff68e91ec75c4c301f8c96bc6",
+        "matches_acquisition_record": true
+      },
+      {
+        "file": "MEG/logs/S22-session1_block2_list2.mat",
+        "sha256": "d70a6bd029811e9c44a70c00a4fa93bf1ee36cc53fc6bb1e9582e5f5e166a27c",
+        "matches_acquisition_record": true
+      },
+      {
+        "file": "MEG/logs/S22-session2_block1_list2.mat",
+        "sha256": "dbdff992d8c31428dcf9b962df43a650cfdcc77559f40cc4a7bbce938ffb03de",
+        "matches_acquisition_record": true
+      },
+      {
+        "file": "MEG/logs/S22-session2_block2_list1.mat",
+        "sha256": "96085ee480ba53b0d09be0ffb1b041fd9e9526917c601357596670ed103d0992",
+        "matches_acquisition_record": true
+      }
+    ],
+    "event_tensor_slab": {
+      "file": "data/processed/s22_official_v1/events.npy",
+      "per_block_sha256": {
+        "session1/block1": "90dd993a786ce440edd3174466408b3aaec2de676a93f3d0883ef243c30596cf",
+        "session1/block2": "2ded6fe7bb6f7a4102d55e55ae9fba5fc02d08e8c603f21e61ae8af667a2efc2",
+        "session2/block1": "bcc681e2d61abaa4c4ff4ca09426e131e6e39a0c3e32a6509c2224cba2b8e977",
+        "session2/block2": "22647cfd7eb25c270d23753ff8a2ee816daad7f95d3d1faff93f140dcbde564b"
+      },
+      "index_sha256": "0cca7586346780a1c0d76c0aacf5728887675b4abf0bf18c6334e605b911f036"
+    },
+    "preprocessing": {
+      "variant": "official_v1_compatible",
+      "module_sha256": "4c7740a66a5ab7d3bda23b88fbc903d16b33b04560f70ac74eef04d51ab5103a"
+    },
+    "splits": {
+      "split_C_sentence_disjoint.json": "b1254f24cfa9cc9f41a61937404673c2e98f14e75d77760a3795b9002d8dc1d1",
+      "split_D_cross_session_sentence_disjoint.json": "2cca2a02fe2623b38011f9b3a2758ecfe6cf0417420f9c0b6623121f64d2f910",
+      "split_E_cross_session_sentence_disjoint.json": "1800aadbd217facef54a2b9cc6bd330cc6e12a231d413e2ec0689aeb8cee34d3"
+    },
+    "seeds_planned": [
+      33,
+      123,
+      777
+    ],
+    "permutation_seed_planned": 2026,
+    "epochs": {
+      "official": 300,
+      "run": 0
+    },
+    "optimizer": {
+      "optimizer": "AdamW, lr 5e-5, weight decay 1e-4",
+      "scheduler": "OneCycleLR, max_lr 5e-5, pct_start 0.1, stepped per batch",
+      "gradient_clipping": null,
+      "epochs": 300,
+      "seed": 33,
+      "devices": "8 GPUs by default; CPU fallback when CUDA is absent",
+      "source_check": {
+        "n_epochs_300": true,
+        "patience_30": true
+      }
+    },
+    "batch_size": {
+      "train": 64,
+      "test": 2048
+    },
+    "model_settings": {
+      "encoder": {
+        "name": "SimpleConvTimeAgg",
+        "time_agg_out": "att",
+        "dropout_input": 0.2,
+        "conv_dropout": 0.5,
+        "hidden": 2048,
+        "batch_norm": true,
+        "depth": 8,
+        "dilation_period": 3,
+        "kernel_size": 3,
+        "relu_leakiness": 0.01,
+        "initial_linear": 512,
+        "gelu": true,
+        "skip": true,
+        "scale": 0.1,
+        "subject_layers_config": {},
+        "merger_config": {
+          "n_virtual_channels": 270,
+          "fourier_emb_config": {
+            "n_freqs": null,
+            "total_dim": 2048,
+            "n_dims": 2
+          },
+          "dropout": 0.2,
+          "usage_penalty": 1.0,
+          "per_subject": true,
+          "embed_ref": false
+        }
+      },
+      "transformer": {
+        "name": "TransformerEncoder",
+        "alibi_pos_bias": true,
+        "depth": 4,
+        "heads": 2
+      }
+    },
+    "runtime_seconds": {
+      "smoke_test": 261.5040559768677
+    },
+    "cpu": {
+      "Name": "Intel(R) Core(TM) Ultra 7 155H",
+      "NumberOfCores": 16,
+      "NumberOfLogicalProcessors": 22,
+      "MaxClockSpeed": 3800
+    },
+    "torch_threads": 16,
+    "cuda_available": false
+  },
+  "tests": {
+    "command": "python -m pytest tests -q",
+    "exit_code": 0,
+    "summary_line": "17 passed, 1 warning in 71.48s (0:01:11)",
+    "collected": 17,
+    "passed": 17,
+    "failed": 0,
+    "skipped": 0,
+    "errors": 0
+  },
+  "integrity": {
+    "official_source_unchanged": true,
+    "historical_preprocessing_unchanged": true,
+    "official_v1_preprocessing_unchanged": true,
+    "tests_unmodified": true,
+    "previous_results_unmodified": true,
+    "modified_tracked_files": [],
+    "raw_fif_and_mat_unchanged": true,
+    "event_clean_artifacts": {
+      "events_clean.pkl": {
+        "sha256": "8bde3764e504d04000f525eb2b6e368d424459b7e97bddf8cc7986f07de2fc2c",
+        "modified": 1789311652.3137572
+      },
+      "events_clean_all_blocks.pkl": {
+        "sha256": "485c3e5b32daa026e4f3ea5dbe3d389e6f8f043d2717bfde67b962c724b23840",
+        "modified": 1790132365.0544982
+      },
+      "events_raw.pkl": {
+        "sha256": "0474eab5ba3c59fb54dd2c7c28ca8c9da4034a397aec89e7b9387647c4ca786b",
+        "modified": 1789307680.7387204
+      }
+    },
+    "event_clean_artifacts_unchanged_note": "modification times predate Phase 6, and the smoke test rebuilt the events through the official study and found them identical",
+    "pinned_official_environment_unchanged": true,
+    "dataset_downloads": false,
+    "software_downloads": "Eight wheels were downloaded into a separate overlay because the pinned environment lacked the official lock's sentence-transformer and metric dependencies",
+    "evidence_selector": false,
+    "llm": false,
+    "architecture_modified": false
+  },
+  "claims_not_made": [
+    "published benchmark reproduced",
+    "mind reading",
+    "clinical readiness",
+    "state of the art",
+    "subject-independent decoding"
+  ]
+}

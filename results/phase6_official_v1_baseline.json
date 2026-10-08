@@ -1,0 +1,79 @@
+{
+  "task": "Phase 6 Part 4: official v1 baseline on S22 splits C, D, E",
+  "execution_status": "NOT EXECUTED",
+  "reason": "The exact official architecture cannot be trained on this machine, at any epoch count.",
+  "blockers": {
+    "memory": {
+      "training_static_memory_gib": 9.291596069931984,
+      "estimated_training_process_gib": 12.015137329697609,
+      "system_available_commit_gib_with_model_loaded": 3.126575469970703,
+      "system_available_physical_gib_with_model_loaded": 2.5212020874023438,
+      "system_total_physical_gib": 15.589859008789062,
+      "explanation": "AdamW training holds four fp32 copies of all 623.5M parameters (weights, gradients, two moment buffers). Reducing epochs does not reduce this. Even with every other application closed it would need most of the 15.6 GB of RAM."
+    },
+    "compute": {
+      "basis": "measured forward cost and exact parameter count; training cost extrapolated (backward ~2x forward)",
+      "forward_seconds_per_keystroke": 0.06617379933595657,
+      "estimated_seconds_per_epoch": {
+        "C": 852.3619024176228,
+        "D": 423.60696585178755,
+        "E": 572.5335081458144
+      },
+      "estimated_hours_per_run": {
+        "official_300_epochs": {
+          "C": 71.0301585348019,
+          "D": 35.300580487648965,
+          "E": 47.711125678817865
+        },
+        "diagnostic_100_epochs": {
+          "C": 23.676719511600634,
+          "D": 11.766860162549653,
+          "E": 15.903708559605956
+        }
+      },
+      "epochs_fitting_2_hours": {
+        "C": 8,
+        "D": 16,
+        "E": 12
+      },
+      "twelve_run_total_hours_at_100_epochs": 225.07202323607063
+    },
+    "gpu_only_operations": false,
+    "gpu_note": "No GPU-only operation was found; the model runs on CPU (forward verified). The limits are memory and time."
+  },
+  "lightweight_diagnostic_assessment": "The brief allows the same architecture with fewer epochs. A 2-hour run fits 8 epochs on C (520 optimizer steps), 16 on D and 12 on E, too few to train a 623.5M-parameter model at the official 5e-5 learning rate, and memory prevents even that. Not run.",
+  "not_done_deliberately": [
+    "No architecture change: n_subjects=1 would shrink the per-subject tables while keeping the single-subject function, but it alters the official model and still exceeds available memory.",
+    "No mixed precision, no gradient checkpointing, no reduced hidden size."
+  ],
+  "exact_official_parameters": {
+    "optimizer": "AdamW, lr 5e-5, weight decay 1e-4",
+    "scheduler": "OneCycleLR, max_lr 5e-5, pct_start 0.1, stepped per batch",
+    "gradient_clipping": null,
+    "epochs": 300,
+    "seed": 33,
+    "devices": "8 GPUs by default; CPU fallback when CUDA is absent",
+    "source_check": {
+      "n_epochs_300": true,
+      "patience_30": true
+    },
+    "batch_size": 64,
+    "val_test_batch_size": 2048
+  },
+  "planned_protocol_if_executable": {
+    "splits": {
+      "C": "train s1/b1 + s2/b2 (list1) -> test s1/b2 + s2/b1 (list2)",
+      "D": "train s1/b1 (list1) -> test s2/b1 (list2)",
+      "E": "train s1/b2 (list2) -> test s2/b2 (list1)"
+    },
+    "seeds": [
+      33,
+      123,
+      777
+    ],
+    "inputs": "validated official-v1 slab, proven identical to the official SegmentDataset batch",
+    "validation": "none: the splits have no validation side, so EarlyStopping and best-checkpointing are omitted and the final weights are evaluated, which is also what the official trainer.test uses"
+  },
+  "results": null,
+  "executed_instead": "results/phase6_official_v1_smoke_test.json (forward-only smoke test, PASS)"
+}

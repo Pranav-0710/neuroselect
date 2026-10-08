@@ -1,0 +1,19 @@
+{
+  "task": "Phase 6 Part 7: test-time signal-dependence of the trained real-label model",
+  "execution_status": "NOT EXECUTED",
+  "reason": "Requires a trained official model and none could be trained. Ablating the untrained network was not done: it would show only that random weights respond to their input.",
+  "planned_conditions": {
+    "A": "original signal",
+    "B": "temporal shuffle within each event (fixed seed)",
+    "C": "zeroed MEG",
+    "D": "one fixed random permutation of the 306 channels, positions unchanged"
+  },
+  "planned_measures": [
+    "character F1",
+    "CER",
+    "decoded length",
+    "agreement with condition-A predictions"
+  ],
+  "formulation_note": "Decoded length is fixed by the keystroke count in v1, so only character identity can change.",
+  "results": null
+}

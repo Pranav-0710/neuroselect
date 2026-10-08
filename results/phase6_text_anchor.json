@@ -1,0 +1,180 @@
+{
+  "task": "Phase 6 Part 8: text-only anchor",
+  "what_it_is": "Each held-out sentence scored against the training sentence closest in target character length (ties broken by sentence UID). The held-out text is never used. A descriptive language/text prior reference, not a model.",
+  "splits": {
+    "C": {
+      "train_sentences": 128,
+      "test_sentences": 128,
+      "test_text_ever_used": false,
+      "mean_sentence_cer": 0.7371174894393164,
+      "mean_sentence_wer": 0.9055710565476192,
+      "counts": {
+        "substitutions": 3017,
+        "deletions": 661,
+        "insertions": 401,
+        "hits": 1869,
+        "reference_characters": 5547,
+        "hypothesis_characters": 5287
+      },
+      "substitution_rate": 0.5438976023075537,
+      "deletion_rate": 0.1191635118081846,
+      "insertion_rate": 0.07229132864611501,
+      "micro_cer": 0.7353524427618533,
+      "hit_rate": 0.33693888588426174,
+      "character_precision": 0.35350860601475315,
+      "character_recall": 0.33693888588426174,
+      "character_f1": 0.3450249215432896,
+      "length_ratio": 0.9531278168379305,
+      "examples": [
+        {
+          "test_sentence_UID": "2.0_S22_1_block2",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "los procesadoras el bit ejecutan las instrucciones",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.72,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "3.0_S22_1_block2",
+          "anchor_sentence_UID": "10.0_S22_1_block1",
+          "target": "los ni@os mayores acaban la escuela",
+          "anchor": "las uniones organizan el calendario",
+          "cer": 0.6857142857142857,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "4.0_S22_1_block2",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "las agencias disponen los equipos por la ma@ana",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.7021276595744681,
+          "wer": 0.875
+        },
+        {
+          "test_sentence_UID": "5.0_S22_1_block2",
+          "anchor_sentence_UID": "23.0_S22_2_block2",
+          "target": "laa investigacione real recoge los",
+          "anchor": "los corredores aceleran la carrera",
+          "cer": 0.8235294117647058,
+          "wer": 1.0
+        }
+      ]
+    },
+    "D": {
+      "train_sentences": 64,
+      "test_sentences": 64,
+      "test_text_ever_used": false,
+      "mean_sentence_cer": 0.7287756000345779,
+      "mean_sentence_wer": 0.8942522321428572,
+      "counts": {
+        "substitutions": 1481,
+        "deletions": 341,
+        "insertions": 209,
+        "hits": 970,
+        "reference_characters": 2792,
+        "hypothesis_characters": 2660
+      },
+      "substitution_rate": 0.5304441260744985,
+      "deletion_rate": 0.12213467048710602,
+      "insertion_rate": 0.0748567335243553,
+      "micro_cer": 0.7274355300859598,
+      "hit_rate": 0.34742120343839544,
+      "character_precision": 0.36466165413533835,
+      "character_recall": 0.34742120343839544,
+      "character_f1": 0.3558327219369039,
+      "length_ratio": 0.9527220630372493,
+      "examples": [
+        {
+          "test_sentence_UID": "2.0_S22_2_block1",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "la controversia en los diagnosticos cierra el paso",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.68,
+          "wer": 0.75
+        },
+        {
+          "test_sentence_UID": "3.0_S22_2_block1",
+          "anchor_sentence_UID": "11.0_S22_1_block1",
+          "target": "las bolsas pequeaas regisran la perdida",
+          "anchor": "las explicaciones aclaran las preguntas",
+          "cer": 0.6410256410256411,
+          "wer": 0.8333333333333334
+        },
+        {
+          "test_sentence_UID": "4.0_S22_2_block1",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "los beneficios superan el riesgo por los puestos",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.6666666666666666,
+          "wer": 0.875
+        },
+        {
+          "test_sentence_UID": "5.0_S22_2_block1",
+          "anchor_sentence_UID": "26.0_S22_1_block1",
+          "target": "los individdos adeptan el reasgo genetivo",
+          "anchor": "las condiciones favorecen los desarrollos",
+          "cer": 0.7317073170731707,
+          "wer": 1.0
+        }
+      ]
+    },
+    "E": {
+      "train_sentences": 64,
+      "test_sentences": 64,
+      "test_text_ever_used": false,
+      "mean_sentence_cer": 0.7464709415136465,
+      "mean_sentence_wer": 0.98125,
+      "counts": {
+        "substitutions": 1170,
+        "deletions": 180,
+        "insertions": 184,
+        "hits": 713,
+        "reference_characters": 2063,
+        "hypothesis_characters": 2067
+      },
+      "substitution_rate": 0.5671352399418322,
+      "deletion_rate": 0.08725157537566651,
+      "insertion_rate": 0.08919049927290354,
+      "micro_cer": 0.7435773145904023,
+      "hit_rate": 0.3456131846825012,
+      "character_precision": 0.3449443638122883,
+      "character_recall": 0.3456131846825012,
+      "character_f1": 0.3452784503631961,
+      "length_ratio": 1.001938923897237,
+      "examples": [
+        {
+          "test_sentence_UID": "2.0_S22_2_block2",
+          "anchor_sentence_UID": "49.0_S22_1_block2",
+          "target": "las interconexiones extienden la costumbre",
+          "anchor": "el centro describe las parabolas asociadas",
+          "cer": 0.8333333333333334,
+          "wer": 1.2
+        },
+        {
+          "test_sentence_UID": "3.0_S22_2_block2",
+          "anchor_sentence_UID": "5.0_S22_1_block2",
+          "target": "las versiones soportan el comendo",
+          "anchor": "laa investigacione real recoge los",
+          "cer": 0.696969696969697,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "4.0_S22_2_block2",
+          "anchor_sentence_UID": "23.0_S22_1_block2",
+          "target": "el grupoexige la liberacion",
+          "anchor": "la regla brinda la garantia",
+          "cer": 0.7777777777777778,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "5.0_S22_2_block2",
+          "anchor_sentence_UID": "19.0_S22_1_block2",
+          "target": "las estrategias distinguen los pensamientos",
+          "anchor": "los pedidos directos merecen las atenciones",
+          "cer": 0.6744186046511628,
+          "wer": 1.2
+        }
+      ]
+    }
+  }
+}
