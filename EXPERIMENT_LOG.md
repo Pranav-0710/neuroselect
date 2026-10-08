@@ -359,3 +359,103 @@ from accessible signal subset and leakage checks done.
 - Artifacts: `results/s22_split_ladder_audit.json`,
   `results/figures/debug/s22_split_ladder.png`,
   `data/manifests/split_[A-G]_*.json`.
+
+## Phase 5Z — Expanded-data baseline (all four S22 blocks)
+
+- Scale: 240 → `9,650` keystrokes (40.2×), 8 → `256` sentences (`128`
+  unique texts, each typed once per session), 1 → 4 blocks, 1 → 2 sessions.
+  Keystrokes per sentence `37.7 ± 7.9` (13–64); 26 of 29 classes occur, space
+  `13.0%`.
+- **Official-v1 output placement completed.** 469 keystrokes land exactly on a
+  half-sample; for `34` (`0.35%`) fp rounding makes `TimedArray.overlap` return
+  24 of 25 samples. The official `MegExtractor` adds that into a zero array of
+  the requested duration (`neuralset.base.TimedArray.__iadd__`), leaving one
+  zero sample at position 0 (17) or 24 (17). The gated module raised instead;
+  it now places the overlap the same way. Gated overlap arithmetic was already
+  bit-exact with `_overlap_slice`, so no previously handled event changed
+  (pytest trial-2 reference hashes unchanged).
+- Parity chain, all exact (max abs difference `0.0`):
+  boundary + control events vs official `MegExtractor`, 66/66;
+  stored slab (workspace env) vs gated module in pinned env, 869/869 across
+  all four blocks. The workspace env differs from the pinned one (scipy 1.15.2,
+  scikit-learn 1.5.2, pandas 3.0.1, torch 2.13.0) yet reproduces it exactly.
+- Tensors: `(9650, 25, 306)` float32 memmap + JSONL index; splits are row
+  views, never copies. All finite; every sentence's labels reconstruct its
+  typed text exactly (`<space>`→` `, `<special>`→`@`).
+- **Event probe** (StandardScaler → PCA 95% → balanced logistic regression,
+  fit on training side only). Train accuracy `1.000` on every split
+  (~900–1,330 PCA components on 2–4k events: memorization). Held-out balanced
+  accuracy vs chance `0.0385`:
+
+  | Split | Bal. acc | × chance | Macro F1 | Pred. classes |
+  |---|---:|---:|---:|---:|
+  | C (primary) | 0.0378 | 0.98 | 0.010 | 3 |
+  | A | 0.0399 | 1.04 | 0.013 | 4 |
+  | B | 0.0346 | 0.90 | 0.017 | 5 |
+  | D | 0.0637 | 1.66 | 0.051 | 21 |
+  | E | 0.0349 | 0.91 | 0.021 | 11 |
+
+  Raw accuracy sits below the majority baseline everywhere; expected with
+  `class_weight="balanced"`, so balanced accuracy vs chance is the reference.
+- **CTC**, unchanged ConvCTC, Adam 1e-3, clip 1.0, 300 epochs, seeds
+  33/123/777. Batches group **identical-length** sentences only: no padding,
+  forward passes identical to one-at-a-time; gradients averaged per group
+  (22 updates/epoch on C). Only protocol difference from the 8-trial runs.
+- Primary metric is aligned-character F1. CER is length-sensitive: across all
+  12 trained runs, Pearson r(CER, decoded/target length) = `+0.962`,
+  r(insertion rate, length) = `+0.984`, r(deletion rate, length) = `−0.975`,
+  but r(character F1, length) = `+0.138`. CER spans 0.778–1.097 across runs;
+  F1 spans 0.297–0.319.
+
+  | Condition | Train CER | Held-out CER | Char F1 (pooled) | F1 per seed | Len ratio |
+  |---|---:|---:|---:|---|---:|
+  | C real (primary) | 0.022 | 0.877 ± 0.033 | **0.313** | .318 .302 .319 | 1.008 |
+  | C control | 0.020 | 0.892 ± 0.157 | **0.305** | .313 .299 .304 | 0.942 |
+  | D real | 0.008 | 0.863 ± 0.092 | **0.309** | .307 .306 .315 | 0.914 |
+  | E real | 0.007 | 0.922 ± 0.112 | **0.298** | .298 .297 .300 | 0.993 |
+  | Text anchor (C) | — | — | **0.345** | — | 0.953 (pooled) |
+
+  CER and length ratio are means of per-sentence values (same CER definition
+  as 5U's `0.9194`); char F1 is pooled over all held-out characters.
+- Every run memorizes its training set (train F1 0.986–0.996), including the
+  control, which reproduces deliberately mismatched targets verbatim.
+- **Control (split C):** real above control in 3/3 seed pairs (same init and
+  batch order; only targets differ) by `+0.003` to `+0.016` F1 — no larger
+  than within-condition seed spread (0.017, 0.014). CER direction flips by
+  seed (control lower for 33 and 123, higher for 777): the 2-seed CER reading
+  did not survive the third seed. Pooled insertion rates equal (0.18 vs 0.18).
+- Control derangement is over sentence UIDs; in split C each sentence occurs
+  twice, so 3/128 pairs (2.3%; ~1 expected) map a signal to its own sentence
+  typed in the other session (2 text-identical). That dilutes the control
+  toward the real condition, so it could only hide an advantage. Stimulus-level
+  derangement would exclude it.
+- **Data scale (Step 7, char F1):** 8-trial real `0.270`, 8-trial control
+  `0.274`; expanded C real `0.313`, C control `0.305`. F1 rose with data in
+  **both** conditions by similar amounts, so the gain is not attributable to
+  valid signal–text correspondence. 8-trial F1 rests on 2 held-out sentences
+  per seed.
+- Cross-session vs same-session cannot be contrasted for CTC: D and E are both
+  cross-session, and same-session A/B were not run for CTC. The probe's A/B
+  show no same-session advantage.
+- Conclusion: **under this protocol, the correctly paired neural condition
+  does not yet demonstrate an advantage over the no-valid-signal-assignment
+  control on length-robust character F1.** A length-matched training-sentence
+  textual anchor achieved higher character F1 than the neural decoder on this
+  development set. One subject, four blocks, three seeds, one control
+  partition; not evidence that neural information is absent.
+- Integrity: all 8 raw FIF/MAT files re-hashed and match the acquisition
+  record; official source, historical preprocessing (`scripts/prepare_real_subset.py`)
+  and tests unchanged; no download, LLM, Evidence Selector, architecture,
+  decoder or vocabulary change. pytest `17 passed`.
+- Runtime: 12 runs, ~0.6–3.2 h each at concurrency 5 (12 at once exceeded RAM
+  and paged); queue is resumable.
+- Artifacts: `results/s22_expanded_baseline.json` (phase summary),
+  `results/s22_expanded_event_tensors.json`,
+  `results/official_v1_boundary_event_parity.json`,
+  `results/s22_event_tensor_env_parity.json`,
+  `results/s22_expanded_event_probe.json`,
+  `results/s22_expanded_ctc_baseline.json`,
+  `results/s22_expanded_no_signal_control.json`,
+  `results/runs/s22_expanded_ctc/*.json`,
+  `results/figures/debug/s22_expanded_{baseline_summary,event_probe,ctc}.png`,
+  `results/figures/debug/s22_no_signal_control.png`.

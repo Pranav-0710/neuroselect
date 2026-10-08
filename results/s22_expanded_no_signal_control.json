@@ -48,6 +48,44 @@
       }
     ]
   },
+  "target_permutation_audit": {
+    "derangement_recomputed_from_trainer": true,
+    "recomputed_mapping_reproduces_stored_examples": true,
+    "draws_until_derangement": 3,
+    "training_pairs": 128,
+    "pairs_mapped_to_same_stimulus_other_session": 3,
+    "same_stimulus_fraction": 0.0234375,
+    "pairs_with_identical_typed_text": 2,
+    "expected_same_stimulus_pairs_by_chance": 1.0078740157480315,
+    "twins": [
+      {
+        "signal_sentence_UID": "18.0_S22_1_block1",
+        "assigned_target_sentence_UID": "40.0_S22_2_block2",
+        "stimulus_group": "G043",
+        "signal_typed_text": "la enfermedad drevela las claves",
+        "assigned_typed_text": "la enfermedad revela las claves",
+        "typed_text_identical": false
+      },
+      {
+        "signal_sentence_UID": "45.0_S22_1_block1",
+        "assigned_target_sentence_UID": "23.0_S22_2_block2",
+        "stimulus_group": "G101",
+        "signal_typed_text": "los corredores aceleran la carrera",
+        "assigned_typed_text": "los corredores aceleran la carrera",
+        "typed_text_identical": true
+      },
+      {
+        "signal_sentence_UID": "60.0_S22_1_block1",
+        "assigned_target_sentence_UID": "52.0_S22_2_block2",
+        "stimulus_group": "G061",
+        "signal_typed_text": "la sociedad plantea la necesidad",
+        "assigned_typed_text": "la sociedad plantea la necesidad",
+        "typed_text_identical": true
+      }
+    ],
+    "effect": "These pairs give the control a little valid supervision, which pulls it toward the real condition and so could only hide a real-label advantage, not create one. They cannot explain the observed real/control equality: the control has valid supervision on this small fraction of pairs against all of them for real labels, and every twin is a list1 sentence, none of which is in the list2 evaluation set.",
+    "design_note": "Deranging at the stimulus-group level rather than the UID level would exclude twins."
+  },
   "control": {
     "split": "C",
     "split_name": "C_sentence_disjoint",

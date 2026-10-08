@@ -1,0 +1,65 @@
+{
+  "task": "cross-environment parity of the stored S22 event tensors",
+  "question": "Does the slab written from the workspace environment equal what the gated official-v1 implementation produces inside the pinned Brain2Qwerty v1 environment?",
+  "comparison_environment": {
+    "python": "3.13.7",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.14.1",
+      "scikit-learn": "1.8.0",
+      "pandas": "2.2.3",
+      "torch": "2.6.0",
+      "mne": "1.11.0"
+    }
+  },
+  "slab_written_by": "workspace environment (see results/s22_expanded_baseline.json reproducibility)",
+  "sampling": "200 evenly spaced events per block plus every zero-filled boundary event",
+  "blocks": [
+    {
+      "block": "session1/block1",
+      "events_in_block": 2040,
+      "events_compared": 210,
+      "boundary_events_included": 7,
+      "exact_hash_matches": 210,
+      "maximum_absolute_difference": 0.0,
+      "mismatch_examples": []
+    },
+    {
+      "block": "session1/block2",
+      "events_in_block": 2755,
+      "events_compared": 220,
+      "boundary_events_included": 8,
+      "exact_hash_matches": 220,
+      "maximum_absolute_difference": 0.0,
+      "mismatch_examples": []
+    },
+    {
+      "block": "session2/block1",
+      "events_in_block": 2792,
+      "events_compared": 221,
+      "boundary_events_included": 6,
+      "exact_hash_matches": 221,
+      "maximum_absolute_difference": 0.0,
+      "mismatch_examples": []
+    },
+    {
+      "block": "session2/block2",
+      "events_in_block": 2063,
+      "events_compared": 218,
+      "boundary_events_included": 13,
+      "exact_hash_matches": 218,
+      "maximum_absolute_difference": 0.0,
+      "mismatch_examples": []
+    }
+  ],
+  "events_compared": 869,
+  "exact_hash_matches": 869,
+  "maximum_absolute_difference": 0.0,
+  "status": "PASS",
+  "chain_of_evidence": [
+    "slab (workspace env) == gated implementation (pinned env): this artifact",
+    "gated implementation (pinned env) == official MegExtractor (pinned env): results/official_v1_boundary_event_parity.json and results/eight_trial_official_v1_parity.json"
+  ],
+  "training_run": false
+}

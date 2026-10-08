@@ -1,0 +1,784 @@
+{
+  "task": "Expanded-data baseline phase summary for subject S22",
+  "phase_steps": {
+    "1_canonical_manifest": "data/manifests/s22_sentence_block_metadata.jsonl",
+    "2_splits": [
+      "split_A_same_session.json",
+      "split_B_same_session.json",
+      "split_C_sentence_disjoint.json",
+      "split_D_cross_session_sentence_disjoint.json",
+      "split_E_cross_session_sentence_disjoint.json",
+      "split_F_cross_session_sentence_overlap.json",
+      "split_G_cross_session_sentence_overlap.json"
+    ],
+    "3_event_tensors": "results/s22_expanded_event_tensors.json",
+    "4_event_probe": "results/s22_expanded_event_probe.json",
+    "5_ctc_baseline": "results/s22_expanded_ctc_baseline.json",
+    "6_no_signal_control": "results/s22_expanded_no_signal_control.json"
+  },
+  "data_scale": {
+    "previous_development_setting": {
+      "trials": 8,
+      "train_trials": 6,
+      "evaluation_trials": 2,
+      "keystrokes_total": 240,
+      "blocks": 1,
+      "sessions": 1,
+      "event_sequence_ctc_mean_eval_cer": 0.9194,
+      "target_permutation_mean_eval_cer": 1.082
+    },
+    "expanded_setting": {
+      "events": 9650,
+      "sentences": 256,
+      "unique_sentence_texts": 128,
+      "blocks": 4,
+      "sessions": 2,
+      "keystrokes_per_sentence": {
+        "mean": 37.6953125,
+        "median": 37.0,
+        "std": 7.893884691794259,
+        "min": 13,
+        "max": 64
+      },
+      "per_block": {
+        "session1/block1": {
+          "events": 2040,
+          "sentences": 64
+        },
+        "session1/block2": {
+          "events": 2755,
+          "sentences": 64
+        },
+        "session2/block1": {
+          "events": 2792,
+          "sentences": 64
+        },
+        "session2/block2": {
+          "events": 2063,
+          "sentences": 64
+        }
+      },
+      "class_distribution": {
+        " ": {
+          "count": 1258,
+          "share": 0.13036269430051814
+        },
+        "a": {
+          "count": 1135,
+          "share": 0.11761658031088083
+        },
+        "e": {
+          "count": 1002,
+          "share": 0.10383419689119171
+        },
+        "s": {
+          "count": 865,
+          "share": 0.08963730569948186
+        },
+        "l": {
+          "count": 814,
+          "share": 0.08435233160621762
+        },
+        "o": {
+          "count": 771,
+          "share": 0.07989637305699482
+        },
+        "i": {
+          "count": 589,
+          "share": 0.06103626943005181
+        },
+        "n": {
+          "count": 566,
+          "share": 0.05865284974093264
+        },
+        "r": {
+          "count": 535,
+          "share": 0.05544041450777202
+        },
+        "c": {
+          "count": 468,
+          "share": 0.04849740932642487
+        },
+        "t": {
+          "count": 310,
+          "share": 0.03212435233160622
+        },
+        "d": {
+          "count": 303,
+          "share": 0.03139896373056995
+        },
+        "p": {
+          "count": 210,
+          "share": 0.021761658031088083
+        },
+        "m": {
+          "count": 175,
+          "share": 0.018134715025906734
+        },
+        "u": {
+          "count": 171,
+          "share": 0.01772020725388601
+        },
+        "g": {
+          "count": 119,
+          "share": 0.012331606217616581
+        },
+        "b": {
+          "count": 96,
+          "share": 0.009948186528497409
+        },
+        "v": {
+          "count": 88,
+          "share": 0.009119170984455959
+        },
+        "f": {
+          "count": 64,
+          "share": 0.006632124352331606
+        },
+        "j": {
+          "count": 28,
+          "share": 0.002901554404145078
+        },
+        "x": {
+          "count": 24,
+          "share": 0.002487046632124352
+        },
+        "q": {
+          "count": 15,
+          "share": 0.0015544041450777201
+        },
+        "@": {
+          "count": 14,
+          "share": 0.001450777202072539
+        },
+        "h": {
+          "count": 14,
+          "share": 0.001450777202072539
+        },
+        "y": {
+          "count": 8,
+          "share": 0.0008290155440414508
+        },
+        "z": {
+          "count": 8,
+          "share": 0.0008290155440414508
+        }
+      }
+    },
+    "growth": {
+      "events": 40.208333333333336,
+      "sentences": 32.0,
+      "blocks": 4.0,
+      "sessions": 2.0
+    },
+    "split_sizes": {
+      "A_same_session": {
+        "classification": "SENTENCE-DISJOINT",
+        "train_sentences": 64,
+        "test_sentences": 64,
+        "train_blocks": [
+          "session1/block1"
+        ],
+        "test_blocks": [
+          "session1/block2"
+        ]
+      },
+      "B_same_session": {
+        "classification": "SENTENCE-DISJOINT",
+        "train_sentences": 64,
+        "test_sentences": 64,
+        "train_blocks": [
+          "session2/block2"
+        ],
+        "test_blocks": [
+          "session2/block1"
+        ]
+      },
+      "C_sentence_disjoint": {
+        "classification": "SENTENCE-DISJOINT",
+        "train_sentences": 128,
+        "test_sentences": 128,
+        "train_blocks": [
+          "session1/block1",
+          "session2/block2"
+        ],
+        "test_blocks": [
+          "session1/block2",
+          "session2/block1"
+        ]
+      },
+      "D_cross_session_sentence_disjoint": {
+        "classification": "SENTENCE-DISJOINT",
+        "train_sentences": 64,
+        "test_sentences": 64,
+        "train_blocks": [
+          "session1/block1"
+        ],
+        "test_blocks": [
+          "session2/block1"
+        ]
+      },
+      "E_cross_session_sentence_disjoint": {
+        "classification": "SENTENCE-DISJOINT",
+        "train_sentences": 64,
+        "test_sentences": 64,
+        "train_blocks": [
+          "session1/block2"
+        ],
+        "test_blocks": [
+          "session2/block2"
+        ]
+      },
+      "F_cross_session_sentence_overlap": {
+        "classification": "CROSS-SESSION WITH SENTENCE OVERLAP",
+        "train_sentences": 64,
+        "test_sentences": 64,
+        "train_blocks": [
+          "session1/block1"
+        ],
+        "test_blocks": [
+          "session2/block2"
+        ]
+      },
+      "G_cross_session_sentence_overlap": {
+        "classification": "CROSS-SESSION WITH SENTENCE OVERLAP",
+        "train_sentences": 64,
+        "test_sentences": 64,
+        "train_blocks": [
+          "session1/block2"
+        ],
+        "test_blocks": [
+          "session2/block1"
+        ]
+      }
+    }
+  },
+  "baseline_comparison": {
+    "primary_metric": "character_f1",
+    "character_f1": {
+      "previous_8_trial_real": {
+        "per_seed": [
+          {
+            "seed": 33,
+            "evaluation_sentences": 2,
+            "substitution_rate": 0.21311475409836064,
+            "deletion_rate": 0.5737704918032787,
+            "insertion_rate": 0.0,
+            "micro_cer": 0.7868852459016393,
+            "hit_rate": 0.21311475409836064,
+            "character_precision": 0.5,
+            "character_recall": 0.21311475409836064,
+            "character_f1": 0.29885057471264365,
+            "length_ratio": 0.4262295081967213
+          },
+          {
+            "seed": 123,
+            "evaluation_sentences": 2,
+            "substitution_rate": 0.16393442622950818,
+            "deletion_rate": 0.6885245901639344,
+            "insertion_rate": 0.0,
+            "micro_cer": 0.8524590163934426,
+            "hit_rate": 0.14754098360655737,
+            "character_precision": 0.47368421052631576,
+            "character_recall": 0.14754098360655737,
+            "character_f1": 0.225,
+            "length_ratio": 0.3114754098360656
+          },
+          {
+            "seed": 777,
+            "evaluation_sentences": 2,
+            "substitution_rate": 0.6229508196721312,
+            "deletion_rate": 0.03278688524590164,
+            "insertion_rate": 0.5245901639344263,
+            "micro_cer": 1.180327868852459,
+            "hit_rate": 0.3442622950819672,
+            "character_precision": 0.23076923076923078,
+            "character_recall": 0.3442622950819672,
+            "character_f1": 0.27631578947368424,
+            "length_ratio": 1.4918032786885247
+          }
+        ],
+        "substitution_rate": 0.3333333333333333,
+        "deletion_rate": 0.43169398907103823,
+        "insertion_rate": 0.17486338797814208,
+        "micro_cer": 0.9398907103825137,
+        "hit_rate": 0.23497267759562843,
+        "character_precision": 0.3161764705882353,
+        "character_recall": 0.23497267759562843,
+        "character_f1": 0.26959247648902823,
+        "length_ratio": 0.7431693989071039,
+        "counts": {
+          "substitutions": 61,
+          "deletions": 79,
+          "insertions": 32,
+          "hits": 43,
+          "reference_characters": 183,
+          "hypothesis_characters": 136
+        }
+      },
+      "previous_8_trial_control": {
+        "per_seed": [
+          {
+            "seed": 33,
+            "evaluation_sentences": 2,
+            "substitution_rate": 0.5901639344262295,
+            "deletion_rate": 0.0,
+            "insertion_rate": 0.819672131147541,
+            "micro_cer": 1.4098360655737705,
+            "hit_rate": 0.4098360655737705,
+            "character_precision": 0.22522522522522523,
+            "character_recall": 0.4098360655737705,
+            "character_f1": 0.29069767441860467,
+            "length_ratio": 1.819672131147541
+          },
+          {
+            "seed": 123,
+            "evaluation_sentences": 2,
+            "substitution_rate": 0.21311475409836064,
+            "deletion_rate": 0.6229508196721312,
+            "insertion_rate": 0.0,
+            "micro_cer": 0.8360655737704918,
+            "hit_rate": 0.16393442622950818,
+            "character_precision": 0.43478260869565216,
+            "character_recall": 0.16393442622950818,
+            "character_f1": 0.23809523809523805,
+            "length_ratio": 0.3770491803278688
+          },
+          {
+            "seed": 777,
+            "evaluation_sentences": 2,
+            "substitution_rate": 0.639344262295082,
+            "deletion_rate": 0.03278688524590164,
+            "insertion_rate": 0.4098360655737705,
+            "micro_cer": 1.0819672131147542,
+            "hit_rate": 0.32786885245901637,
+            "character_precision": 0.23809523809523808,
+            "character_recall": 0.32786885245901637,
+            "character_f1": 0.27586206896551724,
+            "length_ratio": 1.3770491803278688
+          }
+        ],
+        "substitution_rate": 0.4808743169398907,
+        "deletion_rate": 0.2185792349726776,
+        "insertion_rate": 0.4098360655737705,
+        "micro_cer": 1.1092896174863387,
+        "hit_rate": 0.3005464480874317,
+        "character_precision": 0.25229357798165136,
+        "character_recall": 0.3005464480874317,
+        "character_f1": 0.27431421446384036,
+        "length_ratio": 1.1912568306010929,
+        "counts": {
+          "substitutions": 88,
+          "deletions": 40,
+          "insertions": 75,
+          "hits": 55,
+          "reference_characters": 183,
+          "hypothesis_characters": 218
+        }
+      },
+      "expanded_primary_C_real": 0.3133233082706766,
+      "expanded_C_control": 0.3052585778219791,
+      "expanded_D_real": 0.30942123993257165,
+      "expanded_E_real": 0.2982285064196327,
+      "length_matched_text_anchor_C": 0.3450249215432896,
+      "caveat": "The 8-trial F1 rests on 2 held-out sentences per seed (6 sentence decodes in total), so it is far noisier than the expanded result on 128 sentences per seed."
+    },
+    "previous_event_sequence_ctc": {
+      "setting": "8 trials from one block of one session, 6 train / 2 evaluation, 240 keystrokes",
+      "mean_evaluation_cer": 0.9194,
+      "label": "8-trial single-block development result, NOT a generalization benchmark"
+    },
+    "expanded_primary": {
+      "split": "C",
+      "setting": "128 train / 128 held-out sentences, 4103 / 5547 keystrokes, sentence-disjoint across both sessions",
+      "mean_evaluation_cer": 0.8769345585653889,
+      "std_evaluation_cer": 0.03278000691735756,
+      "mean_train_cer": 0.022328720367314814,
+      "label": "expanded-data sentence-disjoint held-out result"
+    },
+    "other_expanded_splits": {
+      "D": {
+        "classification": "SENTENCE-DISJOINT",
+        "mean_evaluation_cer": 0.8628405098562206
+      },
+      "E": {
+        "classification": "SENTENCE-DISJOINT",
+        "mean_evaluation_cer": 0.9217028591039013
+      }
+    },
+    "previous_target_permutation_control": 1.082,
+    "expanded_target_permutation_control": 0.8917279841784845,
+    "comparability_caveats": [
+      "The 8-trial result trained on 6 sentences from one block; the expanded primary result trains on 128 sentences from two blocks in two sessions. Data volume, block count and session count all differ.",
+      "The 8-trial runs used one optimizer step per sequence. The expanded runs average gradients over same-length sentence groups, so the number of optimizer steps per epoch differs. No zero padding is introduced by that grouping and every forward pass is numerically unchanged.",
+      "The 8-trial evaluation held out 2 sentences from the same block as training; the expanded primary evaluation holds out 128 sentences from different blocks and a different stimulus list.",
+      "Neither setting is a state-of-the-art comparison. Both are internal development baselines on one subject."
+    ]
+  },
+  "length_analysis": {
+    "runs": 12,
+    "per_run": [
+      {
+        "run": "C/real/33",
+        "micro_cer": 0.8604651162790697,
+        "character_f1": 0.31796358365794003,
+        "length_ratio": 0.9900847304849468,
+        "insertion_rate": 0.17685235262303947,
+        "deletion_rate": 0.18676762213809267
+      },
+      {
+        "run": "C/real/123",
+        "micro_cer": 0.8381106904633135,
+        "character_f1": 0.3016919988528821,
+        "length_ratio": 0.8858842617631152,
+        "insertion_rate": 0.12258878673156662,
+        "deletion_rate": 0.2367045249684514
+      },
+      {
+        "run": "C/real/777",
+        "micro_cer": 0.9122047953848927,
+        "character_f1": 0.3193191489361702,
+        "length_ratio": 1.1182621236704524,
+        "insertion_rate": 0.25040562466197946,
+        "deletion_rate": 0.13214350099152694
+      },
+      {
+        "run": "D/real/33",
+        "micro_cer": 0.7851002865329513,
+        "character_f1": 0.3065164923572003,
+        "length_ratio": 0.7808022922636103,
+        "insertion_rate": 0.058022922636103154,
+        "deletion_rate": 0.27722063037249284
+      },
+      {
+        "run": "D/real/123",
+        "micro_cer": 0.8101719197707736,
+        "character_f1": 0.30580671087000194,
+        "length_ratio": 0.7825931232091691,
+        "insertion_rate": 0.08273638968481375,
+        "deletion_rate": 0.3001432664756447
+      },
+      {
+        "run": "D/real/777",
+        "micro_cer": 0.9849570200573066,
+        "character_f1": 0.3147659854976928,
+        "length_ratio": 1.173352435530086,
+        "insertion_rate": 0.3270057306590258,
+        "deletion_rate": 0.15365329512893983
+      },
+      {
+        "run": "E/real/33",
+        "micro_cer": 0.7775084827920504,
+        "character_f1": 0.2978322337417531,
+        "length_ratio": 0.5428986912263694,
+        "insertion_rate": 0.007270964614638876,
+        "deletion_rate": 0.46437227338826953
+      },
+      {
+        "run": "E/real/123",
+        "micro_cer": 1.0494425593795444,
+        "character_f1": 0.29669421487603304,
+        "length_ratio": 1.3460979156568105,
+        "insertion_rate": 0.39747939893359185,
+        "deletion_rate": 0.05138148327678139
+      },
+      {
+        "run": "E/real/777",
+        "micro_cer": 0.9345613184682501,
+        "character_f1": 0.3002568293252393,
+        "length_ratio": 1.0761027629665536,
+        "insertion_rate": 0.24624333494910325,
+        "deletion_rate": 0.1701405719825497
+      },
+      {
+        "run": "C/control/33",
+        "micro_cer": 0.7811429601586443,
+        "character_f1": 0.3131511088189789,
+        "length_ratio": 0.7477915990625563,
+        "insertion_rate": 0.05480439877411213,
+        "deletion_rate": 0.3070127997115558
+      },
+      {
+        "run": "C/control/123",
+        "micro_cer": 0.7791599062556337,
+        "character_f1": 0.2991737310870265,
+        "length_ratio": 0.6800072111051019,
+        "insertion_rate": 0.03046691905534523,
+        "deletion_rate": 0.3504597079502434
+      },
+      {
+        "run": "C/control/777",
+        "micro_cer": 1.0971696412475211,
+        "character_f1": 0.3037532289925543,
+        "length_ratio": 1.3728141337659996,
+        "insertion_rate": 0.45754461871281776,
+        "deletion_rate": 0.0847304849468181
+      }
+    ],
+    "pearson_r_cer_vs_length_ratio": 0.9621766726660408,
+    "pearson_r_character_f1_vs_length_ratio": 0.13837810389431446,
+    "pearson_r_insertion_rate_vs_length_ratio": 0.984280507402876,
+    "pearson_r_deletion_rate_vs_length_ratio": -0.9746697150253532,
+    "cer_range": [
+      0.7775084827920504,
+      1.0971696412475211
+    ],
+    "character_f1_range": [
+      0.29669421487603304,
+      0.3193191489361702
+    ],
+    "length_ratio_range": [
+      0.5428986912263694,
+      1.3728141337659996
+    ],
+    "note": "Descriptive correlations across the trained runs, not a hypothesis test. Each run is one seed of one condition."
+  },
+  "paired_real_vs_control": {
+    "design": "same seed = same initialization and same batch order; only the training targets differ",
+    "pairs": [
+      {
+        "seed": 33,
+        "real_character_f1": 0.31796358365794003,
+        "control_character_f1": 0.3131511088189789,
+        "f1_real_minus_control": 0.004812474838961134,
+        "real_cer": 0.8604651162790697,
+        "control_cer": 0.7811429601586443,
+        "cer_real_minus_control": 0.07932215612042548,
+        "real_length_ratio": 0.9900847304849468,
+        "control_length_ratio": 0.7477915990625563
+      },
+      {
+        "seed": 123,
+        "real_character_f1": 0.3016919988528821,
+        "control_character_f1": 0.2991737310870265,
+        "f1_real_minus_control": 0.0025182677658556196,
+        "real_cer": 0.8381106904633135,
+        "control_cer": 0.7791599062556337,
+        "cer_real_minus_control": 0.05895078420767985,
+        "real_length_ratio": 0.8858842617631152,
+        "control_length_ratio": 0.6800072111051019
+      },
+      {
+        "seed": 777,
+        "real_character_f1": 0.3193191489361702,
+        "control_character_f1": 0.3037532289925543,
+        "f1_real_minus_control": 0.015565919943615891,
+        "real_cer": 0.9122047953848927,
+        "control_cer": 1.0971696412475211,
+        "cer_real_minus_control": -0.1849648458626284,
+        "real_length_ratio": 1.1182621236704524,
+        "control_length_ratio": 1.3728141337659996
+      }
+    ],
+    "mean_f1_difference_real_minus_control": 0.0076322208494775485,
+    "pairs_with_real_above_control": 3,
+    "pairs_total": 3,
+    "f1_difference_range": [
+      0.0025182677658556196,
+      0.015565919943615891
+    ],
+    "real_f1_seed_range": 0.01762715008328808,
+    "control_f1_seed_range": 0.0139773777319524,
+    "largest_pair_difference_within_seed_spread": true,
+    "chance_of_this_many_same_sign_pairs": 0.125,
+    "significance_testing_performed": false,
+    "reading": "Real labels score above the control in 3 of 3 seed pairs, by +0.003 to +0.016 character F1. That is no larger than the spread between seeds within either condition. No significance test was run, so this is not a demonstrated advantage."
+  },
+  "tests": {
+    "command": "python -m pytest tests -q",
+    "exit_code": 0,
+    "summary_line": "17 passed, 1 warning in 50.87s",
+    "collected": 17,
+    "passed": 17,
+    "failed": 0,
+    "skipped": 0,
+    "errors": 0
+  },
+  "reproducibility": {
+    "git_commit": "deb604889e10e1acfb439b19a7efe86c9b372469",
+    "git_branch": "main",
+    "git_status_porcelain": [
+      "M EXPERIMENT_LOG.md",
+      " M results/s22_expanded_no_signal_control.json",
+      "?? results/figures/debug/s22_expanded_baseline_summary.png",
+      "?? results/s22_event_tensor_env_parity.json",
+      "?? results/s22_expanded_baseline.json"
+    ],
+    "official_brain2qwerty_revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+    "preprocessing_variant": "official_v1_compatible",
+    "preprocessing_module": "src/neuroselect/official_v1_preprocessing.py",
+    "representation": "official_v1_event_sequence",
+    "model_seeds": [
+      33,
+      123,
+      777
+    ],
+    "target_permutation_seed": 2026,
+    "optimizer": {
+      "name": "Adam",
+      "learning_rate": 0.001,
+      "gradient_clip_max_norm": 1.0,
+      "epochs": 300
+    },
+    "checkpoints_saved": false,
+    "checkpoint_note": "No model checkpoints are stored; every run is reproducible from its seed and the split manifests.",
+    "training_environment": {
+      "python": "3.13.7",
+      "platform": "Windows-11-10.0.26300-SP0",
+      "packages": {
+        "numpy": "2.2.6",
+        "scipy": "1.15.2",
+        "scikit-learn": "1.5.2",
+        "pandas": "3.0.1",
+        "torch": "2.13.0+cpu",
+        "mne": "1.11.0",
+        "matplotlib": "3.10.7"
+      }
+    },
+    "official_extraction_environment": {
+      "path": "C:\\Users\\prana\\Envs\\neuroselect-brain2qwerty-v1",
+      "packages": {
+        "numpy": "2.2.6",
+        "scipy": "1.14.1",
+        "scikit-learn": "1.8.0",
+        "pandas": "2.2.3",
+        "torch": "2.6.0",
+        "mne": "1.11.0",
+        "matplotlib": "3.11.2",
+        "neuralset": "0.2.2",
+        "neuraltrain": "0.2.2",
+        "neuralfetch": "0.2.2",
+        "exca": "0.5.22",
+        "pydantic": "2.12.5",
+        "lightning": "2.5.2",
+        "torchmetrics": "1.7.3",
+        "dtw-python": "1.7.4"
+      }
+    },
+    "data_hashes": {
+      "fif_sha256": {
+        "MEG/FIF/22_9788/231214/block1.fif": "634bf9c57ec7b6ae0697e50750233c4eed27f96e3a7493341bc21a14beaef7d0",
+        "MEG/FIF/22_9788/231214/block2.fif": "b827b6d4e5101a53ba8c6e248cc30cb50501db1628cda8768f68e588a055744e",
+        "MEG/FIF/22_9788/231222/Block1.fif": "dcbcb8f6c693e36be8d7632380103e4bfe35236fc6ee352f837d9257cc2dac82",
+        "MEG/FIF/22_9788/231222/Block2.fif": "659d8f5cb3a9a3786157afecc6b9881adf027d699b2b793c6b3095f802436c33"
+      },
+      "acquisition_record": {
+        "MEG/FIF/22_9788/231214/block2.fif": "b827b6d4e5101a53ba8c6e248cc30cb50501db1628cda8768f68e588a055744e",
+        "MEG/logs/S22-session1_block2_list2.mat": "d70a6bd029811e9c44a70c00a4fa93bf1ee36cc53fc6bb1e9582e5f5e166a27c",
+        "MEG/FIF/22_9788/231222/Block1.fif": "dcbcb8f6c693e36be8d7632380103e4bfe35236fc6ee352f837d9257cc2dac82",
+        "MEG/logs/S22-session2_block1_list2.mat": "dbdff992d8c31428dcf9b962df43a650cfdcc77559f40cc4a7bbce938ffb03de",
+        "MEG/FIF/22_9788/231222/Block2.fif": "659d8f5cb3a9a3786157afecc6b9881adf027d699b2b793c6b3095f802436c33",
+        "MEG/logs/S22-session2_block2_list1.mat": "96085ee480ba53b0d09be0ffb1b041fd9e9526917c601357596670ed103d0992"
+      }
+    },
+    "event_tensor_hashes": {
+      "session1/block1": "90dd993a786ce440edd3174466408b3aaec2de676a93f3d0883ef243c30596cf",
+      "session1/block2": "2ded6fe7bb6f7a4102d55e55ae9fba5fc02d08e8c603f21e61ae8af667a2efc2",
+      "session2/block1": "bcc681e2d61abaa4c4ff4ca09426e131e6e39a0c3e32a6509c2224cba2b8e977",
+      "session2/block2": "22647cfd7eb25c270d23753ff8a2ee816daad7f95d3d1faff93f140dcbde564b"
+    },
+    "split_manifests": [
+      "split_A_same_session.json",
+      "split_B_same_session.json",
+      "split_C_sentence_disjoint.json",
+      "split_D_cross_session_sentence_disjoint.json",
+      "split_E_cross_session_sentence_disjoint.json",
+      "split_F_cross_session_sentence_overlap.json",
+      "split_G_cross_session_sentence_overlap.json"
+    ],
+    "sentence_metadata": "data/manifests/s22_sentence_block_metadata.jsonl"
+  },
+  "integrity": {
+    "official_source_unchanged": true,
+    "official_source_status": [],
+    "historical_preprocessing_unchanged": true,
+    "historical_preprocessing_file": "scripts/prepare_real_subset.py",
+    "tests_unmodified": true,
+    "raw_data_untracked_or_unchanged": true,
+    "raw_files": {
+      "files_hashed": 8,
+      "all_match_acquisition_record": true,
+      "files": [
+        {
+          "file": "MEG/FIF/22_9788/231214/block1.fif",
+          "sha256": "634bf9c57ec7b6ae0697e50750233c4eed27f96e3a7493341bc21a14beaef7d0",
+          "expected_sha256": "634bf9c57ec7b6ae0697e50750233c4eed27f96e3a7493341bc21a14beaef7d0",
+          "matches": true
+        },
+        {
+          "file": "MEG/FIF/22_9788/231214/block2.fif",
+          "sha256": "b827b6d4e5101a53ba8c6e248cc30cb50501db1628cda8768f68e588a055744e",
+          "expected_sha256": "b827b6d4e5101a53ba8c6e248cc30cb50501db1628cda8768f68e588a055744e",
+          "matches": true
+        },
+        {
+          "file": "MEG/FIF/22_9788/231222/Block1.fif",
+          "sha256": "dcbcb8f6c693e36be8d7632380103e4bfe35236fc6ee352f837d9257cc2dac82",
+          "expected_sha256": "dcbcb8f6c693e36be8d7632380103e4bfe35236fc6ee352f837d9257cc2dac82",
+          "matches": true
+        },
+        {
+          "file": "MEG/FIF/22_9788/231222/Block2.fif",
+          "sha256": "659d8f5cb3a9a3786157afecc6b9881adf027d699b2b793c6b3095f802436c33",
+          "expected_sha256": "659d8f5cb3a9a3786157afecc6b9881adf027d699b2b793c6b3095f802436c33",
+          "matches": true
+        },
+        {
+          "file": "MEG/logs/S22-session1_block1_list1.mat",
+          "sha256": "87cd3b3a1a4512db31004b76528a23a4c39c96dff68e91ec75c4c301f8c96bc6",
+          "expected_sha256": "87cd3b3a1a4512db31004b76528a23a4c39c96dff68e91ec75c4c301f8c96bc6",
+          "matches": true
+        },
+        {
+          "file": "MEG/logs/S22-session1_block2_list2.mat",
+          "sha256": "d70a6bd029811e9c44a70c00a4fa93bf1ee36cc53fc6bb1e9582e5f5e166a27c",
+          "expected_sha256": "d70a6bd029811e9c44a70c00a4fa93bf1ee36cc53fc6bb1e9582e5f5e166a27c",
+          "matches": true
+        },
+        {
+          "file": "MEG/logs/S22-session2_block1_list2.mat",
+          "sha256": "dbdff992d8c31428dcf9b962df43a650cfdcc77559f40cc4a7bbce938ffb03de",
+          "expected_sha256": "dbdff992d8c31428dcf9b962df43a650cfdcc77559f40cc4a7bbce938ffb03de",
+          "matches": true
+        },
+        {
+          "file": "MEG/logs/S22-session2_block2_list1.mat",
+          "sha256": "96085ee480ba53b0d09be0ffb1b041fd9e9526917c601357596670ed103d0992",
+          "expected_sha256": "96085ee480ba53b0d09be0ffb1b041fd9e9526917c601357596670ed103d0992",
+          "matches": true
+        }
+      ],
+      "hashed_at": "phase-summary run time (not copied from an earlier artifact)"
+    },
+    "raw_fif_and_mat_files_unchanged": true,
+    "no_dataset_download_this_phase": true,
+    "evidence_selector_implemented": false,
+    "llm_used": false,
+    "architecture_changed": false,
+    "decoder_changed": false,
+    "vocabulary_changed": false,
+    "official_v1_preprocessing_semantics_changed": false,
+    "official_v1_preprocessing_semantics_note": "The module gained the official right-edge output placement it previously refused to perform. Every event it already handled is bit-identical (the 240-event parity fixture and the pytest reference hashes are unchanged), and the new path was verified against the real official MegExtractor. See results/official_v1_boundary_event_parity.json.",
+    "boundary_parity_status": "PASS",
+    "event_tensor_env_parity_status": "PASS",
+    "event_tensor_env_parity_note": "The slab was written from the workspace environment, whose scipy, scikit-learn, pandas and torch differ from the pinned environment. results/s22_event_tensor_env_parity.json re-extracts a sample of every block inside the pinned environment and requires exact equality with the stored rows.",
+    "split_audit_status": "PASS"
+  },
+  "headline_numbers": {
+    "events": 9650,
+    "sentences": 256,
+    "unique_sentence_texts": 128,
+    "primary_ctc_split": "C",
+    "primary_ctc_evaluation_character_f1": 0.3133233082706766,
+    "control_evaluation_character_f1": 0.3052585778219791,
+    "primary_ctc_evaluation_cer": 0.8769345585653889,
+    "control_evaluation_cer": 0.8917279841784845,
+    "primary_probe_test_accuracy": 0.07175049576347575,
+    "primary_probe_majority_baseline": 0.1350279430322697
+  },
+  "claims_not_made": [
+    "No claim of successful brain-to-text decoding.",
+    "No claim of state-of-the-art performance.",
+    "No significance testing was performed."
+  ]
+}
