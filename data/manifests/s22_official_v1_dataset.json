@@ -1,0 +1,86 @@
+{
+  "dataset": "SpanishBCBL MEG, participant S22, four typing blocks",
+  "source_repository": "bcbl190626/SpanishBCBL",
+  "source_revision": "88f9096c6ce3a3fb17cc7b8e3131ff7f96da5684",
+  "study": "Pinet2024Meg (official brain2qwerty studies package)",
+  "official_revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "data_root_env": "BRAIN2QWERTY_STUDIES (default: data/raw/spanishbcbl_s22)",
+  "counts": {
+    "sentence_records": 256,
+    "unique_sentence_texts": 128,
+    "keystrokes": 9650,
+    "blocks": 4,
+    "sessions": 2
+  },
+  "files": [
+    {
+      "path": "data/raw/spanishbcbl_s22/MEG/FIF/22_9788/231214/block1.fif",
+      "kind": "raw",
+      "sha256": "634bf9c57ec7b6ae0697e50750233c4eed27f96e3a7493341bc21a14beaef7d0",
+      "bytes": 1107644612,
+      "matches_acquisition_record": true
+    },
+    {
+      "path": "data/raw/spanishbcbl_s22/MEG/FIF/22_9788/231214/block2.fif",
+      "kind": "raw",
+      "sha256": "b827b6d4e5101a53ba8c6e248cc30cb50501db1628cda8768f68e588a055744e",
+      "bytes": 1411728256,
+      "matches_acquisition_record": true
+    },
+    {
+      "path": "data/raw/spanishbcbl_s22/MEG/FIF/22_9788/231222/Block1.fif",
+      "kind": "raw",
+      "sha256": "dcbcb8f6c693e36be8d7632380103e4bfe35236fc6ee352f837d9257cc2dac82",
+      "bytes": 1560050432,
+      "matches_acquisition_record": true
+    },
+    {
+      "path": "data/raw/spanishbcbl_s22/MEG/FIF/22_9788/231222/Block2.fif",
+      "kind": "raw",
+      "sha256": "659d8f5cb3a9a3786157afecc6b9881adf027d699b2b793c6b3095f802436c33",
+      "bytes": 1136070372,
+      "matches_acquisition_record": true
+    },
+    {
+      "path": "data/raw/spanishbcbl_s22/MEG/logs/S22-session1_block1_list1.mat",
+      "kind": "raw",
+      "sha256": "87cd3b3a1a4512db31004b76528a23a4c39c96dff68e91ec75c4c301f8c96bc6",
+      "bytes": 221606,
+      "matches_acquisition_record": true
+    },
+    {
+      "path": "data/raw/spanishbcbl_s22/MEG/logs/S22-session1_block2_list2.mat",
+      "kind": "raw",
+      "sha256": "d70a6bd029811e9c44a70c00a4fa93bf1ee36cc53fc6bb1e9582e5f5e166a27c",
+      "bytes": 285603,
+      "matches_acquisition_record": true
+    },
+    {
+      "path": "data/raw/spanishbcbl_s22/MEG/logs/S22-session2_block1_list2.mat",
+      "kind": "raw",
+      "sha256": "dbdff992d8c31428dcf9b962df43a650cfdcc77559f40cc4a7bbce938ffb03de",
+      "bytes": 289761,
+      "matches_acquisition_record": true
+    },
+    {
+      "path": "data/raw/spanishbcbl_s22/MEG/logs/S22-session2_block2_list1.mat",
+      "kind": "raw",
+      "sha256": "96085ee480ba53b0d09be0ffb1b041fd9e9526917c601357596670ed103d0992",
+      "bytes": 220934,
+      "matches_acquisition_record": true
+    },
+    {
+      "path": "data/manifests/s22_sentence_block_metadata.jsonl",
+      "kind": "metadata",
+      "sha256": "ab26d8522682e3de5a8b31dfb89d8d519dd84855faf6aa487cae630c069ded61",
+      "bytes": 134604
+    },
+    {
+      "path": "data/raw/spanishbcbl_s22/events_clean_all_blocks.pkl",
+      "kind": "stored_events",
+      "sha256": "485c3e5b32daa026e4f3ea5dbe3d389e6f8f043d2717bfde67b962c724b23840",
+      "bytes": 2920217
+    }
+  ],
+  "note": "No file is downloaded by the harness; every path must already exist and match."
+}

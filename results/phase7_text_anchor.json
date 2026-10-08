@@ -1,0 +1,824 @@
+{
+  "task": "Phase 7 Task 12: text-only anchor on the clean test partitions",
+  "what_it_is": "Each held-out sentence scored against the training-partition sentence closest in target character length (ties by sentence UID). No model; the held-out text is never used. A descriptive text-prior reference.",
+  "comparability_note": "The anchor emits a whole training sentence, so its length can differ from the target; official v1 emits exactly one label per keystroke. Compare character F1, and read CER with the length ratio.",
+  "splits": {
+    "official_v1_clean": {
+      "train_sentences_in_pool": 202,
+      "test_sentences": 28,
+      "test_keystrokes": 983,
+      "test_text_ever_used": false,
+      "mean_sentence_cer": 0.7605265302367386,
+      "mean_sentence_wer": 0.9767857142857144,
+      "counts": {
+        "substitutions": 550,
+        "deletions": 101,
+        "insertions": 101,
+        "hits": 332,
+        "reference_characters": 983,
+        "hypothesis_characters": 983
+      },
+      "substitution_rate": 0.5595116988809766,
+      "deletion_rate": 0.10274669379450661,
+      "insertion_rate": 0.10274669379450661,
+      "micro_cer": 0.7650050864699899,
+      "hit_rate": 0.3377416073245168,
+      "character_precision": 0.3377416073245168,
+      "character_recall": 0.3377416073245168,
+      "character_f1": 0.3377416073245168,
+      "length_ratio": 1.0,
+      "rows": [
+        {
+          "test_sentence_UID": "10.0_S22_1_block1",
+          "anchor_sentence_UID": "14.0_S22_2_block1",
+          "target": "las uniones organizan el calendario",
+          "anchor": "la fuerza atrae el electron primero",
+          "cer": 0.7142857142857143,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "17.0_S22_1_block1",
+          "anchor_sentence_UID": "13.0_S22_1_block1",
+          "target": "el jefe configura el campo",
+          "anchor": "el hilo comparte los datos",
+          "cer": 0.6923076923076923,
+          "wer": 0.8
+        },
+        {
+          "test_sentence_UID": "19.0_S22_1_block1",
+          "anchor_sentence_UID": "11.0_S22_2_block2",
+          "target": "los cuadernos revelan la division",
+          "anchor": "las controversias cierran el paso",
+          "cer": 0.696969696969697,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "28.0_S22_1_block1",
+          "anchor_sentence_UID": "13.0_S22_1_block1",
+          "target": "la ciencia rompe la vision",
+          "anchor": "el hilo comparte los datos",
+          "cer": 0.7307692307692307,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "34.0_S22_1_block1",
+          "anchor_sentence_UID": "16.0_S22_2_block2",
+          "target": "las revoluciones abarcan las esferas",
+          "anchor": "el sistema incluye las posibilidades",
+          "cer": 0.8333333333333334,
+          "wer": 0.8
+        },
+        {
+          "test_sentence_UID": "50.0_S22_1_block1",
+          "anchor_sentence_UID": "17.0_S22_1_block2",
+          "target": "los interruptores conectan las cargas@",
+          "anchor": "la funcion lee los archivos contenidos",
+          "cer": 0.868421052631579,
+          "wer": 1.2
+        },
+        {
+          "test_sentence_UID": "59.0_S22_1_block1",
+          "anchor_sentence_UID": "14.0_S22_2_block1",
+          "target": "la stadistica sigue la distribucion",
+          "anchor": "la fuerza atrae el electron primero",
+          "cer": 0.8,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "64.0_S22_1_block1",
+          "anchor_sentence_UID": "18.0_S22_1_block1",
+          "target": "el signo conserva los resultados",
+          "anchor": "la enfermedad drevela las claves",
+          "cer": 0.78125,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "65.0_S22_1_block1",
+          "anchor_sentence_UID": "10.0_S22_2_block2",
+          "target": "las funciones leen los archivos",
+          "anchor": "los paneles contienne la opcion",
+          "cer": 0.6774193548387096,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "19.0_S22_1_block2",
+          "anchor_sentence_UID": "15.0_S22_2_block1",
+          "target": "los pedidos directos merecen las atenciones",
+          "anchor": "el cuaderno presenta las divisiones enteras",
+          "cer": 0.7906976744186046,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "26.0_S22_1_block2",
+          "anchor_sentence_UID": "17.0_S22_1_block2",
+          "target": "el signo radical conserva el resutados",
+          "anchor": "la funcion lee los archivos contenidos",
+          "cer": 0.8157894736842105,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "43.0_S22_1_block2",
+          "anchor_sentence_UID": "11.0_S22_1_block1",
+          "target": "el interruptor abierto conecta la carga",
+          "anchor": "las explicaciones aclaran las preguntas",
+          "cer": 0.8205128205128205,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "59.0_S22_1_block2",
+          "anchor_sentence_UID": "2.0_S22_2_block2",
+          "target": "el jefe de la edicion configura los campos",
+          "anchor": "las interconexiones extienden la costumbre",
+          "cer": 0.8095238095238095,
+          "wer": 0.875
+        },
+        {
+          "test_sentence_UID": "63.0_S22_1_block2",
+          "anchor_sentence_UID": "25.0_S22_1_block2",
+          "target": "la ciencia de la idea rompe la vision",
+          "anchor": "las bolas blancas impactan las bandas",
+          "cer": 0.7837837837837838,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "6.0_S22_2_block1",
+          "anchor_sentence_UID": "25.0_S22_1_block2",
+          "target": "el signo radical conserva el resltado",
+          "anchor": "las bolas blancas impactan las bandas",
+          "cer": 0.8108108108108109,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "39.0_S22_2_block1",
+          "anchor_sentence_UID": "25.0_S22_1_block2",
+          "target": "la ciencia de la idea rompe la vision",
+          "anchor": "las bolas blancas impactan las bandas",
+          "cer": 0.7837837837837838,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "41.0_S22_2_block1",
+          "anchor_sentence_UID": "2.0_S22_2_block2",
+          "target": "el jefe de la edicion configura los campos",
+          "anchor": "las interconexiones extienden la costumbre",
+          "cer": 0.8095238095238095,
+          "wer": 0.875
+        },
+        {
+          "test_sentence_UID": "44.0_S22_2_block1",
+          "anchor_sentence_UID": "11.0_S22_1_block1",
+          "target": "el interruptor abierto conecta la carga",
+          "anchor": "las explicaciones aclaran las preguntas",
+          "cer": 0.8205128205128205,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "52.0_S22_2_block1",
+          "anchor_sentence_UID": "15.0_S22_2_block1",
+          "target": "los pedidos directos merecen las atenciones",
+          "anchor": "el cuaderno presenta las divisiones enteras",
+          "cer": 0.7906976744186046,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "13.0_S22_2_block2",
+          "anchor_sentence_UID": "18.0_S22_1_block1",
+          "target": "el signo conserva los resultados",
+          "anchor": "la enfermedad drevela las claves",
+          "cer": 0.78125,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "21.0_S22_2_block2",
+          "anchor_sentence_UID": "25.0_S22_1_block2",
+          "target": "los interruptores conectan las cargas",
+          "anchor": "las bolas blancas impactan las bandas",
+          "cer": 0.5405405405405406,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "26.0_S22_2_block2",
+          "anchor_sentence_UID": "16.0_S22_2_block2",
+          "target": "las revoluciones abarcan las esferas",
+          "anchor": "el sistema incluye las posibilidades",
+          "cer": 0.8333333333333334,
+          "wer": 0.8
+        },
+        {
+          "test_sentence_UID": "27.0_S22_2_block2",
+          "anchor_sentence_UID": "14.0_S22_2_block1",
+          "target": "las uniones organizan el calendario",
+          "anchor": "la fuerza atrae el electron primero",
+          "cer": 0.7142857142857143,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "45.0_S22_2_block2",
+          "anchor_sentence_UID": "16.0_S22_2_block2",
+          "target": "la estadistica sigue la distribucion",
+          "anchor": "el sistema incluye las posibilidades",
+          "cer": 0.6944444444444444,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "50.0_S22_2_block2",
+          "anchor_sentence_UID": "13.0_S22_1_block1",
+          "target": "la ciencia rompe la vision",
+          "anchor": "el hilo comparte los datos",
+          "cer": 0.7307692307692307,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "54.0_S22_2_block2",
+          "anchor_sentence_UID": "10.0_S22_2_block2",
+          "target": "las funciones leen los archivos",
+          "anchor": "los paneles contienne la opcion",
+          "cer": 0.6774193548387096,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "55.0_S22_2_block2",
+          "anchor_sentence_UID": "14.0_S22_2_block1",
+          "target": "los cuadernos presentan la division",
+          "anchor": "la fuerza atrae el electron primero",
+          "cer": 0.8,
+          "wer": 1.2
+        },
+        {
+          "test_sentence_UID": "56.0_S22_2_block2",
+          "anchor_sentence_UID": "13.0_S22_1_block1",
+          "target": "el jefe configura el campo",
+          "anchor": "el hilo comparte los datos",
+          "cer": 0.6923076923076923,
+          "wer": 0.8
+        }
+      ]
+    },
+    "D_clean": {
+      "train_sentences_in_pool": 57,
+      "test_sentences": 32,
+      "test_keystrokes": 1363,
+      "test_text_ever_used": false,
+      "mean_sentence_cer": 0.7344617981550685,
+      "mean_sentence_wer": 0.9205729166666667,
+      "counts": {
+        "substitutions": 717,
+        "deletions": 166,
+        "insertions": 117,
+        "hits": 480,
+        "reference_characters": 1363,
+        "hypothesis_characters": 1314
+      },
+      "substitution_rate": 0.5260454878943507,
+      "deletion_rate": 0.12179016874541453,
+      "insertion_rate": 0.08584005869405723,
+      "micro_cer": 0.7336757153338225,
+      "hit_rate": 0.3521643433602348,
+      "character_precision": 0.365296803652968,
+      "character_recall": 0.3521643433602348,
+      "character_f1": 0.3586103847590586,
+      "length_ratio": 0.9640498899486427,
+      "rows": [
+        {
+          "test_sentence_UID": "2.0_S22_2_block1",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "la controversia en los diagnosticos cierra el paso",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.68,
+          "wer": 0.75
+        },
+        {
+          "test_sentence_UID": "4.0_S22_2_block1",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "los beneficios superan el riesgo por los puestos",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.6666666666666666,
+          "wer": 0.875
+        },
+        {
+          "test_sentence_UID": "5.0_S22_2_block1",
+          "anchor_sentence_UID": "26.0_S22_1_block1",
+          "target": "los individdos adeptan el reasgo genetivo",
+          "anchor": "las condiciones favorecen los desarrollos",
+          "cer": 0.7317073170731707,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "8.0_S22_2_block1",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "la explicacione aclara la pregunta de la evaluaci@on",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.7692307692307693,
+          "wer": 0.875
+        },
+        {
+          "test_sentence_UID": "9.0_S22_2_block1",
+          "anchor_sentence_UID": "50.0_S22_1_block1",
+          "target": "la funcion lee los archivos contenidos",
+          "anchor": "los interruptores conectan las cargas@",
+          "cer": 0.868421052631579,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "12.0_S22_2_block1",
+          "anchor_sentence_UID": "50.0_S22_1_block1",
+          "target": "las personae comparan las cosas unicas",
+          "anchor": "los interruptores conectan las cargas@",
+          "cer": 0.631578947368421,
+          "wer": 0.8333333333333334
+        },
+        {
+          "test_sentence_UID": "13.0_S22_2_block1",
+          "anchor_sentence_UID": "15.0_S22_1_block1",
+          "target": "la revolucion mnueva abarca las esferas",
+          "anchor": "la aplicacion posibilida las creaciones",
+          "cer": 0.6666666666666666,
+          "wer": 0.6666666666666666
+        },
+        {
+          "test_sentence_UID": "14.0_S22_2_block1",
+          "anchor_sentence_UID": "10.0_S22_1_block1",
+          "target": "la fuerza atrae el electron primero",
+          "anchor": "las uniones organizan el calendario",
+          "cer": 0.7142857142857143,
+          "wer": 0.8333333333333334
+        },
+        {
+          "test_sentence_UID": "15.0_S22_2_block1",
+          "anchor_sentence_UID": "40.0_S22_1_block1",
+          "target": "el cuaderno presenta las divisiones enteras",
+          "anchor": "las interconexiones extienden la constumbre",
+          "cer": 0.8372093023255814,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "16.0_S22_2_block1",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "las sillas ocasionan la lesion de los organos",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.6666666666666666,
+          "wer": 0.75
+        },
+        {
+          "test_sentence_UID": "17.0_S22_2_block1",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "el arbol con la compensacion estimula la secrecion",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.78,
+          "wer": 0.875
+        },
+        {
+          "test_sentence_UID": "18.0_S22_2_block1",
+          "anchor_sentence_UID": "10.0_S22_1_block1",
+          "target": "los niaos mayores acaban la escuela",
+          "anchor": "las uniones organizan el calendario",
+          "cer": 0.6857142857142857,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "19.0_S22_2_block1",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "la union organiza los calendarios deportivos",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.6818181818181818,
+          "wer": 0.6666666666666666
+        },
+        {
+          "test_sentence_UID": "20.0_S22_2_block1",
+          "anchor_sentence_UID": "26.0_S22_1_block1",
+          "target": "la antena para las bandas mide los metros",
+          "anchor": "las condiciones favorecen los desarrollos",
+          "cer": 0.7560975609756098,
+          "wer": 0.75
+        },
+        {
+          "test_sentence_UID": "21.0_S22_2_block1",
+          "anchor_sentence_UID": "40.0_S22_1_block1",
+          "target": "las tasas exceden las velocidades relativas",
+          "anchor": "las interconexiones extienden la constumbre",
+          "cer": 0.7674418604651163,
+          "wer": 0.8333333333333334
+        },
+        {
+          "test_sentence_UID": "23.0_S22_2_block1",
+          "anchor_sentence_UID": "26.0_S22_1_block1",
+          "target": "el servicio levanta las formas del ataque",
+          "anchor": "las condiciones favorecen los desarrollos",
+          "cer": 0.7804878048780488,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "26.0_S22_2_block1",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "el programa del reasentimiento pide el permiso",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.8043478260869565,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "27.0_S22_2_block1",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "las estadisticas robustas siguen la distribucion",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.7291666666666666,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "30.0_S22_2_block1",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "los sistemas de las raices incluyen las posibilidades",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.6415094339622641,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "31.0_S22_2_block1",
+          "anchor_sentence_UID": "34.0_S22_1_block1",
+          "target": "la proposicion tiene el tema general",
+          "anchor": "las revoluciones abarcan las esferas",
+          "cer": 0.6666666666666666,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "33.0_S22_2_block1",
+          "anchor_sentence_UID": "50.0_S22_1_block1",
+          "target": "los tratos crean las dichas en el caso",
+          "anchor": "los interruptores conectan las cargas@",
+          "cer": 0.6578947368421053,
+          "wer": 0.75
+        },
+        {
+          "test_sentence_UID": "36.0_S22_2_block1",
+          "anchor_sentence_UID": "55.0_S22_1_block1",
+          "target": "los procesadores del bit procesan los",
+          "anchor": "el procesador ejecuta la instrucci@on",
+          "cer": 0.6486486486486487,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "40.0_S22_2_block1",
+          "anchor_sentence_UID": "26.0_S22_1_block1",
+          "target": "los jugadores conocidos golpean la pelota",
+          "anchor": "las condiciones favorecen los desarrollos",
+          "cer": 0.7560975609756098,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "44.0_S22_2_block1",
+          "anchor_sentence_UID": "15.0_S22_1_block1",
+          "target": "el interruptor abierto conecta la carga",
+          "anchor": "la aplicacion posibilida las creaciones",
+          "cer": 0.8717948717948718,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "45.0_S22_2_block1",
+          "anchor_sentence_UID": "26.0_S22_1_block1",
+          "target": "el crecimiento aumenta la estructura real",
+          "anchor": "las condiciones favorecen los desarrollos",
+          "cer": 0.7560975609756098,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "51.0_S22_2_block1",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "los grupos del organismo exigen laliberacion",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.7954545454545454,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "52.0_S22_2_block1",
+          "anchor_sentence_UID": "40.0_S22_1_block1",
+          "target": "los pedidos directos merecen las atenciones",
+          "anchor": "las interconexiones extienden la constumbre",
+          "cer": 0.7441860465116279,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "56.0_S22_2_block1",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "los hilos comparten el dato de la trasaccion",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.8181818181818182,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "57.0_S22_2_block1",
+          "anchor_sentence_UID": "41.0_S22_1_block1",
+          "target": "las gacetas traen las entrevistas con las acusaciones",
+          "anchor": "la investiagacion recongen los conocimientos",
+          "cer": 0.660377358490566,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "58.0_S22_2_block1",
+          "anchor_sentence_UID": "48.0_S22_1_block1",
+          "target": "la presencia de los tipos impone los retos",
+          "anchor": "las codificaciones configuran la seleccion",
+          "cer": 0.7619047619047619,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "61.0_S22_2_block1",
+          "anchor_sentence_UID": "4.0_S22_1_block1",
+          "target": "la teoria erronea reduce el numero",
+          "anchor": "los arboles estimulan la secrecion",
+          "cer": 0.8235294117647058,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "63.0_S22_2_block1",
+          "anchor_sentence_UID": "26.0_S22_1_block1",
+          "target": "los motores rapidos consumen las energias",
+          "anchor": "las condiciones favorecen los desarrollos",
+          "cer": 0.6829268292682927,
+          "wer": 1.0
+        }
+      ]
+    },
+    "E_clean": {
+      "train_sentences_in_pool": 58,
+      "test_sentences": 32,
+      "test_keystrokes": 1010,
+      "test_text_ever_used": false,
+      "mean_sentence_cer": 0.7489081722208593,
+      "mean_sentence_wer": 0.9937500000000001,
+      "counts": {
+        "substitutions": 566,
+        "deletions": 91,
+        "insertions": 94,
+        "hits": 353,
+        "reference_characters": 1010,
+        "hypothesis_characters": 1013
+      },
+      "substitution_rate": 0.5603960396039604,
+      "deletion_rate": 0.0900990099009901,
+      "insertion_rate": 0.09306930693069307,
+      "micro_cer": 0.7435643564356436,
+      "hit_rate": 0.3495049504950495,
+      "character_precision": 0.3484698914116486,
+      "character_recall": 0.3495049504950495,
+      "character_f1": 0.3489866534849234,
+      "length_ratio": 1.002970297029703,
+      "rows": [
+        {
+          "test_sentence_UID": "4.0_S22_2_block2",
+          "anchor_sentence_UID": "23.0_S22_1_block2",
+          "target": "el grupoexige la liberacion",
+          "anchor": "la regla brinda la garantia",
+          "cer": 0.7777777777777778,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "7.0_S22_2_block2",
+          "anchor_sentence_UID": "22.0_S22_1_block2",
+          "target": "las presencias imponen el reto",
+          "anchor": "el cliente establece la creada",
+          "cer": 0.8,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "8.0_S22_2_block2",
+          "anchor_sentence_UID": "23.0_S22_1_block2",
+          "target": "la persona compara las cosas",
+          "anchor": "la regla brinda la garantia",
+          "cer": 0.6785714285714286,
+          "wer": 0.8
+        },
+        {
+          "test_sentence_UID": "9.0_S22_2_block2",
+          "anchor_sentence_UID": "58.0_S22_1_block2",
+          "target": "el procesador ejecuta la instruccion",
+          "anchor": "los tratos crean la dicha en el caso",
+          "cer": 0.7777777777777778,
+          "wer": 1.4
+        },
+        {
+          "test_sentence_UID": "11.0_S22_2_block2",
+          "anchor_sentence_UID": "5.0_S22_1_block2",
+          "target": "las controversias cierran el paso",
+          "anchor": "laa investigacione real recoge los",
+          "cer": 0.7272727272727273,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "14.0_S22_2_block2",
+          "anchor_sentence_UID": "22.0_S22_1_block2",
+          "target": "la silla ocasiona las lesiones",
+          "anchor": "el cliente establece la creada",
+          "cer": 0.8333333333333334,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "15.0_S22_2_block2",
+          "anchor_sentence_UID": "32.0_S22_1_block2",
+          "target": "las explicaciones aclaran las preguntas",
+          "anchor": "las personas comparan las cosas @unicas",
+          "cer": 0.5641025641025641,
+          "wer": 0.8
+        },
+        {
+          "test_sentence_UID": "16.0_S22_2_block2",
+          "anchor_sentence_UID": "58.0_S22_1_block2",
+          "target": "el sistema incluye las posibilidades",
+          "anchor": "los tratos crean la dicha en el caso",
+          "cer": 0.8333333333333334,
+          "wer": 1.6
+        },
+        {
+          "test_sentence_UID": "21.0_S22_2_block2",
+          "anchor_sentence_UID": "25.0_S22_1_block2",
+          "target": "los interruptores conectan las cargas",
+          "anchor": "las bolas blancas impactan las bandas",
+          "cer": 0.5405405405405406,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "22.0_S22_2_block2",
+          "anchor_sentence_UID": "23.0_S22_1_block2",
+          "target": "el trato crea la dicha",
+          "anchor": "la regla brinda la garantia",
+          "cer": 0.8181818181818182,
+          "wer": 0.8
+        },
+        {
+          "test_sentence_UID": "24.0_S22_2_block2",
+          "anchor_sentence_UID": "22.0_S22_1_block2",
+          "target": "el individuo adapta los rasogos",
+          "anchor": "el cliente establece la creada",
+          "cer": 0.7741935483870968,
+          "wer": 0.8
+        },
+        {
+          "test_sentence_UID": "25.0_S22_2_block2",
+          "anchor_sentence_UID": "22.0_S22_1_block2",
+          "target": "las proposiciones tienen el tama",
+          "anchor": "el cliente establece la creada",
+          "cer": 0.8125,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "26.0_S22_2_block2",
+          "anchor_sentence_UID": "58.0_S22_1_block2",
+          "target": "las revoluciones abarcan las esferas",
+          "anchor": "los tratos crean la dicha en el caso",
+          "cer": 0.6944444444444444,
+          "wer": 1.6
+        },
+        {
+          "test_sentence_UID": "27.0_S22_2_block2",
+          "anchor_sentence_UID": "3.0_S22_1_block2",
+          "target": "las uniones organizan el calendario",
+          "anchor": "los ni@os mayores acaban la escuela",
+          "cer": 0.6857142857142857,
+          "wer": 1.2
+        },
+        {
+          "test_sentence_UID": "28.0_S22_2_block2",
+          "anchor_sentence_UID": "23.0_S22_1_block2",
+          "target": "el hijolo comparte los datos",
+          "anchor": "la regla brinda la garantia",
+          "cer": 0.8214285714285714,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "29.0_S22_2_block2",
+          "anchor_sentence_UID": "5.0_S22_1_block2",
+          "target": "las fuerzas atraen los electrones",
+          "anchor": "laa investigacione real recoge los",
+          "cer": 0.7878787878787878,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "37.0_S22_2_block2",
+          "anchor_sentence_UID": "23.0_S22_1_block2",
+          "target": "el jugador dgolpea la pelota",
+          "anchor": "la regla brinda la garantia",
+          "cer": 0.7142857142857143,
+          "wer": 0.8
+        },
+        {
+          "test_sentence_UID": "38.0_S22_2_block2",
+          "anchor_sentence_UID": "23.0_S22_1_block2",
+          "target": "las antenas miden el metro",
+          "anchor": "la regla brinda la garantia",
+          "cer": 0.8076923076923077,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "43.0_S22_2_block2",
+          "anchor_sentence_UID": "22.0_S22_1_block2",
+          "target": "los programas piden el permiso",
+          "anchor": "el cliente establece la creada",
+          "cer": 0.8666666666666667,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "44.0_S22_2_block2",
+          "anchor_sentence_UID": "5.0_S22_1_block2",
+          "target": "los servicios levantan las formas",
+          "anchor": "laa investigacione real recoge los",
+          "cer": 0.7575757575757576,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "45.0_S22_2_block2",
+          "anchor_sentence_UID": "58.0_S22_1_block2",
+          "target": "la estadistica sigue la distribucion",
+          "anchor": "los tratos crean la dicha en el caso",
+          "cer": 0.8055555555555556,
+          "wer": 1.4
+        },
+        {
+          "test_sentence_UID": "46.0_S22_2_block2",
+          "anchor_sentence_UID": "23.0_S22_1_block2",
+          "target": "el niao acaba la escuela",
+          "anchor": "la regla brinda la garantia",
+          "cer": 0.7916666666666666,
+          "wer": 0.8
+        },
+        {
+          "test_sentence_UID": "47.0_S22_2_block2",
+          "anchor_sentence_UID": "22.0_S22_1_block2",
+          "target": "la gaceta trael la entrevista",
+          "anchor": "el cliente establece la creada",
+          "cer": 0.7241379310344828,
+          "wer": 0.8
+        },
+        {
+          "test_sentence_UID": "48.0_S22_2_block2",
+          "anchor_sentence_UID": "28.0_S22_1_block2",
+          "target": "los crecimientos aumentan las estrcuturas",
+          "anchor": "los motores rapidos consumen las energias",
+          "cer": 0.6097560975609756,
+          "wer": 0.8
+        },
+        {
+          "test_sentence_UID": "51.0_S22_2_block2",
+          "anchor_sentence_UID": "22.0_S22_1_block2",
+          "target": "las teorias reducen los numeros",
+          "anchor": "el cliente establece la creada",
+          "cer": 0.7741935483870968,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "53.0_S22_2_block2",
+          "anchor_sentence_UID": "5.0_S22_1_block2",
+          "target": "los arboles estimulan la secrecion",
+          "anchor": "laa investigacione real recoge los",
+          "cer": 0.7352941176470589,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "54.0_S22_2_block2",
+          "anchor_sentence_UID": "22.0_S22_1_block2",
+          "target": "las funciones leen los archivos",
+          "anchor": "el cliente establece la creada",
+          "cer": 0.7741935483870968,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "55.0_S22_2_block2",
+          "anchor_sentence_UID": "3.0_S22_1_block2",
+          "target": "los cuadernos presentan la division",
+          "anchor": "los ni@os mayores acaban la escuela",
+          "cer": 0.6857142857142857,
+          "wer": 0.8
+        },
+        {
+          "test_sentence_UID": "57.0_S22_2_block2",
+          "anchor_sentence_UID": "22.0_S22_1_block2",
+          "target": "la tasa excede las velocidades",
+          "anchor": "el cliente establece la creada",
+          "cer": 0.7666666666666667,
+          "wer": 1.0
+        },
+        {
+          "test_sentence_UID": "59.0_S22_2_block2",
+          "anchor_sentence_UID": "22.0_S22_1_block2",
+          "target": "el beneficio supera los riesgos",
+          "anchor": "el cliente establece la creada",
+          "cer": 0.7419354838709677,
+          "wer": 0.8
+        },
+        {
+          "test_sentence_UID": "62.0_S22_2_block2",
+          "anchor_sentence_UID": "22.0_S22_1_block2",
+          "target": "el pedido merece las atenciones",
+          "anchor": "el cliente establece la creada",
+          "cer": 0.7419354838709677,
+          "wer": 0.8
+        },
+        {
+          "test_sentence_UID": "65.0_S22_2_block2",
+          "anchor_sentence_UID": "23.0_S22_1_block2",
+          "target": "el motor consume la energia",
+          "anchor": "la regla brinda la garantia",
+          "cer": 0.7407407407407407,
+          "wer": 0.8
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,645 @@
+{
+  "task": "Phase 7 Tasks 6, 8, 10, 11: exact official Brain2Qwerty v1 GPU training harness",
+  "official_revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "training_executed": false,
+  "why_not_executed": "No CUDA GPU on this machine; Phase 7 forbids local training (Task 14).",
+  "files": {
+    "scripts/phase7_official_split.py": "f8efa9242e4e3ff930ad3b52d1bbc33a3d0e0294c33bb9dae49019937847218b",
+    "scripts/phase7_common.py": "11e91a976a9307fc686088039c42e88659d11696f62c7fb7fb5109934ba9927e",
+    "scripts/phase7_dataset_manifest.py": "d575ba372f73baad4d933764d4474c5d366c17e4b82679b092f3175cb9b3935d",
+    "scripts/phase7_official_v1_harness.py": "e5922bb4e6156c2e9a11795a0546880edd11b7bf34734cebe9a67dcba9dbf377",
+    "scripts/phase7_official_v1_train.py": "046c2250d66befb40382f9c37b3cfc5832aeb99e1d49afb1b4ae7985b1474053",
+    "scripts/phase7_gpu_preflight.py": "00af245813596ab526bd8285de75ea84e691ef04f179c6144dbe5ce83399c3b6",
+    "scripts/phase7_signal_dependence.py": "b69b27090e207bc205cd3c1de17a9c832a25259d3f0cde10d64f5e54479501e8",
+    "scripts/phase7_control_harness_check.py": "4b60d1a4b8f30b978af9722dae744c0ae4074990417ecf16907e668d07cf6c8e",
+    "scripts/phase7_text_anchor.py": "057037a50c6ec1c891025a650542616b459bc1afe42cbf0c470153f3afd88ef5",
+    "scripts/phase6_official_v1_harness.py": "437972e78852e05991b223173fce928846b09d7453ac4440872514650d9fb8fb"
+  },
+  "what_is_official": [
+    "experiment_config() at 5f98896 (model, loss, optimizer, scheduler, epochs, patience, batch sizes, extractors)",
+    "Data.build: MegExtractor, LabelEncoder targets, subject ids, ChannelPositions2D, SegmentDataset, SentenceGroupedDistributedSampler",
+    "Experiment._build_modules, BrainModule, materialize_lazy_params, Experiment._trainer_setup (EarlyStopping val_CER patience 30, ModelCheckpoint best/last, CSVLogger, DDP when devices > 1)",
+    "trainer.fit then trainer.test on the final weights, as Experiment.run"
+  ],
+  "what_differs": [
+    "the official splitter transform is replaced by Phase7ManifestSplit, which assigns train/val/test from the formal manifests (for official_v1_clean these equal the official splitter's own assignment)",
+    "control only: Phase7TrainTargetDerangement relabels training keystroke targets",
+    "Windows only: the study event cache is disabled (illegal filenames); not needed on Linux",
+    "after training, rank 0 additionally scores the test partition in one process (official test batching) for the Phase 7 metrics; the official trainer.test output is kept alongside"
+  ],
+  "inputs": {
+    "dataset_manifest": "data/manifests/s22_official_v1_dataset.json (8 raw files + metadata + stored events, sha256)",
+    "split_manifest": "--split {official_v1_clean, D_clean, E_clean} or --split-manifest <files>",
+    "seed": "--seed (33, 123, 777)",
+    "output_dir": "--output-dir",
+    "control": "--control"
+  },
+  "logged_per_run": [
+    "git commit and dirty flag",
+    "official revision, vendor tree hash, Experiment.run source hash",
+    "all installed package versions and mismatches against the official requirements.lock",
+    "exact parameter count by module",
+    "full official training configuration and realised devices/global batch",
+    "split identity: manifest file hashes and per-partition UID hashes",
+    "dataset hashes (verified)",
+    "runtime",
+    "GPU names, memory, capability, torch CUDA build, cuDNN, nvidia-smi driver",
+    "control derangement map and relabelling statistics (control runs)"
+  ],
+  "gpu_environment": {
+    "install": "pip install -r vendor/brain2qwerty/requirements.lock  (Linux x86-64, CUDA 12.4, torch 2.6.0)",
+    "pythonpath": "vendor/brain2qwerty:src",
+    "data": "data/raw/spanishbcbl_s22 (verified against the dataset manifest; nothing is downloaded)",
+    "memory_lower_bound": "9.29 GiB fp32 parameter + gradient + AdamW state per GPU, before activations"
+  },
+  "run_matrix": [
+    {
+      "split": "official_v1_clean",
+      "seed": 33,
+      "condition": "real",
+      "output_dir": "results/runs/phase7/official_v1_clean/real_seed33",
+      "command": "python scripts/phase7_official_v1_train.py --split official_v1_clean --seed 33 --output-dir results/runs/phase7/official_v1_clean/real_seed33",
+      "primary": true
+    },
+    {
+      "split": "official_v1_clean",
+      "seed": 33,
+      "condition": "control",
+      "output_dir": "results/runs/phase7/official_v1_clean/control_seed33",
+      "command": "python scripts/phase7_official_v1_train.py --split official_v1_clean --seed 33 --control --output-dir results/runs/phase7/official_v1_clean/control_seed33",
+      "primary": true
+    },
+    {
+      "split": "official_v1_clean",
+      "seed": 123,
+      "condition": "real",
+      "output_dir": "results/runs/phase7/official_v1_clean/real_seed123",
+      "command": "python scripts/phase7_official_v1_train.py --split official_v1_clean --seed 123 --output-dir results/runs/phase7/official_v1_clean/real_seed123",
+      "primary": true
+    },
+    {
+      "split": "official_v1_clean",
+      "seed": 123,
+      "condition": "control",
+      "output_dir": "results/runs/phase7/official_v1_clean/control_seed123",
+      "command": "python scripts/phase7_official_v1_train.py --split official_v1_clean --seed 123 --control --output-dir results/runs/phase7/official_v1_clean/control_seed123",
+      "primary": true
+    },
+    {
+      "split": "official_v1_clean",
+      "seed": 777,
+      "condition": "real",
+      "output_dir": "results/runs/phase7/official_v1_clean/real_seed777",
+      "command": "python scripts/phase7_official_v1_train.py --split official_v1_clean --seed 777 --output-dir results/runs/phase7/official_v1_clean/real_seed777",
+      "primary": true
+    },
+    {
+      "split": "official_v1_clean",
+      "seed": 777,
+      "condition": "control",
+      "output_dir": "results/runs/phase7/official_v1_clean/control_seed777",
+      "command": "python scripts/phase7_official_v1_train.py --split official_v1_clean --seed 777 --control --output-dir results/runs/phase7/official_v1_clean/control_seed777",
+      "primary": true
+    },
+    {
+      "split": "D_clean",
+      "seed": 33,
+      "condition": "real",
+      "output_dir": "results/runs/phase7/D_clean/real_seed33",
+      "command": "python scripts/phase7_official_v1_train.py --split D_clean --seed 33 --output-dir results/runs/phase7/D_clean/real_seed33",
+      "primary": false
+    },
+    {
+      "split": "D_clean",
+      "seed": 33,
+      "condition": "control",
+      "output_dir": "results/runs/phase7/D_clean/control_seed33",
+      "command": "python scripts/phase7_official_v1_train.py --split D_clean --seed 33 --control --output-dir results/runs/phase7/D_clean/control_seed33",
+      "primary": false
+    },
+    {
+      "split": "D_clean",
+      "seed": 123,
+      "condition": "real",
+      "output_dir": "results/runs/phase7/D_clean/real_seed123",
+      "command": "python scripts/phase7_official_v1_train.py --split D_clean --seed 123 --output-dir results/runs/phase7/D_clean/real_seed123",
+      "primary": false
+    },
+    {
+      "split": "D_clean",
+      "seed": 123,
+      "condition": "control",
+      "output_dir": "results/runs/phase7/D_clean/control_seed123",
+      "command": "python scripts/phase7_official_v1_train.py --split D_clean --seed 123 --control --output-dir results/runs/phase7/D_clean/control_seed123",
+      "primary": false
+    },
+    {
+      "split": "D_clean",
+      "seed": 777,
+      "condition": "real",
+      "output_dir": "results/runs/phase7/D_clean/real_seed777",
+      "command": "python scripts/phase7_official_v1_train.py --split D_clean --seed 777 --output-dir results/runs/phase7/D_clean/real_seed777",
+      "primary": false
+    },
+    {
+      "split": "D_clean",
+      "seed": 777,
+      "condition": "control",
+      "output_dir": "results/runs/phase7/D_clean/control_seed777",
+      "command": "python scripts/phase7_official_v1_train.py --split D_clean --seed 777 --control --output-dir results/runs/phase7/D_clean/control_seed777",
+      "primary": false
+    },
+    {
+      "split": "E_clean",
+      "seed": 33,
+      "condition": "real",
+      "output_dir": "results/runs/phase7/E_clean/real_seed33",
+      "command": "python scripts/phase7_official_v1_train.py --split E_clean --seed 33 --output-dir results/runs/phase7/E_clean/real_seed33",
+      "primary": false
+    },
+    {
+      "split": "E_clean",
+      "seed": 33,
+      "condition": "control",
+      "output_dir": "results/runs/phase7/E_clean/control_seed33",
+      "command": "python scripts/phase7_official_v1_train.py --split E_clean --seed 33 --control --output-dir results/runs/phase7/E_clean/control_seed33",
+      "primary": false
+    },
+    {
+      "split": "E_clean",
+      "seed": 123,
+      "condition": "real",
+      "output_dir": "results/runs/phase7/E_clean/real_seed123",
+      "command": "python scripts/phase7_official_v1_train.py --split E_clean --seed 123 --output-dir results/runs/phase7/E_clean/real_seed123",
+      "primary": false
+    },
+    {
+      "split": "E_clean",
+      "seed": 123,
+      "condition": "control",
+      "output_dir": "results/runs/phase7/E_clean/control_seed123",
+      "command": "python scripts/phase7_official_v1_train.py --split E_clean --seed 123 --control --output-dir results/runs/phase7/E_clean/control_seed123",
+      "primary": false
+    },
+    {
+      "split": "E_clean",
+      "seed": 777,
+      "condition": "real",
+      "output_dir": "results/runs/phase7/E_clean/real_seed777",
+      "command": "python scripts/phase7_official_v1_train.py --split E_clean --seed 777 --output-dir results/runs/phase7/E_clean/real_seed777",
+      "primary": false
+    },
+    {
+      "split": "E_clean",
+      "seed": 777,
+      "condition": "control",
+      "output_dir": "results/runs/phase7/E_clean/control_seed777",
+      "command": "python scripts/phase7_official_v1_train.py --split E_clean --seed 777 --control --output-dir results/runs/phase7/E_clean/control_seed777",
+      "primary": false
+    }
+  ],
+  "runs": 18,
+  "order": "preflight first; then official_v1_clean (primary) real and control for each seed, then D_clean and E_clean; then signal dependence on each real run",
+  "signal_dependence": {
+    "script": "scripts/phase7_signal_dependence.py",
+    "model": "real runs only (control runs refused); final weights (last.ckpt); no retraining",
+    "conditions": {
+      "A": "original",
+      "B": "zero_meg",
+      "C": "temporal_permutation (fixed derangement of 25 samples, seed 2026)",
+      "D": "channel_permutation (fixed derangement of 306 channels, seed 2026; positions unchanged)"
+    },
+    "measures": [
+      "character F1",
+      "keystroke accuracy",
+      "CER",
+      "WER",
+      "prediction agreement with A"
+    ],
+    "commands": [
+      "python scripts/phase7_signal_dependence.py --run-dir results/runs/phase7/official_v1_clean/real_seed33",
+      "python scripts/phase7_signal_dependence.py --run-dir results/runs/phase7/official_v1_clean/real_seed123",
+      "python scripts/phase7_signal_dependence.py --run-dir results/runs/phase7/official_v1_clean/real_seed777",
+      "python scripts/phase7_signal_dependence.py --run-dir results/runs/phase7/D_clean/real_seed33",
+      "python scripts/phase7_signal_dependence.py --run-dir results/runs/phase7/D_clean/real_seed123",
+      "python scripts/phase7_signal_dependence.py --run-dir results/runs/phase7/D_clean/real_seed777",
+      "python scripts/phase7_signal_dependence.py --run-dir results/runs/phase7/E_clean/real_seed33",
+      "python scripts/phase7_signal_dependence.py --run-dir results/runs/phase7/E_clean/real_seed123",
+      "python scripts/phase7_signal_dependence.py --run-dir results/runs/phase7/E_clean/real_seed777"
+    ],
+    "dry_run": {
+      "status": "DRY RUN (untrained weights; code path only, not a result)",
+      "conditions": {
+        "original": {
+          "character_f1": 0.0,
+          "keystroke_accuracy": 0.0,
+          "mean_sentence_cer": 1.0,
+          "mean_sentence_wer": 1.0,
+          "prediction_agreement_with_original": 1.0,
+          "keystrokes": 61
+        },
+        "zero_meg": {
+          "character_f1": 0.0,
+          "keystroke_accuracy": 0.0,
+          "mean_sentence_cer": 1.0,
+          "mean_sentence_wer": 1.0,
+          "prediction_agreement_with_original": 1.0,
+          "keystrokes": 61
+        },
+        "temporal_permutation": {
+          "character_f1": 0.0,
+          "keystroke_accuracy": 0.0,
+          "mean_sentence_cer": 1.0,
+          "mean_sentence_wer": 1.0,
+          "prediction_agreement_with_original": 1.0,
+          "keystrokes": 61
+        },
+        "channel_permutation": {
+          "character_f1": 0.0,
+          "keystroke_accuracy": 0.0,
+          "mean_sentence_cer": 1.0,
+          "mean_sentence_wer": 1.0,
+          "prediction_agreement_with_original": 1.0,
+          "keystrokes": 61
+        }
+      }
+    },
+    "interpretation_rule": "Sensitivity to ablation shows input dependence only; it is not evidence of meaningful neural decoding without the real-vs-control comparison."
+  },
+  "metrics": {
+    "primary": [
+      "per-keystroke accuracy",
+      "character F1",
+      "mean sentence CER",
+      "mean sentence WER"
+    ],
+    "secondary": [
+      "substitutions",
+      "deletions",
+      "insertions",
+      "decoded length ratio",
+      "confusion matrix",
+      "per-character recall",
+      "predicted and target sequence lengths (characters and keystrokes)"
+    ],
+    "weights_scored": "final weights (official) as primary; best-val checkpoint also scored and labelled",
+    "comparability": "v1 emits exactly one label per keystroke (oracle segmentation), so its CER is not comparable with CTC CER from earlier phases; compare v1 with its own matched control"
+  },
+  "known_protocol_facts": [
+    "Experiment.devices defaults to 8: on 8 GPUs the global batch is 8 x 64 keystrokes; with fewer GPUs the per-device batch stays 64 and the realised value is logged",
+    "batches are consecutive keystrokes in sentence order, so a sentence can straddle two batches and reach the transformer in pieces (official behaviour)",
+    "the official val_CER/test_CER metric averages per batch, not per sentence",
+    "under DDP, SentenceGroupedDistributedSampler pads ranks with repeated samples and the official prediction callback saves rank 0 only; the Phase 7 single-process scoring avoids both"
+  ],
+  "dry_runs": {
+    "official_v1_clean_real": {
+      "status": "DRY RUN COMPLETE (no training performed)",
+      "dataset_hashes_verified": true,
+      "raw_files_hashed": 8,
+      "split_disjoint": true,
+      "loaders_match_manifest": true,
+      "loaders": {
+        "train": {
+          "keystroke_segments": 7708,
+          "sentences": 202,
+          "batch_size": 64,
+          "batches": 121
+        },
+        "val": {
+          "keystroke_segments": 959,
+          "sentences": 26,
+          "batch_size": 2048,
+          "batches": 1
+        },
+        "test": {
+          "keystroke_segments": 983,
+          "sentences": 28,
+          "batch_size": 2048,
+          "batches": 1
+        }
+      },
+      "parameters_total": 623548457,
+      "parameters_exact": true,
+      "experiment_run_source_matches_audit": true,
+      "official_source_clean": true,
+      "trainer": {
+        "max_epochs": 300,
+        "gradient_clip_val": null,
+        "callbacks": [
+          "LogSentencePredictions",
+          "EarlyStopping",
+          "TQDMProgressBar",
+          "ModelSummary",
+          "ModelCheckpoint"
+        ],
+        "early_stopping": [
+          {
+            "monitor": "val_CER",
+            "patience": 30,
+            "mode": "min"
+          }
+        ]
+      },
+      "deviations_from_official": [
+        "Windows: official study event cache disabled (exca writes JSON in filenames, illegal on Windows); events verified identical to the stored extraction",
+        "local dry run: dataloader workers 0, no pinned memory (throughput settings only)"
+      ],
+      "control_relabelling": null,
+      "evaluation_path_exercised": true
+    },
+    "official_v1_clean_control": {
+      "status": "DRY RUN COMPLETE (no training performed)",
+      "dataset_hashes_verified": true,
+      "raw_files_hashed": 8,
+      "split_disjoint": true,
+      "loaders_match_manifest": true,
+      "loaders": {
+        "train": {
+          "keystroke_segments": 7708,
+          "sentences": 202,
+          "batch_size": 64,
+          "batches": 121
+        },
+        "val": {
+          "keystroke_segments": 959,
+          "sentences": 26,
+          "batch_size": 2048,
+          "batches": 1
+        },
+        "test": {
+          "keystroke_segments": 983,
+          "sentences": 28,
+          "batch_size": 2048,
+          "batches": 1
+        }
+      },
+      "parameters_total": 623548457,
+      "parameters_exact": true,
+      "experiment_run_source_matches_audit": true,
+      "official_source_clean": true,
+      "trainer": {
+        "max_epochs": 300,
+        "gradient_clip_val": null,
+        "callbacks": [
+          "LogSentencePredictions",
+          "EarlyStopping",
+          "TQDMProgressBar",
+          "ModelSummary",
+          "ModelCheckpoint"
+        ],
+        "early_stopping": [
+          {
+            "monitor": "val_CER",
+            "patience": 30,
+            "mode": "min"
+          }
+        ]
+      },
+      "deviations_from_official": [
+        "Windows: official study event cache disabled (exca writes JSON in filenames, illegal on Windows); events verified identical to the stored extraction",
+        "local dry run: dataloader workers 0, no pinned memory (throughput settings only)"
+      ],
+      "control_relabelling": {
+        "training_sentences_relabelled": 202,
+        "training_keystrokes_relabelled": 7708,
+        "keystroke_labels_changed": 6755,
+        "fraction_of_training_labels_changed": 0.8763622210690192,
+        "sentences_needing_length_adaptation": 137
+      },
+      "evaluation_path_exercised": true
+    },
+    "D_clean_real": {
+      "status": "DRY RUN COMPLETE (no training performed)",
+      "dataset_hashes_verified": true,
+      "raw_files_hashed": 8,
+      "split_disjoint": true,
+      "loaders_match_manifest": true,
+      "loaders": {
+        "train": {
+          "keystroke_segments": 1821,
+          "sentences": 57,
+          "batch_size": 64,
+          "batches": 29
+        },
+        "val": {
+          "keystroke_segments": 219,
+          "sentences": 7,
+          "batch_size": 2048,
+          "batches": 1
+        },
+        "test": {
+          "keystroke_segments": 1363,
+          "sentences": 32,
+          "batch_size": 2048,
+          "batches": 1
+        }
+      },
+      "parameters_total": 623548457,
+      "parameters_exact": true,
+      "experiment_run_source_matches_audit": true,
+      "official_source_clean": true,
+      "trainer": {
+        "max_epochs": 300,
+        "gradient_clip_val": null,
+        "callbacks": [
+          "LogSentencePredictions",
+          "EarlyStopping",
+          "TQDMProgressBar",
+          "ModelSummary",
+          "ModelCheckpoint"
+        ],
+        "early_stopping": [
+          {
+            "monitor": "val_CER",
+            "patience": 30,
+            "mode": "min"
+          }
+        ]
+      },
+      "deviations_from_official": [
+        "Windows: official study event cache disabled (exca writes JSON in filenames, illegal on Windows); events verified identical to the stored extraction",
+        "local dry run: dataloader workers 0, no pinned memory (throughput settings only)"
+      ],
+      "control_relabelling": null,
+      "evaluation_path_exercised": true
+    },
+    "D_clean_control": {
+      "status": "DRY RUN COMPLETE (no training performed)",
+      "dataset_hashes_verified": true,
+      "raw_files_hashed": 8,
+      "split_disjoint": true,
+      "loaders_match_manifest": true,
+      "loaders": {
+        "train": {
+          "keystroke_segments": 1821,
+          "sentences": 57,
+          "batch_size": 64,
+          "batches": 29
+        },
+        "val": {
+          "keystroke_segments": 219,
+          "sentences": 7,
+          "batch_size": 2048,
+          "batches": 1
+        },
+        "test": {
+          "keystroke_segments": 1363,
+          "sentences": 32,
+          "batch_size": 2048,
+          "batches": 1
+        }
+      },
+      "parameters_total": 623548457,
+      "parameters_exact": true,
+      "experiment_run_source_matches_audit": true,
+      "official_source_clean": true,
+      "trainer": {
+        "max_epochs": 300,
+        "gradient_clip_val": null,
+        "callbacks": [
+          "LogSentencePredictions",
+          "EarlyStopping",
+          "TQDMProgressBar",
+          "ModelSummary",
+          "ModelCheckpoint"
+        ],
+        "early_stopping": [
+          {
+            "monitor": "val_CER",
+            "patience": 30,
+            "mode": "min"
+          }
+        ]
+      },
+      "deviations_from_official": [
+        "Windows: official study event cache disabled (exca writes JSON in filenames, illegal on Windows); events verified identical to the stored extraction",
+        "local dry run: dataloader workers 0, no pinned memory (throughput settings only)"
+      ],
+      "control_relabelling": {
+        "training_sentences_relabelled": 57,
+        "training_keystrokes_relabelled": 1821,
+        "keystroke_labels_changed": 1592,
+        "fraction_of_training_labels_changed": 0.8742449203734212,
+        "sentences_needing_length_adaptation": 45
+      },
+      "evaluation_path_exercised": true
+    },
+    "E_clean_real": {
+      "status": "DRY RUN COMPLETE (no training performed)",
+      "dataset_hashes_verified": true,
+      "raw_files_hashed": 8,
+      "split_disjoint": true,
+      "loaders_match_manifest": true,
+      "loaders": {
+        "train": {
+          "keystroke_segments": 2458,
+          "sentences": 58,
+          "batch_size": 64,
+          "batches": 39
+        },
+        "val": {
+          "keystroke_segments": 297,
+          "sentences": 6,
+          "batch_size": 2048,
+          "batches": 1
+        },
+        "test": {
+          "keystroke_segments": 1010,
+          "sentences": 32,
+          "batch_size": 2048,
+          "batches": 1
+        }
+      },
+      "parameters_total": 623548457,
+      "parameters_exact": true,
+      "experiment_run_source_matches_audit": true,
+      "official_source_clean": true,
+      "trainer": {
+        "max_epochs": 300,
+        "gradient_clip_val": null,
+        "callbacks": [
+          "LogSentencePredictions",
+          "EarlyStopping",
+          "TQDMProgressBar",
+          "ModelSummary",
+          "ModelCheckpoint"
+        ],
+        "early_stopping": [
+          {
+            "monitor": "val_CER",
+            "patience": 30,
+            "mode": "min"
+          }
+        ]
+      },
+      "deviations_from_official": [
+        "Windows: official study event cache disabled (exca writes JSON in filenames, illegal on Windows); events verified identical to the stored extraction",
+        "local dry run: dataloader workers 0, no pinned memory (throughput settings only)"
+      ],
+      "control_relabelling": null,
+      "evaluation_path_exercised": true
+    },
+    "E_clean_control": {
+      "status": "DRY RUN COMPLETE (no training performed)",
+      "dataset_hashes_verified": true,
+      "raw_files_hashed": 8,
+      "split_disjoint": true,
+      "loaders_match_manifest": true,
+      "loaders": {
+        "train": {
+          "keystroke_segments": 2458,
+          "sentences": 58,
+          "batch_size": 64,
+          "batches": 39
+        },
+        "val": {
+          "keystroke_segments": 297,
+          "sentences": 6,
+          "batch_size": 2048,
+          "batches": 1
+        },
+        "test": {
+          "keystroke_segments": 1010,
+          "sentences": 32,
+          "batch_size": 2048,
+          "batches": 1
+        }
+      },
+      "parameters_total": 623548457,
+      "parameters_exact": true,
+      "experiment_run_source_matches_audit": true,
+      "official_source_clean": true,
+      "trainer": {
+        "max_epochs": 300,
+        "gradient_clip_val": null,
+        "callbacks": [
+          "LogSentencePredictions",
+          "EarlyStopping",
+          "TQDMProgressBar",
+          "ModelSummary",
+          "ModelCheckpoint"
+        ],
+        "early_stopping": [
+          {
+            "monitor": "val_CER",
+            "patience": 30,
+            "mode": "min"
+          }
+        ]
+      },
+      "deviations_from_official": [
+        "Windows: official study event cache disabled (exca writes JSON in filenames, illegal on Windows); events verified identical to the stored extraction",
+        "local dry run: dataloader workers 0, no pinned memory (throughput settings only)"
+      ],
+      "control_relabelling": {
+        "training_sentences_relabelled": 58,
+        "training_keystrokes_relabelled": 2458,
+        "keystroke_labels_changed": 2203,
+        "fraction_of_training_labels_changed": 0.8962571196094385,
+        "sentences_needing_length_adaptation": 51
+      },
+      "evaluation_path_exercised": true
+    }
+  },
+  "dry_runs_all_pass": true
+}

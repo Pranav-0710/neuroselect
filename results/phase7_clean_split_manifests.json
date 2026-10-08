@@ -1,0 +1,192 @@
+{
+  "task": "Phase 7 Task 5: formal clean split manifests",
+  "manifests": {
+    "official_v1_clean_train.json": {
+      "path": "data/manifests/official_v1_clean_train.json",
+      "sha256": "4f56d297d1ecf8b20f9e6906ec8ee5225b8e0060647f651cd74d1712e84921e7"
+    },
+    "official_v1_clean_val.json": {
+      "path": "data/manifests/official_v1_clean_val.json",
+      "sha256": "9833aeb4c259dfda932a6a20e5c69352647efe56b43d16fcfaf27d0d527ffbbf"
+    },
+    "official_v1_clean_test.json": {
+      "path": "data/manifests/official_v1_clean_test.json",
+      "sha256": "00f05a4d20fa3f750507a3594d61881a40edb24bfa79c9bd9ce2043645a316ee"
+    },
+    "s22_D_clean.json": {
+      "path": "data/manifests/s22_D_clean.json",
+      "sha256": "f5d37fcc4f2f9becf8c6ec03b0c24345b47425e39332b38b121ace6dc315168d"
+    },
+    "s22_E_clean.json": {
+      "path": "data/manifests/s22_E_clean.json",
+      "sha256": "55c04389e3982f511a84ffc63fb755c597abb4d5143b94f7b11517a07e7a27a9"
+    }
+  },
+  "clusters_file": {
+    "path": "results/phase7_official_clusters.json",
+    "sha256": "1df91e638b0f0f804b58d3fa84e5ce34b9653fb18714992a45bfea9f0c7bf5aa"
+  },
+  "summary": {
+    "official_v1_clean": {
+      "train": {
+        "sentence_records": 202,
+        "unique_sentence_groups": 101,
+        "tfidf_clusters": 75,
+        "keystrokes": 7708,
+        "by_session_block_list": {
+          "session1/block1/list1": {
+            "sentence_records": 47,
+            "keystrokes": 1487
+          },
+          "session1/block2/list2": {
+            "sentence_records": 54,
+            "keystrokes": 2340
+          },
+          "session2/block1/list2": {
+            "sentence_records": 54,
+            "keystrokes": 2375
+          },
+          "session2/block2/list1": {
+            "sentence_records": 47,
+            "keystrokes": 1506
+          }
+        }
+      },
+      "val": {
+        "sentence_records": 26,
+        "unique_sentence_groups": 13,
+        "tfidf_clusters": 10,
+        "keystrokes": 959,
+        "by_session_block_list": {
+          "session1/block1/list1": {
+            "sentence_records": 8,
+            "keystrokes": 261
+          },
+          "session1/block2/list2": {
+            "sentence_records": 5,
+            "keystrokes": 216
+          },
+          "session2/block1/list2": {
+            "sentence_records": 5,
+            "keystrokes": 219
+          },
+          "session2/block2/list1": {
+            "sentence_records": 8,
+            "keystrokes": 263
+          }
+        }
+      },
+      "test": {
+        "sentence_records": 28,
+        "unique_sentence_groups": 14,
+        "tfidf_clusters": 11,
+        "keystrokes": 983,
+        "by_session_block_list": {
+          "session1/block1/list1": {
+            "sentence_records": 9,
+            "keystrokes": 292
+          },
+          "session1/block2/list2": {
+            "sentence_records": 5,
+            "keystrokes": 199
+          },
+          "session2/block1/list2": {
+            "sentence_records": 5,
+            "keystrokes": 198
+          },
+          "session2/block2/list1": {
+            "sentence_records": 9,
+            "keystrokes": 294
+          }
+        }
+      }
+    },
+    "D_clean": {
+      "train": {
+        "sentence_records": 57,
+        "unique_sentence_groups": 57,
+        "tfidf_clusters": 57,
+        "keystrokes": 1821,
+        "by_session_block_list": {
+          "session1/block1/list1": {
+            "sentence_records": 57,
+            "keystrokes": 1821
+          }
+        }
+      },
+      "val": {
+        "sentence_records": 7,
+        "unique_sentence_groups": 7,
+        "tfidf_clusters": 7,
+        "keystrokes": 219,
+        "by_session_block_list": {
+          "session1/block1/list1": {
+            "sentence_records": 7,
+            "keystrokes": 219
+          }
+        }
+      },
+      "test": {
+        "sentence_records": 32,
+        "unique_sentence_groups": 32,
+        "tfidf_clusters": 32,
+        "keystrokes": 1363,
+        "by_session_block_list": {
+          "session2/block1/list2": {
+            "sentence_records": 32,
+            "keystrokes": 1363
+          }
+        }
+      }
+    },
+    "E_clean": {
+      "train": {
+        "sentence_records": 58,
+        "unique_sentence_groups": 58,
+        "tfidf_clusters": 58,
+        "keystrokes": 2458,
+        "by_session_block_list": {
+          "session1/block2/list2": {
+            "sentence_records": 58,
+            "keystrokes": 2458
+          }
+        }
+      },
+      "val": {
+        "sentence_records": 6,
+        "unique_sentence_groups": 6,
+        "tfidf_clusters": 6,
+        "keystrokes": 297,
+        "by_session_block_list": {
+          "session1/block2/list2": {
+            "sentence_records": 6,
+            "keystrokes": 297
+          }
+        }
+      },
+      "test": {
+        "sentence_records": 32,
+        "unique_sentence_groups": 32,
+        "tfidf_clusters": 32,
+        "keystrokes": 1010,
+        "by_session_block_list": {
+          "session2/block2/list1": {
+            "sentence_records": 32,
+            "keystrokes": 1010
+          }
+        }
+      }
+    }
+  },
+  "fields_per_record": [
+    "sentence_UID",
+    "unique_sentence_group_id",
+    "tfidf_cluster_id",
+    "session",
+    "block",
+    "list_id",
+    "sentence_presented",
+    "sentence_typed",
+    "keystrokes"
+  ]
+}

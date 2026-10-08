@@ -1,0 +1,484 @@
+{
+  "task": "Phase 7 Task 9: matched no-valid-signal control harness check",
+  "control_definition": {
+    "what": "training-target derangement at the stimulus level (unique sentence group), seed 2026, constrained to a different group and a different official TF-IDF cluster, within length-ordered windows of 8 groups; both occurrences of a group take the donor group's same-session occurrence",
+    "per_keystroke_labels": "official formulation needs one label per keystroke: a longer donor is truncated, a shorter donor is repeated after a space token",
+    "unchanged": [
+      "MEG tensors",
+      "subject ids",
+      "channel positions",
+      "keystroke timing and segments",
+      "batch structure",
+      "architecture",
+      "optimizer",
+      "scheduler",
+      "epochs",
+      "early stopping",
+      "model seeds",
+      "validation and test targets"
+    ],
+    "same_permutation_across_model_seeds": true
+  },
+  "splits": {
+    "official_v1_clean": {
+      "derangement": {
+        "seed": 2026,
+        "window": 8,
+        "windows": 13,
+        "attempts_per_window": {
+          "0": 2,
+          "1": 1,
+          "2": 5,
+          "3": 4,
+          "4": 5,
+          "5": 1,
+          "6": 5,
+          "7": 2,
+          "8": 2,
+          "9": 1,
+          "10": 4,
+          "11": 1,
+          "12": 5
+        },
+        "fixed_points": 0,
+        "same_cluster_pairs": 0,
+        "identical_target_text_pairs": 0,
+        "keystroke_length_gap": {
+          "mean_abs": 2.0,
+          "max_abs": 18,
+          "exact_length_matches": 65
+        }
+      },
+      "group_map": {
+        "G000": "G065",
+        "G001": "G014",
+        "G002": "G102",
+        "G004": "G071",
+        "G005": "G073",
+        "G006": "G098",
+        "G007": "G062",
+        "G008": "G111",
+        "G009": "G064",
+        "G010": "G033",
+        "G011": "G082",
+        "G012": "G090",
+        "G013": "G077",
+        "G014": "G058",
+        "G015": "G126",
+        "G016": "G095",
+        "G020": "G032",
+        "G021": "G020",
+        "G022": "G000",
+        "G023": "G015",
+        "G024": "G068",
+        "G026": "G048",
+        "G027": "G097",
+        "G028": "G083",
+        "G031": "G056",
+        "G032": "G023",
+        "G033": "G051",
+        "G040": "G106",
+        "G041": "G108",
+        "G042": "G127",
+        "G043": "G116",
+        "G044": "G046",
+        "G046": "G119",
+        "G047": "G099",
+        "G048": "G026",
+        "G049": "G005",
+        "G050": "G109",
+        "G051": "G042",
+        "G052": "G122",
+        "G053": "G110",
+        "G055": "G088",
+        "G056": "G069",
+        "G057": "G053",
+        "G058": "G070",
+        "G060": "G049",
+        "G061": "G105",
+        "G062": "G094",
+        "G064": "G101",
+        "G065": "G076",
+        "G068": "G024",
+        "G069": "G031",
+        "G070": "G060",
+        "G071": "G008",
+        "G072": "G091",
+        "G073": "G001",
+        "G074": "G004",
+        "G075": "G124",
+        "G076": "G057",
+        "G077": "G080",
+        "G078": "G103",
+        "G079": "G084",
+        "G080": "G050",
+        "G081": "G087",
+        "G082": "G121",
+        "G083": "G028",
+        "G084": "G006",
+        "G086": "G081",
+        "G087": "G075",
+        "G088": "G007",
+        "G090": "G016",
+        "G091": "G079",
+        "G093": "G022",
+        "G094": "G011",
+        "G095": "G052",
+        "G097": "G027",
+        "G098": "G061",
+        "G099": "G120",
+        "G100": "G044",
+        "G101": "G047",
+        "G102": "G002",
+        "G103": "G010",
+        "G105": "G072",
+        "G106": "G100",
+        "G107": "G013",
+        "G108": "G041",
+        "G109": "G107",
+        "G110": "G093",
+        "G111": "G113",
+        "G113": "G074",
+        "G114": "G078",
+        "G115": "G117",
+        "G116": "G012",
+        "G117": "G125",
+        "G119": "G040",
+        "G120": "G009",
+        "G121": "G055",
+        "G122": "G043",
+        "G124": "G086",
+        "G125": "G115",
+        "G126": "G021",
+        "G127": "G114"
+      },
+      "identical_for_seeds": {
+        "33": true,
+        "123": true,
+        "777": true
+      },
+      "relabelling": {
+        "training_sentences_relabelled": 202,
+        "training_keystrokes_relabelled": 7708,
+        "keystroke_labels_changed": 6755,
+        "fraction_of_training_labels_changed": 0.8763622210690192,
+        "sentences_needing_length_adaptation": 137
+      },
+      "loaders": {
+        "train": {
+          "segments_identical": true,
+          "batches_compared": 3,
+          "inputs_identical": {
+            "neuro": true,
+            "subject_id": true,
+            "channel_positions": true
+          },
+          "fraction_of_targets_equal_in_compared_batches": [
+            0.34375,
+            0.125,
+            0.078125
+          ]
+        },
+        "val": {
+          "segments_identical": true,
+          "batches_compared": 1,
+          "inputs_identical": {
+            "neuro": true,
+            "subject_id": true,
+            "channel_positions": true
+          },
+          "fraction_of_targets_equal_in_compared_batches": [
+            1.0
+          ]
+        },
+        "test": {
+          "segments_identical": true,
+          "batches_compared": 1,
+          "inputs_identical": {
+            "neuro": true,
+            "subject_id": true,
+            "channel_positions": true
+          },
+          "fraction_of_targets_equal_in_compared_batches": [
+            1.0
+          ]
+        }
+      },
+      "pass": true
+    },
+    "D_clean": {
+      "derangement": {
+        "seed": 2026,
+        "window": 8,
+        "windows": 7,
+        "attempts_per_window": {
+          "0": 6,
+          "1": 3,
+          "2": 3,
+          "3": 1,
+          "4": 1,
+          "5": 2,
+          "6": 4
+        },
+        "fixed_points": 0,
+        "same_cluster_pairs": 0,
+        "identical_target_text_pairs": 0,
+        "keystroke_length_gap": {
+          "mean_abs": 1.8596491228070176,
+          "max_abs": 18,
+          "exact_length_matches": 12
+        }
+      },
+      "group_map": {
+        "G006": "G084",
+        "G009": "G041",
+        "G012": "G116",
+        "G014": "G054",
+        "G015": "G068",
+        "G016": "G122",
+        "G018": "G024",
+        "G020": "G037",
+        "G021": "G032",
+        "G023": "G073",
+        "G024": "G018",
+        "G025": "G091",
+        "G026": "G035",
+        "G029": "G061",
+        "G031": "G092",
+        "G032": "G021",
+        "G035": "G088",
+        "G037": "G020",
+        "G041": "G108",
+        "G043": "G052",
+        "G045": "G096",
+        "G051": "G076",
+        "G052": "G063",
+        "G054": "G070",
+        "G058": "G126",
+        "G060": "G058",
+        "G061": "G098",
+        "G063": "G095",
+        "G066": "G123",
+        "G068": "G015",
+        "G070": "G014",
+        "G072": "G105",
+        "G073": "G060",
+        "G076": "G103",
+        "G078": "G112",
+        "G079": "G099",
+        "G082": "G026",
+        "G084": "G025",
+        "G085": "G029",
+        "G088": "G078",
+        "G091": "G006",
+        "G092": "G045",
+        "G095": "G012",
+        "G096": "G031",
+        "G098": "G085",
+        "G099": "G101",
+        "G101": "G066",
+        "G103": "G051",
+        "G104": "G009",
+        "G105": "G072",
+        "G108": "G104",
+        "G112": "G082",
+        "G116": "G016",
+        "G120": "G079",
+        "G122": "G043",
+        "G123": "G120",
+        "G126": "G023"
+      },
+      "identical_for_seeds": {
+        "33": true,
+        "123": true,
+        "777": true
+      },
+      "relabelling": {
+        "training_sentences_relabelled": 57,
+        "training_keystrokes_relabelled": 1821,
+        "keystroke_labels_changed": 1592,
+        "fraction_of_training_labels_changed": 0.8742449203734212,
+        "sentences_needing_length_adaptation": 45
+      },
+      "loaders": {
+        "train": {
+          "segments_identical": true,
+          "batches_compared": 3,
+          "inputs_identical": {
+            "neuro": true,
+            "subject_id": true,
+            "channel_positions": true
+          },
+          "fraction_of_targets_equal_in_compared_batches": [
+            0.15625,
+            0.09375,
+            0.078125
+          ]
+        },
+        "val": {
+          "segments_identical": true,
+          "batches_compared": 1,
+          "inputs_identical": {
+            "neuro": true,
+            "subject_id": true,
+            "channel_positions": true
+          },
+          "fraction_of_targets_equal_in_compared_batches": [
+            1.0
+          ]
+        },
+        "test": {
+          "segments_identical": true,
+          "batches_compared": 1,
+          "inputs_identical": {
+            "neuro": true,
+            "subject_id": true,
+            "channel_positions": true
+          },
+          "fraction_of_targets_equal_in_compared_batches": [
+            1.0
+          ]
+        }
+      },
+      "pass": true
+    },
+    "E_clean": {
+      "derangement": {
+        "seed": 2026,
+        "window": 8,
+        "windows": 7,
+        "attempts_per_window": {
+          "0": 1,
+          "1": 3,
+          "2": 1,
+          "3": 1,
+          "4": 3,
+          "5": 3,
+          "6": 5
+        },
+        "fixed_points": 0,
+        "same_cluster_pairs": 0,
+        "identical_target_text_pairs": 0,
+        "keystroke_length_gap": {
+          "mean_abs": 3.8275862068965516,
+          "max_abs": 18,
+          "exact_length_matches": 7
+        }
+      },
+      "group_map": {
+        "G000": "G109",
+        "G004": "G125",
+        "G007": "G094",
+        "G008": "G030",
+        "G010": "G071",
+        "G011": "G000",
+        "G013": "G077",
+        "G017": "G008",
+        "G019": "G118",
+        "G022": "G057",
+        "G027": "G075",
+        "G028": "G113",
+        "G030": "G004",
+        "G033": "G114",
+        "G036": "G064",
+        "G039": "G027",
+        "G040": "G087",
+        "G042": "G062",
+        "G044": "G050",
+        "G046": "G102",
+        "G047": "G036",
+        "G048": "G059",
+        "G050": "G097",
+        "G053": "G065",
+        "G055": "G121",
+        "G056": "G089",
+        "G057": "G011",
+        "G059": "G017",
+        "G062": "G042",
+        "G064": "G047",
+        "G065": "G110",
+        "G067": "G093",
+        "G069": "G115",
+        "G071": "G127",
+        "G074": "G048",
+        "G075": "G119",
+        "G077": "G107",
+        "G081": "G040",
+        "G087": "G106",
+        "G089": "G056",
+        "G093": "G044",
+        "G094": "G007",
+        "G097": "G013",
+        "G102": "G039",
+        "G106": "G081",
+        "G107": "G067",
+        "G109": "G022",
+        "G110": "G053",
+        "G111": "G028",
+        "G113": "G111",
+        "G114": "G033",
+        "G115": "G117",
+        "G117": "G069",
+        "G118": "G019",
+        "G119": "G046",
+        "G121": "G055",
+        "G125": "G074",
+        "G127": "G010"
+      },
+      "identical_for_seeds": {
+        "33": true,
+        "123": true,
+        "777": true
+      },
+      "relabelling": {
+        "training_sentences_relabelled": 58,
+        "training_keystrokes_relabelled": 2458,
+        "keystroke_labels_changed": 2203,
+        "fraction_of_training_labels_changed": 0.8962571196094385,
+        "sentences_needing_length_adaptation": 51
+      },
+      "loaders": {
+        "train": {
+          "segments_identical": true,
+          "batches_compared": 3,
+          "inputs_identical": {
+            "neuro": true,
+            "subject_id": true,
+            "channel_positions": true
+          },
+          "fraction_of_targets_equal_in_compared_batches": [
+            0.125,
+            0.125,
+            0.125
+          ]
+        },
+        "val": {
+          "segments_identical": true,
+          "batches_compared": 1,
+          "inputs_identical": {
+            "neuro": true,
+            "subject_id": true,
+            "channel_positions": true
+          },
+          "fraction_of_targets_equal_in_compared_batches": [
+            1.0
+          ]
+        },
+        "test": {
+          "segments_identical": true,
+          "batches_compared": 1,
+          "inputs_identical": {
+            "neuro": true,
+            "subject_id": true,
+            "channel_positions": true
+          },
+          "fraction_of_targets_equal_in_compared_batches": [
+            1.0
+          ]
+        }
+      },
+      "pass": true
+    }
+  },
+  "all_pass": true
+}

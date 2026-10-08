@@ -1,0 +1,423 @@
+{
+  "split_name": "official_v1_clean",
+  "partition": "test",
+  "subject": "S22",
+  "official_revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "construction": "Exact official Brain2QwertyV1Splitter (seed 1, threshold 0.5, ratios 0.8/0.1/0.1 in keystrokes) on the S22 events of the official study + SpanishBCBLPreprocessing; sentence texts mapped back to all sentence records",
+  "scope_note": "The published official run applies the splitter to all participants' events; only S22 is available here, so the TF-IDF fit, clusters and allocation are over S22's 128 texts",
+  "sentence_groups": [
+    "G017",
+    "G018",
+    "G019",
+    "G029",
+    "G030",
+    "G036",
+    "G037",
+    "G045",
+    "G085",
+    "G092",
+    "G096",
+    "G104",
+    "G112",
+    "G118"
+  ],
+  "tfidf_clusters": 11,
+  "sentence_UIDs": [
+    "10.0_S22_1_block1",
+    "17.0_S22_1_block1",
+    "19.0_S22_1_block1",
+    "28.0_S22_1_block1",
+    "34.0_S22_1_block1",
+    "50.0_S22_1_block1",
+    "59.0_S22_1_block1",
+    "64.0_S22_1_block1",
+    "65.0_S22_1_block1",
+    "19.0_S22_1_block2",
+    "26.0_S22_1_block2",
+    "43.0_S22_1_block2",
+    "59.0_S22_1_block2",
+    "63.0_S22_1_block2",
+    "6.0_S22_2_block1",
+    "39.0_S22_2_block1",
+    "41.0_S22_2_block1",
+    "44.0_S22_2_block1",
+    "52.0_S22_2_block1",
+    "13.0_S22_2_block2",
+    "21.0_S22_2_block2",
+    "26.0_S22_2_block2",
+    "27.0_S22_2_block2",
+    "45.0_S22_2_block2",
+    "50.0_S22_2_block2",
+    "54.0_S22_2_block2",
+    "55.0_S22_2_block2",
+    "56.0_S22_2_block2"
+  ],
+  "records": [
+    {
+      "sentence_UID": "10.0_S22_1_block1",
+      "unique_sentence_group_id": "G096",
+      "tfidf_cluster_id": "TC093",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "las uniones organizan el calendario",
+      "sentence_typed": "las uniones organizan el calendario",
+      "keystrokes": 35
+    },
+    {
+      "sentence_UID": "17.0_S22_1_block1",
+      "unique_sentence_group_id": "G018",
+      "tfidf_cluster_id": "TC091",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "el jefe configura el campo",
+      "sentence_typed": "el jefe configura el campo",
+      "keystrokes": 26
+    },
+    {
+      "sentence_UID": "19.0_S22_1_block1",
+      "unique_sentence_group_id": "G104",
+      "tfidf_cluster_id": "TC095",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "los cuadernos presentan la division",
+      "sentence_typed": "los cuadernos revelan la division",
+      "keystrokes": 33
+    },
+    {
+      "sentence_UID": "28.0_S22_1_block1",
+      "unique_sentence_group_id": "G037",
+      "tfidf_cluster_id": "TC085",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "la ciencia rompe la vision",
+      "sentence_typed": "la ciencia rompe la vision",
+      "keystrokes": 26
+    },
+    {
+      "sentence_UID": "34.0_S22_1_block1",
+      "unique_sentence_group_id": "G092",
+      "tfidf_cluster_id": "TC092",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "las revoluciones abarcan las esferas",
+      "sentence_typed": "las revoluciones abarcan las esferas",
+      "keystrokes": 36
+    },
+    {
+      "sentence_UID": "50.0_S22_1_block1",
+      "unique_sentence_group_id": "G112",
+      "tfidf_cluster_id": "TC086",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "los interruptores conectan las cargas",
+      "sentence_typed": "los interruptores conectan las cargas@",
+      "keystrokes": 38
+    },
+    {
+      "sentence_UID": "59.0_S22_1_block1",
+      "unique_sentence_group_id": "G045",
+      "tfidf_cluster_id": "TC089",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "la estadistica sigue la distribucion",
+      "sentence_typed": "la stadistica sigue la distribucion",
+      "keystrokes": 35
+    },
+    {
+      "sentence_UID": "64.0_S22_1_block1",
+      "unique_sentence_group_id": "G029",
+      "tfidf_cluster_id": "TC083",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "el signo conserva los resultados",
+      "sentence_typed": "el signo conserva los resultados",
+      "keystrokes": 32
+    },
+    {
+      "sentence_UID": "65.0_S22_1_block1",
+      "unique_sentence_group_id": "G085",
+      "tfidf_cluster_id": "TC090",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "las funciones leen los archivos",
+      "sentence_typed": "las funciones leen los archivos",
+      "keystrokes": 31
+    },
+    {
+      "sentence_UID": "19.0_S22_1_block2",
+      "unique_sentence_group_id": "G118",
+      "tfidf_cluster_id": "TC094",
+      "session": "1",
+      "block": "block2",
+      "list_id": "list2",
+      "sentence_presented": "los pedidos directos merecen las atenciones",
+      "sentence_typed": "los pedidos directos merecen las atenciones",
+      "keystrokes": 43
+    },
+    {
+      "sentence_UID": "26.0_S22_1_block2",
+      "unique_sentence_group_id": "G030",
+      "tfidf_cluster_id": "TC083",
+      "session": "1",
+      "block": "block2",
+      "list_id": "list2",
+      "sentence_presented": "el signo radical conserva el resultado",
+      "sentence_typed": "el signo radical conserva el resutados",
+      "keystrokes": 38
+    },
+    {
+      "sentence_UID": "43.0_S22_1_block2",
+      "unique_sentence_group_id": "G017",
+      "tfidf_cluster_id": "TC087",
+      "session": "1",
+      "block": "block2",
+      "list_id": "list2",
+      "sentence_presented": "el interruptor abierto conecta la carga",
+      "sentence_typed": "el interruptor abierto conecta la carga",
+      "keystrokes": 39
+    },
+    {
+      "sentence_UID": "59.0_S22_1_block2",
+      "unique_sentence_group_id": "G019",
+      "tfidf_cluster_id": "TC091",
+      "session": "1",
+      "block": "block2",
+      "list_id": "list2",
+      "sentence_presented": "el jefe de la edicion configura los campos",
+      "sentence_typed": "el jefe de la edicion configura los campos",
+      "keystrokes": 42
+    },
+    {
+      "sentence_UID": "63.0_S22_1_block2",
+      "unique_sentence_group_id": "G036",
+      "tfidf_cluster_id": "TC085",
+      "session": "1",
+      "block": "block2",
+      "list_id": "list2",
+      "sentence_presented": "la ciencia de la idea rompe la vision",
+      "sentence_typed": "la ciencia de la idea rompe la vision",
+      "keystrokes": 37
+    },
+    {
+      "sentence_UID": "6.0_S22_2_block1",
+      "unique_sentence_group_id": "G030",
+      "tfidf_cluster_id": "TC083",
+      "session": "2",
+      "block": "block1",
+      "list_id": "list2",
+      "sentence_presented": "el signo radical conserva el resultado",
+      "sentence_typed": "el signo radical conserva el resltado",
+      "keystrokes": 37
+    },
+    {
+      "sentence_UID": "39.0_S22_2_block1",
+      "unique_sentence_group_id": "G036",
+      "tfidf_cluster_id": "TC085",
+      "session": "2",
+      "block": "block1",
+      "list_id": "list2",
+      "sentence_presented": "la ciencia de la idea rompe la vision",
+      "sentence_typed": "la ciencia de la idea rompe la vision",
+      "keystrokes": 37
+    },
+    {
+      "sentence_UID": "41.0_S22_2_block1",
+      "unique_sentence_group_id": "G019",
+      "tfidf_cluster_id": "TC091",
+      "session": "2",
+      "block": "block1",
+      "list_id": "list2",
+      "sentence_presented": "el jefe de la edicion configura los campos",
+      "sentence_typed": "el jefe de la edicion configura los campos",
+      "keystrokes": 42
+    },
+    {
+      "sentence_UID": "44.0_S22_2_block1",
+      "unique_sentence_group_id": "G017",
+      "tfidf_cluster_id": "TC087",
+      "session": "2",
+      "block": "block1",
+      "list_id": "list2",
+      "sentence_presented": "el interruptor abierto conecta la carga",
+      "sentence_typed": "el interruptor abierto conecta la carga",
+      "keystrokes": 39
+    },
+    {
+      "sentence_UID": "52.0_S22_2_block1",
+      "unique_sentence_group_id": "G118",
+      "tfidf_cluster_id": "TC094",
+      "session": "2",
+      "block": "block1",
+      "list_id": "list2",
+      "sentence_presented": "los pedidos directos merecen las atenciones",
+      "sentence_typed": "los pedidos directos merecen las atenciones",
+      "keystrokes": 43
+    },
+    {
+      "sentence_UID": "13.0_S22_2_block2",
+      "unique_sentence_group_id": "G029",
+      "tfidf_cluster_id": "TC083",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "el signo conserva los resultados",
+      "sentence_typed": "el signo conserva los resultados",
+      "keystrokes": 32
+    },
+    {
+      "sentence_UID": "21.0_S22_2_block2",
+      "unique_sentence_group_id": "G112",
+      "tfidf_cluster_id": "TC086",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "los interruptores conectan las cargas",
+      "sentence_typed": "los interruptores conectan las cargas",
+      "keystrokes": 37
+    },
+    {
+      "sentence_UID": "26.0_S22_2_block2",
+      "unique_sentence_group_id": "G092",
+      "tfidf_cluster_id": "TC092",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "las revoluciones abarcan las esferas",
+      "sentence_typed": "las revoluciones abarcan las esferas",
+      "keystrokes": 36
+    },
+    {
+      "sentence_UID": "27.0_S22_2_block2",
+      "unique_sentence_group_id": "G096",
+      "tfidf_cluster_id": "TC093",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "las uniones organizan el calendario",
+      "sentence_typed": "las uniones organizan el calendario",
+      "keystrokes": 35
+    },
+    {
+      "sentence_UID": "45.0_S22_2_block2",
+      "unique_sentence_group_id": "G045",
+      "tfidf_cluster_id": "TC089",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "la estadistica sigue la distribucion",
+      "sentence_typed": "la estadistica sigue la distribucion",
+      "keystrokes": 36
+    },
+    {
+      "sentence_UID": "50.0_S22_2_block2",
+      "unique_sentence_group_id": "G037",
+      "tfidf_cluster_id": "TC085",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "la ciencia rompe la vision",
+      "sentence_typed": "la ciencia rompe la vision",
+      "keystrokes": 26
+    },
+    {
+      "sentence_UID": "54.0_S22_2_block2",
+      "unique_sentence_group_id": "G085",
+      "tfidf_cluster_id": "TC090",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "las funciones leen los archivos",
+      "sentence_typed": "las funciones leen los archivos",
+      "keystrokes": 31
+    },
+    {
+      "sentence_UID": "55.0_S22_2_block2",
+      "unique_sentence_group_id": "G104",
+      "tfidf_cluster_id": "TC095",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "los cuadernos presentan la division",
+      "sentence_typed": "los cuadernos presentan la division",
+      "keystrokes": 35
+    },
+    {
+      "sentence_UID": "56.0_S22_2_block2",
+      "unique_sentence_group_id": "G018",
+      "tfidf_cluster_id": "TC091",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "el jefe configura el campo",
+      "sentence_typed": "el jefe configura el campo",
+      "keystrokes": 26
+    }
+  ],
+  "sentence_records": 28,
+  "unique_sentence_groups": 14,
+  "keystrokes": 983,
+  "by_session_block_list": {
+    "session1/block1/list1": {
+      "sentence_records": 9,
+      "keystrokes": 292
+    },
+    "session1/block2/list2": {
+      "sentence_records": 5,
+      "keystrokes": 199
+    },
+    "session2/block1/list2": {
+      "sentence_records": 5,
+      "keystrokes": 198
+    },
+    "session2/block2/list1": {
+      "sentence_records": 9,
+      "keystrokes": 294
+    }
+  },
+  "overlap_checks": {
+    "vs_train": {
+      "presented_text_overlap": 0,
+      "typed_text_overlap": 0,
+      "sentence_UID_overlap": 0,
+      "unique_sentence_group_overlap": 0,
+      "tfidf_cluster_overlap": 0,
+      "paraphrase_pairs_above_official_threshold": 0,
+      "max_cross_partition_tfidf_cosine": 0.2894980209079789,
+      "most_similar_cross_partition_pair": {
+        "a": "la estadistica sigue la distribucion",
+        "b": "las estadisticas robustas siguen la distribucion",
+        "cosine": 0.2894980209079789
+      }
+    },
+    "vs_val": {
+      "presented_text_overlap": 0,
+      "typed_text_overlap": 0,
+      "sentence_UID_overlap": 0,
+      "unique_sentence_group_overlap": 0,
+      "tfidf_cluster_overlap": 0,
+      "paraphrase_pairs_above_official_threshold": 0,
+      "max_cross_partition_tfidf_cosine": 0.2894980209079789,
+      "most_similar_cross_partition_pair": {
+        "a": "las revoluciones abarcan las esferas",
+        "b": "la revolucion nueva abarca las esferas",
+        "cosine": 0.2894980209079789
+      }
+    }
+  },
+  "twin_check": {
+    "groups_split_across_partitions": [],
+    "no_group_split_across_partitions": true,
+    "unused_occurrences_of_used_groups": []
+  },
+  "sentence_disjoint": true,
+  "training_performed": false
+}

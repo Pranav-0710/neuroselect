@@ -532,3 +532,67 @@ from accessible signal subset and leakage checks done.
   `results/phase6_signal_dependence.json`, `results/phase6_text_anchor.json`,
   `results/phase6_leakage_audit.json`,
   `results/figures/debug/phase6_{real_vs_control,feasibility,outputs}.png`.
+
+## Phase 7 — Official paraphrase-disjoint splits and exact v1 GPU harness
+
+- **Classification A: clean official split reproduced and GPU harness ready**
+  ("ready" = built and dry-run verified end to end on CPU with no optimisation
+  step; the GPU preflight was **not executed**: no CUDA device). Nothing was
+  trained. No decoding conclusion is drawn.
+- **Official splitter reproduced exactly.** The configured official
+  `Brain2QwertyV1Splitter` (seed 1, threshold 0.5, 80/10/10 in keystrokes) was
+  run unmodified in the official order (study → SpanishBCBLPreprocessing →
+  splitter). Its clusters were captured by temporarily swapping the `random`
+  reference seen by the official module for a forwarding recorder; a verbatim
+  re-implementation reproduces both the captured clusters and the assignment.
+  Normalisation: none (raw presented text); TF-IDF: sklearn defaults; clusters:
+  connected components of cosine > 0.5; `random.shuffle` with seed 1; first-fit
+  allocation, overflow to test. Scope: the published run splits all
+  participants; here the universe is S22's 128 texts.
+- **Clusters:** 96 = 64 singletons + 32 pairs; every pair joins a list1 and a
+  list2 text (cosine 0.51–0.875); no within-list pairs, no transitive merges.
+- **Official 80/10/10 (S22):** train 101 groups / 202 records / 7,708
+  keystrokes / 75 clusters; val 13 / 26 / 959 / 10; test 14 / 28 / 983 / 11.
+  Both occurrences of every group sit in one partition. Zero cross-partition
+  overlap in UIDs, groups, clusters, presented and typed text; max cross-partition
+  cosine 0.30. Residual: TF-IDF does not catch inflectional variants (train
+  `las estadisticas robustas siguen la distribucion` vs test
+  `la estadistica sigue la distribucion`, cosine 0.29), clean by the official rule.
+- **D-clean / E-clean:** the literal definitions are **infeasible** without
+  breaking clusters (32 clusters span train and test in each). Resolution:
+  clusters with a training-side member stay on the training side; their
+  session-2 occurrences are excluded from test. D-clean: train 57 / val 7 /
+  test 32 sentences (1,821 / 219 / 1,363 keystrokes); E-clean: 58 / 6 / 32
+  (2,458 / 297 / 1,010). Validation is carved from training clusters (official
+  seed and first-fit at 80:10; a research choice). Both cluster-disjoint.
+- **Harness** (`scripts/phase7_official_v1_train.py`): official
+  `experiment_config`, `Data.build`, `_build_modules`, `BrainModule`,
+  `materialize_lazy_params`, `_trainer_setup`, `fit` then `test` on final
+  weights; only the splitter is replaced by a manifest transform. Logs git
+  commit, packages vs the official lock, parameter count, config, split and
+  dataset hashes, runtime, GPU and CUDA. Refuses to train without CUDA.
+  Six dry runs (3 splits × real/control) pass: 8 raw hashes verified, loaders
+  equal manifests, 623,548,457 parameters, 300 epochs, EarlyStopping val_CER
+  patience 30, no clipping, `Experiment.run` source hash matches the audit.
+  Run matrix: 18 runs + 9 signal-dependence evaluations.
+- **Control:** stimulus-level derangement of training targets (seed 2026,
+  different group and different cluster, length-ordered windows of 8; same map
+  for every model seed); one label per keystroke forces truncation or
+  space-separated repetition of the donor. Loader check: MEG, subject ids,
+  channel positions, segments identical; val/test targets identical; ~87–90 %
+  of training labels changed.
+- **Signal dependence** script ready (real runs only; final weights; zero MEG,
+  fixed temporal and channel derangements, seed 2026); dry run on untrained
+  weights exercised the code path only.
+- **Text anchor** (clean test partitions): F1 official 0.338, D-clean 0.359,
+  E-clean 0.349.
+- Tests: `28 passed` (17 existing + 11 new in `tests/test_phase7_splits.py`).
+  Integrity: raw FIF/MAT hashes match; historical and official-v1 preprocessing,
+  official source, existing tests and earlier results unchanged; pinned env
+  unchanged; no download; no LLM, no Evidence Selector; no local training.
+- Artifacts: `results/phase7_{official_split_audit,clean_split_manifests,
+  gpu_preflight,training_harness,control_harness,text_anchor,master_report,
+  official_clusters}.json`; `data/manifests/official_v1_clean_{train,val,test}.json`,
+  `s22_{D,E}_clean.json`, `s22_official_v1_dataset.json`;
+  `results/runs/phase7/dry_run/`;
+  `results/figures/debug/phase7_{split_clusters,split_composition,gpu_preflight}.png`.

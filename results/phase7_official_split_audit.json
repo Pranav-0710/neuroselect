@@ -1,0 +1,1991 @@
+{
+  "task": "Phase 7 Tasks 1-3: exact official splitter, cluster statistics, leakage audit",
+  "official_revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "official_splitter": {
+    "class": "brain2qwerty_v1.transforms.Brain2QwertyV1Splitter",
+    "configured_as": {
+      "name": "Brain2QwertyV1Splitter",
+      "seed": 1
+    },
+    "realized_parameters": {
+      "splitting_ratios": [
+        0.8,
+        0.1,
+        0.1
+      ],
+      "seed": 1,
+      "threshold": 0.5
+    },
+    "pipeline_position": "study -> SpanishBCBLPreprocessing -> Brain2QwertyV1Splitter (official Data.build_events)",
+    "sentence_normalization": "none: the raw 'sentence' field of keystroke events (presented text, already lowercase without accents in S22), deduplicated by pandas unique() in event order",
+    "tfidf": "sklearn TfidfVectorizer() with default settings, fit on the unique sentences of the given events",
+    "similarity": "sklearn cosine_similarity over the TF-IDF rows",
+    "clustering": "connected components of the graph with an edge where cosine > threshold, grown from each unvisited sentence in unique() order",
+    "shuffle": "random.seed(seed); random.shuffle(clusters) with the stdlib random module",
+    "allocation": "first-fit over (train, val, test) with keystroke budgets int(0.8 N), int(0.1 N), N - both; a cluster that fits no budget goes to test",
+    "invoked": "the configured official instance's .run(), source unmodified",
+    "cluster_capture": "the official module's `random` reference was swapped for a forwarding recorder during the call and restored afterwards",
+    "exact_reproduction": {
+      "captured_clusters_equal_reimplementation": true,
+      "official_assignment_equals_reimplementation": true,
+      "every_keystroke_assigned": true,
+      "random_module_calls_seen_by_official_code": [
+        "seed",
+        "shuffle"
+      ]
+    },
+    "unique_sentence_order_sha256": "697229992c7a51832dc6b1042cb2f78966ee7eb0f957bc0800072fd11ab814a3",
+    "sklearn_version": "1.8.0"
+  },
+  "events": {
+    "rows": 12952,
+    "rebuilt_keystrokes": 9650,
+    "stored_keystrokes": 9650,
+    "identical_timeline_start_button": true
+  },
+  "scope_note": "The published official run applies the splitter to all participants' events; here only S22 exists, so the TF-IDF vocabulary, clusters and keystroke budgets are those of S22's 128 texts. This is the exact official procedure applied to the available universe, not a reproduction of the published multi-subject partition.",
+  "cluster_statistics": {
+    "unique_sentence_texts": 128,
+    "clusters": 96,
+    "cluster_size_histogram": {
+      "1": 64,
+      "2": 32
+    },
+    "singleton_clusters": 64,
+    "multi_sentence_clusters": 32,
+    "sentence_texts_in_multi_sentence_clusters": 64,
+    "cross_list_clusters": 32,
+    "within_list1_clusters_multi": 0,
+    "within_list2_clusters_multi": 0,
+    "list2_texts_with_a_list1_partner_above_threshold": 32,
+    "pairs_above_threshold": 32,
+    "max_off_diagonal_cosine": 0.8749253854285167,
+    "largest_cluster_size": 2,
+    "transitive_merges": 0
+  },
+  "multi_sentence_clusters": [
+    {
+      "tfidf_cluster_id": "TC003",
+      "sentence_texts": [
+        "la modalidad permite el trabajo",
+        "la modalidad permite el trabajo en los campos"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.7857413680475065,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC004",
+      "sentence_texts": [
+        "el algoritmo recorre el nodo",
+        "el algoritmo de los controles recorre el nodo"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.8136141094744427,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC005",
+      "sentence_texts": [
+        "la diversidad dificulta la relacion",
+        "la diversidad previa dificulta la relacion"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.8642254557915557,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC006",
+      "sentence_texts": [
+        "la enfermedad revela las claves",
+        "la enfermedad revela las claves para la decision"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.7764398413432072,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC011",
+      "sentence_texts": [
+        "las bolas impactan las bandas",
+        "las bolas blancas impactan las bandas"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.8604329485023258,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC013",
+      "sentence_texts": [
+        "los paneles contienen la opcion larga",
+        "los paneles contienen la opcion"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.8572585288020149,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC014",
+      "sentence_texts": [
+        "las condiciones favorecen los desarrollos",
+        "las condiciones favorecen el desarrollo maritimo"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.5450866465900363,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC018",
+      "sentence_texts": [
+        "el flujo atraviesa las bobinas",
+        "el flujo atraviesa las bobinas con los nucleos"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.7790328692719687,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC020",
+      "sentence_texts": [
+        "los productos cumplen la propiedad",
+        "los productos cumplen la propiedad asociada"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.8572585288020149,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC021",
+      "sentence_texts": [
+        "el caballo recorre la casilla",
+        "el caballo hermoso recorre las casillas"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.5147364251387873,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC025",
+      "sentence_texts": [
+        "los ejemplos muestran los bloques de las canteras",
+        "los ejemplos muestran los bloques"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.8222159685191887,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC026",
+      "sentence_texts": [
+        "las codificaciones de los caracteres seleccionan la informacion",
+        "las codificaciones seleccionan la informacion"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.8061928037437415,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC029",
+      "sentence_texts": [
+        "las interconexiones de la fibra extienden las costumbres",
+        "las interconexiones extienden la costumbre"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.5502345351427916,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC031",
+      "sentence_texts": [
+        "el centro describe las parabolas",
+        "el centro describe las parabolas asociadas"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.857564036927575,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC032",
+      "sentence_texts": [
+        "los usos ofrecen las ventajas energeticas",
+        "los usos ofrecen la ventaja"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.5380931995429142,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC034",
+      "sentence_texts": [
+        "la regla brinda las garantias",
+        "la regla brinda la garantia de las calidades"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.5502345351427916,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC035",
+      "sentence_texts": [
+        "el cliente establece las conexiones",
+        "el cliente establece la conexion creada"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.5390969622434305,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC037",
+      "sentence_texts": [
+        "la investigacion real recoge los conocimientos",
+        "la investigacion recoge los conocimientos"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.8749253854285167,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC041",
+      "sentence_texts": [
+        "las calles marcan las lineas imaginarias",
+        "las calles marcan las lineas"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.8642254557915557,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC042",
+      "sentence_texts": [
+        "el lugar regula los ritmos de los desarrollos",
+        "el lugar regula el ritmo"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.5131099389223706,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC046",
+      "sentence_texts": [
+        "los elementos manifiestan los danos",
+        "los elementos apropiados manifiestan los danos"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.8675306553764839,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC047",
+      "sentence_texts": [
+        "la sociedad plantea la necesidad",
+        "la sociedad plantea la necesidad del apoyo"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.8075639192449984,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC050",
+      "sentence_texts": [
+        "las versiones del programa soportan el comando",
+        "las versiones soportan el comando"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.8132556921637664,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC054",
+      "sentence_texts": [
+        "los corredores aceleran la carrera",
+        "los corredores con las marcas aceleran la carrera"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.7805736340835209,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC057",
+      "sentence_texts": [
+        "las bolsas registran las perdidas",
+        "las bolsas pequenas registran la perdida"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.5462969993384591,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC066",
+      "sentence_texts": [
+        "las estrategias diferencian el pensamiento de la persona",
+        "las estrategias diferencian los pensamientos"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.5112456217999999,
+      "official_split": "train"
+    },
+    {
+      "tfidf_cluster_id": "TC074",
+      "sentence_texts": [
+        "la aplicacion posibilita las creaciones",
+        "la aplicacion buena posibilita las creaciones"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.8563155416918428,
+      "official_split": "val"
+    },
+    {
+      "tfidf_cluster_id": "TC075",
+      "sentence_texts": [
+        "las agencias disponen los equipos por la manana",
+        "las agencias disponen los equipos"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.7661880753920358,
+      "official_split": "val"
+    },
+    {
+      "tfidf_cluster_id": "TC081",
+      "sentence_texts": [
+        "la compania anuncia las adquisiciones",
+        "la compania anuncia las adquisiciones de los datos"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.8209592350374558,
+      "official_split": "val"
+    },
+    {
+      "tfidf_cluster_id": "TC083",
+      "sentence_texts": [
+        "el signo radical conserva el resultado",
+        "el signo conserva los resultados"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.5551999747699266,
+      "official_split": "test"
+    },
+    {
+      "tfidf_cluster_id": "TC085",
+      "sentence_texts": [
+        "la ciencia rompe la vision",
+        "la ciencia de la idea rompe la vision"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.8365948793928704,
+      "official_split": "test"
+    },
+    {
+      "tfidf_cluster_id": "TC091",
+      "sentence_texts": [
+        "el jefe de la edicion configura los campos",
+        "el jefe configura el campo"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "max_within_cluster_cosine": 0.5291281635081555,
+      "official_split": "test"
+    }
+  ],
+  "official_split": {
+    "target_keystrokes": {
+      "train": 7720,
+      "val": 965,
+      "test": 965
+    },
+    "achieved_keystrokes": {
+      "train": 7708,
+      "val": 959,
+      "test": 983
+    },
+    "achieved_fraction": {
+      "train": 0.7987564766839378,
+      "val": 0.0993782383419689,
+      "test": 0.10186528497409326
+    },
+    "running_totals_after_allocation": {
+      "train": 7708,
+      "val": 959,
+      "test": 915
+    },
+    "composition": {
+      "train": {
+        "sentence_records": 202,
+        "unique_sentence_groups": 101,
+        "tfidf_clusters": 75,
+        "keystrokes": 7708,
+        "by_session_block_list": {
+          "session1/block1/list1": {
+            "sentence_records": 47,
+            "keystrokes": 1487
+          },
+          "session1/block2/list2": {
+            "sentence_records": 54,
+            "keystrokes": 2340
+          },
+          "session2/block1/list2": {
+            "sentence_records": 54,
+            "keystrokes": 2375
+          },
+          "session2/block2/list1": {
+            "sentence_records": 47,
+            "keystrokes": 1506
+          }
+        }
+      },
+      "val": {
+        "sentence_records": 26,
+        "unique_sentence_groups": 13,
+        "tfidf_clusters": 10,
+        "keystrokes": 959,
+        "by_session_block_list": {
+          "session1/block1/list1": {
+            "sentence_records": 8,
+            "keystrokes": 261
+          },
+          "session1/block2/list2": {
+            "sentence_records": 5,
+            "keystrokes": 216
+          },
+          "session2/block1/list2": {
+            "sentence_records": 5,
+            "keystrokes": 219
+          },
+          "session2/block2/list1": {
+            "sentence_records": 8,
+            "keystrokes": 263
+          }
+        }
+      },
+      "test": {
+        "sentence_records": 28,
+        "unique_sentence_groups": 14,
+        "tfidf_clusters": 11,
+        "keystrokes": 983,
+        "by_session_block_list": {
+          "session1/block1/list1": {
+            "sentence_records": 9,
+            "keystrokes": 292
+          },
+          "session1/block2/list2": {
+            "sentence_records": 5,
+            "keystrokes": 199
+          },
+          "session2/block1/list2": {
+            "sentence_records": 5,
+            "keystrokes": 198
+          },
+          "session2/block2/list1": {
+            "sentence_records": 9,
+            "keystrokes": 294
+          }
+        }
+      }
+    },
+    "overlaps": {
+      "train_vs_val": {
+        "presented_text_overlap": 0,
+        "typed_text_overlap": 0,
+        "sentence_UID_overlap": 0,
+        "unique_sentence_group_overlap": 0,
+        "tfidf_cluster_overlap": 0,
+        "paraphrase_pairs_above_official_threshold": 0,
+        "max_cross_partition_tfidf_cosine": 0.299757442716294,
+        "most_similar_cross_partition_pair": {
+          "a": "las estrategias diferencian el pensamiento de la persona",
+          "b": "la persona compara las cosas",
+          "cosine": 0.299757442716294
+        }
+      },
+      "train_vs_test": {
+        "presented_text_overlap": 0,
+        "typed_text_overlap": 0,
+        "sentence_UID_overlap": 0,
+        "unique_sentence_group_overlap": 0,
+        "tfidf_cluster_overlap": 0,
+        "paraphrase_pairs_above_official_threshold": 0,
+        "max_cross_partition_tfidf_cosine": 0.2894980209079789,
+        "most_similar_cross_partition_pair": {
+          "a": "las estadisticas robustas siguen la distribucion",
+          "b": "la estadistica sigue la distribucion",
+          "cosine": 0.2894980209079789
+        }
+      },
+      "val_vs_test": {
+        "presented_text_overlap": 0,
+        "typed_text_overlap": 0,
+        "sentence_UID_overlap": 0,
+        "unique_sentence_group_overlap": 0,
+        "tfidf_cluster_overlap": 0,
+        "paraphrase_pairs_above_official_threshold": 0,
+        "max_cross_partition_tfidf_cosine": 0.2894980209079789,
+        "most_similar_cross_partition_pair": {
+          "a": "la revolucion nueva abarca las esferas",
+          "b": "las revoluciones abarcan las esferas",
+          "cosine": 0.2894980209079789
+        }
+      }
+    },
+    "twin_check": {
+      "groups_split_across_partitions": [],
+      "no_group_split_across_partitions": true,
+      "unused_occurrences_of_used_groups": []
+    },
+    "all_clean": true
+  },
+  "cross_session_clean": {
+    "D_clean": {
+      "definition": "TRAIN = session 1 list1 (s1/block1); TEST = session 2 list2 (s2/block1)",
+      "literal_definition": {
+        "train_records": 64,
+        "test_records": 64,
+        "overlap_checks": {
+          "presented_text_overlap": 0,
+          "typed_text_overlap": 0,
+          "sentence_UID_overlap": 0,
+          "unique_sentence_group_overlap": 0,
+          "tfidf_cluster_overlap": 32,
+          "paraphrase_pairs_above_official_threshold": 32,
+          "max_cross_partition_tfidf_cosine": 0.8749253854285167,
+          "most_similar_cross_partition_pair": {
+            "a": "la investigacion recoge los conocimientos",
+            "b": "la investigacion real recoge los conocimientos",
+            "cosine": 0.8749253854285167
+          }
+        },
+        "cluster_integrity_preserved": false,
+        "feasible_without_breaking_clusters": false
+      },
+      "resolution": "Every official cluster with a member on the training side stays entirely on the training side; test-side sentences in such clusters are excluded from the test partition. Nothing is moved across sessions or blocks.",
+      "test_records_excluded_for_cluster_integrity": 32,
+      "clusters_shared_by_literal_train_and_test": 32,
+      "excluded_test_records": [
+        {
+          "sentence_UID": "3.0_S22_2_block1",
+          "unique_sentence_group_id": "G071",
+          "tfidf_cluster_id": "TC057",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "las bolsas pequenas registran la perdida",
+          "sentence_typed": "las bolsas pequeaas regisran la perdida",
+          "keystrokes": 39,
+          "train_side_cluster_members": [
+            "las bolsas registran las perdidas"
+          ]
+        },
+        {
+          "sentence_UID": "6.0_S22_2_block1",
+          "unique_sentence_group_id": "G030",
+          "tfidf_cluster_id": "TC083",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "el signo radical conserva el resultado",
+          "sentence_typed": "el signo radical conserva el resltado",
+          "keystrokes": 37,
+          "train_side_cluster_members": [
+            "el signo conserva los resultados"
+          ]
+        },
+        {
+          "sentence_UID": "7.0_S22_2_block1",
+          "unique_sentence_group_id": "G087",
+          "tfidf_cluster_id": "TC029",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "las interconexiones de la fibra extienden las costumbres",
+          "sentence_typed": "las interxoxeiones de la fiebra extienden el resultado",
+          "keystrokes": 54,
+          "train_side_cluster_members": [
+            "las interconexiones extienden la costumbre"
+          ]
+        },
+        {
+          "sentence_UID": "10.0_S22_2_block1",
+          "unique_sentence_group_id": "G042",
+          "tfidf_cluster_id": "TC005",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "la diversidad previa dificulta la relacion",
+          "sentence_typed": "la diversidad previa dificulta la relacio",
+          "keystrokes": 41,
+          "train_side_cluster_members": [
+            "la diversidad dificulta la relacion"
+          ]
+        },
+        {
+          "sentence_UID": "11.0_S22_2_block1",
+          "unique_sentence_group_id": "G000",
+          "tfidf_cluster_id": "TC004",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "el algoritmo de los controles recorre el nodo",
+          "sentence_typed": "el algoritmo de los controles recorre el nodo",
+          "keystrokes": 45,
+          "train_side_cluster_members": [
+            "el algoritmo recorre el nodo"
+          ]
+        },
+        {
+          "sentence_UID": "22.0_S22_2_block1",
+          "unique_sentence_group_id": "G106",
+          "tfidf_cluster_id": "TC025",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "los ejemplos muestran los bloques de las canteras",
+          "sentence_typed": "los ejemplos muestran los bloques de las canteras",
+          "keystrokes": 49,
+          "train_side_cluster_members": [
+            "los ejemplos muestran los bloques"
+          ]
+        },
+        {
+          "sentence_UID": "24.0_S22_2_block1",
+          "unique_sentence_group_id": "G107",
+          "tfidf_cluster_id": "TC046",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "los elementos apropiados manifiestan los danos",
+          "sentence_typed": "los elementos apropiados manifiestan los daaos",
+          "keystrokes": 46,
+          "train_side_cluster_members": [
+            "los elementos manifiestan los danos"
+          ]
+        },
+        {
+          "sentence_UID": "25.0_S22_2_block1",
+          "unique_sentence_group_id": "G081",
+          "tfidf_cluster_id": "TC066",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "las estrategias diferencian el pensamiento de la persona",
+          "sentence_typed": "las estrategias diferencia en le pensamiento de la persona",
+          "keystrokes": 58,
+          "train_side_cluster_members": [
+            "las estrategias diferencian los pensamientos"
+          ]
+        },
+        {
+          "sentence_UID": "28.0_S22_2_block1",
+          "unique_sentence_group_id": "G007",
+          "tfidf_cluster_id": "TC031",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "el centro describe las parabolas asociadas",
+          "sentence_typed": "el centro describe las parabolas asociadas",
+          "keystrokes": 42,
+          "train_side_cluster_members": [
+            "el centro describe las parabolas"
+          ]
+        },
+        {
+          "sentence_UID": "29.0_S22_2_block1",
+          "unique_sentence_group_id": "G075",
+          "tfidf_cluster_id": "TC026",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "las codificaciones de los caracteres seleccionan la informacion",
+          "sentence_typed": "las codificaciones de os caracteres seleccionan la informaci@on",
+          "keystrokes": 63,
+          "train_side_cluster_members": [
+            "las codificaciones seleccionan la informacion"
+          ]
+        },
+        {
+          "sentence_UID": "32.0_S22_2_block1",
+          "unique_sentence_group_id": "G044",
+          "tfidf_cluster_id": "TC006",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "la enfermedad revela las claves para la decision",
+          "sentence_typed": "la enfermedad revela las claves para la decision",
+          "keystrokes": 48,
+          "train_side_cluster_members": [
+            "la enfermedad revela las claves"
+          ]
+        },
+        {
+          "sentence_UID": "34.0_S22_2_block1",
+          "unique_sentence_group_id": "G022",
+          "tfidf_cluster_id": "TC042",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "el lugar regula los ritmos de los desarrollos",
+          "sentence_typed": "el lugar regula los ritmos de los desarrollos",
+          "keystrokes": 45,
+          "train_side_cluster_members": [
+            "el lugar regula el ritmo"
+          ]
+        },
+        {
+          "sentence_UID": "35.0_S22_2_block1",
+          "unique_sentence_group_id": "G117",
+          "tfidf_cluster_id": "TC013",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "los paneles contienen la opcion larga",
+          "sentence_typed": "los paneles contienen la opcion larga",
+          "keystrokes": 37,
+          "train_side_cluster_members": [
+            "los paneles contienen la opcion"
+          ]
+        },
+        {
+          "sentence_UID": "37.0_S22_2_block1",
+          "unique_sentence_group_id": "G097",
+          "tfidf_cluster_id": "TC050",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "las versiones del programa soportan el comando",
+          "sentence_typed": "las verisones del programa procesan el comando",
+          "keystrokes": 46,
+          "train_side_cluster_members": [
+            "las versiones soportan el comando"
+          ]
+        },
+        {
+          "sentence_UID": "38.0_S22_2_block1",
+          "unique_sentence_group_id": "G067",
+          "tfidf_cluster_id": "TC075",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "las agencias disponen los equipos por la manana",
+          "sentence_typed": "las agencias disponen los equipos por la maaana",
+          "keystrokes": 47,
+          "train_side_cluster_members": [
+            "las agencias disponen los equipos"
+          ]
+        },
+        {
+          "sentence_UID": "39.0_S22_2_block1",
+          "unique_sentence_group_id": "G036",
+          "tfidf_cluster_id": "TC085",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "la ciencia de la idea rompe la vision",
+          "sentence_typed": "la ciencia de la idea rompe la vision",
+          "keystrokes": 37,
+          "train_side_cluster_members": [
+            "la ciencia rompe la vision"
+          ]
+        },
+        {
+          "sentence_UID": "41.0_S22_2_block1",
+          "unique_sentence_group_id": "G019",
+          "tfidf_cluster_id": "TC091",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "el jefe de la edicion configura los campos",
+          "sentence_typed": "el jefe de la edicion configura los campos",
+          "keystrokes": 42,
+          "train_side_cluster_members": [
+            "el jefe configura el campo"
+          ]
+        },
+        {
+          "sentence_UID": "42.0_S22_2_block1",
+          "unique_sentence_group_id": "G039",
+          "tfidf_cluster_id": "TC081",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "la compania anuncia las adquisiciones de los datos",
+          "sentence_typed": "la compaaia anuncai la sadquisiciones de los datos",
+          "keystrokes": 50,
+          "train_side_cluster_members": [
+            "la compania anuncia las adquisiciones"
+          ]
+        },
+        {
+          "sentence_UID": "43.0_S22_2_block1",
+          "unique_sentence_group_id": "G013",
+          "tfidf_cluster_id": "TC018",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "el flujo atraviesa las bobinas con los nucleos",
+          "sentence_typed": "el flujo atraviesa las bobinas con los nucleos",
+          "keystrokes": 46,
+          "train_side_cluster_members": [
+            "el flujo atraviesa las bobinas"
+          ]
+        },
+        {
+          "sentence_UID": "46.0_S22_2_block1",
+          "unique_sentence_group_id": "G050",
+          "tfidf_cluster_id": "TC037",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "la investigacion real recoge los conocimientos",
+          "sentence_typed": "la investiagacion real recoge los conocimientos",
+          "keystrokes": 47,
+          "train_side_cluster_members": [
+            "la investigacion recoge los conocimientos"
+          ]
+        },
+        {
+          "sentence_UID": "47.0_S22_2_block1",
+          "unique_sentence_group_id": "G062",
+          "tfidf_cluster_id": "TC047",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "la sociedad plantea la necesidad del apoyo",
+          "sentence_typed": "la sociedad plantea la necesidad del apoyo",
+          "keystrokes": 42,
+          "train_side_cluster_members": [
+            "la sociedad plantea la necesidad"
+          ]
+        },
+        {
+          "sentence_UID": "48.0_S22_2_block1",
+          "unique_sentence_group_id": "G102",
+          "tfidf_cluster_id": "TC054",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "los corredores con las marcas aceleran la carrera",
+          "sentence_typed": "los corredores con las marcas aceleran la carrera",
+          "keystrokes": 49,
+          "train_side_cluster_members": [
+            "los corredores aceleran la carrera"
+          ]
+        },
+        {
+          "sentence_UID": "49.0_S22_2_block1",
+          "unique_sentence_group_id": "G034",
+          "tfidf_cluster_id": "TC074",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "la aplicacion buena posibilita las creaciones",
+          "sentence_typed": "la aplicacion buena posibilida las creaciones",
+          "keystrokes": 45,
+          "train_side_cluster_members": [
+            "la aplicacion posibilita las creaciones"
+          ]
+        },
+        {
+          "sentence_UID": "50.0_S22_2_block1",
+          "unique_sentence_group_id": "G008",
+          "tfidf_cluster_id": "TC035",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "el cliente establece la conexion creada",
+          "sentence_typed": "el cliente establece la conexion creada",
+          "keystrokes": 39,
+          "train_side_cluster_members": [
+            "el cliente establece las conexiones"
+          ]
+        },
+        {
+          "sentence_UID": "53.0_S22_2_block1",
+          "unique_sentence_group_id": "G074",
+          "tfidf_cluster_id": "TC041",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "las calles marcan las lineas imaginarias",
+          "sentence_typed": "las calles marcan las lineas imaginarias",
+          "keystrokes": 40,
+          "train_side_cluster_members": [
+            "las calles marcan las lineas"
+          ]
+        },
+        {
+          "sentence_UID": "54.0_S22_2_block1",
+          "unique_sentence_group_id": "G053",
+          "tfidf_cluster_id": "TC003",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "la modalidad permite el trabajo en los campos",
+          "sentence_typed": "la modalidad permit el trabajo en los campos",
+          "keystrokes": 44,
+          "train_side_cluster_members": [
+            "la modalidad permite el trabajo"
+          ]
+        },
+        {
+          "sentence_UID": "55.0_S22_2_block1",
+          "unique_sentence_group_id": "G121",
+          "tfidf_cluster_id": "TC020",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "los productos cumplen la propiedad asociada",
+          "sentence_typed": "lso productos cumplen la propiedad asociada",
+          "keystrokes": 43,
+          "train_side_cluster_members": [
+            "los productos cumplen la propiedad"
+          ]
+        },
+        {
+          "sentence_UID": "59.0_S22_2_block1",
+          "unique_sentence_group_id": "G069",
+          "tfidf_cluster_id": "TC011",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "las bolas blancas impactan las bandas",
+          "sentence_typed": "las bolas blancas imponen las bandas",
+          "keystrokes": 36,
+          "train_side_cluster_members": [
+            "las bolas impactan las bandas"
+          ]
+        },
+        {
+          "sentence_UID": "60.0_S22_2_block1",
+          "unique_sentence_group_id": "G004",
+          "tfidf_cluster_id": "TC021",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "el caballo hermoso recorre las casillas",
+          "sentence_typed": "el caballo hermoso recorre las casillas",
+          "keystrokes": 39,
+          "train_side_cluster_members": [
+            "el caballo recorre la casilla"
+          ]
+        },
+        {
+          "sentence_UID": "62.0_S22_2_block1",
+          "unique_sentence_group_id": "G057",
+          "tfidf_cluster_id": "TC034",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "la regla brinda la garantia de las calidades",
+          "sentence_typed": "la regla brinda la garantia de las calidades",
+          "keystrokes": 44,
+          "train_side_cluster_members": [
+            "la regla brinda las garantias"
+          ]
+        },
+        {
+          "sentence_UID": "64.0_S22_2_block1",
+          "unique_sentence_group_id": "G077",
+          "tfidf_cluster_id": "TC014",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "las condiciones favorecen el desarrollo maritimo",
+          "sentence_typed": "las condiciones favorecen el desarrollo maritimo",
+          "keystrokes": 48,
+          "train_side_cluster_members": [
+            "las condiciones favorecen los desarrollos"
+          ]
+        },
+        {
+          "sentence_UID": "65.0_S22_2_block1",
+          "unique_sentence_group_id": "G127",
+          "tfidf_cluster_id": "TC032",
+          "session": "2",
+          "block": "block1",
+          "list_id": "list2",
+          "sentence_presented": "los usos ofrecen las ventajas energeticas",
+          "sentence_typed": "los usos ofrecen las ventajas energeticas",
+          "keystrokes": 41,
+          "train_side_cluster_members": [
+            "los usos ofrecen la ventaja"
+          ]
+        }
+      ],
+      "validation_carve_out": {
+        "rule": "official seed (1) shuffle of the training side's official clusters, then the official first-fit allocation at the official train:val proportion 80:10; a cluster fitting neither stays in train. A research choice for early stopping, not official code.",
+        "target_keystrokes": {
+          "train": 1813,
+          "val": 226
+        },
+        "achieved_keystrokes": {
+          "train": 1821,
+          "val": 219
+        },
+        "overflow_clusters_kept_in_train": [
+          "TC024"
+        ]
+      },
+      "composition": {
+        "train": {
+          "sentence_records": 57,
+          "unique_sentence_groups": 57,
+          "tfidf_clusters": 57,
+          "keystrokes": 1821,
+          "by_session_block_list": {
+            "session1/block1/list1": {
+              "sentence_records": 57,
+              "keystrokes": 1821
+            }
+          }
+        },
+        "val": {
+          "sentence_records": 7,
+          "unique_sentence_groups": 7,
+          "tfidf_clusters": 7,
+          "keystrokes": 219,
+          "by_session_block_list": {
+            "session1/block1/list1": {
+              "sentence_records": 7,
+              "keystrokes": 219
+            }
+          }
+        },
+        "test": {
+          "sentence_records": 32,
+          "unique_sentence_groups": 32,
+          "tfidf_clusters": 32,
+          "keystrokes": 1363,
+          "by_session_block_list": {
+            "session2/block1/list2": {
+              "sentence_records": 32,
+              "keystrokes": 1363
+            }
+          }
+        }
+      },
+      "overlaps": {
+        "train_vs_val": {
+          "presented_text_overlap": 0,
+          "typed_text_overlap": 0,
+          "sentence_UID_overlap": 0,
+          "unique_sentence_group_overlap": 0,
+          "tfidf_cluster_overlap": 0,
+          "paraphrase_pairs_above_official_threshold": 0,
+          "max_cross_partition_tfidf_cosine": 0.1715598730838859,
+          "most_similar_cross_partition_pair": {
+            "a": "el jefe configura el campo",
+            "b": "el algoritmo recorre el nodo",
+            "cosine": 0.1715598730838859
+          }
+        },
+        "train_vs_test": {
+          "presented_text_overlap": 0,
+          "typed_text_overlap": 0,
+          "sentence_UID_overlap": 0,
+          "unique_sentence_group_overlap": 0,
+          "tfidf_cluster_overlap": 0,
+          "paraphrase_pairs_above_official_threshold": 0,
+          "max_cross_partition_tfidf_cosine": 0.299227441146253,
+          "most_similar_cross_partition_pair": {
+            "a": "la persona compara las cosas",
+            "b": "las personas comparan las cosas unicas",
+            "cosine": 0.299227441146253
+          }
+        },
+        "val_vs_test": {
+          "presented_text_overlap": 0,
+          "typed_text_overlap": 0,
+          "sentence_UID_overlap": 0,
+          "unique_sentence_group_overlap": 0,
+          "tfidf_cluster_overlap": 0,
+          "paraphrase_pairs_above_official_threshold": 0,
+          "max_cross_partition_tfidf_cosine": 0.14288044771798702,
+          "most_similar_cross_partition_pair": {
+            "a": "la gaceta trae la entrevista",
+            "b": "la explicacion aclara la pregunta de la evaluacion",
+            "cosine": 0.14288044771798702
+          }
+        }
+      },
+      "twin_check": {
+        "groups_split_across_partitions": [],
+        "no_group_split_across_partitions": true,
+        "unused_occurrences_of_used_groups": [
+          "10.0_S22_1_block2",
+          "10.0_S22_2_block2",
+          "11.0_S22_1_block2",
+          "11.0_S22_2_block2",
+          "12.0_S22_1_block2",
+          "12.0_S22_2_block2",
+          "13.0_S22_2_block2",
+          "14.0_S22_2_block2",
+          "15.0_S22_2_block2",
+          "16.0_S22_1_block2",
+          "16.0_S22_2_block2",
+          "17.0_S22_1_block2",
+          "17.0_S22_2_block2",
+          "18.0_S22_2_block2",
+          "19.0_S22_1_block2",
+          "19.0_S22_2_block2",
+          "2.0_S22_1_block2",
+          "2.0_S22_2_block2",
+          "20.0_S22_1_block2",
+          "20.0_S22_2_block2",
+          "21.0_S22_2_block2",
+          "22.0_S22_2_block2",
+          "23.0_S22_2_block2",
+          "24.0_S22_1_block2",
+          "24.0_S22_2_block2",
+          "25.0_S22_2_block2",
+          "26.0_S22_2_block2",
+          "27.0_S22_2_block2",
+          "28.0_S22_1_block2",
+          "28.0_S22_2_block2",
+          "29.0_S22_2_block2",
+          "3.0_S22_1_block2",
+          "3.0_S22_2_block2",
+          "30.0_S22_2_block2",
+          "31.0_S22_1_block2",
+          "31.0_S22_2_block2",
+          "32.0_S22_1_block2",
+          "32.0_S22_2_block2",
+          "33.0_S22_1_block2",
+          "33.0_S22_2_block2",
+          "34.0_S22_1_block2",
+          "34.0_S22_2_block2",
+          "35.0_S22_1_block2",
+          "35.0_S22_2_block2",
+          "36.0_S22_2_block2",
+          "37.0_S22_2_block2",
+          "38.0_S22_1_block2",
+          "38.0_S22_2_block2",
+          "39.0_S22_2_block2",
+          "4.0_S22_2_block2",
+          "40.0_S22_2_block2",
+          "41.0_S22_2_block2",
+          "42.0_S22_1_block2",
+          "42.0_S22_2_block2",
+          "43.0_S22_1_block2",
+          "43.0_S22_2_block2",
+          "44.0_S22_1_block2",
+          "44.0_S22_2_block2",
+          "45.0_S22_1_block2",
+          "45.0_S22_2_block2",
+          "46.0_S22_1_block2",
+          "46.0_S22_2_block2",
+          "47.0_S22_2_block2",
+          "48.0_S22_1_block2",
+          "48.0_S22_2_block2",
+          "49.0_S22_2_block2",
+          "5.0_S22_2_block2",
+          "50.0_S22_2_block2",
+          "51.0_S22_1_block2",
+          "51.0_S22_2_block2",
+          "52.0_S22_1_block2",
+          "52.0_S22_2_block2",
+          "53.0_S22_1_block2",
+          "53.0_S22_2_block2",
+          "54.0_S22_1_block2",
+          "54.0_S22_2_block2",
+          "55.0_S22_2_block2",
+          "56.0_S22_1_block2",
+          "56.0_S22_2_block2",
+          "57.0_S22_2_block2",
+          "58.0_S22_1_block2",
+          "58.0_S22_2_block2",
+          "59.0_S22_2_block2",
+          "6.0_S22_1_block2",
+          "6.0_S22_2_block2",
+          "60.0_S22_2_block2",
+          "61.0_S22_1_block2",
+          "61.0_S22_2_block2",
+          "62.0_S22_2_block2",
+          "63.0_S22_2_block2",
+          "64.0_S22_2_block2",
+          "65.0_S22_1_block2",
+          "65.0_S22_2_block2",
+          "7.0_S22_2_block2",
+          "8.0_S22_2_block2",
+          "9.0_S22_2_block2"
+        ]
+      },
+      "all_clean": true,
+      "classification": "CLUSTER-DISJOINT (official TF-IDF clusters)"
+    },
+    "E_clean": {
+      "definition": "TRAIN = session 1 list2 (s1/block2); TEST = session 2 list1 (s2/block2)",
+      "literal_definition": {
+        "train_records": 64,
+        "test_records": 64,
+        "overlap_checks": {
+          "presented_text_overlap": 0,
+          "typed_text_overlap": 0,
+          "sentence_UID_overlap": 0,
+          "unique_sentence_group_overlap": 0,
+          "tfidf_cluster_overlap": 32,
+          "paraphrase_pairs_above_official_threshold": 32,
+          "max_cross_partition_tfidf_cosine": 0.8749253854285167,
+          "most_similar_cross_partition_pair": {
+            "a": "la investigacion real recoge los conocimientos",
+            "b": "la investigacion recoge los conocimientos",
+            "cosine": 0.8749253854285167
+          }
+        },
+        "cluster_integrity_preserved": false,
+        "feasible_without_breaking_clusters": false
+      },
+      "resolution": "Every official cluster with a member on the training side stays entirely on the training side; test-side sentences in such clusters are excluded from the test partition. Nothing is moved across sessions or blocks.",
+      "test_records_excluded_for_cluster_integrity": 32,
+      "clusters_shared_by_literal_train_and_test": 32,
+      "excluded_test_records": [
+        {
+          "sentence_UID": "2.0_S22_2_block2",
+          "unique_sentence_group_id": "G088",
+          "tfidf_cluster_id": "TC029",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "las interconexiones extienden la costumbre",
+          "sentence_typed": "las interconexiones extienden la costumbre",
+          "keystrokes": 42,
+          "train_side_cluster_members": [
+            "las interconexiones de la fibra extienden las costumbres"
+          ]
+        },
+        {
+          "sentence_UID": "3.0_S22_2_block2",
+          "unique_sentence_group_id": "G098",
+          "tfidf_cluster_id": "TC050",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "las versiones soportan el comando",
+          "sentence_typed": "las versiones soportan el comendo",
+          "keystrokes": 33,
+          "train_side_cluster_members": [
+            "las versiones del programa soportan el comando"
+          ]
+        },
+        {
+          "sentence_UID": "5.0_S22_2_block2",
+          "unique_sentence_group_id": "G082",
+          "tfidf_cluster_id": "TC066",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "las estrategias diferencian los pensamientos",
+          "sentence_typed": "las estrategias distinguen los pensamientos",
+          "keystrokes": 43,
+          "train_side_cluster_members": [
+            "las estrategias diferencian el pensamiento de la persona"
+          ]
+        },
+        {
+          "sentence_UID": "6.0_S22_2_block2",
+          "unique_sentence_group_id": "G076",
+          "tfidf_cluster_id": "TC026",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "las codificaciones seleccionan la informacion",
+          "sentence_typed": "las selecciones dofician la informaci@on",
+          "keystrokes": 40,
+          "train_side_cluster_members": [
+            "las codificaciones de los caracteres seleccionan la informacion"
+          ]
+        },
+        {
+          "sentence_UID": "10.0_S22_2_block2",
+          "unique_sentence_group_id": "G116",
+          "tfidf_cluster_id": "TC013",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "los paneles contienen la opcion",
+          "sentence_typed": "los paneles contienne la opcion",
+          "keystrokes": 31,
+          "train_side_cluster_members": [
+            "los paneles contienen la opcion larga"
+          ]
+        },
+        {
+          "sentence_UID": "12.0_S22_2_block2",
+          "unique_sentence_group_id": "G058",
+          "tfidf_cluster_id": "TC034",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "la regla brinda las garantias",
+          "sentence_typed": "la regla brinda las garantias",
+          "keystrokes": 29,
+          "train_side_cluster_members": [
+            "la regla brinda la garantia de las calidades"
+          ]
+        },
+        {
+          "sentence_UID": "13.0_S22_2_block2",
+          "unique_sentence_group_id": "G029",
+          "tfidf_cluster_id": "TC083",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "el signo conserva los resultados",
+          "sentence_typed": "el signo conserva los resultados",
+          "keystrokes": 32,
+          "train_side_cluster_members": [
+            "el signo radical conserva el resultado"
+          ]
+        },
+        {
+          "sentence_UID": "17.0_S22_2_block2",
+          "unique_sentence_group_id": "G105",
+          "tfidf_cluster_id": "TC025",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "los ejemplos muestran los bloques",
+          "sentence_typed": "los ejemplos muestran los bloques",
+          "keystrokes": 33,
+          "train_side_cluster_members": [
+            "los ejemplos muestran los bloques de las canteras"
+          ]
+        },
+        {
+          "sentence_UID": "18.0_S22_2_block2",
+          "unique_sentence_group_id": "G006",
+          "tfidf_cluster_id": "TC031",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "el centro describe las parabolas",
+          "sentence_typed": "el centro describe las parabolas",
+          "keystrokes": 32,
+          "train_side_cluster_members": [
+            "el centro describe las parabolas asociadas"
+          ]
+        },
+        {
+          "sentence_UID": "19.0_S22_2_block2",
+          "unique_sentence_group_id": "G070",
+          "tfidf_cluster_id": "TC011",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "las bolas impactan las bandas",
+          "sentence_typed": "las bolas impactan las bandas",
+          "keystrokes": 29,
+          "train_side_cluster_members": [
+            "las bolas blancas impactan las bandas"
+          ]
+        },
+        {
+          "sentence_UID": "20.0_S22_2_block2",
+          "unique_sentence_group_id": "G005",
+          "tfidf_cluster_id": "TC021",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "el caballo recorre la casilla",
+          "sentence_typed": "el caballo recorre la casilla",
+          "keystrokes": 29,
+          "train_side_cluster_members": [
+            "el caballo hermoso recorre las casillas"
+          ]
+        },
+        {
+          "sentence_UID": "23.0_S22_2_block2",
+          "unique_sentence_group_id": "G101",
+          "tfidf_cluster_id": "TC054",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "los corredores aceleran la carrera",
+          "sentence_typed": "los corredores aceleran la carrera",
+          "keystrokes": 34,
+          "train_side_cluster_members": [
+            "los corredores con las marcas aceleran la carrera"
+          ]
+        },
+        {
+          "sentence_UID": "30.0_S22_2_block2",
+          "unique_sentence_group_id": "G009",
+          "tfidf_cluster_id": "TC035",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "el cliente establece las conexiones",
+          "sentence_typed": "el cliente establece las conexioes",
+          "keystrokes": 34,
+          "train_side_cluster_members": [
+            "el cliente establece la conexion creada"
+          ]
+        },
+        {
+          "sentence_UID": "31.0_S22_2_block2",
+          "unique_sentence_group_id": "G108",
+          "tfidf_cluster_id": "TC046",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "los elementos manifiestan los danos",
+          "sentence_typed": "los elementos manifiestan lso daaos",
+          "keystrokes": 35,
+          "train_side_cluster_members": [
+            "los elementos apropiados manifiestan los danos"
+          ]
+        },
+        {
+          "sentence_UID": "32.0_S22_2_block2",
+          "unique_sentence_group_id": "G035",
+          "tfidf_cluster_id": "TC074",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "la aplicacion posibilita las creaciones",
+          "sentence_typed": "la aplicacione posibilita las creaciones",
+          "keystrokes": 40,
+          "train_side_cluster_members": [
+            "la aplicacion buena posibilita las creaciones"
+          ]
+        },
+        {
+          "sentence_UID": "33.0_S22_2_block2",
+          "unique_sentence_group_id": "G051",
+          "tfidf_cluster_id": "TC037",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "la investigacion recoge los conocimientos",
+          "sentence_typed": "la investiagcion recoge los conocimientos",
+          "keystrokes": 41,
+          "train_side_cluster_members": [
+            "la investigacion real recoge los conocimientos"
+          ]
+        },
+        {
+          "sentence_UID": "34.0_S22_2_block2",
+          "unique_sentence_group_id": "G120",
+          "tfidf_cluster_id": "TC020",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "los productos cumplen la propiedad",
+          "sentence_typed": "los productos cumplen la propiedad",
+          "keystrokes": 34,
+          "train_side_cluster_members": [
+            "los productos cumplen la propiedad asociada"
+          ]
+        },
+        {
+          "sentence_UID": "35.0_S22_2_block2",
+          "unique_sentence_group_id": "G001",
+          "tfidf_cluster_id": "TC004",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "el algoritmo recorre el nodo",
+          "sentence_typed": "el algorimto recorre el nodo",
+          "keystrokes": 28,
+          "train_side_cluster_members": [
+            "el algoritmo de los controles recorre el nodo"
+          ]
+        },
+        {
+          "sentence_UID": "36.0_S22_2_block2",
+          "unique_sentence_group_id": "G126",
+          "tfidf_cluster_id": "TC032",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "los usos ofrecen la ventaja",
+          "sentence_typed": "los usos ofrecen la ventaja",
+          "keystrokes": 27,
+          "train_side_cluster_members": [
+            "los usos ofrecen las ventajas energeticas"
+          ]
+        },
+        {
+          "sentence_UID": "39.0_S22_2_block2",
+          "unique_sentence_group_id": "G052",
+          "tfidf_cluster_id": "TC003",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "la modalidad permite el trabajo",
+          "sentence_typed": "l amodalidad permite el traabjo",
+          "keystrokes": 31,
+          "train_side_cluster_members": [
+            "la modalidad permite el trabajo en los campos"
+          ]
+        },
+        {
+          "sentence_UID": "40.0_S22_2_block2",
+          "unique_sentence_group_id": "G043",
+          "tfidf_cluster_id": "TC006",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "la enfermedad revela las claves",
+          "sentence_typed": "la enfermedad revela las claves",
+          "keystrokes": 31,
+          "train_side_cluster_members": [
+            "la enfermedad revela las claves para la decision"
+          ]
+        },
+        {
+          "sentence_UID": "41.0_S22_2_block2",
+          "unique_sentence_group_id": "G066",
+          "tfidf_cluster_id": "TC075",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "las agencias disponen los equipos",
+          "sentence_typed": "las agencias disponen los equipos",
+          "keystrokes": 33,
+          "train_side_cluster_members": [
+            "las agencias disponen los equipos por la manana"
+          ]
+        },
+        {
+          "sentence_UID": "42.0_S22_2_block2",
+          "unique_sentence_group_id": "G078",
+          "tfidf_cluster_id": "TC014",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "las condiciones favorecen los desarrollos",
+          "sentence_typed": "las condiciones favorecen los desarrollos",
+          "keystrokes": 41,
+          "train_side_cluster_members": [
+            "las condiciones favorecen el desarrollo maritimo"
+          ]
+        },
+        {
+          "sentence_UID": "49.0_S22_2_block2",
+          "unique_sentence_group_id": "G072",
+          "tfidf_cluster_id": "TC057",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "las bolsas registran las perdidas",
+          "sentence_typed": "las bolsas registran las perdidas",
+          "keystrokes": 33,
+          "train_side_cluster_members": [
+            "las bolsas pequenas registran la perdida"
+          ]
+        },
+        {
+          "sentence_UID": "50.0_S22_2_block2",
+          "unique_sentence_group_id": "G037",
+          "tfidf_cluster_id": "TC085",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "la ciencia rompe la vision",
+          "sentence_typed": "la ciencia rompe la vision",
+          "keystrokes": 26,
+          "train_side_cluster_members": [
+            "la ciencia de la idea rompe la vision"
+          ]
+        },
+        {
+          "sentence_UID": "52.0_S22_2_block2",
+          "unique_sentence_group_id": "G061",
+          "tfidf_cluster_id": "TC047",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "la sociedad plantea la necesidad",
+          "sentence_typed": "la sociedad plantea la necesidad",
+          "keystrokes": 32,
+          "train_side_cluster_members": [
+            "la sociedad plantea la necesidad del apoyo"
+          ]
+        },
+        {
+          "sentence_UID": "56.0_S22_2_block2",
+          "unique_sentence_group_id": "G018",
+          "tfidf_cluster_id": "TC091",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "el jefe configura el campo",
+          "sentence_typed": "el jefe configura el campo",
+          "keystrokes": 26,
+          "train_side_cluster_members": [
+            "el jefe de la edicion configura los campos"
+          ]
+        },
+        {
+          "sentence_UID": "58.0_S22_2_block2",
+          "unique_sentence_group_id": "G038",
+          "tfidf_cluster_id": "TC081",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "la compania anuncia las adquisiciones",
+          "sentence_typed": "la compaaia comunica las aduisiciones",
+          "keystrokes": 37,
+          "train_side_cluster_members": [
+            "la compania anuncia las adquisiciones de los datos"
+          ]
+        },
+        {
+          "sentence_UID": "60.0_S22_2_block2",
+          "unique_sentence_group_id": "G041",
+          "tfidf_cluster_id": "TC005",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "la diversidad dificulta la relacion",
+          "sentence_typed": "la diversidad dificulta la relacion",
+          "keystrokes": 35,
+          "train_side_cluster_members": [
+            "la diversidad previa dificulta la relacion"
+          ]
+        },
+        {
+          "sentence_UID": "61.0_S22_2_block2",
+          "unique_sentence_group_id": "G073",
+          "tfidf_cluster_id": "TC041",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "las calles marcan las lineas",
+          "sentence_typed": "las calles marcan las lineas",
+          "keystrokes": 28,
+          "train_side_cluster_members": [
+            "las calles marcan las lineas imaginarias"
+          ]
+        },
+        {
+          "sentence_UID": "63.0_S22_2_block2",
+          "unique_sentence_group_id": "G012",
+          "tfidf_cluster_id": "TC018",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "el flujo atraviesa las bobinas",
+          "sentence_typed": "el flujo atraviesa las bobinas",
+          "keystrokes": 30,
+          "train_side_cluster_members": [
+            "el flujo atraviesa las bobinas con los nucleos"
+          ]
+        },
+        {
+          "sentence_UID": "64.0_S22_2_block2",
+          "unique_sentence_group_id": "G021",
+          "tfidf_cluster_id": "TC042",
+          "session": "2",
+          "block": "block2",
+          "list_id": "list1",
+          "sentence_presented": "el lugar regula el ritmo",
+          "sentence_typed": "el lugar regula el ritmo",
+          "keystrokes": 24,
+          "train_side_cluster_members": [
+            "el lugar regula los ritmos de los desarrollos"
+          ]
+        }
+      ],
+      "validation_carve_out": {
+        "rule": "official seed (1) shuffle of the training side's official clusters, then the official first-fit allocation at the official train:val proportion 80:10; a cluster fitting neither stays in train. A research choice for early stopping, not official code.",
+        "target_keystrokes": {
+          "train": 2448,
+          "val": 306
+        },
+        "achieved_keystrokes": {
+          "train": 2458,
+          "val": 297
+        },
+        "overflow_clusters_kept_in_train": [
+          "TC025"
+        ]
+      },
+      "composition": {
+        "train": {
+          "sentence_records": 58,
+          "unique_sentence_groups": 58,
+          "tfidf_clusters": 58,
+          "keystrokes": 2458,
+          "by_session_block_list": {
+            "session1/block2/list2": {
+              "sentence_records": 58,
+              "keystrokes": 2458
+            }
+          }
+        },
+        "val": {
+          "sentence_records": 6,
+          "unique_sentence_groups": 6,
+          "tfidf_clusters": 6,
+          "keystrokes": 297,
+          "by_session_block_list": {
+            "session1/block2/list2": {
+              "sentence_records": 6,
+              "keystrokes": 297
+            }
+          }
+        },
+        "test": {
+          "sentence_records": 32,
+          "unique_sentence_groups": 32,
+          "tfidf_clusters": 32,
+          "keystrokes": 1010,
+          "by_session_block_list": {
+            "session2/block2/list1": {
+              "sentence_records": 32,
+              "keystrokes": 1010
+            }
+          }
+        }
+      },
+      "overlaps": {
+        "train_vs_val": {
+          "presented_text_overlap": 0,
+          "typed_text_overlap": 0,
+          "sentence_UID_overlap": 0,
+          "unique_sentence_group_overlap": 0,
+          "tfidf_cluster_overlap": 0,
+          "paraphrase_pairs_above_official_threshold": 0,
+          "max_cross_partition_tfidf_cosine": 0.21565173788523484,
+          "most_similar_cross_partition_pair": {
+            "a": "las agencias disponen los equipos por la manana",
+            "b": "los beneficios superan el riesgo por los puestos",
+            "cosine": 0.21565173788523484
+          }
+        },
+        "train_vs_test": {
+          "presented_text_overlap": 0,
+          "typed_text_overlap": 0,
+          "sentence_UID_overlap": 0,
+          "unique_sentence_group_overlap": 0,
+          "tfidf_cluster_overlap": 0,
+          "paraphrase_pairs_above_official_threshold": 0,
+          "max_cross_partition_tfidf_cosine": 0.299757442716294,
+          "most_similar_cross_partition_pair": {
+            "a": "las estrategias diferencian el pensamiento de la persona",
+            "b": "la persona compara las cosas",
+            "cosine": 0.299757442716294
+          }
+        },
+        "val_vs_test": {
+          "presented_text_overlap": 0,
+          "typed_text_overlap": 0,
+          "sentence_UID_overlap": 0,
+          "unique_sentence_group_overlap": 0,
+          "tfidf_cluster_overlap": 0,
+          "paraphrase_pairs_above_official_threshold": 0,
+          "max_cross_partition_tfidf_cosine": 0.2894980209079789,
+          "most_similar_cross_partition_pair": {
+            "a": "las estadisticas robustas siguen la distribucion",
+            "b": "la estadistica sigue la distribucion",
+            "cosine": 0.2894980209079789
+          }
+        }
+      },
+      "twin_check": {
+        "groups_split_across_partitions": [],
+        "no_group_split_across_partitions": true,
+        "unused_occurrences_of_used_groups": [
+          "10.0_S22_1_block1",
+          "10.0_S22_2_block1",
+          "11.0_S22_1_block1",
+          "11.0_S22_2_block1",
+          "12.0_S22_1_block1",
+          "12.0_S22_2_block1",
+          "13.0_S22_1_block1",
+          "13.0_S22_2_block1",
+          "14.0_S22_1_block1",
+          "14.0_S22_2_block1",
+          "15.0_S22_2_block1",
+          "16.0_S22_2_block1",
+          "17.0_S22_2_block1",
+          "18.0_S22_2_block1",
+          "19.0_S22_1_block1",
+          "19.0_S22_2_block1",
+          "2.0_S22_1_block1",
+          "2.0_S22_2_block1",
+          "20.0_S22_2_block1",
+          "21.0_S22_2_block1",
+          "22.0_S22_2_block1",
+          "23.0_S22_1_block1",
+          "23.0_S22_2_block1",
+          "24.0_S22_1_block1",
+          "24.0_S22_2_block1",
+          "25.0_S22_2_block1",
+          "26.0_S22_2_block1",
+          "27.0_S22_2_block1",
+          "28.0_S22_2_block1",
+          "29.0_S22_2_block1",
+          "3.0_S22_1_block1",
+          "3.0_S22_2_block1",
+          "30.0_S22_1_block1",
+          "30.0_S22_2_block1",
+          "31.0_S22_2_block1",
+          "32.0_S22_1_block1",
+          "32.0_S22_2_block1",
+          "33.0_S22_1_block1",
+          "33.0_S22_2_block1",
+          "34.0_S22_1_block1",
+          "34.0_S22_2_block1",
+          "35.0_S22_2_block1",
+          "36.0_S22_1_block1",
+          "36.0_S22_2_block1",
+          "37.0_S22_1_block1",
+          "37.0_S22_2_block1",
+          "38.0_S22_1_block1",
+          "38.0_S22_2_block1",
+          "39.0_S22_2_block1",
+          "4.0_S22_1_block1",
+          "4.0_S22_2_block1",
+          "40.0_S22_2_block1",
+          "41.0_S22_2_block1",
+          "42.0_S22_1_block1",
+          "42.0_S22_2_block1",
+          "43.0_S22_2_block1",
+          "44.0_S22_2_block1",
+          "45.0_S22_2_block1",
+          "46.0_S22_2_block1",
+          "47.0_S22_2_block1",
+          "48.0_S22_2_block1",
+          "49.0_S22_2_block1",
+          "5.0_S22_1_block1",
+          "5.0_S22_2_block1",
+          "50.0_S22_1_block1",
+          "50.0_S22_2_block1",
+          "51.0_S22_2_block1",
+          "52.0_S22_2_block1",
+          "53.0_S22_2_block1",
+          "54.0_S22_1_block1",
+          "54.0_S22_2_block1",
+          "55.0_S22_1_block1",
+          "55.0_S22_2_block1",
+          "56.0_S22_1_block1",
+          "56.0_S22_2_block1",
+          "57.0_S22_1_block1",
+          "57.0_S22_2_block1",
+          "58.0_S22_1_block1",
+          "58.0_S22_2_block1",
+          "59.0_S22_1_block1",
+          "59.0_S22_2_block1",
+          "6.0_S22_2_block1",
+          "60.0_S22_2_block1",
+          "61.0_S22_1_block1",
+          "61.0_S22_2_block1",
+          "62.0_S22_1_block1",
+          "62.0_S22_2_block1",
+          "63.0_S22_1_block1",
+          "63.0_S22_2_block1",
+          "64.0_S22_2_block1",
+          "65.0_S22_1_block1",
+          "65.0_S22_2_block1",
+          "7.0_S22_2_block1",
+          "8.0_S22_1_block1",
+          "8.0_S22_2_block1",
+          "9.0_S22_2_block1"
+        ]
+      },
+      "all_clean": true,
+      "classification": "CLUSTER-DISJOINT (official TF-IDF clusters)"
+    }
+  },
+  "leakage_checks": {
+    "official_split_clean": true,
+    "D_clean_clean": true,
+    "E_clean_clean": true,
+    "literal_D_feasible": false,
+    "literal_E_feasible": false
+  }
+}

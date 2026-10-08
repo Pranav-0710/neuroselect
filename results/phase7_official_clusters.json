@@ -1,0 +1,3015 @@
+{
+  "task": "Phase 7: official TF-IDF clusters of the S22 sentence texts (captured from the official splitter)",
+  "clusters": [
+    {
+      "tfidf_cluster_id": "TC000",
+      "official_allocation_order": 0,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los crecimientos aumentan las estructuras"
+      ],
+      "unique_sentence_groups": [
+        "G103"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 82,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 82,
+        "assigned": "train",
+        "running_totals": {
+          "train": 82,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC001",
+      "official_allocation_order": 1,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los programas piden el permiso"
+      ],
+      "unique_sentence_groups": [
+        "G122"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 60,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 60,
+        "assigned": "train",
+        "running_totals": {
+          "train": 142,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC002",
+      "official_allocation_order": 2,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "la silla ocasiona las lesiones"
+      ],
+      "unique_sentence_groups": [
+        "G060"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 60,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 60,
+        "assigned": "train",
+        "running_totals": {
+          "train": 202,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC003",
+      "official_allocation_order": 3,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "la modalidad permite el trabajo",
+        "la modalidad permite el trabajo en los campos"
+      ],
+      "unique_sentence_groups": [
+        "G052",
+        "G053"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 151,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.7857413680475065,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 151,
+        "assigned": "train",
+        "running_totals": {
+          "train": 353,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC004",
+      "official_allocation_order": 4,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "el algoritmo recorre el nodo",
+        "el algoritmo de los controles recorre el nodo"
+      ],
+      "unique_sentence_groups": [
+        "G000",
+        "G001"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 146,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.8136141094744427,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 146,
+        "assigned": "train",
+        "running_totals": {
+          "train": 499,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC005",
+      "official_allocation_order": 5,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "la diversidad dificulta la relacion",
+        "la diversidad previa dificulta la relacion"
+      ],
+      "unique_sentence_groups": [
+        "G041",
+        "G042"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 154,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.8642254557915557,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 154,
+        "assigned": "train",
+        "running_totals": {
+          "train": 653,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC006",
+      "official_allocation_order": 6,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "la enfermedad revela las claves",
+        "la enfermedad revela las claves para la decision"
+      ],
+      "unique_sentence_groups": [
+        "G043",
+        "G044"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 160,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.7764398413432072,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 160,
+        "assigned": "train",
+        "running_totals": {
+          "train": 813,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC007",
+      "official_allocation_order": 7,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "las explicaciones aclaran las preguntas"
+      ],
+      "unique_sentence_groups": [
+        "G083"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 78,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 78,
+        "assigned": "train",
+        "running_totals": {
+          "train": 891,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC008",
+      "official_allocation_order": 8,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "las gacetas traen las entrevistas con las acusaciones"
+      ],
+      "unique_sentence_groups": [
+        "G086"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 106,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 106,
+        "assigned": "train",
+        "running_totals": {
+          "train": 997,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC009",
+      "official_allocation_order": 9,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el jugador golpea la pelot"
+      ],
+      "unique_sentence_groups": [
+        "G020"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 55,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 55,
+        "assigned": "train",
+        "running_totals": {
+          "train": 1052,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC010",
+      "official_allocation_order": 10,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el trato crea la dicha"
+      ],
+      "unique_sentence_groups": [
+        "G032"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 44,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 44,
+        "assigned": "train",
+        "running_totals": {
+          "train": 1096,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC011",
+      "official_allocation_order": 11,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "las bolas impactan las bandas",
+        "las bolas blancas impactan las bandas"
+      ],
+      "unique_sentence_groups": [
+        "G069",
+        "G070"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 131,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.8604329485023258,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 131,
+        "assigned": "train",
+        "running_totals": {
+          "train": 1227,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC012",
+      "official_allocation_order": 12,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los tratos crean las dichas en el caso"
+      ],
+      "unique_sentence_groups": [
+        "G125"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 74,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 74,
+        "assigned": "train",
+        "running_totals": {
+          "train": 1301,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC013",
+      "official_allocation_order": 13,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "los paneles contienen la opcion larga",
+        "los paneles contienen la opcion"
+      ],
+      "unique_sentence_groups": [
+        "G116",
+        "G117"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 136,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.8572585288020149,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 136,
+        "assigned": "train",
+        "running_totals": {
+          "train": 1437,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC014",
+      "official_allocation_order": 14,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "las condiciones favorecen los desarrollos",
+        "las condiciones favorecen el desarrollo maritimo"
+      ],
+      "unique_sentence_groups": [
+        "G077",
+        "G078"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 177,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.5450866465900363,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 177,
+        "assigned": "train",
+        "running_totals": {
+          "train": 1614,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC015",
+      "official_allocation_order": 15,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los procesadores del bit ejecutan las instrucciones"
+      ],
+      "unique_sentence_groups": [
+        "G119"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 87,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 87,
+        "assigned": "train",
+        "running_totals": {
+          "train": 1701,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC016",
+      "official_allocation_order": 16,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el procesador ejecuta la instruccion"
+      ],
+      "unique_sentence_groups": [
+        "G026"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 73,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 73,
+        "assigned": "train",
+        "running_totals": {
+          "train": 1774,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC017",
+      "official_allocation_order": 17,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "la funcion lee los archivos contenidos"
+      ],
+      "unique_sentence_groups": [
+        "G048"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 76,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 76,
+        "assigned": "train",
+        "running_totals": {
+          "train": 1850,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC018",
+      "official_allocation_order": 18,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "el flujo atraviesa las bobinas",
+        "el flujo atraviesa las bobinas con los nucleos"
+      ],
+      "unique_sentence_groups": [
+        "G012",
+        "G013"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 152,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.7790328692719687,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 152,
+        "assigned": "train",
+        "running_totals": {
+          "train": 2002,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC019",
+      "official_allocation_order": 19,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los grupos del organismo exigen la liberacion"
+      ],
+      "unique_sentence_groups": [
+        "G109"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 90,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 90,
+        "assigned": "train",
+        "running_totals": {
+          "train": 2092,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC020",
+      "official_allocation_order": 20,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "los productos cumplen la propiedad",
+        "los productos cumplen la propiedad asociada"
+      ],
+      "unique_sentence_groups": [
+        "G120",
+        "G121"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 154,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.8572585288020149,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 154,
+        "assigned": "train",
+        "running_totals": {
+          "train": 2246,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC021",
+      "official_allocation_order": 21,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "el caballo recorre la casilla",
+        "el caballo hermoso recorre las casillas"
+      ],
+      "unique_sentence_groups": [
+        "G004",
+        "G005"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 136,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.5147364251387873,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 136,
+        "assigned": "train",
+        "running_totals": {
+          "train": 2382,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC022",
+      "official_allocation_order": 22,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los ninos mayores acaban la escuela"
+      ],
+      "unique_sentence_groups": [
+        "G115"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 70,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 70,
+        "assigned": "train",
+        "running_totals": {
+          "train": 2452,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC023",
+      "official_allocation_order": 23,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "las estadisticas robustas siguen la distribucion"
+      ],
+      "unique_sentence_groups": [
+        "G080"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 94,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 94,
+        "assigned": "train",
+        "running_totals": {
+          "train": 2546,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC024",
+      "official_allocation_order": 24,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "las controversias cierran el paso"
+      ],
+      "unique_sentence_groups": [
+        "G079"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 66,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 66,
+        "assigned": "train",
+        "running_totals": {
+          "train": 2612,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC025",
+      "official_allocation_order": 25,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "los ejemplos muestran los bloques de las canteras",
+        "los ejemplos muestran los bloques"
+      ],
+      "unique_sentence_groups": [
+        "G105",
+        "G106"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 163,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.8222159685191887,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 163,
+        "assigned": "train",
+        "running_totals": {
+          "train": 2775,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC026",
+      "official_allocation_order": 26,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "las codificaciones de los caracteres seleccionan la informacion",
+        "las codificaciones seleccionan la informacion"
+      ],
+      "unique_sentence_groups": [
+        "G075",
+        "G076"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 209,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.8061928037437415,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 209,
+        "assigned": "train",
+        "running_totals": {
+          "train": 2984,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC027",
+      "official_allocation_order": 27,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los individuos adaptan el rasgo genetico"
+      ],
+      "unique_sentence_groups": [
+        "G111"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 81,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 81,
+        "assigned": "train",
+        "running_totals": {
+          "train": 3065,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC028",
+      "official_allocation_order": 28,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "la fuerza atrae el electron primero"
+      ],
+      "unique_sentence_groups": [
+        "G047"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 70,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 70,
+        "assigned": "train",
+        "running_totals": {
+          "train": 3135,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC029",
+      "official_allocation_order": 29,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "las interconexiones de la fibra extienden las costumbres",
+        "las interconexiones extienden la costumbre"
+      ],
+      "unique_sentence_groups": [
+        "G087",
+        "G088"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 195,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.5502345351427916,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 195,
+        "assigned": "train",
+        "running_totals": {
+          "train": 3330,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC030",
+      "official_allocation_order": 30,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el crecimiento aumenta la estructura real"
+      ],
+      "unique_sentence_groups": [
+        "G010"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 81,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 81,
+        "assigned": "train",
+        "running_totals": {
+          "train": 3411,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC031",
+      "official_allocation_order": 31,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "el centro describe las parabolas",
+        "el centro describe las parabolas asociadas"
+      ],
+      "unique_sentence_groups": [
+        "G006",
+        "G007"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 148,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.857564036927575,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 148,
+        "assigned": "train",
+        "running_totals": {
+          "train": 3559,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC032",
+      "official_allocation_order": 32,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "los usos ofrecen las ventajas energeticas",
+        "los usos ofrecen la ventaja"
+      ],
+      "unique_sentence_groups": [
+        "G126",
+        "G127"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 136,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.5380931995429142,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 136,
+        "assigned": "train",
+        "running_totals": {
+          "train": 3695,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC033",
+      "official_allocation_order": 33,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el sistema incluye las posibilidades"
+      ],
+      "unique_sentence_groups": [
+        "G031"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 72,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 72,
+        "assigned": "train",
+        "running_totals": {
+          "train": 3767,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC034",
+      "official_allocation_order": 34,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "la regla brinda las garantias",
+        "la regla brinda la garantia de las calidades"
+      ],
+      "unique_sentence_groups": [
+        "G057",
+        "G058"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 129,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.5502345351427916,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 129,
+        "assigned": "train",
+        "running_totals": {
+          "train": 3896,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC035",
+      "official_allocation_order": 35,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "el cliente establece las conexiones",
+        "el cliente establece la conexion creada"
+      ],
+      "unique_sentence_groups": [
+        "G008",
+        "G009"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 138,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.5390969622434305,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 138,
+        "assigned": "train",
+        "running_totals": {
+          "train": 4034,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC036",
+      "official_allocation_order": 36,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el programa del reasentamiento pide los permisos"
+      ],
+      "unique_sentence_groups": [
+        "G027"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 95,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 95,
+        "assigned": "train",
+        "running_totals": {
+          "train": 4129,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC037",
+      "official_allocation_order": 37,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "la investigacion real recoge los conocimientos",
+        "la investigacion recoge los conocimientos"
+      ],
+      "unique_sentence_groups": [
+        "G050",
+        "G051"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 166,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.8749253854285167,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 166,
+        "assigned": "train",
+        "running_totals": {
+          "train": 4295,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC038",
+      "official_allocation_order": 38,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los jugadores conocidos golpean la pelot"
+      ],
+      "unique_sentence_groups": [
+        "G113"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 82,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 82,
+        "assigned": "train",
+        "running_totals": {
+          "train": 4377,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC039",
+      "official_allocation_order": 39,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "la teoria erronea reduce el numero"
+      ],
+      "unique_sentence_groups": [
+        "G064"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 68,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 68,
+        "assigned": "train",
+        "running_totals": {
+          "train": 4445,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC040",
+      "official_allocation_order": 40,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el grupo exige la liberacion"
+      ],
+      "unique_sentence_groups": [
+        "G014"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 55,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 55,
+        "assigned": "train",
+        "running_totals": {
+          "train": 4500,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC041",
+      "official_allocation_order": 41,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "las calles marcan las lineas imaginarias",
+        "las calles marcan las lineas"
+      ],
+      "unique_sentence_groups": [
+        "G073",
+        "G074"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 135,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.8642254557915557,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 135,
+        "assigned": "train",
+        "running_totals": {
+          "train": 4635,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC042",
+      "official_allocation_order": 42,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "el lugar regula los ritmos de los desarrollos",
+        "el lugar regula el ritmo"
+      ],
+      "unique_sentence_groups": [
+        "G021",
+        "G022"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 138,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.5131099389223706,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 138,
+        "assigned": "train",
+        "running_totals": {
+          "train": 4773,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC043",
+      "official_allocation_order": 43,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el cuaderno presenta las divisiones enteras"
+      ],
+      "unique_sentence_groups": [
+        "G011"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 86,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 86,
+        "assigned": "train",
+        "running_totals": {
+          "train": 4859,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC044",
+      "official_allocation_order": 44,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el hilo comparte los datos"
+      ],
+      "unique_sentence_groups": [
+        "G015"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 54,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 54,
+        "assigned": "train",
+        "running_totals": {
+          "train": 4913,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC045",
+      "official_allocation_order": 45,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "las proposiciones tienen el tema"
+      ],
+      "unique_sentence_groups": [
+        "G091"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 66,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 66,
+        "assigned": "train",
+        "running_totals": {
+          "train": 4979,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC046",
+      "official_allocation_order": 46,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "los elementos manifiestan los danos",
+        "los elementos apropiados manifiestan los danos"
+      ],
+      "unique_sentence_groups": [
+        "G107",
+        "G108"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 162,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.8675306553764839,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 162,
+        "assigned": "train",
+        "running_totals": {
+          "train": 5141,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC047",
+      "official_allocation_order": 47,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "la sociedad plantea la necesidad",
+        "la sociedad plantea la necesidad del apoyo"
+      ],
+      "unique_sentence_groups": [
+        "G061",
+        "G062"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 148,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.8075639192449984,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 148,
+        "assigned": "train",
+        "running_totals": {
+          "train": 5289,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC048",
+      "official_allocation_order": 48,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los beneficios superan el riesgo por los puestos"
+      ],
+      "unique_sentence_groups": [
+        "G100"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 96,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 96,
+        "assigned": "train",
+        "running_totals": {
+          "train": 5385,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC049",
+      "official_allocation_order": 49,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "las sillas ocasionan la lesion de los organos"
+      ],
+      "unique_sentence_groups": [
+        "G093"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 90,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 90,
+        "assigned": "train",
+        "running_totals": {
+          "train": 5475,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC050",
+      "official_allocation_order": 50,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "las versiones del programa soportan el comando",
+        "las versiones soportan el comando"
+      ],
+      "unique_sentence_groups": [
+        "G097",
+        "G098"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 158,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.8132556921637664,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 158,
+        "assigned": "train",
+        "running_totals": {
+          "train": 5633,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC051",
+      "official_allocation_order": 51,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los motores rapidos consumen las energias"
+      ],
+      "unique_sentence_groups": [
+        "G114"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 82,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 82,
+        "assigned": "train",
+        "running_totals": {
+          "train": 5715,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC052",
+      "official_allocation_order": 52,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "la proposicion tiene el tema general"
+      ],
+      "unique_sentence_groups": [
+        "G056"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 71,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 71,
+        "assigned": "train",
+        "running_totals": {
+          "train": 5786,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC053",
+      "official_allocation_order": 53,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el servicio levanta las formas del ataque"
+      ],
+      "unique_sentence_groups": [
+        "G028"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 82,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 82,
+        "assigned": "train",
+        "running_totals": {
+          "train": 5868,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC054",
+      "official_allocation_order": 54,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "los corredores aceleran la carrera",
+        "los corredores con las marcas aceleran la carrera"
+      ],
+      "unique_sentence_groups": [
+        "G101",
+        "G102"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 168,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.7805736340835209,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 168,
+        "assigned": "train",
+        "running_totals": {
+          "train": 6036,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC055",
+      "official_allocation_order": 55,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "la explicacion aclara la pregunta de la evaluacion"
+      ],
+      "unique_sentence_groups": [
+        "G046"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 91,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 91,
+        "assigned": "train",
+        "running_totals": {
+          "train": 6127,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC056",
+      "official_allocation_order": 56,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "las presencias imponen el reto"
+      ],
+      "unique_sentence_groups": [
+        "G090"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 58,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 58,
+        "assigned": "train",
+        "running_totals": {
+          "train": 6185,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC057",
+      "official_allocation_order": 57,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "las bolsas registran las perdidas",
+        "las bolsas pequenas registran la perdida"
+      ],
+      "unique_sentence_groups": [
+        "G071",
+        "G072"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 143,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.5462969993384591,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 143,
+        "assigned": "train",
+        "running_totals": {
+          "train": 6328,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC058",
+      "official_allocation_order": 58,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "las teorias reducen los numeros"
+      ],
+      "unique_sentence_groups": [
+        "G095"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 62,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 62,
+        "assigned": "train",
+        "running_totals": {
+          "train": 6390,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC059",
+      "official_allocation_order": 59,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "las fuerzas atraen los electrones"
+      ],
+      "unique_sentence_groups": [
+        "G084"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 66,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 66,
+        "assigned": "train",
+        "running_totals": {
+          "train": 6456,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC060",
+      "official_allocation_order": 60,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "la presencia de los tipos impone los retos"
+      ],
+      "unique_sentence_groups": [
+        "G055"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 84,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 84,
+        "assigned": "train",
+        "running_totals": {
+          "train": 6540,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC061",
+      "official_allocation_order": 61,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "la union organiza los calendarios deportivos"
+      ],
+      "unique_sentence_groups": [
+        "G065"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 88,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 88,
+        "assigned": "train",
+        "running_totals": {
+          "train": 6628,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC062",
+      "official_allocation_order": 62,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "la controversia en los diagnosticos cierra el paso"
+      ],
+      "unique_sentence_groups": [
+        "G040"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 100,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 100,
+        "assigned": "train",
+        "running_totals": {
+          "train": 6728,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC063",
+      "official_allocation_order": 63,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "las antenas miden el metro"
+      ],
+      "unique_sentence_groups": [
+        "G068"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 52,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 52,
+        "assigned": "train",
+        "running_totals": {
+          "train": 6780,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC064",
+      "official_allocation_order": 64,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el arbol con la compensacion estimula la secrecion"
+      ],
+      "unique_sentence_groups": [
+        "G002"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 100,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 100,
+        "assigned": "train",
+        "running_totals": {
+          "train": 6880,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC065",
+      "official_allocation_order": 65,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el nino acaba la escuela"
+      ],
+      "unique_sentence_groups": [
+        "G024"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 48,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 48,
+        "assigned": "train",
+        "running_totals": {
+          "train": 6928,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC066",
+      "official_allocation_order": 66,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "las estrategias diferencian el pensamiento de la persona",
+        "las estrategias diferencian los pensamientos"
+      ],
+      "unique_sentence_groups": [
+        "G081",
+        "G082"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 195,
+      "official_split": "train",
+      "max_within_cluster_cosine": 0.5112456217999999,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 195,
+        "assigned": "train",
+        "running_totals": {
+          "train": 7123,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC067",
+      "official_allocation_order": 67,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "la antena para las bandas mide los metros"
+      ],
+      "unique_sentence_groups": [
+        "G033"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 82,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 82,
+        "assigned": "train",
+        "running_totals": {
+          "train": 7205,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC068",
+      "official_allocation_order": 68,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el motor consume la energia"
+      ],
+      "unique_sentence_groups": [
+        "G023"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 54,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 54,
+        "assigned": "train",
+        "running_totals": {
+          "train": 7259,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC069",
+      "official_allocation_order": 69,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los sistemas de las raices incluyen las posibilidades"
+      ],
+      "unique_sentence_groups": [
+        "G124"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 106,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 106,
+        "assigned": "train",
+        "running_totals": {
+          "train": 7365,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC070",
+      "official_allocation_order": 70,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "las tasas exceden las velocidades relativas"
+      ],
+      "unique_sentence_groups": [
+        "G094"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 86,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 86,
+        "assigned": "train",
+        "running_totals": {
+          "train": 7451,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC071",
+      "official_allocation_order": 71,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los arboles estimulan la secrecion"
+      ],
+      "unique_sentence_groups": [
+        "G099"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 68,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 68,
+        "assigned": "train",
+        "running_totals": {
+          "train": 7519,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC072",
+      "official_allocation_order": 72,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los hilos comparten el dato de la transaccion"
+      ],
+      "unique_sentence_groups": [
+        "G110"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 88,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 88,
+        "assigned": "train",
+        "running_totals": {
+          "train": 7607,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC073",
+      "official_allocation_order": 73,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el individuo adapta los rasgos"
+      ],
+      "unique_sentence_groups": [
+        "G016"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 44,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 44,
+        "assigned": "train",
+        "running_totals": {
+          "train": 7651,
+          "val": 0,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC074",
+      "official_allocation_order": 74,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "la aplicacion posibilita las creaciones",
+        "la aplicacion buena posibilita las creaciones"
+      ],
+      "unique_sentence_groups": [
+        "G034",
+        "G035"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 171,
+      "official_split": "val",
+      "max_within_cluster_cosine": 0.8563155416918428,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 171,
+        "assigned": "val",
+        "running_totals": {
+          "train": 7651,
+          "val": 171,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC075",
+      "official_allocation_order": 75,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "las agencias disponen los equipos por la manana",
+        "las agencias disponen los equipos"
+      ],
+      "unique_sentence_groups": [
+        "G066",
+        "G067"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 160,
+      "official_split": "val",
+      "max_within_cluster_cosine": 0.7661880753920358,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 160,
+        "assigned": "val",
+        "running_totals": {
+          "train": 7651,
+          "val": 331,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC076",
+      "official_allocation_order": 76,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "la gaceta trae la entrevista"
+      ],
+      "unique_sentence_groups": [
+        "G049"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 57,
+      "official_split": "train",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 57,
+        "assigned": "train",
+        "running_totals": {
+          "train": 7708,
+          "val": 331,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC077",
+      "official_allocation_order": 77,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "la revolucion nueva abarca las esferas"
+      ],
+      "unique_sentence_groups": [
+        "G059"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 76,
+      "official_split": "val",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 76,
+        "assigned": "val",
+        "running_totals": {
+          "train": 7708,
+          "val": 407,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC078",
+      "official_allocation_order": 78,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "la tasa excede las velocidades"
+      ],
+      "unique_sentence_groups": [
+        "G063"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 60,
+      "official_split": "val",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 60,
+        "assigned": "val",
+        "running_totals": {
+          "train": 7708,
+          "val": 467,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC079",
+      "official_allocation_order": 79,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "las personas comparan las cosas unicas"
+      ],
+      "unique_sentence_groups": [
+        "G089"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 77,
+      "official_split": "val",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 77,
+        "assigned": "val",
+        "running_totals": {
+          "train": 7708,
+          "val": 544,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC080",
+      "official_allocation_order": 80,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los servicios levantan las formas"
+      ],
+      "unique_sentence_groups": [
+        "G123"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 66,
+      "official_split": "val",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 66,
+        "assigned": "val",
+        "running_totals": {
+          "train": 7708,
+          "val": 610,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC081",
+      "official_allocation_order": 81,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "la compania anuncia las adquisiciones",
+        "la compania anuncia las adquisiciones de los datos"
+      ],
+      "unique_sentence_groups": [
+        "G038",
+        "G039"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 169,
+      "official_split": "val",
+      "max_within_cluster_cosine": 0.8209592350374558,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 169,
+        "assigned": "val",
+        "running_totals": {
+          "train": 7708,
+          "val": 779,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC082",
+      "official_allocation_order": 82,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el pedido merece las atenciones"
+      ],
+      "unique_sentence_groups": [
+        "G025"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 62,
+      "official_split": "val",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 62,
+        "assigned": "val",
+        "running_totals": {
+          "train": 7708,
+          "val": 841,
+          "test": 0
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC083",
+      "official_allocation_order": 83,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "el signo radical conserva el resultado",
+        "el signo conserva los resultados"
+      ],
+      "unique_sentence_groups": [
+        "G029",
+        "G030"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 139,
+      "official_split": "test",
+      "max_within_cluster_cosine": 0.5551999747699266,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 139,
+        "assigned": "test",
+        "running_totals": {
+          "train": 7708,
+          "val": 841,
+          "test": 139
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC084",
+      "official_allocation_order": 84,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el beneficio supera los riesgos"
+      ],
+      "unique_sentence_groups": [
+        "G003"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 62,
+      "official_split": "val",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 62,
+        "assigned": "val",
+        "running_totals": {
+          "train": 7708,
+          "val": 903,
+          "test": 139
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC085",
+      "official_allocation_order": 85,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "la ciencia rompe la vision",
+        "la ciencia de la idea rompe la vision"
+      ],
+      "unique_sentence_groups": [
+        "G036",
+        "G037"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 126,
+      "official_split": "test",
+      "max_within_cluster_cosine": 0.8365948793928704,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 126,
+        "assigned": "test",
+        "running_totals": {
+          "train": 7708,
+          "val": 903,
+          "test": 265
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC086",
+      "official_allocation_order": 86,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los interruptores conectan las cargas"
+      ],
+      "unique_sentence_groups": [
+        "G112"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 75,
+      "official_split": "test",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 75,
+        "assigned": "test",
+        "running_totals": {
+          "train": 7708,
+          "val": 903,
+          "test": 340
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC087",
+      "official_allocation_order": 87,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "el interruptor abierto conecta la carga"
+      ],
+      "unique_sentence_groups": [
+        "G017"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 78,
+      "official_split": "test",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 78,
+        "assigned": "test",
+        "running_totals": {
+          "train": 7708,
+          "val": 903,
+          "test": 418
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC088",
+      "official_allocation_order": 88,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "la persona compara las cosas"
+      ],
+      "unique_sentence_groups": [
+        "G054"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 56,
+      "official_split": "val",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 56,
+        "assigned": "val",
+        "running_totals": {
+          "train": 7708,
+          "val": 959,
+          "test": 418
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC089",
+      "official_allocation_order": 89,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "la estadistica sigue la distribucion"
+      ],
+      "unique_sentence_groups": [
+        "G045"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 71,
+      "official_split": "test",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 71,
+        "assigned": "test",
+        "running_totals": {
+          "train": 7708,
+          "val": 959,
+          "test": 489
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC090",
+      "official_allocation_order": 90,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "las funciones leen los archivos"
+      ],
+      "unique_sentence_groups": [
+        "G085"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 62,
+      "official_split": "test",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 62,
+        "assigned": "test",
+        "running_totals": {
+          "train": 7708,
+          "val": 959,
+          "test": 551
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC091",
+      "official_allocation_order": 91,
+      "size_sentence_texts": 2,
+      "sentence_texts": [
+        "el jefe de la edicion configura los campos",
+        "el jefe configura el campo"
+      ],
+      "unique_sentence_groups": [
+        "G018",
+        "G019"
+      ],
+      "lists": [
+        "list1",
+        "list2"
+      ],
+      "cross_list": true,
+      "sentence_records": 4,
+      "keystrokes": 136,
+      "official_split": "test",
+      "max_within_cluster_cosine": 0.5291281635081555,
+      "allocation_trace": {
+        "cluster_members": 2,
+        "keystrokes": 136,
+        "assigned": "test",
+        "running_totals": {
+          "train": 7708,
+          "val": 959,
+          "test": 687
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC092",
+      "official_allocation_order": 92,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "las revoluciones abarcan las esferas"
+      ],
+      "unique_sentence_groups": [
+        "G092"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 72,
+      "official_split": "test",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 72,
+        "assigned": "test",
+        "running_totals": {
+          "train": 7708,
+          "val": 959,
+          "test": 759
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC093",
+      "official_allocation_order": 93,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "las uniones organizan el calendario"
+      ],
+      "unique_sentence_groups": [
+        "G096"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 70,
+      "official_split": "test",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 70,
+        "assigned": "test",
+        "running_totals": {
+          "train": 7708,
+          "val": 959,
+          "test": 829
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC094",
+      "official_allocation_order": 94,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los pedidos directos merecen las atenciones"
+      ],
+      "unique_sentence_groups": [
+        "G118"
+      ],
+      "lists": [
+        "list2"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 86,
+      "official_split": "test",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 86,
+        "assigned": "test",
+        "running_totals": {
+          "train": 7708,
+          "val": 959,
+          "test": 915
+        }
+      }
+    },
+    {
+      "tfidf_cluster_id": "TC095",
+      "official_allocation_order": 95,
+      "size_sentence_texts": 1,
+      "sentence_texts": [
+        "los cuadernos presentan la division"
+      ],
+      "unique_sentence_groups": [
+        "G104"
+      ],
+      "lists": [
+        "list1"
+      ],
+      "cross_list": false,
+      "sentence_records": 2,
+      "keystrokes": 68,
+      "official_split": "test",
+      "max_within_cluster_cosine": null,
+      "allocation_trace": {
+        "cluster_members": 1,
+        "keystrokes": 68,
+        "assigned": "test",
+        "running_totals": {
+          "train": 7708,
+          "val": 959,
+          "test": 915
+        }
+      }
+    }
+  ],
+  "text_to_cluster": {
+    "los crecimientos aumentan las estructuras": "TC000",
+    "los programas piden el permiso": "TC001",
+    "la silla ocasiona las lesiones": "TC002",
+    "la modalidad permite el trabajo": "TC003",
+    "la modalidad permite el trabajo en los campos": "TC003",
+    "el algoritmo recorre el nodo": "TC004",
+    "el algoritmo de los controles recorre el nodo": "TC004",
+    "la diversidad dificulta la relacion": "TC005",
+    "la diversidad previa dificulta la relacion": "TC005",
+    "la enfermedad revela las claves": "TC006",
+    "la enfermedad revela las claves para la decision": "TC006",
+    "las explicaciones aclaran las preguntas": "TC007",
+    "las gacetas traen las entrevistas con las acusaciones": "TC008",
+    "el jugador golpea la pelot": "TC009",
+    "el trato crea la dicha": "TC010",
+    "las bolas impactan las bandas": "TC011",
+    "las bolas blancas impactan las bandas": "TC011",
+    "los tratos crean las dichas en el caso": "TC012",
+    "los paneles contienen la opcion larga": "TC013",
+    "los paneles contienen la opcion": "TC013",
+    "las condiciones favorecen los desarrollos": "TC014",
+    "las condiciones favorecen el desarrollo maritimo": "TC014",
+    "los procesadores del bit ejecutan las instrucciones": "TC015",
+    "el procesador ejecuta la instruccion": "TC016",
+    "la funcion lee los archivos contenidos": "TC017",
+    "el flujo atraviesa las bobinas": "TC018",
+    "el flujo atraviesa las bobinas con los nucleos": "TC018",
+    "los grupos del organismo exigen la liberacion": "TC019",
+    "los productos cumplen la propiedad": "TC020",
+    "los productos cumplen la propiedad asociada": "TC020",
+    "el caballo recorre la casilla": "TC021",
+    "el caballo hermoso recorre las casillas": "TC021",
+    "los ninos mayores acaban la escuela": "TC022",
+    "las estadisticas robustas siguen la distribucion": "TC023",
+    "las controversias cierran el paso": "TC024",
+    "los ejemplos muestran los bloques de las canteras": "TC025",
+    "los ejemplos muestran los bloques": "TC025",
+    "las codificaciones de los caracteres seleccionan la informacion": "TC026",
+    "las codificaciones seleccionan la informacion": "TC026",
+    "los individuos adaptan el rasgo genetico": "TC027",
+    "la fuerza atrae el electron primero": "TC028",
+    "las interconexiones de la fibra extienden las costumbres": "TC029",
+    "las interconexiones extienden la costumbre": "TC029",
+    "el crecimiento aumenta la estructura real": "TC030",
+    "el centro describe las parabolas": "TC031",
+    "el centro describe las parabolas asociadas": "TC031",
+    "los usos ofrecen las ventajas energeticas": "TC032",
+    "los usos ofrecen la ventaja": "TC032",
+    "el sistema incluye las posibilidades": "TC033",
+    "la regla brinda las garantias": "TC034",
+    "la regla brinda la garantia de las calidades": "TC034",
+    "el cliente establece las conexiones": "TC035",
+    "el cliente establece la conexion creada": "TC035",
+    "el programa del reasentamiento pide los permisos": "TC036",
+    "la investigacion real recoge los conocimientos": "TC037",
+    "la investigacion recoge los conocimientos": "TC037",
+    "los jugadores conocidos golpean la pelot": "TC038",
+    "la teoria erronea reduce el numero": "TC039",
+    "el grupo exige la liberacion": "TC040",
+    "las calles marcan las lineas imaginarias": "TC041",
+    "las calles marcan las lineas": "TC041",
+    "el lugar regula los ritmos de los desarrollos": "TC042",
+    "el lugar regula el ritmo": "TC042",
+    "el cuaderno presenta las divisiones enteras": "TC043",
+    "el hilo comparte los datos": "TC044",
+    "las proposiciones tienen el tema": "TC045",
+    "los elementos manifiestan los danos": "TC046",
+    "los elementos apropiados manifiestan los danos": "TC046",
+    "la sociedad plantea la necesidad": "TC047",
+    "la sociedad plantea la necesidad del apoyo": "TC047",
+    "los beneficios superan el riesgo por los puestos": "TC048",
+    "las sillas ocasionan la lesion de los organos": "TC049",
+    "las versiones del programa soportan el comando": "TC050",
+    "las versiones soportan el comando": "TC050",
+    "los motores rapidos consumen las energias": "TC051",
+    "la proposicion tiene el tema general": "TC052",
+    "el servicio levanta las formas del ataque": "TC053",
+    "los corredores aceleran la carrera": "TC054",
+    "los corredores con las marcas aceleran la carrera": "TC054",
+    "la explicacion aclara la pregunta de la evaluacion": "TC055",
+    "las presencias imponen el reto": "TC056",
+    "las bolsas registran las perdidas": "TC057",
+    "las bolsas pequenas registran la perdida": "TC057",
+    "las teorias reducen los numeros": "TC058",
+    "las fuerzas atraen los electrones": "TC059",
+    "la presencia de los tipos impone los retos": "TC060",
+    "la union organiza los calendarios deportivos": "TC061",
+    "la controversia en los diagnosticos cierra el paso": "TC062",
+    "las antenas miden el metro": "TC063",
+    "el arbol con la compensacion estimula la secrecion": "TC064",
+    "el nino acaba la escuela": "TC065",
+    "las estrategias diferencian el pensamiento de la persona": "TC066",
+    "las estrategias diferencian los pensamientos": "TC066",
+    "la antena para las bandas mide los metros": "TC067",
+    "el motor consume la energia": "TC068",
+    "los sistemas de las raices incluyen las posibilidades": "TC069",
+    "las tasas exceden las velocidades relativas": "TC070",
+    "los arboles estimulan la secrecion": "TC071",
+    "los hilos comparten el dato de la transaccion": "TC072",
+    "el individuo adapta los rasgos": "TC073",
+    "la aplicacion posibilita las creaciones": "TC074",
+    "la aplicacion buena posibilita las creaciones": "TC074",
+    "las agencias disponen los equipos por la manana": "TC075",
+    "las agencias disponen los equipos": "TC075",
+    "la gaceta trae la entrevista": "TC076",
+    "la revolucion nueva abarca las esferas": "TC077",
+    "la tasa excede las velocidades": "TC078",
+    "las personas comparan las cosas unicas": "TC079",
+    "los servicios levantan las formas": "TC080",
+    "la compania anuncia las adquisiciones": "TC081",
+    "la compania anuncia las adquisiciones de los datos": "TC081",
+    "el pedido merece las atenciones": "TC082",
+    "el signo radical conserva el resultado": "TC083",
+    "el signo conserva los resultados": "TC083",
+    "el beneficio supera los riesgos": "TC084",
+    "la ciencia rompe la vision": "TC085",
+    "la ciencia de la idea rompe la vision": "TC085",
+    "los interruptores conectan las cargas": "TC086",
+    "el interruptor abierto conecta la carga": "TC087",
+    "la persona compara las cosas": "TC088",
+    "la estadistica sigue la distribucion": "TC089",
+    "las funciones leen los archivos": "TC090",
+    "el jefe de la edicion configura los campos": "TC091",
+    "el jefe configura el campo": "TC091",
+    "las revoluciones abarcan las esferas": "TC092",
+    "las uniones organizan el calendario": "TC093",
+    "los pedidos directos merecen las atenciones": "TC094",
+    "los cuadernos presentan la division": "TC095"
+  }
+}

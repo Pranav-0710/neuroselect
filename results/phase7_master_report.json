@@ -1,0 +1,364 @@
+{
+  "task": "Phase 7: official paraphrase-disjoint splits and the exact official v1 GPU harness",
+  "classification": {
+    "code": "A",
+    "label": "Clean official split successfully reproduced and GPU harness ready",
+    "qualifier": "'ready' = built, dry-run verified end to end on CPU without optimisation, control verified; the GPU preflight was not executed (no CUDA device), so CUDA memory and runtime are unmeasured"
+  },
+  "no_decoding_conclusion": "Phase 7 prepares leakage-safe evaluation; it makes no decoding claim.",
+  "splitter": {
+    "class": "brain2qwerty_v1.transforms.Brain2QwertyV1Splitter",
+    "configured_as": {
+      "name": "Brain2QwertyV1Splitter",
+      "seed": 1
+    },
+    "realized_parameters": {
+      "splitting_ratios": [
+        0.8,
+        0.1,
+        0.1
+      ],
+      "seed": 1,
+      "threshold": 0.5
+    },
+    "pipeline_position": "study -> SpanishBCBLPreprocessing -> Brain2QwertyV1Splitter (official Data.build_events)",
+    "sentence_normalization": "none: the raw 'sentence' field of keystroke events (presented text, already lowercase without accents in S22), deduplicated by pandas unique() in event order",
+    "tfidf": "sklearn TfidfVectorizer() with default settings, fit on the unique sentences of the given events",
+    "similarity": "sklearn cosine_similarity over the TF-IDF rows",
+    "clustering": "connected components of the graph with an edge where cosine > threshold, grown from each unvisited sentence in unique() order",
+    "shuffle": "random.seed(seed); random.shuffle(clusters) with the stdlib random module",
+    "allocation": "first-fit over (train, val, test) with keystroke budgets int(0.8 N), int(0.1 N), N - both; a cluster that fits no budget goes to test",
+    "invoked": "the configured official instance's .run(), source unmodified",
+    "cluster_capture": "the official module's `random` reference was swapped for a forwarding recorder during the call and restored afterwards",
+    "exact_reproduction": {
+      "captured_clusters_equal_reimplementation": true,
+      "official_assignment_equals_reimplementation": true,
+      "every_keystroke_assigned": true,
+      "random_module_calls_seen_by_official_code": [
+        "seed",
+        "shuffle"
+      ]
+    },
+    "unique_sentence_order_sha256": "697229992c7a51832dc6b1042cb2f78966ee7eb0f957bc0800072fd11ab814a3",
+    "sklearn_version": "1.8.0"
+  },
+  "scope_note": "The published official run applies the splitter to all participants' events; here only S22 exists, so the TF-IDF vocabulary, clusters and keystroke budgets are those of S22's 128 texts. This is the exact official procedure applied to the available universe, not a reproduction of the published multi-subject partition.",
+  "cluster_statistics": {
+    "unique_sentence_texts": 128,
+    "clusters": 96,
+    "cluster_size_histogram": {
+      "1": 64,
+      "2": 32
+    },
+    "singleton_clusters": 64,
+    "multi_sentence_clusters": 32,
+    "sentence_texts_in_multi_sentence_clusters": 64,
+    "cross_list_clusters": 32,
+    "within_list1_clusters_multi": 0,
+    "within_list2_clusters_multi": 0,
+    "list2_texts_with_a_list1_partner_above_threshold": 32,
+    "pairs_above_threshold": 32,
+    "max_off_diagonal_cosine": 0.8749253854285167,
+    "largest_cluster_size": 2,
+    "transitive_merges": 0
+  },
+  "official_split": {
+    "train": {
+      "unique_sentence_groups": 101,
+      "sentence_records": 202,
+      "keystrokes": 7708,
+      "tfidf_clusters": 75,
+      "by_session_block_list": {
+        "session1/block1/list1": {
+          "sentence_records": 47,
+          "keystrokes": 1487
+        },
+        "session1/block2/list2": {
+          "sentence_records": 54,
+          "keystrokes": 2340
+        },
+        "session2/block1/list2": {
+          "sentence_records": 54,
+          "keystrokes": 2375
+        },
+        "session2/block2/list1": {
+          "sentence_records": 47,
+          "keystrokes": 1506
+        }
+      }
+    },
+    "val": {
+      "unique_sentence_groups": 13,
+      "sentence_records": 26,
+      "keystrokes": 959,
+      "tfidf_clusters": 10,
+      "by_session_block_list": {
+        "session1/block1/list1": {
+          "sentence_records": 8,
+          "keystrokes": 261
+        },
+        "session1/block2/list2": {
+          "sentence_records": 5,
+          "keystrokes": 216
+        },
+        "session2/block1/list2": {
+          "sentence_records": 5,
+          "keystrokes": 219
+        },
+        "session2/block2/list1": {
+          "sentence_records": 8,
+          "keystrokes": 263
+        }
+      }
+    },
+    "test": {
+      "unique_sentence_groups": 14,
+      "sentence_records": 28,
+      "keystrokes": 983,
+      "tfidf_clusters": 11,
+      "by_session_block_list": {
+        "session1/block1/list1": {
+          "sentence_records": 9,
+          "keystrokes": 292
+        },
+        "session1/block2/list2": {
+          "sentence_records": 5,
+          "keystrokes": 199
+        },
+        "session2/block1/list2": {
+          "sentence_records": 5,
+          "keystrokes": 198
+        },
+        "session2/block2/list1": {
+          "sentence_records": 9,
+          "keystrokes": 294
+        }
+      }
+    }
+  },
+  "official_split_fractions": {
+    "train": 0.7987564766839378,
+    "val": 0.0993782383419689,
+    "test": 0.10186528497409326
+  },
+  "cross_session_clean": {
+    "D_clean": {
+      "literal_feasible": false,
+      "literal_shared_clusters": 32,
+      "test_records_excluded": 32,
+      "partitions": {
+        "train": {
+          "sentence_records": 57,
+          "unique_sentence_groups": 57,
+          "keystrokes": 1821,
+          "tfidf_clusters": 57
+        },
+        "val": {
+          "sentence_records": 7,
+          "unique_sentence_groups": 7,
+          "keystrokes": 219,
+          "tfidf_clusters": 7
+        },
+        "test": {
+          "sentence_records": 32,
+          "unique_sentence_groups": 32,
+          "keystrokes": 1363,
+          "tfidf_clusters": 32
+        }
+      },
+      "classification": "CLUSTER-DISJOINT (official TF-IDF clusters)"
+    },
+    "E_clean": {
+      "literal_feasible": false,
+      "literal_shared_clusters": 32,
+      "test_records_excluded": 32,
+      "partitions": {
+        "train": {
+          "sentence_records": 58,
+          "unique_sentence_groups": 58,
+          "keystrokes": 2458,
+          "tfidf_clusters": 58
+        },
+        "val": {
+          "sentence_records": 6,
+          "unique_sentence_groups": 6,
+          "keystrokes": 297,
+          "tfidf_clusters": 6
+        },
+        "test": {
+          "sentence_records": 32,
+          "unique_sentence_groups": 32,
+          "keystrokes": 1010,
+          "tfidf_clusters": 32
+        }
+      },
+      "classification": "CLUSTER-DISJOINT (official TF-IDF clusters)"
+    }
+  },
+  "leakage_checks": {
+    "official_split_clean": true,
+    "D_clean_clean": true,
+    "E_clean_clean": true,
+    "literal_D_feasible": false,
+    "literal_E_feasible": false
+  },
+  "gpu_preflight": {
+    "status": "GPU preflight not executed",
+    "reason": "no CUDA device available (torch reports cuda_available = False)"
+  },
+  "control_harness_all_pass": true,
+  "dry_runs_all_pass": true,
+  "text_anchor": {
+    "official_v1_clean": {
+      "character_f1": 0.3377416073245168,
+      "mean_sentence_cer": 0.7605265302367386,
+      "mean_sentence_wer": 0.9767857142857144,
+      "length_ratio": 1.0,
+      "test_sentences": 28,
+      "test_keystrokes": 983
+    },
+    "D_clean": {
+      "character_f1": 0.3586103847590586,
+      "mean_sentence_cer": 0.7344617981550685,
+      "mean_sentence_wer": 0.9205729166666667,
+      "length_ratio": 0.9640498899486427,
+      "test_sentences": 32,
+      "test_keystrokes": 1363
+    },
+    "E_clean": {
+      "character_f1": 0.3489866534849234,
+      "mean_sentence_cer": 0.7489081722208593,
+      "mean_sentence_wer": 0.9937500000000001,
+      "length_ratio": 1.002970297029703,
+      "test_sentences": 32,
+      "test_keystrokes": 1010
+    }
+  },
+  "artifacts": {
+    "results": [
+      "results/phase7_official_split_audit.json",
+      "results/phase7_clean_split_manifests.json",
+      "results/phase7_gpu_preflight.json",
+      "results/phase7_training_harness.json",
+      "results/phase7_control_harness.json",
+      "results/phase7_text_anchor.json",
+      "results/phase7_master_report.json",
+      "results/phase7_official_clusters.json"
+    ],
+    "manifests": [
+      "data/manifests/official_v1_clean_train.json",
+      "data/manifests/official_v1_clean_val.json",
+      "data/manifests/official_v1_clean_test.json",
+      "data/manifests/s22_D_clean.json",
+      "data/manifests/s22_E_clean.json",
+      "data/manifests/s22_official_v1_dataset.json"
+    ],
+    "figures": [
+      "results/figures/debug/phase7_split_clusters.png",
+      "results/figures/debug/phase7_split_composition.png",
+      "results/figures/debug/phase7_gpu_preflight.png"
+    ],
+    "dry_runs": [
+      "results/runs/phase7/dry_run/D_clean_control_seed33/run_summary.json",
+      "results/runs/phase7/dry_run/D_clean_real_seed33/run_summary.json",
+      "results/runs/phase7/dry_run/E_clean_control_seed33/run_summary.json",
+      "results/runs/phase7/dry_run/E_clean_real_seed33/run_summary.json",
+      "results/runs/phase7/dry_run/official_v1_clean_control_seed33/run_summary.json",
+      "results/runs/phase7/dry_run/official_v1_clean_real_seed33/run_summary.json",
+      "results/runs/phase7/dry_run/signal_dependence_dry_run.json"
+    ],
+    "not_created": {
+      "training-result figures": "no training was executed (Task 13)"
+    }
+  },
+  "tests": {
+    "command": "python -m pytest tests -q",
+    "exit_code": 0,
+    "summary_line": "28 passed, 1 warning in 39.17s",
+    "collected": 28,
+    "passed": 28,
+    "failed": 0,
+    "skipped": 0,
+    "errors": 0
+  },
+  "integrity": {
+    "raw_fif_and_mat_hashes_unchanged": true,
+    "raw_files": {
+      "files": [
+        {
+          "file": "MEG/FIF/22_9788/231214/block1.fif",
+          "sha256": "634bf9c57ec7b6ae0697e50750233c4eed27f96e3a7493341bc21a14beaef7d0",
+          "matches_acquisition_record": true
+        },
+        {
+          "file": "MEG/FIF/22_9788/231214/block2.fif",
+          "sha256": "b827b6d4e5101a53ba8c6e248cc30cb50501db1628cda8768f68e588a055744e",
+          "matches_acquisition_record": true
+        },
+        {
+          "file": "MEG/FIF/22_9788/231222/Block1.fif",
+          "sha256": "dcbcb8f6c693e36be8d7632380103e4bfe35236fc6ee352f837d9257cc2dac82",
+          "matches_acquisition_record": true
+        },
+        {
+          "file": "MEG/FIF/22_9788/231222/Block2.fif",
+          "sha256": "659d8f5cb3a9a3786157afecc6b9881adf027d699b2b793c6b3095f802436c33",
+          "matches_acquisition_record": true
+        },
+        {
+          "file": "MEG/logs/S22-session1_block1_list1.mat",
+          "sha256": "87cd3b3a1a4512db31004b76528a23a4c39c96dff68e91ec75c4c301f8c96bc6",
+          "matches_acquisition_record": true
+        },
+        {
+          "file": "MEG/logs/S22-session1_block2_list2.mat",
+          "sha256": "d70a6bd029811e9c44a70c00a4fa93bf1ee36cc53fc6bb1e9582e5f5e166a27c",
+          "matches_acquisition_record": true
+        },
+        {
+          "file": "MEG/logs/S22-session2_block1_list2.mat",
+          "sha256": "dbdff992d8c31428dcf9b962df43a650cfdcc77559f40cc4a7bbce938ffb03de",
+          "matches_acquisition_record": true
+        },
+        {
+          "file": "MEG/logs/S22-session2_block2_list1.mat",
+          "sha256": "96085ee480ba53b0d09be0ffb1b041fd9e9526917c601357596670ed103d0992",
+          "matches_acquisition_record": true
+        }
+      ],
+      "fif_files": 4,
+      "mat_files": 4,
+      "all_match": true
+    },
+    "historical_preprocessing_unchanged": true,
+    "official_v1_preprocessing_unchanged": true,
+    "official_source_unchanged": true,
+    "existing_tests_unchanged": true,
+    "tracked_files_modified": [],
+    "existing_results_unchanged": true,
+    "pinned_environment": {
+      "pip_freeze_identical_to_pre_phase6_snapshot": true,
+      "packages": 74
+    },
+    "no_dataset_download": true,
+    "evidence_selector_implemented": false,
+    "llm_used": false,
+    "local_training_performed": false,
+    "note": "computed before the EXPERIMENT_LOG.md entry for this phase was appended"
+  },
+  "reproducibility": {
+    "git_commit_at_report": "63ec84eea3fc2f1912cf17304c1435e9ae8f8498",
+    "pinned_environment": "C:\\Users\\prana\\Envs\\neuroselect-brain2qwerty-v1\\Scripts\\python.exe",
+    "overlay": "C:\\Users\\prana\\Envs\\phase6-official-overlay\\site",
+    "commands": [
+      "PYTHONPATH=\"<overlay>/site;vendor/brain2qwerty;src\" <pinned>/python scripts/phase7_official_split.py",
+      "PYTHONPATH=src python scripts/phase7_dataset_manifest.py",
+      "<pinned> scripts/phase7_official_v1_train.py --split <S> --seed 33 [--control] --dry-run --output-dir results/runs/phase7/dry_run/<S>_<cond>_seed33",
+      "<pinned> scripts/phase7_control_harness_check.py",
+      "<pinned> scripts/phase7_gpu_preflight.py",
+      "<pinned> scripts/phase7_signal_dependence.py --dry-run --output results/runs/phase7/dry_run/signal_dependence_dry_run.json",
+      "PYTHONPATH=src python scripts/phase7_text_anchor.py",
+      "PYTHONPATH=src python scripts/phase7_master_report.py"
+    ]
+  }
+}

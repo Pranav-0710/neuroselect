@@ -1,0 +1,398 @@
+{
+  "split_name": "official_v1_clean",
+  "partition": "val",
+  "subject": "S22",
+  "official_revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+  "construction": "Exact official Brain2QwertyV1Splitter (seed 1, threshold 0.5, ratios 0.8/0.1/0.1 in keystrokes) on the S22 events of the official study + SpanishBCBLPreprocessing; sentence texts mapped back to all sentence records",
+  "scope_note": "The published official run applies the splitter to all participants' events; only S22 is available here, so the TF-IDF fit, clusters and allocation are over S22's 128 texts",
+  "sentence_groups": [
+    "G003",
+    "G025",
+    "G034",
+    "G035",
+    "G038",
+    "G039",
+    "G054",
+    "G059",
+    "G063",
+    "G066",
+    "G067",
+    "G089",
+    "G123"
+  ],
+  "tfidf_clusters": 10,
+  "sentence_UIDs": [
+    "2.0_S22_1_block1",
+    "5.0_S22_1_block1",
+    "14.0_S22_1_block1",
+    "15.0_S22_1_block1",
+    "31.0_S22_1_block1",
+    "51.0_S22_1_block1",
+    "57.0_S22_1_block1",
+    "62.0_S22_1_block1",
+    "4.0_S22_1_block2",
+    "8.0_S22_1_block2",
+    "30.0_S22_1_block2",
+    "32.0_S22_1_block2",
+    "52.0_S22_1_block2",
+    "12.0_S22_2_block1",
+    "13.0_S22_2_block1",
+    "38.0_S22_2_block1",
+    "42.0_S22_2_block1",
+    "49.0_S22_2_block1",
+    "8.0_S22_2_block2",
+    "32.0_S22_2_block2",
+    "41.0_S22_2_block2",
+    "44.0_S22_2_block2",
+    "57.0_S22_2_block2",
+    "58.0_S22_2_block2",
+    "59.0_S22_2_block2",
+    "62.0_S22_2_block2"
+  ],
+  "records": [
+    {
+      "sentence_UID": "2.0_S22_1_block1",
+      "unique_sentence_group_id": "G063",
+      "tfidf_cluster_id": "TC078",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "la tasa excede las velocidades",
+      "sentence_typed": "la tasa excede las velocidades",
+      "keystrokes": 30
+    },
+    {
+      "sentence_UID": "5.0_S22_1_block1",
+      "unique_sentence_group_id": "G025",
+      "tfidf_cluster_id": "TC082",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "el pedido merece las atenciones",
+      "sentence_typed": "el pedido merece las atenciones",
+      "keystrokes": 31
+    },
+    {
+      "sentence_UID": "14.0_S22_1_block1",
+      "unique_sentence_group_id": "G003",
+      "tfidf_cluster_id": "TC084",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "el beneficio supera los riesgos",
+      "sentence_typed": "el beneficio supera los riesgos",
+      "keystrokes": 31
+    },
+    {
+      "sentence_UID": "15.0_S22_1_block1",
+      "unique_sentence_group_id": "G035",
+      "tfidf_cluster_id": "TC074",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "la aplicacion posibilita las creaciones",
+      "sentence_typed": "la aplicacion posibilida las creaciones",
+      "keystrokes": 39
+    },
+    {
+      "sentence_UID": "31.0_S22_1_block1",
+      "unique_sentence_group_id": "G066",
+      "tfidf_cluster_id": "TC075",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "las agencias disponen los equipos",
+      "sentence_typed": "las agencias disponen los equipos",
+      "keystrokes": 33
+    },
+    {
+      "sentence_UID": "51.0_S22_1_block1",
+      "unique_sentence_group_id": "G038",
+      "tfidf_cluster_id": "TC081",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "la compania anuncia las adquisiciones",
+      "sentence_typed": "la compa@ia anuncia las adquisicones",
+      "keystrokes": 36
+    },
+    {
+      "sentence_UID": "57.0_S22_1_block1",
+      "unique_sentence_group_id": "G123",
+      "tfidf_cluster_id": "TC080",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "los servicios levantan las formas",
+      "sentence_typed": "los servicios levantan las formas",
+      "keystrokes": 33
+    },
+    {
+      "sentence_UID": "62.0_S22_1_block1",
+      "unique_sentence_group_id": "G054",
+      "tfidf_cluster_id": "TC088",
+      "session": "1",
+      "block": "block1",
+      "list_id": "list1",
+      "sentence_presented": "la persona compara las cosas",
+      "sentence_typed": "la persona compara las cosas",
+      "keystrokes": 28
+    },
+    {
+      "sentence_UID": "4.0_S22_1_block2",
+      "unique_sentence_group_id": "G067",
+      "tfidf_cluster_id": "TC075",
+      "session": "1",
+      "block": "block2",
+      "list_id": "list2",
+      "sentence_presented": "las agencias disponen los equipos por la manana",
+      "sentence_typed": "las agencias disponen los equipos por la ma@ana",
+      "keystrokes": 47
+    },
+    {
+      "sentence_UID": "8.0_S22_1_block2",
+      "unique_sentence_group_id": "G034",
+      "tfidf_cluster_id": "TC074",
+      "session": "1",
+      "block": "block2",
+      "list_id": "list2",
+      "sentence_presented": "la aplicacion buena posibilita las creaciones",
+      "sentence_typed": "la aplicacione buena posibilidta las creaciones",
+      "keystrokes": 47
+    },
+    {
+      "sentence_UID": "30.0_S22_1_block2",
+      "unique_sentence_group_id": "G039",
+      "tfidf_cluster_id": "TC081",
+      "session": "1",
+      "block": "block2",
+      "list_id": "list2",
+      "sentence_presented": "la compania anuncia las adquisiciones de los datos",
+      "sentence_typed": "la compa@ia anuncia la adquisicio de los datos",
+      "keystrokes": 46
+    },
+    {
+      "sentence_UID": "32.0_S22_1_block2",
+      "unique_sentence_group_id": "G089",
+      "tfidf_cluster_id": "TC079",
+      "session": "1",
+      "block": "block2",
+      "list_id": "list2",
+      "sentence_presented": "las personas comparan las cosas unicas",
+      "sentence_typed": "las personas comparan las cosas @unicas",
+      "keystrokes": 39
+    },
+    {
+      "sentence_UID": "52.0_S22_1_block2",
+      "unique_sentence_group_id": "G059",
+      "tfidf_cluster_id": "TC077",
+      "session": "1",
+      "block": "block2",
+      "list_id": "list2",
+      "sentence_presented": "la revolucion nueva abarca las esferas",
+      "sentence_typed": "la revolucion nueva marca las esferas",
+      "keystrokes": 37
+    },
+    {
+      "sentence_UID": "12.0_S22_2_block1",
+      "unique_sentence_group_id": "G089",
+      "tfidf_cluster_id": "TC079",
+      "session": "2",
+      "block": "block1",
+      "list_id": "list2",
+      "sentence_presented": "las personas comparan las cosas unicas",
+      "sentence_typed": "las personae comparan las cosas unicas",
+      "keystrokes": 38
+    },
+    {
+      "sentence_UID": "13.0_S22_2_block1",
+      "unique_sentence_group_id": "G059",
+      "tfidf_cluster_id": "TC077",
+      "session": "2",
+      "block": "block1",
+      "list_id": "list2",
+      "sentence_presented": "la revolucion nueva abarca las esferas",
+      "sentence_typed": "la revolucion mnueva abarca las esferas",
+      "keystrokes": 39
+    },
+    {
+      "sentence_UID": "38.0_S22_2_block1",
+      "unique_sentence_group_id": "G067",
+      "tfidf_cluster_id": "TC075",
+      "session": "2",
+      "block": "block1",
+      "list_id": "list2",
+      "sentence_presented": "las agencias disponen los equipos por la manana",
+      "sentence_typed": "las agencias disponen los equipos por la maaana",
+      "keystrokes": 47
+    },
+    {
+      "sentence_UID": "42.0_S22_2_block1",
+      "unique_sentence_group_id": "G039",
+      "tfidf_cluster_id": "TC081",
+      "session": "2",
+      "block": "block1",
+      "list_id": "list2",
+      "sentence_presented": "la compania anuncia las adquisiciones de los datos",
+      "sentence_typed": "la compaaia anuncai la sadquisiciones de los datos",
+      "keystrokes": 50
+    },
+    {
+      "sentence_UID": "49.0_S22_2_block1",
+      "unique_sentence_group_id": "G034",
+      "tfidf_cluster_id": "TC074",
+      "session": "2",
+      "block": "block1",
+      "list_id": "list2",
+      "sentence_presented": "la aplicacion buena posibilita las creaciones",
+      "sentence_typed": "la aplicacion buena posibilida las creaciones",
+      "keystrokes": 45
+    },
+    {
+      "sentence_UID": "8.0_S22_2_block2",
+      "unique_sentence_group_id": "G054",
+      "tfidf_cluster_id": "TC088",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "la persona compara las cosas",
+      "sentence_typed": "la persona compara las cosas",
+      "keystrokes": 28
+    },
+    {
+      "sentence_UID": "32.0_S22_2_block2",
+      "unique_sentence_group_id": "G035",
+      "tfidf_cluster_id": "TC074",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "la aplicacion posibilita las creaciones",
+      "sentence_typed": "la aplicacione posibilita las creaciones",
+      "keystrokes": 40
+    },
+    {
+      "sentence_UID": "41.0_S22_2_block2",
+      "unique_sentence_group_id": "G066",
+      "tfidf_cluster_id": "TC075",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "las agencias disponen los equipos",
+      "sentence_typed": "las agencias disponen los equipos",
+      "keystrokes": 33
+    },
+    {
+      "sentence_UID": "44.0_S22_2_block2",
+      "unique_sentence_group_id": "G123",
+      "tfidf_cluster_id": "TC080",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "los servicios levantan las formas",
+      "sentence_typed": "los servicios levantan las formas",
+      "keystrokes": 33
+    },
+    {
+      "sentence_UID": "57.0_S22_2_block2",
+      "unique_sentence_group_id": "G063",
+      "tfidf_cluster_id": "TC078",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "la tasa excede las velocidades",
+      "sentence_typed": "la tasa excede las velocidades",
+      "keystrokes": 30
+    },
+    {
+      "sentence_UID": "58.0_S22_2_block2",
+      "unique_sentence_group_id": "G038",
+      "tfidf_cluster_id": "TC081",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "la compania anuncia las adquisiciones",
+      "sentence_typed": "la compaaia comunica las aduisiciones",
+      "keystrokes": 37
+    },
+    {
+      "sentence_UID": "59.0_S22_2_block2",
+      "unique_sentence_group_id": "G003",
+      "tfidf_cluster_id": "TC084",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "el beneficio supera los riesgos",
+      "sentence_typed": "el beneficio supera los riesgos",
+      "keystrokes": 31
+    },
+    {
+      "sentence_UID": "62.0_S22_2_block2",
+      "unique_sentence_group_id": "G025",
+      "tfidf_cluster_id": "TC082",
+      "session": "2",
+      "block": "block2",
+      "list_id": "list1",
+      "sentence_presented": "el pedido merece las atenciones",
+      "sentence_typed": "el pedido merece las atenciones",
+      "keystrokes": 31
+    }
+  ],
+  "sentence_records": 26,
+  "unique_sentence_groups": 13,
+  "keystrokes": 959,
+  "by_session_block_list": {
+    "session1/block1/list1": {
+      "sentence_records": 8,
+      "keystrokes": 261
+    },
+    "session1/block2/list2": {
+      "sentence_records": 5,
+      "keystrokes": 216
+    },
+    "session2/block1/list2": {
+      "sentence_records": 5,
+      "keystrokes": 219
+    },
+    "session2/block2/list1": {
+      "sentence_records": 8,
+      "keystrokes": 263
+    }
+  },
+  "overlap_checks": {
+    "vs_train": {
+      "presented_text_overlap": 0,
+      "typed_text_overlap": 0,
+      "sentence_UID_overlap": 0,
+      "unique_sentence_group_overlap": 0,
+      "tfidf_cluster_overlap": 0,
+      "paraphrase_pairs_above_official_threshold": 0,
+      "max_cross_partition_tfidf_cosine": 0.299757442716294,
+      "most_similar_cross_partition_pair": {
+        "a": "la persona compara las cosas",
+        "b": "las estrategias diferencian el pensamiento de la persona",
+        "cosine": 0.299757442716294
+      }
+    },
+    "vs_test": {
+      "presented_text_overlap": 0,
+      "typed_text_overlap": 0,
+      "sentence_UID_overlap": 0,
+      "unique_sentence_group_overlap": 0,
+      "tfidf_cluster_overlap": 0,
+      "paraphrase_pairs_above_official_threshold": 0,
+      "max_cross_partition_tfidf_cosine": 0.2894980209079789,
+      "most_similar_cross_partition_pair": {
+        "a": "la revolucion nueva abarca las esferas",
+        "b": "las revoluciones abarcan las esferas",
+        "cosine": 0.2894980209079789
+      }
+    }
+  },
+  "twin_check": {
+    "groups_split_across_partitions": [],
+    "no_group_split_across_partitions": true,
+    "unused_occurrences_of_used_groups": []
+  },
+  "sentence_disjoint": true,
+  "training_performed": false
+}

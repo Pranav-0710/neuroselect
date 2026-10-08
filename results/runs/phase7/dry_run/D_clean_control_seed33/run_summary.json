@@ -1,0 +1,1172 @@
+{
+  "task": "Phase 7 official Brain2Qwerty v1 run (dry run)",
+  "arguments": {
+    "dataset_manifest": "Z:/PROJECTS/PROJECTS/Meta project brain/data/manifests/s22_official_v1_dataset.json",
+    "split": "D_clean",
+    "split_manifest": null,
+    "seed": 33,
+    "output_dir": "results/runs/phase7/dry_run/D_clean_control_seed33",
+    "control": true,
+    "devices": null,
+    "dry_run": true,
+    "skip_raw_hash": false
+  },
+  "condition": "no_valid_signal_control",
+  "provenance": {
+    "git_commit": "63ec84eea3fc2f1912cf17304c1435e9ae8f8498",
+    "git_worktree_dirty": true,
+    "official_revision": "5f9889621d0df391c5aab37c996683d308e6e926",
+    "official_source_clean": true,
+    "official_tree": "abb5d8972c0f2d28946cf7a57bb78c3db9e1d2cb",
+    "experiment_run_source_sha256": "50cf428f68c6c13b27ec60bc23af868f2172d2dab5838e2b79756bda89f4904f",
+    "experiment_run_source_matches_audit": true,
+    "python": "3.13.7 (tags/v3.13.7:bcee1c3, Aug 14 2025, 14:15:11) [MSC v.1944 64 bit (AMD64)]",
+    "python_executable": "C:\\Users\\prana\\Envs\\neuroselect-brain2qwerty-v1\\Scripts\\python.exe",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "key_packages": {
+        "torch": "2.6.0",
+        "lightning": "2.5.2",
+        "pytorch-lightning": "2.6.6",
+        "neuralset": "0.2.2",
+        "neuraltrain": "0.2.2",
+        "x-transformers": "2.4.9",
+        "numpy": "2.2.6",
+        "scikit-learn": "1.8.0",
+        "mne": "1.11.0",
+        "pandas": "2.2.3",
+        "torchmetrics": "1.7.3",
+        "exca": "0.5.22",
+        "levenshtein": "0.27.1",
+        "einops": "0.8.1"
+      },
+      "lock_file": "vendor/brain2qwerty/requirements.lock",
+      "lock_mismatches": {
+        "accelerate": {
+          "locked": "1.12.0",
+          "installed": null
+        },
+        "annotated-types": {
+          "locked": "0.7.0",
+          "installed": "0.8.0"
+        },
+        "certifi": {
+          "locked": "2026.1.4",
+          "installed": "2026.7.22"
+        },
+        "charset-normalizer": {
+          "locked": "3.4.4",
+          "installed": "3.5.1"
+        },
+        "click": {
+          "locked": "8.2.1",
+          "installed": null
+        },
+        "cloudpickle": {
+          "locked": "3.1.1",
+          "installed": "3.1.2"
+        },
+        "contourpy": {
+          "locked": "1.3.2",
+          "installed": "1.4.0"
+        },
+        "decorator": {
+          "locked": "5.2.1",
+          "installed": "5.3.1"
+        },
+        "distance": {
+          "locked": "0.1.3",
+          "installed": null
+        },
+        "edit-distance": {
+          "locked": "1.0.7",
+          "installed": null
+        },
+        "filelock": {
+          "locked": "3.18.0",
+          "installed": "3.32.7"
+        },
+        "fonttools": {
+          "locked": "4.58.4",
+          "installed": "4.65.0"
+        },
+        "fsspec": {
+          "locked": "2025.5.1",
+          "installed": "2026.7.0"
+        },
+        "g2p-en": {
+          "locked": "2.1.0",
+          "installed": null
+        },
+        "gitdb": {
+          "locked": "4.0.12",
+          "installed": null
+        },
+        "gitpython": {
+          "locked": "3.1.44",
+          "installed": null
+        },
+        "h5py": {
+          "locked": "3.12.1",
+          "installed": "3.16.0"
+        },
+        "hf-xet": {
+          "locked": "1.1.5",
+          "installed": null
+        },
+        "huggingface-hub": {
+          "locked": "0.33.0",
+          "installed": null
+        },
+        "idna": {
+          "locked": "3.11",
+          "installed": "3.19"
+        },
+        "inflect": {
+          "locked": "7.5.0",
+          "installed": null
+        },
+        "joblib": {
+          "locked": "1.5.1",
+          "installed": "1.6.0"
+        },
+        "kenlm": {
+          "locked": "0.2.0",
+          "installed": null
+        },
+        "kiwisolver": {
+          "locked": "1.4.8",
+          "installed": "1.5.1"
+        },
+        "lazy-loader": {
+          "locked": "0.4",
+          "installed": "0.5"
+        },
+        "lightning-utilities": {
+          "locked": "0.14.3",
+          "installed": "0.15.3"
+        },
+        "markupsafe": {
+          "locked": "3.0.2",
+          "installed": "3.0.3"
+        },
+        "matplotlib": {
+          "locked": "3.10.3",
+          "installed": "3.11.2"
+        },
+        "more-itertools": {
+          "locked": "10.8.0",
+          "installed": null
+        },
+        "networkx": {
+          "locked": "3.5",
+          "installed": "3.6.1"
+        },
+        "nibabel": {
+          "locked": "5.3.2",
+          "installed": "5.4.2"
+        },
+        "nltk": {
+          "locked": "3.9.1",
+          "installed": null
+        },
+        "nvidia-cublas-cu12": {
+          "locked": "12.4.5.8",
+          "installed": null
+        },
+        "nvidia-cuda-cupti-cu12": {
+          "locked": "12.4.127",
+          "installed": null
+        },
+        "nvidia-cuda-nvrtc-cu12": {
+          "locked": "12.4.127",
+          "installed": null
+        },
+        "nvidia-cuda-runtime-cu12": {
+          "locked": "12.4.127",
+          "installed": null
+        },
+        "nvidia-cudnn-cu12": {
+          "locked": "9.1.0.70",
+          "installed": null
+        },
+        "nvidia-cufft-cu12": {
+          "locked": "11.2.1.3",
+          "installed": null
+        },
+        "nvidia-curand-cu12": {
+          "locked": "10.3.5.147",
+          "installed": null
+        },
+        "nvidia-cusolver-cu12": {
+          "locked": "11.6.1.9",
+          "installed": null
+        },
+        "nvidia-cusparse-cu12": {
+          "locked": "12.3.1.170",
+          "installed": null
+        },
+        "nvidia-cusparselt-cu12": {
+          "locked": "0.6.2",
+          "installed": null
+        },
+        "nvidia-nccl-cu12": {
+          "locked": "2.21.5",
+          "installed": null
+        },
+        "nvidia-nvjitlink-cu12": {
+          "locked": "12.4.127",
+          "installed": null
+        },
+        "nvidia-nvtx-cu12": {
+          "locked": "12.4.127",
+          "installed": null
+        },
+        "orjson": {
+          "locked": "3.11.0",
+          "installed": "3.12.0"
+        },
+        "packaging": {
+          "locked": "25.0",
+          "installed": "26.3"
+        },
+        "peft": {
+          "locked": "0.18.1",
+          "installed": null
+        },
+        "pillow": {
+          "locked": "12.1.0",
+          "installed": "12.3.0"
+        },
+        "platformdirs": {
+          "locked": "4.3.8",
+          "installed": "4.11.8"
+        },
+        "pooch": {
+          "locked": "1.8.2",
+          "installed": "1.9.0"
+        },
+        "protobuf": {
+          "locked": "6.31.1",
+          "installed": null
+        },
+        "psutil": {
+          "locked": "5.9.0",
+          "installed": null
+        },
+        "pyarrow": {
+          "locked": "20.0.0",
+          "installed": "25.0.1"
+        },
+        "pybv": {
+          "locked": "0.7.6",
+          "installed": "0.8.1"
+        },
+        "pyparsing": {
+          "locked": "3.2.3",
+          "installed": "3.3.2"
+        },
+        "pytorch-lightning": {
+          "locked": "1.9.5",
+          "installed": "2.6.6"
+        },
+        "pytz": {
+          "locked": "2025.2",
+          "installed": "2026.3.post1"
+        },
+        "pyyaml": {
+          "locked": "6.0.2",
+          "installed": "6.0.3"
+        },
+        "rapidfuzz": {
+          "locked": "3.13.0",
+          "installed": "3.14.6"
+        },
+        "regex": {
+          "locked": "2024.11.6",
+          "installed": null
+        },
+        "requests": {
+          "locked": "2.32.5",
+          "installed": "2.34.2"
+        },
+        "safetensors": {
+          "locked": "0.5.3",
+          "installed": null
+        },
+        "seaborn": {
+          "locked": "0.12.2",
+          "installed": null
+        },
+        "sentry-sdk": {
+          "locked": "2.30.0",
+          "installed": null
+        },
+        "setuptools": {
+          "locked": "78.1.1",
+          "installed": "84.0.0"
+        },
+        "smmap": {
+          "locked": "5.0.2",
+          "installed": null
+        },
+        "submitit": {
+          "locked": "1.5.3",
+          "installed": "1.5.4"
+        },
+        "threadpoolctl": {
+          "locked": "3.6.0",
+          "installed": "3.7.0"
+        },
+        "tokenizers": {
+          "locked": "0.21.1",
+          "installed": null
+        },
+        "torchaudio": {
+          "locked": "2.6.0",
+          "installed": null
+        },
+        "tqdm": {
+          "locked": "4.67.1",
+          "installed": "4.70.1"
+        },
+        "transformers": {
+          "locked": "4.52.4",
+          "installed": null
+        },
+        "triton": {
+          "locked": "3.2.0",
+          "installed": null
+        },
+        "typeguard": {
+          "locked": "4.5.1",
+          "installed": null
+        },
+        "typing-extensions": {
+          "locked": "4.15.0",
+          "installed": "4.16.0"
+        },
+        "typing-inspection": {
+          "locked": "0.4.2",
+          "installed": "0.4.4"
+        },
+        "tzdata": {
+          "locked": "2025.2",
+          "installed": "2026.4"
+        },
+        "ujson": {
+          "locked": "5.11.0",
+          "installed": "6.0.0"
+        },
+        "urllib3": {
+          "locked": "2.6.3",
+          "installed": "2.8.0"
+        },
+        "wandb": {
+          "locked": "0.26.1",
+          "installed": null
+        }
+      },
+      "all_installed": {
+        "aiohappyeyeballs": "2.7.1",
+        "aiohttp": "3.14.3",
+        "aiosignal": "1.4.0",
+        "annotated-types": "0.8.0",
+        "attrs": "26.1.0",
+        "certifi": "2026.7.22",
+        "charset-normalizer": "3.5.1",
+        "cloudpickle": "3.1.2",
+        "colorama": "0.4.6",
+        "contourpy": "1.4.0",
+        "cycler": "0.12.1",
+        "decorator": "5.3.1",
+        "dtw-python": "1.7.4",
+        "einops": "0.8.1",
+        "einx": "0.3.0",
+        "exca": "0.5.22",
+        "filelock": "3.32.7",
+        "fonttools": "4.65.0",
+        "frozendict": "2.4.6",
+        "frozenlist": "1.8.0",
+        "fsspec": "2026.7.0",
+        "h5py": "3.16.0",
+        "idna": "3.19",
+        "jinja2": "3.1.6",
+        "joblib": "1.6.0",
+        "kiwisolver": "1.5.1",
+        "lazy-loader": "0.5",
+        "levenshtein": "0.27.1",
+        "lightning": "2.5.2",
+        "lightning-utilities": "0.15.3",
+        "loguru": "0.7.3",
+        "markupsafe": "3.0.3",
+        "matplotlib": "3.11.2",
+        "mne": "1.11.0",
+        "mne-bids": "0.19.0",
+        "mpmath": "1.3.0",
+        "multidict": "6.8.0",
+        "networkx": "3.6.1",
+        "neuralfetch": "0.2.2",
+        "neuralset": "0.2.2",
+        "neuraltrain": "0.2.2",
+        "nibabel": "5.4.2",
+        "numpy": "2.2.6",
+        "orjson": "3.12.0",
+        "packaging": "26.3",
+        "pandas": "2.2.3",
+        "pillow": "12.3.0",
+        "pip": "26.2.1",
+        "platformdirs": "4.11.8",
+        "pooch": "1.9.0",
+        "propcache": "0.5.4",
+        "pyarrow": "25.0.1",
+        "pybv": "0.8.1",
+        "pydantic": "2.12.5",
+        "pydantic-core": "2.41.5",
+        "pyparsing": "3.3.2",
+        "python-dateutil": "2.9.0.post0",
+        "pytorch-lightning": "2.6.6",
+        "pytz": "2026.3.post1",
+        "pyyaml": "6.0.3",
+        "rapidfuzz": "3.14.6",
+        "requests": "2.34.2",
+        "scikit-learn": "1.8.0",
+        "scipy": "1.14.1",
+        "setuptools": "84.0.0",
+        "six": "1.17.0",
+        "submitit": "1.5.4",
+        "sympy": "1.13.1",
+        "threadpoolctl": "3.7.0",
+        "torch": "2.6.0",
+        "torchmetrics": "1.7.3",
+        "torchvision": "0.21.0",
+        "tqdm": "4.70.1",
+        "typing-extensions": "4.16.0",
+        "typing-inspection": "0.4.4",
+        "tzdata": "2026.4",
+        "ujson": "6.0.0",
+        "urllib3": "2.8.0",
+        "win32-setctime": "1.2.0",
+        "x-transformers": "2.4.9",
+        "yarl": "1.25.1"
+      }
+    },
+    "gpu": {
+      "torch": "2.6.0+cpu",
+      "torch_cuda_build": null,
+      "cuda_available": false,
+      "cudnn": null,
+      "device_count": 0,
+      "devices": [],
+      "nvidia_smi": "not available: FileNotFoundError"
+    }
+  },
+  "dataset": {
+    "dataset_manifest": "data/manifests/s22_official_v1_dataset.json",
+    "dataset_manifest_sha256": "37558a1ca2ee015407b9ac4107dd31e57585bfbfbcf49549cb1d6d090c429886",
+    "files": [
+      {
+        "path": "data/raw/spanishbcbl_s22/MEG/FIF/22_9788/231214/block1.fif",
+        "kind": "raw",
+        "sha256": "634bf9c57ec7b6ae0697e50750233c4eed27f96e3a7493341bc21a14beaef7d0",
+        "actual_sha256": "634bf9c57ec7b6ae0697e50750233c4eed27f96e3a7493341bc21a14beaef7d0",
+        "verified": true
+      },
+      {
+        "path": "data/raw/spanishbcbl_s22/MEG/FIF/22_9788/231214/block2.fif",
+        "kind": "raw",
+        "sha256": "b827b6d4e5101a53ba8c6e248cc30cb50501db1628cda8768f68e588a055744e",
+        "actual_sha256": "b827b6d4e5101a53ba8c6e248cc30cb50501db1628cda8768f68e588a055744e",
+        "verified": true
+      },
+      {
+        "path": "data/raw/spanishbcbl_s22/MEG/FIF/22_9788/231222/Block1.fif",
+        "kind": "raw",
+        "sha256": "dcbcb8f6c693e36be8d7632380103e4bfe35236fc6ee352f837d9257cc2dac82",
+        "actual_sha256": "dcbcb8f6c693e36be8d7632380103e4bfe35236fc6ee352f837d9257cc2dac82",
+        "verified": true
+      },
+      {
+        "path": "data/raw/spanishbcbl_s22/MEG/FIF/22_9788/231222/Block2.fif",
+        "kind": "raw",
+        "sha256": "659d8f5cb3a9a3786157afecc6b9881adf027d699b2b793c6b3095f802436c33",
+        "actual_sha256": "659d8f5cb3a9a3786157afecc6b9881adf027d699b2b793c6b3095f802436c33",
+        "verified": true
+      },
+      {
+        "path": "data/raw/spanishbcbl_s22/MEG/logs/S22-session1_block1_list1.mat",
+        "kind": "raw",
+        "sha256": "87cd3b3a1a4512db31004b76528a23a4c39c96dff68e91ec75c4c301f8c96bc6",
+        "actual_sha256": "87cd3b3a1a4512db31004b76528a23a4c39c96dff68e91ec75c4c301f8c96bc6",
+        "verified": true
+      },
+      {
+        "path": "data/raw/spanishbcbl_s22/MEG/logs/S22-session1_block2_list2.mat",
+        "kind": "raw",
+        "sha256": "d70a6bd029811e9c44a70c00a4fa93bf1ee36cc53fc6bb1e9582e5f5e166a27c",
+        "actual_sha256": "d70a6bd029811e9c44a70c00a4fa93bf1ee36cc53fc6bb1e9582e5f5e166a27c",
+        "verified": true
+      },
+      {
+        "path": "data/raw/spanishbcbl_s22/MEG/logs/S22-session2_block1_list2.mat",
+        "kind": "raw",
+        "sha256": "dbdff992d8c31428dcf9b962df43a650cfdcc77559f40cc4a7bbce938ffb03de",
+        "actual_sha256": "dbdff992d8c31428dcf9b962df43a650cfdcc77559f40cc4a7bbce938ffb03de",
+        "verified": true
+      },
+      {
+        "path": "data/raw/spanishbcbl_s22/MEG/logs/S22-session2_block2_list1.mat",
+        "kind": "raw",
+        "sha256": "96085ee480ba53b0d09be0ffb1b041fd9e9526917c601357596670ed103d0992",
+        "actual_sha256": "96085ee480ba53b0d09be0ffb1b041fd9e9526917c601357596670ed103d0992",
+        "verified": true
+      },
+      {
+        "path": "data/manifests/s22_sentence_block_metadata.jsonl",
+        "kind": "metadata",
+        "sha256": "ab26d8522682e3de5a8b31dfb89d8d519dd84855faf6aa487cae630c069ded61",
+        "actual_sha256": "ab26d8522682e3de5a8b31dfb89d8d519dd84855faf6aa487cae630c069ded61",
+        "verified": true
+      },
+      {
+        "path": "data/raw/spanishbcbl_s22/events_clean_all_blocks.pkl",
+        "kind": "stored_events",
+        "sha256": "485c3e5b32daa026e4f3ea5dbe3d389e6f8f043d2717bfde67b962c724b23840",
+        "actual_sha256": "485c3e5b32daa026e4f3ea5dbe3d389e6f8f043d2717bfde67b962c724b23840",
+        "verified": true
+      }
+    ],
+    "all_verified": true,
+    "expected_counts": {
+      "sentence_records": 256,
+      "unique_sentence_texts": 128,
+      "keystrokes": 9650,
+      "blocks": 4,
+      "sessions": 2
+    }
+  },
+  "split": {
+    "split_name": "D_clean",
+    "manifest_files": {
+      "Z:/PROJECTS/PROJECTS/Meta project brain/data/manifests/s22_D_clean.json": "e9394cd6dc6eec6e24062469e22de7ab2b784a71aaa0be272db61397184e757b"
+    },
+    "partition_uid_sha256": {
+      "train": "5cff8773597f944ab2dbe7682845b8705e37f6a4deff243489e78f7cdd449144",
+      "val": "e93d17787aaf3b0843ef931079767f7f1a0f79c04a418e7eb23f337655382d46",
+      "test": "b0f48a77ab9682be5f9fac31442ff761c8fb59ef7fc58fe3d392b172f891d8c3"
+    },
+    "integrity": {
+      "train_vs_val": {
+        "sentence_UID": 0,
+        "unique_sentence_group_id": 0,
+        "tfidf_cluster_id": 0,
+        "sentence_presented": 0,
+        "sentence_typed": 0
+      },
+      "train_vs_test": {
+        "sentence_UID": 0,
+        "unique_sentence_group_id": 0,
+        "tfidf_cluster_id": 0,
+        "sentence_presented": 0,
+        "sentence_typed": 0
+      },
+      "val_vs_test": {
+        "sentence_UID": 0,
+        "unique_sentence_group_id": 0,
+        "tfidf_cluster_id": 0,
+        "sentence_presented": 0,
+        "sentence_typed": 0
+      },
+      "disjoint": true
+    }
+  },
+  "control": {
+    "seed": 2026,
+    "window": 8,
+    "group_map": {
+      "G006": "G084",
+      "G009": "G041",
+      "G012": "G116",
+      "G014": "G054",
+      "G015": "G068",
+      "G016": "G122",
+      "G018": "G024",
+      "G020": "G037",
+      "G021": "G032",
+      "G023": "G073",
+      "G024": "G018",
+      "G025": "G091",
+      "G026": "G035",
+      "G029": "G061",
+      "G031": "G092",
+      "G032": "G021",
+      "G035": "G088",
+      "G037": "G020",
+      "G041": "G108",
+      "G043": "G052",
+      "G045": "G096",
+      "G051": "G076",
+      "G052": "G063",
+      "G054": "G070",
+      "G058": "G126",
+      "G060": "G058",
+      "G061": "G098",
+      "G063": "G095",
+      "G066": "G123",
+      "G068": "G015",
+      "G070": "G014",
+      "G072": "G105",
+      "G073": "G060",
+      "G076": "G103",
+      "G078": "G112",
+      "G079": "G099",
+      "G082": "G026",
+      "G084": "G025",
+      "G085": "G029",
+      "G088": "G078",
+      "G091": "G006",
+      "G092": "G045",
+      "G095": "G012",
+      "G096": "G031",
+      "G098": "G085",
+      "G099": "G101",
+      "G101": "G066",
+      "G103": "G051",
+      "G104": "G009",
+      "G105": "G072",
+      "G108": "G104",
+      "G112": "G082",
+      "G116": "G016",
+      "G120": "G079",
+      "G122": "G043",
+      "G123": "G120",
+      "G126": "G023"
+    },
+    "windows": 7,
+    "attempts_per_window": {
+      "0": 6,
+      "1": 3,
+      "2": 3,
+      "3": 1,
+      "4": 1,
+      "5": 2,
+      "6": 4
+    },
+    "fixed_points": 0,
+    "same_cluster_pairs": 0,
+    "identical_target_text_pairs": 0,
+    "keystroke_length_gap": {
+      "mean_abs": 1.8596491228070176,
+      "max_abs": 18,
+      "exact_length_matches": 12
+    },
+    "donor_of_uid": {
+      "2.0_S22_1_block1": "37.0_S22_1_block1",
+      "3.0_S22_1_block1": "9.0_S22_1_block1",
+      "4.0_S22_1_block1": "45.0_S22_1_block1",
+      "5.0_S22_1_block1": "8.0_S22_1_block1",
+      "8.0_S22_1_block1": "27.0_S22_1_block1",
+      "9.0_S22_1_block1": "12.0_S22_1_block1",
+      "10.0_S22_1_block1": "61.0_S22_1_block1",
+      "12.0_S22_1_block1": "44.0_S22_1_block1",
+      "13.0_S22_1_block1": "30.0_S22_1_block1",
+      "15.0_S22_1_block1": "40.0_S22_1_block1",
+      "16.0_S22_1_block1": "25.0_S22_1_block1",
+      "17.0_S22_1_block1": "56.0_S22_1_block1",
+      "18.0_S22_1_block1": "53.0_S22_1_block1",
+      "19.0_S22_1_block1": "21.0_S22_1_block1",
+      "20.0_S22_1_block1": "65.0_S22_1_block1",
+      "21.0_S22_1_block1": "35.0_S22_1_block1",
+      "22.0_S22_1_block1": "49.0_S22_1_block1",
+      "23.0_S22_1_block1": "62.0_S22_1_block1",
+      "25.0_S22_1_block1": "16.0_S22_1_block1",
+      "26.0_S22_1_block1": "50.0_S22_1_block1",
+      "27.0_S22_1_block1": "33.0_S22_1_block1",
+      "28.0_S22_1_block1": "54.0_S22_1_block1",
+      "29.0_S22_1_block1": "55.0_S22_1_block1",
+      "30.0_S22_1_block1": "13.0_S22_1_block1",
+      "31.0_S22_1_block1": "57.0_S22_1_block1",
+      "32.0_S22_1_block1": "18.0_S22_1_block1",
+      "33.0_S22_1_block1": "5.0_S22_1_block1",
+      "34.0_S22_1_block1": "59.0_S22_1_block1",
+      "35.0_S22_1_block1": "43.0_S22_1_block1",
+      "37.0_S22_1_block1": "22.0_S22_1_block1",
+      "38.0_S22_1_block1": "4.0_S22_1_block1",
+      "39.0_S22_1_block1": "3.0_S22_1_block1",
+      "40.0_S22_1_block1": "26.0_S22_1_block1",
+      "41.0_S22_1_block1": "48.0_S22_1_block1",
+      "42.0_S22_1_block1": "32.0_S22_1_block1",
+      "43.0_S22_1_block1": "19.0_S22_1_block1",
+      "44.0_S22_1_block1": "39.0_S22_1_block1",
+      "45.0_S22_1_block1": "31.0_S22_1_block1",
+      "46.0_S22_1_block1": "38.0_S22_1_block1",
+      "47.0_S22_1_block1": "23.0_S22_1_block1",
+      "48.0_S22_1_block1": "63.0_S22_1_block1",
+      "49.0_S22_1_block1": "42.0_S22_1_block1",
+      "50.0_S22_1_block1": "29.0_S22_1_block1",
+      "52.0_S22_1_block1": "58.0_S22_1_block1",
+      "53.0_S22_1_block1": "2.0_S22_1_block1",
+      "54.0_S22_1_block1": "28.0_S22_1_block1",
+      "55.0_S22_1_block1": "15.0_S22_1_block1",
+      "56.0_S22_1_block1": "17.0_S22_1_block1",
+      "57.0_S22_1_block1": "46.0_S22_1_block1",
+      "58.0_S22_1_block1": "52.0_S22_1_block1",
+      "59.0_S22_1_block1": "10.0_S22_1_block1",
+      "60.0_S22_1_block1": "20.0_S22_1_block1",
+      "61.0_S22_1_block1": "34.0_S22_1_block1",
+      "62.0_S22_1_block1": "47.0_S22_1_block1",
+      "63.0_S22_1_block1": "41.0_S22_1_block1",
+      "64.0_S22_1_block1": "60.0_S22_1_block1",
+      "65.0_S22_1_block1": "64.0_S22_1_block1"
+    },
+    "evaluation_targets": "unchanged (validation and test correctly paired)",
+    "relabelling": {
+      "training_sentences_relabelled": 57,
+      "training_keystrokes_relabelled": 1821,
+      "keystroke_labels_changed": 1592,
+      "fraction_of_training_labels_changed": 0.8742449203734212,
+      "sentences_needing_length_adaptation": 45
+    }
+  },
+  "deviations_from_official": [
+    "Windows: official study event cache disabled (exca writes JSON in filenames, illegal on Windows); events verified identical to the stored extraction",
+    "local dry run: dataloader workers 0, no pinned memory (throughput settings only)"
+  ],
+  "training_configuration": {
+    "official_config": {
+      "output_dir": "Z:\\PROJECTS\\PROJECTS\\Meta project brain\\results\\runs\\phase7\\dry_run\\D_clean_control_seed33",
+      "seed": 33,
+      "n_epochs": 300,
+      "patience": 30,
+      "save_checkpoints": true,
+      "data": {
+        "study": {
+          "name": "Pinet2024Meg",
+          "path": "Z:\\PROJECTS\\PROJECTS\\Meta project brain\\data\\raw\\spanishbcbl_s22"
+        },
+        "transforms": [
+          {
+            "name": "SpanishBCBLPreprocessing"
+          },
+          {
+            "name": "Phase7ManifestSplit",
+            "partitions": {
+              "train": [
+                "2.0_S22_1_block1",
+                "3.0_S22_1_block1",
+                "4.0_S22_1_block1",
+                "5.0_S22_1_block1",
+                "8.0_S22_1_block1",
+                "9.0_S22_1_block1",
+                "10.0_S22_1_block1",
+                "12.0_S22_1_block1",
+                "13.0_S22_1_block1",
+                "15.0_S22_1_block1",
+                "16.0_S22_1_block1",
+                "17.0_S22_1_block1",
+                "18.0_S22_1_block1",
+                "19.0_S22_1_block1",
+                "20.0_S22_1_block1",
+                "21.0_S22_1_block1",
+                "22.0_S22_1_block1",
+                "23.0_S22_1_block1",
+                "25.0_S22_1_block1",
+                "26.0_S22_1_block1",
+                "27.0_S22_1_block1",
+                "28.0_S22_1_block1",
+                "29.0_S22_1_block1",
+                "30.0_S22_1_block1",
+                "31.0_S22_1_block1",
+                "32.0_S22_1_block1",
+                "33.0_S22_1_block1",
+                "34.0_S22_1_block1",
+                "35.0_S22_1_block1",
+                "37.0_S22_1_block1",
+                "38.0_S22_1_block1",
+                "39.0_S22_1_block1",
+                "40.0_S22_1_block1",
+                "41.0_S22_1_block1",
+                "42.0_S22_1_block1",
+                "43.0_S22_1_block1",
+                "44.0_S22_1_block1",
+                "45.0_S22_1_block1",
+                "46.0_S22_1_block1",
+                "47.0_S22_1_block1",
+                "48.0_S22_1_block1",
+                "49.0_S22_1_block1",
+                "50.0_S22_1_block1",
+                "52.0_S22_1_block1",
+                "53.0_S22_1_block1",
+                "54.0_S22_1_block1",
+                "55.0_S22_1_block1",
+                "56.0_S22_1_block1",
+                "57.0_S22_1_block1",
+                "58.0_S22_1_block1",
+                "59.0_S22_1_block1",
+                "60.0_S22_1_block1",
+                "61.0_S22_1_block1",
+                "62.0_S22_1_block1",
+                "63.0_S22_1_block1",
+                "64.0_S22_1_block1",
+                "65.0_S22_1_block1"
+              ],
+              "val": [
+                "6.0_S22_1_block1",
+                "7.0_S22_1_block1",
+                "11.0_S22_1_block1",
+                "14.0_S22_1_block1",
+                "24.0_S22_1_block1",
+                "36.0_S22_1_block1",
+                "51.0_S22_1_block1"
+              ],
+              "test": [
+                "2.0_S22_2_block1",
+                "4.0_S22_2_block1",
+                "5.0_S22_2_block1",
+                "8.0_S22_2_block1",
+                "9.0_S22_2_block1",
+                "12.0_S22_2_block1",
+                "13.0_S22_2_block1",
+                "14.0_S22_2_block1",
+                "15.0_S22_2_block1",
+                "16.0_S22_2_block1",
+                "17.0_S22_2_block1",
+                "18.0_S22_2_block1",
+                "19.0_S22_2_block1",
+                "20.0_S22_2_block1",
+                "21.0_S22_2_block1",
+                "23.0_S22_2_block1",
+                "26.0_S22_2_block1",
+                "27.0_S22_2_block1",
+                "30.0_S22_2_block1",
+                "31.0_S22_2_block1",
+                "33.0_S22_2_block1",
+                "36.0_S22_2_block1",
+                "40.0_S22_2_block1",
+                "44.0_S22_2_block1",
+                "45.0_S22_2_block1",
+                "51.0_S22_2_block1",
+                "52.0_S22_2_block1",
+                "56.0_S22_2_block1",
+                "57.0_S22_2_block1",
+                "58.0_S22_2_block1",
+                "61.0_S22_2_block1",
+                "63.0_S22_2_block1"
+              ]
+            }
+          },
+          {
+            "name": "Phase7TrainTargetDerangement",
+            "donor_of_uid": {
+              "2.0_S22_1_block1": "37.0_S22_1_block1",
+              "3.0_S22_1_block1": "9.0_S22_1_block1",
+              "4.0_S22_1_block1": "45.0_S22_1_block1",
+              "5.0_S22_1_block1": "8.0_S22_1_block1",
+              "8.0_S22_1_block1": "27.0_S22_1_block1",
+              "9.0_S22_1_block1": "12.0_S22_1_block1",
+              "10.0_S22_1_block1": "61.0_S22_1_block1",
+              "12.0_S22_1_block1": "44.0_S22_1_block1",
+              "13.0_S22_1_block1": "30.0_S22_1_block1",
+              "15.0_S22_1_block1": "40.0_S22_1_block1",
+              "16.0_S22_1_block1": "25.0_S22_1_block1",
+              "17.0_S22_1_block1": "56.0_S22_1_block1",
+              "18.0_S22_1_block1": "53.0_S22_1_block1",
+              "19.0_S22_1_block1": "21.0_S22_1_block1",
+              "20.0_S22_1_block1": "65.0_S22_1_block1",
+              "21.0_S22_1_block1": "35.0_S22_1_block1",
+              "22.0_S22_1_block1": "49.0_S22_1_block1",
+              "23.0_S22_1_block1": "62.0_S22_1_block1",
+              "25.0_S22_1_block1": "16.0_S22_1_block1",
+              "26.0_S22_1_block1": "50.0_S22_1_block1",
+              "27.0_S22_1_block1": "33.0_S22_1_block1",
+              "28.0_S22_1_block1": "54.0_S22_1_block1",
+              "29.0_S22_1_block1": "55.0_S22_1_block1",
+              "30.0_S22_1_block1": "13.0_S22_1_block1",
+              "31.0_S22_1_block1": "57.0_S22_1_block1",
+              "32.0_S22_1_block1": "18.0_S22_1_block1",
+              "33.0_S22_1_block1": "5.0_S22_1_block1",
+              "34.0_S22_1_block1": "59.0_S22_1_block1",
+              "35.0_S22_1_block1": "43.0_S22_1_block1",
+              "37.0_S22_1_block1": "22.0_S22_1_block1",
+              "38.0_S22_1_block1": "4.0_S22_1_block1",
+              "39.0_S22_1_block1": "3.0_S22_1_block1",
+              "40.0_S22_1_block1": "26.0_S22_1_block1",
+              "41.0_S22_1_block1": "48.0_S22_1_block1",
+              "42.0_S22_1_block1": "32.0_S22_1_block1",
+              "43.0_S22_1_block1": "19.0_S22_1_block1",
+              "44.0_S22_1_block1": "39.0_S22_1_block1",
+              "45.0_S22_1_block1": "31.0_S22_1_block1",
+              "46.0_S22_1_block1": "38.0_S22_1_block1",
+              "47.0_S22_1_block1": "23.0_S22_1_block1",
+              "48.0_S22_1_block1": "63.0_S22_1_block1",
+              "49.0_S22_1_block1": "42.0_S22_1_block1",
+              "50.0_S22_1_block1": "29.0_S22_1_block1",
+              "52.0_S22_1_block1": "58.0_S22_1_block1",
+              "53.0_S22_1_block1": "2.0_S22_1_block1",
+              "54.0_S22_1_block1": "28.0_S22_1_block1",
+              "55.0_S22_1_block1": "15.0_S22_1_block1",
+              "56.0_S22_1_block1": "17.0_S22_1_block1",
+              "57.0_S22_1_block1": "46.0_S22_1_block1",
+              "58.0_S22_1_block1": "52.0_S22_1_block1",
+              "59.0_S22_1_block1": "10.0_S22_1_block1",
+              "60.0_S22_1_block1": "20.0_S22_1_block1",
+              "61.0_S22_1_block1": "34.0_S22_1_block1",
+              "62.0_S22_1_block1": "47.0_S22_1_block1",
+              "63.0_S22_1_block1": "41.0_S22_1_block1",
+              "64.0_S22_1_block1": "60.0_S22_1_block1",
+              "65.0_S22_1_block1": "64.0_S22_1_block1"
+            }
+          }
+        ],
+        "neuro": {
+          "name": "MegExtractor",
+          "frequency": 50,
+          "filter": [
+            0.1,
+            20.0
+          ],
+          "baseline": [
+            0.0,
+            0.2
+          ],
+          "apply_proj": false,
+          "clamp": 5,
+          "scaler": "RobustScaler",
+          "allow_maxshield": true,
+          "infra": {
+            "folder": "C:\\Users\\prana\\Envs\\phase6-official-cache",
+            "cluster": null
+          }
+        },
+        "feature": {
+          "name": "LabelEncoder",
+          "aggregation": "trigger",
+          "predefined_mapping": {
+            "s": 0,
+            "o": 1,
+            "t": 2,
+            "e": 3,
+            "n": 4,
+            "c": 5,
+            "i": 6,
+            "a": 7,
+            "<space>": 8,
+            "d": 9,
+            "l": 10,
+            "r": 11,
+            "b": 12,
+            "<special>": 13,
+            "z": 14,
+            "v": 15,
+            "f": 16,
+            "m": 17,
+            "u": 18,
+            "h": 19,
+            "p": 20,
+            "g": 21,
+            "q": 22,
+            "w": 23,
+            "x": 24,
+            "y": 25,
+            "j": 26,
+            "k": 27,
+            "<number>": 28,
+            "ý": 13,
+            "\u0014": 13,
+            "ü": 13,
+            "û": 13,
+            "£": 13,
+            "¤": 13,
+            "-": 13,
+            "¿": 13,
+            "`": 13
+          },
+          "event_types": "Keystroke",
+          "event_field": "button",
+          "return_one_hot": false
+        },
+        "num_classes": 29,
+        "start": -0.2,
+        "duration": 0.5,
+        "batch_size": 64,
+        "val_batch_size": 2048,
+        "test_batch_size": 2048,
+        "num_workers": 0,
+        "pin_memory": false,
+        "persistent_workers": false
+      },
+      "brain_model_config": {
+        "name": "SimpleConvTimeAgg",
+        "time_agg_out": "att",
+        "dropout_input": 0.2,
+        "conv_dropout": 0.5,
+        "hidden": 2048,
+        "batch_norm": true,
+        "depth": 8,
+        "dilation_period": 3,
+        "kernel_size": 3,
+        "relu_leakiness": 0.01,
+        "initial_linear": 512,
+        "gelu": true,
+        "skip": true,
+        "scale": 0.1,
+        "subject_layers_config": {},
+        "merger_config": {
+          "n_virtual_channels": 270,
+          "fourier_emb_config": {
+            "n_freqs": null,
+            "total_dim": 2048,
+            "n_dims": 2
+          },
+          "dropout": 0.2,
+          "usage_penalty": 1.0,
+          "per_subject": true,
+          "embed_ref": false
+        }
+      },
+      "transformer_config": {
+        "name": "TransformerEncoder",
+        "alibi_pos_bias": true,
+        "depth": 4,
+        "heads": 2
+      },
+      "loss": {
+        "name": "CrossEntropyLoss"
+      },
+      "optimizer": {
+        "name": "LightningOptimizer",
+        "optimizer": {
+          "name": "AdamW",
+          "lr": 5e-05,
+          "kwargs": {
+            "weight_decay": 0.0001
+          }
+        },
+        "scheduler": {
+          "name": "OneCycleLR",
+          "kwargs": {
+            "max_lr": 5e-05,
+            "pct_start": 0.1
+          }
+        },
+        "interval": "step"
+      }
+    },
+    "seed": 33,
+    "n_epochs": 300,
+    "patience": 30,
+    "grad_max_norm": null,
+    "devices_requested": 8,
+    "accelerator_and_devices": [
+      "cpu",
+      1
+    ],
+    "train_batch_size_per_device": 64,
+    "effective_global_train_batch": 64,
+    "note_on_devices": "The official Experiment defaults to 8 GPUs with DDP (global batch 8 x 64 keystrokes). With fewer GPUs the per-device batch stays 64 and the global batch and step count change accordingly; the realised value is recorded here."
+  },
+  "loaders": {
+    "train": {
+      "keystroke_segments": 1821,
+      "expected_keystrokes": 1821,
+      "sentences": 57,
+      "expected_sentences": 57,
+      "matches_manifest": true,
+      "batch_size": 64,
+      "batches": 29
+    },
+    "val": {
+      "keystroke_segments": 219,
+      "expected_keystrokes": 219,
+      "sentences": 7,
+      "expected_sentences": 7,
+      "matches_manifest": true,
+      "batch_size": 2048,
+      "batches": 1
+    },
+    "test": {
+      "keystroke_segments": 1363,
+      "expected_keystrokes": 1363,
+      "sentences": 32,
+      "expected_sentences": 32,
+      "matches_manifest": true,
+      "batch_size": 2048,
+      "batches": 1
+    }
+  },
+  "parameters": {
+    "uninitialized_lazy_parameters": 0,
+    "channel_merger": 110592000,
+    "channel_merger_heads_shape": [
+      200,
+      270,
+      2048
+    ],
+    "initial_linear": 138752,
+    "subject_layers": 210124800,
+    "subject_layers_weight_shape": [
+      200,
+      512,
+      2048
+    ],
+    "conv_encoder": 100724736,
+    "time_aggregation": 524803,
+    "sentence_transformer": 201383945,
+    "output_linear": 59421,
+    "total": 623548457
+  },
+  "seconds_to_model": 46.93656802177429,
+  "trainer": {
+    "max_epochs": 300,
+    "gradient_clip_val": null,
+    "callbacks": [
+      "LogSentencePredictions",
+      "EarlyStopping",
+      "TQDMProgressBar",
+      "ModelSummary",
+      "ModelCheckpoint"
+    ],
+    "early_stopping": [
+      {
+        "monitor": "val_CER",
+        "patience": 30,
+        "mode": "min"
+      }
+    ]
+  },
+  "dry_run_evaluation_path_check": {
+    "what": "untrained weights on the first test sentences; exercises scoring only, not a result",
+    "sentences": 3,
+    "keystrokes": 139,
+    "metric_keys": [
+      "character_f1",
+      "character_precision",
+      "character_recall",
+      "confusion_axes",
+      "confusion_matrix",
+      "counts",
+      "decoding_note",
+      "deletion_rate",
+      "hit_rate",
+      "insertion_rate",
+      "keystroke_accuracy",
+      "keystrokes",
+      "length_ratio",
+      "mean_sentence_cer",
+      "mean_sentence_wer",
+      "micro_cer",
+      "per_character_recall",
+      "per_character_support",
+      "predicted_sequence_length_characters",
+      "predicted_sequence_length_keystrokes",
+      "seconds",
+      "sentences",
+      "substitution_rate",
+      "target_sequence_length_characters",
+      "target_sequence_length_keystrokes"
+    ],
+    "finite": true
+  },
+  "status": "DRY RUN COMPLETE (no training performed)",
+  "runtime_seconds": 52.982826709747314
+}

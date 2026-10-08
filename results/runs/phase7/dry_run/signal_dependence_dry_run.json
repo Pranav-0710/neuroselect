@@ -1,0 +1,48 @@
+{
+  "task": "Phase 7 Task 11: signal dependence of the real official v1 model",
+  "status": "DRY RUN (untrained weights; code path only, not a result)",
+  "weights": "untrained",
+  "split": "official_v1_clean",
+  "seed": 33,
+  "deviations_from_official": [
+    "devices set to 1 (official default: Experiment.devices = 8, capped by GPUs present)",
+    "Windows: official study event cache disabled (exca writes JSON in filenames, illegal on Windows); events verified identical to the stored extraction",
+    "local dry run: dataloader workers 0, no pinned memory (throughput settings only)"
+  ],
+  "ablation_seed": 2026,
+  "conditions": {
+    "original": {
+      "character_f1": 0.0,
+      "keystroke_accuracy": 0.0,
+      "mean_sentence_cer": 1.0,
+      "mean_sentence_wer": 1.0,
+      "prediction_agreement_with_original": 1.0,
+      "keystrokes": 61
+    },
+    "zero_meg": {
+      "character_f1": 0.0,
+      "keystroke_accuracy": 0.0,
+      "mean_sentence_cer": 1.0,
+      "mean_sentence_wer": 1.0,
+      "prediction_agreement_with_original": 1.0,
+      "keystrokes": 61
+    },
+    "temporal_permutation": {
+      "character_f1": 0.0,
+      "keystroke_accuracy": 0.0,
+      "mean_sentence_cer": 1.0,
+      "mean_sentence_wer": 1.0,
+      "prediction_agreement_with_original": 1.0,
+      "keystrokes": 61
+    },
+    "channel_permutation": {
+      "character_f1": 0.0,
+      "keystroke_accuracy": 0.0,
+      "mean_sentence_cer": 1.0,
+      "mean_sentence_wer": 1.0,
+      "prediction_agreement_with_original": 1.0,
+      "keystrokes": 61
+    }
+  },
+  "interpretation_rule": "Sensitivity to ablation shows input dependence only; it is not evidence of meaningful neural decoding without the real-vs-control comparison."
+}
